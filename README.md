@@ -6,7 +6,7 @@
 
 Future graphics rig, under construction.
 
-Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit/issues) for what this will be.
+Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit/issues?q=label%3ADiscussion) for what this will be.
 
 ### Developing
 
