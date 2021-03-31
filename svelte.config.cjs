@@ -1,6 +1,5 @@
 const sveltePreprocess = require('svelte-preprocess');
 const pkg = require('./package.json');
-const imagetools = require('vite-imagetools');
 
 module.exports = {
 	preprocess: sveltePreprocess({
@@ -46,7 +45,7 @@ module.exports = {
 			build: {
 				assetsInlineLimit: 0,
 			},
-			plugins: [imagetools.imagetools({force: true})],
+			plugins: [],
 		}
 	}
 };
