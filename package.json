@@ -1,19 +1,24 @@
 {
 	"name": "sveltekit-test",
 	"version": "0.0.1",
+	"homepage": "https://graphics.reuters.com/somehash123/",
+	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev --open",
 		"build": "svelte-kit build",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
+		"@vitejs/plugin-legacy": "^1.3.2",
 		"autoprefixer": "^10.2.5",
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.1.0",
+		"glob": "^7.1.6",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"sass": "^1.0.0",
@@ -22,7 +27,7 @@
 		"vite": "^2.1.0"
 	},
 	"engines": {
-		"node": ">= 12.17.0"
+		"node": ">= 14.16.0"
 	},
 	"dependencies": {
 		"@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
@@ -33,10 +38,21 @@
 		"svelte-markdown": "^0.1.5"
 	},
 	"reuters": {
-		"publishPaths": {
-			"preview": null,
-			"cdn": "https://graphics.thomsonreuters.com/asddsaasd123",
-			"interactive": "/asdfewefsd233/HEALTH-CORONAVIRUS"
+		"contact": {
+			"name": null,
+			"email": null
+		},
+		"graphic": {
+			"packId": null,
+			"desk": null,
+			"slugs": {
+				"root": "",
+				"wild": ""
+			},
+			"authors": [],
+			"referrals": [],
+			"published": null,
+			"updated": null
 		}
 	}
 }

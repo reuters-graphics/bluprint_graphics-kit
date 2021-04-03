@@ -1,5 +1,13 @@
 const sveltePreprocess = require('svelte-preprocess');
 const pkg = require('./package.json');
+const url = require('url');
+
+const getRootRelativePath = (homepageURL) => {
+	if (!homepageURL) return '';
+	const page = url.parse(homepageURL);
+	return homepageURL.replace(`${page.protocol}//${page.host}`, '').replace(/\/$/, '');
+}
+
 
 module.exports = {
 	preprocess: sveltePreprocess({
@@ -20,8 +28,8 @@ module.exports = {
 	kit: {
 		appDir: '_app',
 		paths: {
-			assets: process.env.NODE_ENV === 'production' ? pkg.reuters.publishPaths.cdn : '',
-			base: process.env.NODE_ENV === 'production' ? pkg.reuters.publishPaths.interactive : '',
+			assets: process.env.NODE_ENV === 'production' ? getRootRelativePath(pkg.homepage) + '/cdn' : '',
+			base: process.env.NODE_ENV === 'production' ? getRootRelativePath(pkg.homepage) : '',
 		},
 		adapter: {
 			name: 'static-adapter',
@@ -30,7 +38,7 @@ module.exports = {
 				builder.copy_client_files('dist/cdn');
 				await builder.prerender({
 					force: true,
-					dest: 'dist/interactive',
+					dest: 'dist',
 				});
 			}
 		},
