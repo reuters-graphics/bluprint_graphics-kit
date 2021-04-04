@@ -1,7 +1,6 @@
 {
   "name": "sveltekit-test",
   "version": "0.0.1",
-  "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/dgkvlenjjpb/",
   "type": "module",
   "scripts": {
     "dev": "svelte-kit dev --open",
@@ -46,7 +45,7 @@
       "email": "jon.mcclure@thomsonreuters.com"
     },
     "graphic": {
-      "pack": "40042adb-5c6d-401e-a905-b758fbab564f",
+      "pack": "4094ba80-82f9-4bf6-bed2-71de025fde5f",
       "desk": "london",
       "slugs": {
         "root": "HEALTH-CORONAVIRUS",
@@ -63,5 +62,6 @@
       "updated": null,
       "editions": []
     }
-  }
+  },
+  "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/"
 }
