@@ -12,7 +12,8 @@
     "test-publisher:prepack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js prepack",
     "test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack",
     "test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure",
-    "test-publisher:upload": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js upload"
+    "test-publisher:upload": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js upload",
+    "test-publisher:publish": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js publish"
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
