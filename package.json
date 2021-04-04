@@ -64,14 +64,26 @@
       "mediaEditions": [
         {
           "slug": "media-de-chart",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/chart/",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/de/chart/",
           "title": "Testing",
           "description": " Testing in Deutsch"
         },
         {
           "slug": "media-en-barchart",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/barchart/",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/barchart/",
           "title": "Testing",
+          "description": "Testing"
+        },
+        {
+          "slug": "media-en-chart",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/chart/",
+          "title": "Testing",
+          "description": "Testing"
+        },
+        {
+          "slug": "media-en-map",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/map/",
+          "title": "Testing map",
           "description": "Testing"
         }
       ]
