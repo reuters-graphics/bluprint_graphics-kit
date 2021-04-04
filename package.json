@@ -9,7 +9,8 @@
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack"
+		"test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack",
+		"test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
@@ -52,7 +53,10 @@
 			"authors": [],
 			"referrals": [],
 			"published": null,
-			"updated": null
+			"updated": null,
+			"editions": [
+				{"name": "public", "img": { "name": "", "width": null, "height": null }}
+			]
 		}
 	}
 }
