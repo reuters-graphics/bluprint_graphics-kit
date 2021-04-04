@@ -1,62 +1,67 @@
 {
-	"name": "sveltekit-test",
-	"version": "0.0.1",
-	"homepage": "https://graphics.reuters.com/somehash123/",
-	"type": "module",
-	"scripts": {
-		"dev": "svelte-kit dev --open",
-		"build": "svelte-kit build",
-		"start": "svelte-kit start",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack",
-		"test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure"
-	},
-	"devDependencies": {
-		"@sveltejs/kit": "next",
-		"@vitejs/plugin-legacy": "^1.3.2",
-		"autoprefixer": "^10.2.5",
-		"eslint": "^7.22.0",
-		"eslint-config-prettier": "^8.1.0",
-		"eslint-plugin-svelte3": "^3.1.0",
-		"glob": "^7.1.6",
-		"prettier": "~2.2.1",
-		"prettier-plugin-svelte": "^2.2.0",
-		"sass": "^1.0.0",
-		"svelte": "^3.29.0",
-		"svelte-preprocess": "^4.0.0",
-		"vite": "^2.1.0"
-	},
-	"engines": {
-		"node": ">= 14.16.0"
-	},
-	"dependencies": {
-		"@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
-		"@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
-		"@reuters-graphics/style-theme-eisbaer": "^0.2.4",
-		"classnames": "^2.2.6",
-		"svelte-i18n": "^3.3.9",
-		"svelte-markdown": "^0.1.5"
-	},
-	"reuters": {
-		"contact": {
-			"name": null,
-			"email": null
-		},
-		"graphic": {
-			"packId": null,
-			"desk": null,
-			"slugs": {
-				"root": "",
-				"wild": ""
-			},
-			"authors": [],
-			"referrals": [],
-			"published": null,
-			"updated": null,
-			"editions": [
-				{"name": "public", "img": { "name": "", "width": null, "height": null }}
-			]
-		}
-	}
+  "name": "sveltekit-test",
+  "version": "0.0.1",
+  "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/dgkvlenjjpb/",
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit dev --open",
+    "build": "svelte-kit build",
+    "start": "svelte-kit start",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "test-publisher:prepack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js prepack",
+    "test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack",
+    "test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure",
+    "test-publisher:upload": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js upload"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "@vitejs/plugin-legacy": "^1.3.2",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.1.0",
+    "glob": "^7.1.6",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "sass": "^1.0.0",
+    "svelte": "^3.29.0",
+    "svelte-preprocess": "^4.0.0",
+    "vite": "^2.1.0"
+  },
+  "engines": {
+    "node": ">= 14.16.0"
+  },
+  "dependencies": {
+    "@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
+    "@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
+    "@reuters-graphics/style-theme-eisbaer": "^0.2.4",
+    "classnames": "^2.2.6",
+    "svelte-i18n": "^3.3.9",
+    "svelte-markdown": "^0.1.5"
+  },
+  "reuters": {
+    "contact": {
+      "name": "Jon McClure",
+      "email": "jon.mcclure@thomsonreuters.com"
+    },
+    "graphic": {
+      "pack": "40042adb-5c6d-401e-a905-b758fbab564f",
+      "desk": "london",
+      "slugs": {
+        "root": "HEALTH-CORONAVIRUS",
+        "wild": ""
+      },
+      "authors": [
+        {
+          "name": "Jon McClure",
+          "link": "https://www.twitter.com/JonRMcClure"
+        }
+      ],
+      "referrals": [],
+      "published": "2021-04-05T15:00:00.000Z",
+      "updated": null,
+      "editions": []
+    }
+  }
 }
