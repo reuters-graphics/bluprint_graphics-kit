@@ -61,7 +61,20 @@
       "referrals": [],
       "published": "2021-04-05T15:00:00.000Z",
       "updated": null,
-      "mediaEditions": []
+      "mediaEditions": [
+        {
+          "slug": "media-de-chart",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/chart/",
+          "title": "Testing",
+          "description": " Testing in Deutsch"
+        },
+        {
+          "slug": "media-en-barchart",
+          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/barchart/",
+          "title": "Testing",
+          "description": "Testing"
+        }
+      ]
     }
   },
   "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/"
