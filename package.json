@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "svelte-kit dev --open",
     "build": "svelte-kit build",
+    "build:preview": "svelte-kit build",
     "start": "svelte-kit start",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
@@ -60,7 +61,7 @@
       "referrals": [],
       "published": "2021-04-05T15:00:00.000Z",
       "updated": null,
-      "editions": []
+      "mediaEditions": []
     }
   },
   "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/"
