@@ -5,17 +5,18 @@
   "scripts": {
     "dev": "svelte-kit dev --open",
     "build": "svelte-kit build",
-    "build:preview": "svelte-kit build",
+    "build:preview": "PREVIEW=true svelte-kit build",
     "start": "svelte-kit start",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "test-publisher:prepack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js prepack",
-    "test-publisher:pack": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js pack",
+    "test-publisher:prepack": "npx graphics-publisher prepack",
+    "publisher:pack": "npx graphics-publisher pack",
     "test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure",
     "test-publisher:upload": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js upload",
     "test-publisher:publish": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js publish"
   },
   "devDependencies": {
+    "@reuters-graphics/graphics-kit-publisher": "^0.0.1",
     "@sveltejs/kit": "next",
     "@vitejs/plugin-legacy": "^1.3.2",
     "autoprefixer": "^10.2.5",
@@ -88,7 +89,8 @@
           "description": "Testing"
         }
       ]
-    }
+    },
+    "preview": "https://graphics.thomsonreuters.com/testfiles/2021/Y30sB9GrJ64T/"
   },
   "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/"
 }

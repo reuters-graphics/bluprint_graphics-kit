@@ -8,7 +8,6 @@ const getRootRelativePath = (homepageURL) => {
 	return homepageURL.replace(`${page.protocol}//${page.host}`, '').replace(/\/$/, '');
 }
 
-
 module.exports = {
 	preprocess: sveltePreprocess({
 		scss: {
@@ -28,8 +27,8 @@ module.exports = {
 	kit: {
 		appDir: '_app',
 		paths: {
-			assets: process.env.NODE_ENV === 'production' ? getRootRelativePath(pkg.homepage) + '/cdn' : '',
-			base: process.env.NODE_ENV === 'production' ? getRootRelativePath(pkg.homepage) : '',
+			assets: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + '/cdn' : '',
+			base: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) : '',
 		},
 		adapter: {
 			name: 'static-adapter',
