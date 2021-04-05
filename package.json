@@ -9,11 +9,12 @@
     "start": "svelte-kit start",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "test-publisher:prepack": "npx graphics-publisher prepack",
+    "publisher:prepack": "npx graphics-publisher prepack",
     "publisher:pack": "npx graphics-publisher pack",
-    "test-publisher:measure": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js measure",
-    "test-publisher:upload": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js upload",
-    "test-publisher:publish": "npx ./node_modules/@reuters-graphics/graphics-publisher/dist/cli.js publish"
+    "publisher:measure-images": "npx graphics-publisher measure-images",
+    "publisher:upload": "npx graphics-publisher upload",
+    "publisher:publish": "npx graphics-publisher publish",
+		"publisher:preview": "npx graphics-publisher preview"
   },
   "devDependencies": {
     "@reuters-graphics/graphics-kit-publisher": "^0.0.1",
@@ -44,53 +45,23 @@
   },
   "reuters": {
     "contact": {
-      "name": "Jon McClure",
-      "email": "jon.mcclure@thomsonreuters.com"
+      "name": null,
+      "email": null
     },
     "graphic": {
-      "pack": "4094ba80-82f9-4bf6-bed2-71de025fde5f",
-      "desk": "london",
+      "pack": null,
+      "desk": null,
       "slugs": {
-        "root": "HEALTH-CORONAVIRUS",
+        "root": "",
         "wild": ""
       },
-      "authors": [
-        {
-          "name": "Jon McClure",
-          "link": "https://www.twitter.com/JonRMcClure"
-        }
-      ],
+      "authors": [],
       "referrals": [],
-      "published": "2021-04-05T15:00:00.000Z",
+      "published": null,
       "updated": null,
-      "mediaEditions": [
-        {
-          "slug": "media-de-chart",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/de/chart/",
-          "title": "Testing",
-          "description": " Testing in Deutsch"
-        },
-        {
-          "slug": "media-en-barchart",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/barchart/",
-          "title": "Testing",
-          "description": "Testing"
-        },
-        {
-          "slug": "media-en-chart",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/chart/",
-          "title": "Testing",
-          "description": "Testing"
-        },
-        {
-          "slug": "media-en-map",
-          "url": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/embeds/en/map/",
-          "title": "Testing map",
-          "description": "Testing"
-        }
-      ]
+      "mediaEditions": []
     },
-    "preview": "https://graphics.thomsonreuters.com/testfiles/2021/Y30sB9GrJ64T/"
+    "preview": ""
   },
-  "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/nmovareydpa/"
+  "homepage": ""
 }
