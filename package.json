@@ -14,7 +14,7 @@
     "publisher:measure-images": "npx graphics-publisher measure-images",
     "publisher:upload": "npx graphics-publisher upload",
     "publisher:publish": "npx graphics-publisher publish",
-		"publisher:preview": "npx graphics-publisher preview"
+    "publisher:preview": "npx graphics-publisher preview"
   },
   "devDependencies": {
     "@reuters-graphics/graphics-kit-publisher": "^0.0.1",
@@ -45,23 +45,28 @@
   },
   "reuters": {
     "contact": {
-      "name": null,
-      "email": null
+      "name": "Jon McClure",
+      "email": "jon.mcclure@thomsonreuters.com"
     },
     "graphic": {
-      "pack": null,
-      "desk": null,
+      "pack": "c74b2eb3-35d2-499a-bfb6-e778f66247bc",
+      "desk": "london",
       "slugs": {
-        "root": "",
+        "root": "HEALTH-CORONAVIRUS",
         "wild": ""
       },
-      "authors": [],
+      "authors": [
+        {
+          "name": "Jon McClure",
+          "link": "https://www.twitter.com/JonRMcClure"
+        }
+      ],
       "referrals": [],
-      "published": null,
+      "published": "2021-04-06T20:00:00.000Z",
       "updated": null,
       "mediaEditions": []
     },
     "preview": ""
   },
-  "homepage": ""
+  "homepage": "https://graphics.reuters.com/HEALTH-CORONAVIRUS/xegpbgrxzvq/"
 }
