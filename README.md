@@ -10,10 +10,20 @@ Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit
 
 ### Developing
 
+Develop project
+
 ```
 yarn dev
 ```
 
+Build and publish a preview page to AWS.
+
 ```
-yarn build
+yarn publisher:preview
+```
+
+Build and upload to RNGS server.
+
+```
+yarn publisher:upload
 ```
