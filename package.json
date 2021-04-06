@@ -9,9 +9,6 @@
     "start": "svelte-kit start",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
-    "publisher:prepack": "npx graphics-publisher prepack",
-    "publisher:pack": "npx graphics-publisher pack",
-    "publisher:measure-images": "npx graphics-publisher measure-images",
     "publisher:upload": "npx graphics-publisher upload",
     "publisher:preview": "npx graphics-publisher preview"
   },

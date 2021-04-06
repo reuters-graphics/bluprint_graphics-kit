@@ -143,10 +143,10 @@
     d3-selection "^2.0.0"
     lodash "^4.17.20"
 
-"@reuters-graphics/graphics-kit-publisher@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.0.1.tgz#cd1a14d753dde599e65f667279e4bfea096aba85"
-  integrity sha512-RSHQSqb7ueyZDqk/pcaLCBRlcqefXa5gXNF6HpZy704l+0VfHrM/TfGX9Ni3eN0H9FLCg/z8HKm/6SCZZ2YBKQ==
+"@reuters-graphics/graphics-kit-publisher@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.0.2.tgz#1391befa2f35505977919570c3c95460aadbcb81"
+  integrity sha512-0HNJgpZMU2473mnilDlvo4Pe+llvCakqmwmVXwY5YAvaT0NkxgrGm7V+gWOBrc3njDCmXJ3anNVbEBntGmv4LQ==
   dependencies:
     "@reuters-graphics/server-client" "^1.2.2"
     archiver "^5.3.0"
