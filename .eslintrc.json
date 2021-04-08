@@ -1,0 +1,33 @@
+{
+	"root": true,
+	"extends": ["standard"],
+	"plugins": ["svelte3"],
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"overrides": [
+		{ "files": ["*.svelte"], "processor": "svelte3/svelte3" }
+	],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018
+	},
+	"rules": {
+    "semi": ["error", "always"],
+		"no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 2}],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "operator-linebreak": ["error", "after"],
+    "space-before-function-paren": ["error", "never"],
+		"import/first": ["warn", "always"]
+  }
+}

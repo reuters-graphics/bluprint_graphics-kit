@@ -2,15 +2,21 @@
 	import Page from '$lib/Page.svelte';
 	import '$lib/translations';
 	import { assets } from '$app/paths';
+	import SEO from '../src/FutureComponentLib/SEO/index.svelte'
 
 	import { init } from 'svelte-i18n';
 	
 	init({ initialLocale: 'en' });
 </script>
 
-<svelte:head>
-	<meta property="og:image" content={`${assets}/${('images/shark.jpg').replace(/^\/+/, '')}`}>
-</svelte:head>
+<SEO 
+	seoTitle='My page'
+	seoDescription='My description'
+	shareTitle='myShareTitle'
+	shareDescription='My share description'
+	shareImgPath='images/shark.jpg'
+	locale='en'
+/>
 
 <Page />
 

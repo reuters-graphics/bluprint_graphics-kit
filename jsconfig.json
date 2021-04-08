@@ -5,7 +5,8 @@
 			"$app/*": [".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*"],
 			"$lib/*": ["src/lib/*"],
 			"$locales/*": ["locales/*"],
-			"$utils/*": ["src/utils/*"]
+			"$utils/*": ["src/utils/*"],
+			"$imgs": ["src/statics/images/manifest.json"]
 		}
 	},
 	"include": ["src/**/*.js", "src/**/*.svelte"]

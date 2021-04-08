@@ -4,61 +4,64 @@ const url = require('url');
 const path = require('path');
 
 const getRootRelativePath = (homepageURL) => {
-	if (!homepageURL) return '';
-	const page = url.parse(homepageURL);
-	return homepageURL.replace(`${page.protocol}//${page.host}`, '').replace(/\/$/, '');
-}
+  if (!homepageURL) return '';
+  const page = new url.URL(homepageURL);
+  return homepageURL.replace(`${page.protocol}//${page.host}`, '').replace(/\/$/, '');
+};
 
 module.exports = {
-	preprocess: sveltePreprocess({
-		scss: {
-			includePaths: ['src/', 'node_modules/bootstrap/scss/'],
-			importer: [
-				(url) => {
-					// Redirect tilde-prefixed imports to node_modules
-					if (/^~/.test(url)) return { file: `node_modules/${url.replace('~', '')}` };
-					return null;
-				},
-			],
-		},
-		postcss: {
-			plugins: [require('autoprefixer')],
-		},
-	}),
-	kit: {
-		appDir: '_app',
-		paths: {
-			assets: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + '/cdn' : '',
-			base: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) : '',
-		},
-		adapter: {
-			name: 'static-adapter',
-			async adapt(builder) {
-				builder.copy_static_files('dist/cdn');
-				builder.copy_client_files('dist/cdn');
-				await builder.prerender({
-					force: true,
-					dest: 'dist',
-				});
-			}
-		},
-		files: {
-			assets: 'src/statics',
-			lib: 'src/lib',
-			routes: 'pages',
-			template: 'src/template.html',
-		},
-		target: '',
-		vite: {
-			resolve: {
-				alias: {
-					$utils: path.resolve(__dirname, 'src/utils'),
-				}
-			},
-			build: {
-				assetsInlineLimit: 0,
-			},
-			plugins: [],
-		}
-	}
+  preprocess: sveltePreprocess({
+    preserve: ['ld+json'],
+    scss: {
+      includePaths: ['src/', 'node_modules/bootstrap/scss/'],
+      importer: [
+        (url) => {
+          // Redirect tilde-prefixed imports to node_modules
+          if (/^~/.test(url)) return { file: `node_modules/${url.replace('~', '')}` };
+          return null;
+        },
+      ],
+    },
+    postcss: {
+      plugins: [require('autoprefixer')],
+    },
+  }),
+  kit: {
+    appDir: '_app',
+    paths: {
+      assets: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + '/cdn' : '',
+      base: process.env.NODE_ENV === 'production' ? getRootRelativePath(process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) : '',
+    },
+    adapter: {
+      name: 'static-adapter',
+      async adapt(builder) {
+        builder.copy_static_files('dist/cdn');
+        builder.copy_client_files('dist/cdn');
+        await builder.prerender({
+          force: true,
+          dest: 'dist',
+        });
+      },
+    },
+    files: {
+      assets: 'src/statics',
+      lib: 'src/lib',
+      routes: 'pages',
+      template: 'src/template.html',
+    },
+    target: '',
+    vite: {
+      resolve: {
+        alias: {
+          $utils: path.resolve(__dirname, 'src/utils'),
+          $pkg: path.resolve(__dirname, 'package.json'),
+          $imgs: path.resolve(__dirname, 'src/statics/images/manifest.json'),
+        },
+      },
+      build: {
+        assetsInlineLimit: 0,
+      },
+      plugins: [],
+    },
+  },
 };
