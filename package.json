@@ -39,7 +39,8 @@
     "@reuters-graphics/style-theme-eisbaer": "^0.2.4",
     "classnames": "^2.2.6",
     "svelte-i18n": "^3.3.9",
-    "svelte-markdown": "^0.1.5"
+    "svelte-markdown": "^0.1.5",
+    "url-join": "^4.0.1"
   },
   "reuters": {
     "contact": {

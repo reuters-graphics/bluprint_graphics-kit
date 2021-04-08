@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-  import { assets } from '$app/paths';
+	import { getPath } from '$utils/statics';
 	import classnames from 'classnames';
 
   export let src;
@@ -48,7 +48,7 @@
 
 <figure class={classnames('photo', { wide, wider, widest, fluid })} bind:this={container}>
   {#if (!lazy || (intersectable && intersecting))}
-    <img src={`${assets}/${src.replace(/^\/+/, '')}`} alt={alt}>
+    <img src={getPath(src)} alt={alt}>
   {:else}
     <div class='placeholder' height={`${height}px`} />
   {/if}

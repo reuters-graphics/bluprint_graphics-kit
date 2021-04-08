@@ -4,7 +4,8 @@
 		"paths": {
 			"$app/*": [".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*"],
 			"$lib/*": ["src/lib/*"],
-			"$locales/*": ["locales/*"]
+			"$locales/*": ["locales/*"],
+			"$utils/*": ["src/utils/*"]
 		}
 	},
 	"include": ["src/**/*.js", "src/**/*.svelte"]

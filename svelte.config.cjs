@@ -1,6 +1,7 @@
 const sveltePreprocess = require('svelte-preprocess');
 const pkg = require('./package.json');
 const url = require('url');
+const path = require('path');
 
 const getRootRelativePath = (homepageURL) => {
 	if (!homepageURL) return '';
@@ -49,6 +50,11 @@ module.exports = {
 		},
 		target: '',
 		vite: {
+			resolve: {
+				alias: {
+					$utils: path.resolve(__dirname, 'src/utils'),
+				}
+			},
 			build: {
 				assetsInlineLimit: 0,
 			},
