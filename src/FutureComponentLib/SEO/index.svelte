@@ -45,10 +45,11 @@ export let seoDescription;
 export let shareTitle;
 export let shareDescription;
 export let shareImgPath;
-export let locale = 'en';
 
-const URL = get(pkg, 'homepage') ? urljoin(pkg.homepage, $page.path, { trailingSlash: true }) :
-  get(pkg, 'reuters.preview') ? urljoin(pkg.reuters.preview, $page.path, { trailingSlash: true }) :
+const URL = get(pkg, 'homepage') ?
+  urljoin(pkg.homepage, $page.path, { trailingSlash: true }) :
+  get(pkg, 'reuters.preview') ?
+    urljoin(pkg.reuters.preview, $page.path, { trailingSlash: true }) :
     $page.host ? urljoin('https://' + $page.host, $page.path, { trailingSlash: true }) : 'https://graphics.reuters.com';
 
 const orgLdJson = {
