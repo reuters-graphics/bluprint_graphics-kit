@@ -1,5 +1,5 @@
 <nav class="nav">
-	<div class='logo-container'>
+	<div class="logo-container">
 		<a href="https://graphics.reuters.com">
 			<figure class="navbar-brand">
 				<img class="logo reuters-graphics" src="https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/png/graphics-logo-color.png" alt='Reuters graphics logo' />
