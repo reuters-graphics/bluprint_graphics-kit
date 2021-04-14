@@ -5,12 +5,12 @@
 		"paths": {
 			"$app/*": [".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*"],
 			"$lib/*": ["src/lib/*"],
-			"@reuters-graphics/svelte-page-components": ["src/FutureComponentLib/index.js"],
-			"$locales/*": ["locales/*"],
 			"$utils/*": ["src/utils/*"],
-			"$imgs": ["src/statics/images/manifest.json"]
+			"$pkg": ["package.json"],
+			"$imgs": ["src/statics/images/manifest.json"],
+			"$locales/*": ["locales/*"],
+			"@reuters-graphics/svelte-page-components": ["src/FutureComponentLib/index.js"]
 		}
 	},
-	"include": ["src/**/*.js", "src/**/*.svelte"],
-	"exclude": ["node_modules", "dist"]
+	"include": ["src/**/*.js", "src/**/*.svelte"]
 }

@@ -57,6 +57,7 @@ module.exports = {
           $utils: path.resolve(__dirname, 'src/utils'),
           $pkg: path.resolve(__dirname, 'package.json'),
           $imgs: path.resolve(__dirname, 'src/statics/images/manifest.json'),
+          $locales: path.resolve(__dirname, 'locales'),
           '@reuters-graphics/svelte-page-components': path.resolve(__dirname, 'src/FutureGraphicsComponentsLib/index.js'),
         },
       },

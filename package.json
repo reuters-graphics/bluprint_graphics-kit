@@ -23,11 +23,9 @@
     "pub": "npm-run-all publish:publish publish:git-commit publish:trello-move"
   },
   "devDependencies": {
-    "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.8",
     "@reuters-graphics/graphics-kit-publisher": "^0.0.4",
-    "@rollup/plugin-virtual": "^2.0.3",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.23.0",
@@ -44,8 +42,8 @@
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
     "@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
     "@reuters-graphics/style-theme-eisbaer": "^0.2.4",
     "classnames": "^2.3.1",
@@ -76,7 +74,7 @@
       "updated": null,
       "mediaEditions": []
     },
-    "preview": "https://graphics.thomsonreuters.com/testfiles/2021/245xiLavkXGB/"
+    "preview": ""
   },
   "homepage": ""
 }
