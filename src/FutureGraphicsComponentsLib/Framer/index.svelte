@@ -3,8 +3,10 @@ import Fa from 'svelte-fa/src/fa.svelte';
 import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus.js';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus.js';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons/faDesktop.js';
-import { afterUpdate } from 'svelte';
+import { afterUpdate, onMount } from 'svelte';
+import { browser } from '$app/env';
 import pym from 'pym.js';
+import urljoin from 'proper-url-join';
 
 export let embeds;
 
@@ -14,15 +16,29 @@ const roundToFive = (x) => Math.ceil(x / 5) * 5;
 let width = 600;
 let windowInnerWidth = 1200;
 
-const resize = (w) => { width = w; };
-afterUpdate(() => {
-  windowInnerWidth = window.innerWidth - 25;
+const resize = (newWidth) => {
+  localStorage.setItem('previewWidth', newWidth);
+  width = newWidth;
+};
+
+const reframe = (embed) => {
   new pym.Parent(
     'frame-parent',
-    activeEmbed
+    urljoin(window.location.origin, embed)
   );
+}
+
+onMount(() => {
+  width = parseInt(localStorage.getItem('previewWidth')) || 600;
+  reframe(activeEmbed);
 });
+
+$: if (browser) {
+  reframe(activeEmbed);
+}
 </script>
+
+<svelte:window bind:innerWidth={windowInnerWidth}/>
 
 <div class='container'>
   <header>
@@ -53,13 +69,13 @@ afterUpdate(() => {
   <input
     type="number"
     min={300}
-    max={windowInnerWidth - width}
+    max={windowInnerWidth - 25 - width}
     on:change={(e) => resize(parseInt(e.target.value))}
     value={width}
   />
   <button
     on:click={() => resize(roundToFive(width + 5))}
-    disabled={windowInnerWidth - width < 5}
+    disabled={windowInnerWidth - 25 - width < 5}
   >
     <Fa icon={faPlus} />
   </button>
