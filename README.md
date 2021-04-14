@@ -1,4 +1,4 @@
-![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/logo-color.svg)
+![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
 # bluprint_graphics-kit
 
