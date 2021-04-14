@@ -1,13 +1,16 @@
 {
 	"compilerOptions": {
+		"module": "es6",
 		"baseUrl": ".",
 		"paths": {
 			"$app/*": [".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*"],
 			"$lib/*": ["src/lib/*"],
+			"@reuters-graphics/svelte-page-components": ["src/FutureComponentLib/index.js"],
 			"$locales/*": ["locales/*"],
 			"$utils/*": ["src/utils/*"],
 			"$imgs": ["src/statics/images/manifest.json"]
 		}
 	},
-	"include": ["src/**/*.js", "src/**/*.svelte"]
+	"include": ["src/**/*.js", "src/**/*.svelte"],
+	"exclude": ["node_modules", "dist"]
 }

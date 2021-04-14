@@ -1,14 +1,10 @@
 <script>
-	import Image from '../FutureComponentLib/Image/index.svelte';
-	import Nav from '../FutureComponentLib/Nav/index.svelte';
-	import Footer from '../FutureComponentLib/Footer/index.svelte';
-	import BodyText from '../FutureComponentLib/BodyText/index.svelte';
+	import { Image, BodyText } from '@reuters-graphics/svelte-page-components';
 
 	import { _ } from 'svelte-i18n';
 	import Chart from './Chart.svelte';
 </script>
 
-<Nav />
 
 <article class='container-fluid'>
 	<section class="headline">
@@ -21,6 +17,6 @@
 	<BodyText text={$_('story')} />
 	<Image src='/images/shark.jpg' alt='a shark' caption='Photo by Jon' wider />
 	<BodyText text={$_('story')} />
+
 </article>
 
-<Footer />

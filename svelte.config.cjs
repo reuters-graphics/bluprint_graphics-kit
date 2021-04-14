@@ -2,6 +2,7 @@ const sveltePreprocess = require('svelte-preprocess');
 const pkg = require('./package.json');
 const url = require('url');
 const path = require('path');
+const svelteKitPagesPlugin = require('./bin/svelte-kit/plugins/svelte-kit-pages/index.cjs');
 
 const getRootRelativePath = (homepageURL) => {
   if (!homepageURL) return '';
@@ -56,12 +57,18 @@ module.exports = {
           $utils: path.resolve(__dirname, 'src/utils'),
           $pkg: path.resolve(__dirname, 'package.json'),
           $imgs: path.resolve(__dirname, 'src/statics/images/manifest.json'),
+          '@reuters-graphics/svelte-page-components': path.resolve(__dirname, 'src/FutureGraphicsComponentsLib/index.js'),
         },
       },
       build: {
         assetsInlineLimit: 0,
       },
-      plugins: [],
+      optimizeDeps: {
+        exclude: ['svelte-fa', 'embeds'],
+      },
+      plugins: [
+        svelteKitPagesPlugin(),
+      ],
     },
   },
 };

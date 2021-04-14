@@ -1,12 +1,11 @@
 <script>
-	import Page from '$lib/Page.svelte';
-	import '$lib/translations';
-	import { assets } from '$app/paths';
-	import SEO from '../src/FutureComponentLib/SEO/index.svelte'
+import Page from '$lib/Page.svelte';
+import '$lib/translations';
+import { SEO, Sharer, Referrals, Nav, Footer, EmbedPreviewerLink } from '@reuters-graphics/svelte-page-components';
 
-	import { init } from 'svelte-i18n';
-	
-	init({ initialLocale: 'en' });
+import { init } from 'svelte-i18n';
+
+init({ initialLocale: 'en' });
 </script>
 
 <SEO 
@@ -15,14 +14,20 @@
 	shareTitle='myShareTitle'
 	shareDescription='My share description'
 	shareImgPath='images/shark.jpg'
-	locale='en'
+	lang='en'
 />
 
+<Nav />
 <Page />
+<Sharer />
+<Referrals />
+<Footer />
 
+<!-- Only visible in dev! -->
+<EmbedPreviewerLink />
 
 <style lang="scss">
-	:global {
-		@import "@reuters-graphics/style-theme-eisbaer/scss/main";
-	}
+:global {
+	@import "@reuters-graphics/style-theme-eisbaer/scss/main";
+}
 </style>

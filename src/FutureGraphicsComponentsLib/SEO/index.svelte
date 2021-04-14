@@ -1,5 +1,5 @@
-
 <svelte:head>
+  <html lang={lang} />
   <title>{seoTitle}</title>
   <meta name="description" content={seoDescription} />
   <link rel="canonical" href={URL} />
@@ -45,6 +45,7 @@ export let seoDescription;
 export let shareTitle;
 export let shareDescription;
 export let shareImgPath;
+export let lang = 'en';
 
 const URL = get(pkg, 'homepage') ?
   urljoin(pkg.homepage, $page.path, { trailingSlash: true }) :
