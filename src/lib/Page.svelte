@@ -5,11 +5,13 @@ import Chart from './Chart.svelte';
 </script>
 
 <article class='container-fluid'>
+	
 	<section class="headline">
 		<p class="section-title color-red">{content.Kicker}</p>
 		<h2>{content.Hed}</h2>
 		<p>{content.Dek}</p>
 	</section>
+
 	{#each content.blocks as block}
 		{#if block.Type === 'text'}
 			 <BodyText text={block.Text} />
@@ -26,4 +28,5 @@ import Chart from './Chart.svelte';
 	{/each}
 
 	<EndNotes text={content.EndNotes} />
+
 </article>

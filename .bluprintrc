@@ -1,0 +1,63 @@
+{
+  "bluprint": "^0.6.3",
+  "name": "Graphics kit (svelte)",
+  "category": "Graphics rigs",
+  "actions": [{
+    "action": "prompt",
+    "questions": [{
+      "type": "text",
+      "name": "projectName",
+      "message": "What should we call this project?"
+    }],
+    "condition": ["bluprintPart", null]
+  }, {
+    "action": "remove",
+    "paths": ["README.md"],
+    "condition": ["bluprintPart", null]
+  }, {
+    "action": "move",
+    "paths": ["PROJECT_README.md", "README.md"],
+    "condition": ["bluprintPart", null]
+  }, {
+    "action": "regexreplace",
+    "files": ["package.json", "README.md"],
+    "replace": [
+      ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"]
+    ],
+    "condition": ["bluprintPart", null]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["yarn"]
+    ]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["git", ["init"]],
+      ["git", ["add", "."]],
+      ["git", ["commit", "-m", "initial"]],
+      ["yarn", ["startup:check-creds"]],
+      ["yarn", ["startup:create-repo"]],
+      ["yarn", ["startup:archie-doc"]],
+      ["yarn", ["startup:trello-create"]],
+      ["yarn", ["start"]]
+    ],
+    "condition": ["bluprintPart", null]
+  }],
+  "parts": {
+    "Update the graphics kit": [
+      ".vscode/**/*",
+      "bin/**/*",
+      "pages/embed-previewer/**/*",
+      "src/FutureGraphicsComponentsLib/**/*",
+      "src/utils/**/*",
+      ".eslintrc.json",
+      ".npmrc",
+      "assetinfo.json",
+      "jsconfig.json",
+      "package.json",
+      "svelte.config.cjs"
+    ]
+  },
+  "mergeJson": true
+}

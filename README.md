@@ -13,17 +13,17 @@ Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit
 Develop project
 
 ```
-yarn dev
+yarn start
 ```
 
 Build and publish a preview page to AWS.
 
 ```
-yarn publisher:preview
+yarn preview
 ```
 
 Build and upload to RNGS server.
 
 ```
-yarn publisher:upload
+yarn upload
 ```
