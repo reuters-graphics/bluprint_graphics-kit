@@ -2,11 +2,11 @@
 
 # bluprint_graphics-kit
 
-<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" height="50" />
+Graphics rig for graphics projects and apps.
 
-Future graphics rig, under construction.
+Built with:
 
-Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit/issues?q=label%3ADiscussion) for what this will be.
+<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" height="40" />
 
 ## Quickstart
 
