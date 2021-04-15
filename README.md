@@ -2,7 +2,7 @@
 
 # bluprint_graphics-kit
 
-![](https://icon-library.com/images/road-construction-icon/road-construction-icon-1.jpg)
+<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" style="height: 50px;" />
 
 Future graphics rig, under construction.
 
