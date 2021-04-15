@@ -2,7 +2,7 @@
 
 # bluprint_graphics-kit
 
-<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" style="height: 50px;" />
+<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" height="50" />
 
 Future graphics rig, under construction.
 
