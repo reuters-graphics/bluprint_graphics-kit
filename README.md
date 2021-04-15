@@ -8,22 +8,17 @@ Future graphics rig, under construction.
 
 Check out the [issues](https://github.com/reuters-graphics/bluprint_graphics-kit/issues?q=label%3ADiscussion) for what this will be.
 
-### Developing
+## Quickstart
 
-Develop project
-
-```
-yarn start
-```
-
-Build and publish a preview page to AWS.
+If you haven't already, add this bluprint to your CLI.
 
 ```
-yarn preview
+bluprint add https://github.com/reuters-graphics/bluprint_graphics-kit
 ```
 
-Build and upload to RNGS server.
+Make a new directory and use the bluprint.
 
 ```
-yarn upload
+mkdir my-project && cd my-project
+bluprint start
 ```
