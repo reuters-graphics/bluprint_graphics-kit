@@ -16,13 +16,15 @@ const roundToFive = (x) => Math.ceil(x / 5) * 5;
 let width = 600;
 let windowInnerWidth = 1200;
 
+let pymParent;
+
 const resize = (newWidth) => {
   localStorage.setItem('previewWidth', newWidth);
   width = newWidth;
 };
 
 const reframe = (embed) => {
-  new pym.Parent(
+  pymParent = new pym.Parent(
     'frame-parent',
     urljoin(window.location.origin, embed)
   );
@@ -106,7 +108,7 @@ $: if (browser) {
     margin-bottom: 20px;
     button {
       margin: 0 4px;
-      background-color: #fff;
+      background-color:transparent;
       border: 0;
       color: #999;
       padding: 2px 2px;
@@ -122,14 +124,14 @@ $: if (browser) {
   }
 
   #frame-parent {
-    border: 2px dashed #ddd;
+    border: 1px solid #ddd;
     margin: 0 auto;
     width: var(--width);
   }
 
   .resizer {
     padding: 10px;
-    background-color: #fff;
+    background-color:transparent;
     position: fixed;
     bottom: 0;
     right: 0;

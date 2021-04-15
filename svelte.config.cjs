@@ -51,7 +51,7 @@ module.exports = {
       routes: 'pages',
       template: 'src/template.html',
     },
-    target: '',
+    target: '#svelte-app',
     vite: {
       resolve: {
         alias: {
@@ -59,14 +59,11 @@ module.exports = {
           $pkg: path.resolve(__dirname, 'package.json'),
           $imgs: path.resolve(__dirname, 'src/statics/images/manifest.json'),
           $locales: path.resolve(__dirname, 'locales'),
-          '@reuters-graphics/svelte-page-components': path.resolve(__dirname, 'src/FutureGraphicsComponentsLib/index.js'),
+          'reuters-components': path.resolve(__dirname, 'src/FutureGraphicsComponentsLib'),
         },
       },
-      build: {
-        assetsInlineLimit: 0,
-      },
       optimizeDeps: {
-        exclude: ['svelte-fa', 'embeds'],
+        exclude: ['svelte-fa'],
       },
       plugins: [
         dsv(),

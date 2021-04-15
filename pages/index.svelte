@@ -1,18 +1,14 @@
 <script>
+import { SEO, Sharer, Referrals, Nav, Footer, EmbedPreviewerLink } from 'reuters-components';
 import Page from '$lib/Page.svelte';
-import '$lib/translations';
-import { SEO, Sharer, Referrals, Nav, Footer, EmbedPreviewerLink } from '@reuters-graphics/svelte-page-components';
-
-import { init } from 'svelte-i18n';
-
-init({ initialLocale: 'en' });
+import content from '$locales/en/content.json';
 </script>
 
 <SEO 
-	seoTitle='My page'
-	seoDescription='My description'
-	shareTitle='myShareTitle'
-	shareDescription='My share description'
+	seoTitle={content.SEOTitle}
+	seoDescription={content.SEODescription}
+	shareTitle={content.ShareTitle}
+	shareDescription={content.ShareDescription}
 	shareImgPath='images/shark.jpg'
 	lang='en'
 />

@@ -2,9 +2,9 @@
 import { onMount } from 'svelte';
 import pym from 'pym.js';
 
-let childFrame;
+let pymChild;
 
 onMount(() => {
-  childFrame = new pym.Child({ polling: 500 });
+  pymChild = new pym.Child({ polling: 500 });
 });
 </script>

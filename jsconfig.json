@@ -8,8 +8,7 @@
 			"$utils/*": ["src/utils/*"],
 			"$pkg": ["package.json"],
 			"$imgs": ["src/statics/images/manifest.json"],
-			"$locales/*": ["locales/*"],
-			"@reuters-graphics/svelte-page-components": ["src/FutureComponentLib/index.js"]
+			"$locales/*": ["locales/*"]
 		}
 	},
 	"include": ["src/**/*.js", "src/**/*.svelte"]

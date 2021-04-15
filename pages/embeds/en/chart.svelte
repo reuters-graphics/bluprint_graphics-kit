@@ -1,12 +1,21 @@
 <script>
 import Chart from '$lib/Chart.svelte';
-import { PymChild } from '@reuters-graphics/svelte-page-components';
-import '$lib/translations';
-import { init } from 'svelte-i18n';
-init({ initialLocale: 'en' });
+import { PymChild } from 'reuters-components';
+import content from '$locales/en/content.json';
 </script>
 
-<PymChild />
-<article class='container-fluid'>
-	<Chart />
+
+<article>
+  {#each content.blocks as block}
+		{#if block.Type === 'graphic'}
+			<Chart title={block.Title} chatter={block.Chatter} />
+		{/if}
+	{/each}
 </article>
+<PymChild />
+
+<style lang="scss">
+:global {
+  @import "@reuters-graphics/style-theme-eisbaer/scss/main";
+}
+</style>

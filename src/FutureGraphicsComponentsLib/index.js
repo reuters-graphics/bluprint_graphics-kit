@@ -1,5 +1,6 @@
 export { default as BodyText } from './BodyText/index.svelte';
 export { default as EmbedPreviewerLink } from './EmbedPreviewerLink/index.svelte';
+export { default as EndNotes } from './EndNotes/index.svelte';
 export { default as Footer } from './Footer/index.svelte';
 export { default as Framer } from './Framer/index.svelte';
 export { default as Image } from './Image/index.svelte';
