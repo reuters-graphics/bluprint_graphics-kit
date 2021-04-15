@@ -6,7 +6,9 @@ Graphics rig for graphics projects and apps.
 
 Built with:
 
+<a href="https://kit.svelte.dev/" target="_blank">
 <img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" height="40" />
+</a>
 
 ## Quickstart
 
