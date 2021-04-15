@@ -26,6 +26,7 @@
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.8",
     "@reuters-graphics/graphics-kit-publisher": "^0.0.4",
+    "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.23.0",

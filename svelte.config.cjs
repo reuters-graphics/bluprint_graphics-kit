@@ -2,6 +2,7 @@ const sveltePreprocess = require('svelte-preprocess');
 const pkg = require('./package.json');
 const url = require('url');
 const path = require('path');
+const dsv = require('@rollup/plugin-dsv');
 const svelteKitPagesPlugin = require('./bin/svelte-kit/plugins/svelte-kit-pages/index.cjs');
 
 const getRootRelativePath = (homepageURL) => {
@@ -68,6 +69,7 @@ module.exports = {
         exclude: ['svelte-fa', 'embeds'],
       },
       plugins: [
+        dsv(),
         svelteKitPagesPlugin(),
       ],
     },
