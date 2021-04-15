@@ -2,7 +2,7 @@
 
 # bluprint_graphics-kit
 
-Graphics rig for graphics projects and apps.
+Graphics rig for graphics and newsapps.
 
 Built with:
 
