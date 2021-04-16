@@ -63,7 +63,7 @@ module.exports = {
         },
       },
       optimizeDeps: {
-        exclude: ['svelte-fa'],
+        exclude: ['svelte-fa', 'reuters-components'],
       },
       plugins: [
         dsv(),
