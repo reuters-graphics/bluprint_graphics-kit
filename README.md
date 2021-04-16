@@ -2,7 +2,7 @@
 
 # bluprint_graphics-kit
 
-Graphics rig for graphics and newsapps.
+A rig for graphics and newsapps.
 
 Built with:
 
@@ -27,6 +27,12 @@ bluprint start
 
 Check out the README in your created project for details on developing.
 
+## When to use this
+
+This rig is currently best built for projects written in JavaScript. A workflow for incorporating Adobe Illustrator-created graphics is [in the works](https://github.com/reuters-graphics/bluprint_graphics-kit/issues/7), but for now, choose this rig for graphics you plan to build in JS.
+
+The rig improves on our current [graphics rig](https://github.com/reuters-graphics/bluprint_graphics-rig/) by letting you build _multiple_ pages and embeds. It's well-suited for multipage graphics or projects with graphics components that make sense as individual embeds for media clients. It's also perfect for building simple projects with Svelte.
+
 ## Prereqs
 
 ### Node
@@ -44,6 +50,10 @@ Once installed, you can use it to download and install any version of node:
 ```
 n 14.16.0
 ```
+
+### Svelte
+
+This rig uses [Svelte](https://svelte.dev/). Check out the [official tutorial](https://svelte.dev/tutorial/basics) for an intro to the framework.
 
 ### ES modules
 
