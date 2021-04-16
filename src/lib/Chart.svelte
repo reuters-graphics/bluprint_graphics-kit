@@ -1,7 +1,7 @@
 <script>
   import Chart from '@reuters-graphics/parliament-chart';
   import { onMount } from 'svelte';
-  import debounce from 'lodash/debounce';
+  import debounce from 'lodash/debounce.js';
   export let title;
   export let chatter;
 
