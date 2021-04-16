@@ -24,3 +24,19 @@ Make a new directory and use the bluprint.
 mkdir my-project && cd my-project
 bluprint start
 ```
+
+## Requirements
+
+This rig requires a node version >= 14.16.0. I highly recommend using a node version manager so you can easily switch which version of node you want to use.
+
+[n](https://github.com/tj/n) is a great option and can be installed easily on a mac using brew:
+
+```
+brew install n
+```
+
+Once installed, you can use it to download and install any version of node:
+
+```
+n 14.16.0
+```
