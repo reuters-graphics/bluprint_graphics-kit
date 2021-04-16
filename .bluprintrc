@@ -38,8 +38,8 @@
       ["git", ["commit", "-m", "initial"]],
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
-      ["yarn", ["startup:archie-doc"]],
       ["yarn", ["startup:trello-create"]],
+      ["yarn", ["startup:archie-doc"]],
       ["yarn", ["start"]]
     ],
     "condition": ["bluprintPart", null]
