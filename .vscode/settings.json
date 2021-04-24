@@ -3,9 +3,12 @@
     "locales"
   ],
   "i18n-ally.keystyle": "nested",
-  "javascript.validate.enable": false,
   "eslint.validate": [
     "javascript",
     "svelte"
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
