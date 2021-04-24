@@ -53,6 +53,7 @@ module.exports = {
     },
     target: '#svelte-app',
     vite: {
+      build: { target: 'es2015' },
       resolve: {
         alias: {
           $utils: path.resolve(__dirname, 'src/utils'),
@@ -64,7 +65,7 @@ module.exports = {
       },
       optimizeDeps: {
         exclude: ['svelte-fa'],
-        include: ['marked'],
+        include: ['marked', 'lodash-es'],
       },
       plugins: [
         dsv(),
