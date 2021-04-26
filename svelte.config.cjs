@@ -40,8 +40,9 @@ module.exports = {
         builder.copy_static_files('dist/cdn');
         builder.copy_client_files('dist/cdn');
         await builder.prerender({
-          force: true,
+          all: true,
           dest: 'dist',
+          fallback: null,
         });
       },
     },
