@@ -357,10 +357,10 @@
     eslint-plugin-react-hooks "*"
     eslint-plugin-standard "*"
 
-"@reuters-graphics/graphics-bin@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.9.tgz#a89f7c0c90698190eb7b91235ca3f10b2ba73fb9"
-  integrity sha512-XY5IAM1jjBKXV+JtzRvU1OZ9RljiomnOdgf3uWKvM8oIhrnabAZ2NzCc9F3DB//CaU68r30A0GjUfexSCM5S3w==
+"@reuters-graphics/graphics-bin@latest":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.10.tgz#0e0fa2ab656f6e75bd69fd36c11aaa1c0692838e"
+  integrity sha512-h77OmX7pEcYy2F/wYLusfwe7VkxGT99GWWmvQTikiGhbbWtsb+WBLdzi94V5Cqeb9zx70dUxOgowgsTcTR5zgQ==
   dependencies:
     "@newswire/doc-to-archieml" "^1.0.0"
     "@newswire/sheet-to-data" "^1.0.0"
@@ -387,10 +387,10 @@
     trello "^0.10.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-kit-publisher@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.0.6.tgz#663a93b0343fb6ad7b5bd6051e1ddae911a2e3d9"
-  integrity sha512-OejkkKk1BGZyxGELaWEg5IekEzXrZK7YlQ21Qqz27DFIbeidovdQvBa9JVU1WaDQSau98Dd9HHlMbI/08fWQTA==
+"@reuters-graphics/graphics-kit-publisher@latest":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.0.10.tgz#c4350f5abb5dd932912efba3e5318a60b7521dab"
+  integrity sha512-2pi3eO+Bw3AkDCBDPgI+4YzHpyg56azSFMi6zURPOYXwHrltc/urtoDCW7Q5Oj1a5Inx6Tl4GCJ5+UmRg4MYJw==
   dependencies:
     "@reuters-graphics/server-client" "^1.2.2"
     archiver "^5.3.0"
@@ -541,19 +541,19 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
-"@sveltejs/kit@^1.0.0-next.75":
-  version "1.0.0-next.76"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.76.tgz#531d495a27863f20790d8dfa3dac4a4aeea23711"
-  integrity sha512-V/FM7hh+NU+Zs0LQ3Rf8EyiFGH7546GyxDBcri7LpCXPOPxdbRf/Pfpe2X0PvaHUAD0sApLOk6NaKKV3Ak3vpQ==
+"@sveltejs/kit@next":
+  version "1.0.0-next.90"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.90.tgz#4e8475672189c197c7452a5c21b442eb6f4c0340"
+  integrity sha512-aiK4K4hRIZrMVbE+J8+taMNYmK3TonVsi2kHclfXJMQremKFR811rm6vgQUQoJtmwFRFJPOoNmuZVluJr/qDJg==
   dependencies:
-    "@sveltejs/vite-plugin-svelte" "1.0.0-next.5"
+    "@sveltejs/vite-plugin-svelte" "^1.0.0-next.7"
     cheap-watch "^1.0.3"
     sade "^1.7.4"
 
-"@sveltejs/vite-plugin-svelte@1.0.0-next.5":
-  version "1.0.0-next.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.5.tgz#8cf608f7a3c33dfa5b648397aae1ba90e6a4883f"
-  integrity sha512-RVjafsqziWwnQm8VEy2y0qNaugNDvRd8tTaCt9rjgQkqaS/BDiyDCluXxA28PRC+ddZjvwUeq9k+0EfbLVObfg==
+"@sveltejs/vite-plugin-svelte@^1.0.0-next.7":
+  version "1.0.0-next.7"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.7.tgz#77e7649ab6fd1452b3ccddd2ad8456c4d63a6026"
+  integrity sha512-ENvKYY36jrvFP7h1G87k5uOoEh5UM1m8n40J2duqV/R3wHnxfW81SCR1aXo+5CVU8Prm3/jtS4TWs8CUTqO1fw==
   dependencies:
     "@rollup/pluginutils" "^4.1.0"
     chalk "^4.1.0"
@@ -562,7 +562,7 @@
     require-relative "^0.8.7"
     slash "^3.0.0"
     source-map "^0.7.3"
-    svelte-hmr "^0.13.3"
+    svelte-hmr "^0.14.0"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -5574,10 +5574,10 @@ svelte-fa@^2.2.0:
   resolved "https://registry.yarnpkg.com/svelte-fa/-/svelte-fa-2.2.0.tgz#2b2282ee83e550ab29317a1955bdef53321e9110"
   integrity sha512-PN1H8AWDh+OwhwjJKTv4/zXvKvmvOEVSCVhIhji6Onx8XEw+CGf8BDR0BVUIp87IEX+DEqIo9pbyhgz8EoYZyA==
 
-svelte-hmr@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.13.3.tgz#fba5739b477ea44caf70e542a24a4352bee2b897"
-  integrity sha512-gagW62pLQ2lULmvNA3pIZu9pBCYOaGu3rQikUOv6Nokz5VxUgT9/mQLfMxj9phDEKHCg/lgr3i6PkqZDbO9P2Q==
+svelte-hmr@^0.14.0:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.2.tgz#458e02627505e72e8baf2bfb887a3c00822ddeb4"
+  integrity sha512-aVIRSCRpOFGuLqjg12Z5hBhvjrrlqkJVMMGEK14iVD0kXI4l5dkpHCj35AEyieWNvyYTMtlyhZlpKPrIjFpxxQ==
 
 svelte-i18n@^3.3.9:
   version "3.3.9"
