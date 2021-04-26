@@ -16,7 +16,7 @@
   seoDescription="{content.SEODescription}"
   shareTitle="{content.ShareTitle}"
   shareDescription="{content.ShareDescription}"
-  shareImgPath="images/shark.jpg"
+  shareImgPath="images/reuter-graphics.jpg"
   lang="en"
 />
 
