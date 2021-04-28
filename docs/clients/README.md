@@ -2,13 +2,13 @@
 
 # Graphics client docs
 
-Reuters Graphics can be completely customized to suit the needs of your site and built to host on your servers by editing the source code directly.
+Reuters graphics can be completely customized to suit the needs of your site and built to host on your servers by editing the source code directly.
 
 ## Getting started
 
 You'll need a code editor and a compatible version of [Node](https://nodejs.org/en/) installed on your computer. (The minimum version of Node will be specified in the `engines` field in the `package.json` file in the root of the project.)
 
-Unzip the project archive, navigate to the root of the project (where `package.json` lives) in your terminal and then install the project dependencies using a Node package manager like `npm` or [`yarn`](https://yarnpkg.com/).
+Unzip the project archive, navigate to the root of the project (where `package.json` lives) in a terminal and then install the project dependencies using a Node package manager like `npm` or [`yarn`](https://yarnpkg.com/).
 
 ```
 npm install
