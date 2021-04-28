@@ -12,7 +12,7 @@
     "condition": ["bluprintPart", null]
   }, {
     "action": "remove",
-    "paths": ["README.md"],
+    "paths": ["README.md", "docs/"],
     "condition": ["bluprintPart", null]
   }, {
     "action": "move",
