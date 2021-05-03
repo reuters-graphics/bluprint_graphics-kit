@@ -41,14 +41,14 @@ You may need to also import font-faces, specifically, if using our house themes:
 
 ## CSS variables
 
-You can use inline CSS variables to use JavaScript values in your styles:
+You can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to use JavaScript values in your styles:
 
 ```svelte
 <script>
   let color = '#ff3e00';
 </script>
 
-<div style="--theme-color: {color}">
+<div style="--theme-color: {color};">
   <p>the color is set using a CSS variable</p>
 </div>
 
