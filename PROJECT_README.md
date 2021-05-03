@@ -2,9 +2,9 @@
 
 # projectName
 
-TK
+Graphics created with [bluprint_graphics-kit](https://github.com/reuters-graphics/bluprint_graphics-kit).
 
-### Developing
+## Developing
 
 Develop your project.
 
@@ -29,3 +29,5 @@ Publish your project in the RNGS server.
 ```
 yarn publish
 ```
+
+Read more in the [development docs](https://github.com/reuters-graphics/bluprint_graphics-kit/tree/master/docs/developers).

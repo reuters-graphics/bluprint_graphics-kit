@@ -8,6 +8,7 @@
     "build": "svelte-kit build",
     "build:preview": "PREVIEW=true svelte-kit build",
     "get-google": "npx graphics get-google-docs google.json",
+    "lock-google": "npx graphics lock-google-docs google.json",
     "publish:upload": "npx graphics-publisher upload",
     "publish:preview": "npx graphics-publisher preview",
     "publish:publish": "npx graphics-publisher publish",
