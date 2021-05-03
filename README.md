@@ -17,7 +17,7 @@ This rig is best used with [bluprint](https://github.com/reuters-graphics/blupri
 If you haven't already, add this bluprint to your CLI.
 
 ```
-bluprint add https://github.com/reuters-graphics/bluprint_graphics-kit
+bluprint add reuters-graphics/bluprint_graphics-kit
 ```
 
 Make a new directory and use the bluprint.
