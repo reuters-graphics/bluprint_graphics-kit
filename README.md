@@ -12,6 +12,8 @@ Built with:
 
 ## Quickstart
 
+This rig is best used with [bluprint](https://github.com/reuters-graphics/bluprint), our in-house templating tool.
+
 If you haven't already, add this bluprint to your CLI.
 
 ```
