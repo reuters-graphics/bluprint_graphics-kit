@@ -1,0 +1,1 @@
+To embed this graphic in your CMS, use the embed code in the EMBED.txt file in this package.

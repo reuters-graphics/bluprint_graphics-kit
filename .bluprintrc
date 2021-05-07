@@ -56,7 +56,7 @@
       "assetinfo.json",
       "jsconfig.json",
       "package.json",
-      "svelte.config.cjs"
+      "svelte.config.js"
     ]
   },
   "mergeJson": true
