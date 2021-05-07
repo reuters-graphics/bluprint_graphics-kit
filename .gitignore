@@ -175,5 +175,6 @@ temp/
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,linux
 
 .svelte/
+.svelte-kit/
 dist/
 graphics-pack/
