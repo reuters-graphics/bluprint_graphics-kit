@@ -33,6 +33,7 @@
     "@reuters-graphics/graphics-bin": "^0.0.16",
     "@reuters-graphics/graphics-kit-publisher": "^0.0.17",
     "@rollup/plugin-dsv": "^2.0.1",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.24.0",

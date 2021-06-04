@@ -1,3 +1,4 @@
+import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import dsv from '@rollup/plugin-dsv';
 import fs from 'fs-extra';
@@ -51,18 +52,11 @@ export default {
             )
           : '',
     },
-    adapter: {
-      name: 'static-adapter',
-      async adapt(builder) {
-        builder.copy_static_files('dist/cdn');
-        builder.copy_client_files('dist/cdn');
-        await builder.prerender({
-          all: true,
-          dest: 'dist',
-          fallback: null,
-        });
-      },
-    },
+    adapter: adapter({
+      pages: 'dist',
+      assets: 'dist/cdn',
+      fallback: null,
+    }),
     files: {
       assets: 'src/statics',
       lib: 'src/lib',
