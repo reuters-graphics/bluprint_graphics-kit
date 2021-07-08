@@ -6,7 +6,7 @@
     Nav,
     Footer,
     EmbedPreviewerLink,
-  } from 'reuters-components';
+  } from '@reuters-graphics/graphics-svelte-components';
   import Page from '$lib/Page.svelte';
   import content from '$locales/en/content.json';
 </script>

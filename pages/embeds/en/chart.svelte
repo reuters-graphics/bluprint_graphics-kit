@@ -1,6 +1,6 @@
 <script>
   import Chart from '$lib/Chart.svelte';
-  import { PymChild } from 'reuters-components';
+  import { PymChild } from '@reuters-graphics/graphics-svelte-components';
   import content from '$locales/en/content.json';
 </script>
 

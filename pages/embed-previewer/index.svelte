@@ -1,15 +1,15 @@
 <script>
-import pages from '@svelte-kit-pages';
-import { Framer } from 'reuters-components';
+  import pages from '@svelte-kit-pages';
+  import { Framer } from '@reuters-graphics/graphics-svelte-components';
 
-const embeds = pages.filter(p => /^\/embeds\//.test(p));
+  const embeds = pages.filter((p) => /^\/embeds\//.test(p));
 </script>
 
-<Framer {embeds} />
+<Framer embeds="{embeds}" />
 
-<style lang='scss'>
-:global(body) {
-  padding-bottom: 60px;
-  background-color: #fafafa;
-}
+<style lang="scss">
+  :global(body) {
+    padding-bottom: 60px;
+    background-color: #fafafa;
+  }
 </style>

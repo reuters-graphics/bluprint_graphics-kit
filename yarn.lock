@@ -395,6 +395,26 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
+"@reuters-graphics/graphics-svelte-components@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.8.tgz#43dcedb19864c86bd3b6b07f4933875a68b18cb3"
+  integrity sha512-MfL6WVgMgWf1jS52qWnLnP81Rq6rHp8kByOImcrUGJ/46CSo/b7SyunvbuKGMFFLzfiMl3EZsn0muJUQ6v01tQ==
+  dependencies:
+    "@fortawesome/free-brands-svg-icons" "^5.15.3"
+    "@fortawesome/free-regular-svg-icons" "^5.15.3"
+    "@fortawesome/free-solid-svg-icons" "^5.15.3"
+    "@reuters-graphics/style-theme-eisbaer" "^0.3.0"
+    classnames "^2.3.1"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    prop-types "^15.7.2"
+    proper-url-join "^2.1.1"
+    pym.js "^1.3.2"
+    svelte-fa "^2.2.0"
+    svelte-i18n "^3.3.9"
+    svelte-markdown "^0.1.5"
+    ua-parser-js "^0.7.27"
+
 "@reuters-graphics/parliament-chart@https://github.com/reuters-graphics/chart-module-parliament-chart.git":
   version "0.0.1"
   resolved "https://github.com/reuters-graphics/chart-module-parliament-chart.git#01291cf83ea35a16d0f15b21e4d340092a1453f9"

@@ -1,8 +1,7 @@
 <script>
-  import { SEO } from 'reuters-components';
   import Page from '$lib/Page.svelte';
   import content from '$locales/en/content.json';
-  import { PymChild } from 'reuters-components';
+  import { PymChild, SEO } from '@reuters-graphics/graphics-svelte-components';
 </script>
 
 <SEO
