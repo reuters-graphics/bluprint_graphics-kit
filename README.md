@@ -43,6 +43,6 @@ Some projects built with this rig:
 - [Euros 2020](https://graphics.reuters.com/SOCCER-EURO/yzdvxmjjnpx/)
 - [Hot and humid Olympic Summer](https://graphics.reuters.com/OLYMPICS-2020/SUMMER-HEAT/bdwvkogrzvm/index.html)
 
-## Docs
+## 📚 Developer Docs
 
-Read more in the [developer docs](docs/developers/README.md).
+Read more in the [developer docs](docs/developers/README.md) about how to use this rig to create graphics pages.
