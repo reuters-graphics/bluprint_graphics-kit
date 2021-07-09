@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+sh bin/hooks/precheck-file-size.sh
 npx lint-staged
