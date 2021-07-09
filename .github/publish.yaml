@@ -1,11 +1,13 @@
 ###############################
-# Uncomment lines below to publish the project via GitHub Actions
+# To publish the project via GitHub Actions:
+# - move this file into .github/workflows
+# - uncomment the following lines and configure
 ###############################
 
-name: Publish page
+# name: Publish page
 
 # # These line define what will trigger your project to publish
-on:
+# on:
 #   # ... when you hit the API endpoint for this repo
 #   # Read more: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event
 #   workflow_dispatch:
