@@ -1,0 +1,44 @@
+###############################
+# Uncomment lines below to publish the project via GitHub Actions
+###############################
+
+# name: Publish page
+
+# # These line define what will trigger your project to publish
+# on:
+#   # ... when you hit the API endpoint for this repo
+#   # Read more: https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event
+#   workflow_dispatch:
+#   # ... whenever you push code to the master branch on GitHub
+#   push:
+#     branches:
+#       - master
+#   # ... on a cron schedule
+#   schedule:
+#     # Customize to whatever interval you need:
+#     # https://crontab.guru/
+#     - cron: '35 * * * *'
+
+# jobs:
+#   publish-page:
+#     name: Publish page
+#     runs-on: ubuntu-latest
+#     env:
+#       SERVER_WORKFLOW: true
+#       GRAPHICS_SERVER_USERNAME: ${{ secrets.GRAPHICS_SERVER_USERNAME }}
+#       GRAPHICS_SERVER_PASSWORD: ${{ secrets.GRAPHICS_SERVER_PASSWORD }}
+#       GRAPHICS_SERVER_API_KEY: ${{ secrets.GRAPHICS_SERVER_API_KEY }}
+#       SKIP_BUILD_GIT_COMMIT: true
+#       GRAPHICS_SERVER_PUBLISH: true
+#       # This line will notify a Teams channel everytime your project successfully publishes
+#       # GRAPHICS_SERVER_NOTIFY_TEAMS_CHANNEL: # Add a Teams webhook URL here
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
+#       - run: git config user.name hobbes7878
+#       - run: git config user.email jon.r.mcclure@gmail.com
+#       - run: npm install
+#       - run: npm run upload
+#       - run: npm run publish:publish
