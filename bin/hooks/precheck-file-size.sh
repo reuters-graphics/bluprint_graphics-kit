@@ -4,7 +4,7 @@
 # larger than $limit to your _local_ repo fail, with a helpful error message.
 
 # Maximum file size limit in bytes
-limit=$(( 0.000000001 * 2**20 )) # 100MB
+limit=$(( 100 * 2**20 )) # 100MB
 limitInMB=$(( $limit / 2**20 ))
 
 # Move to the repo root so git files paths make sense
