@@ -4,7 +4,7 @@
 
 This graphics kit can publish projects to our RNGS server using GitHub Actions.
 
-To set your project up for automated publishing, make sure your repo is located in the [Reuters Graphics Github org](https://github.com/reuters-graphics) then uncomment the YAML file at `.github/workflows/publish.yaml` and further configure the publishing conditions per the comments in that file.
+To set your project up for automated publishing, make sure your repo is located in the [Reuters Graphics Github org](https://github.com/reuters-graphics) then move and uncomment the YAML file at `.github/publish.yaml` and further configure the publishing conditions per the comments in that file.
 
 ## Publishing from a script
 

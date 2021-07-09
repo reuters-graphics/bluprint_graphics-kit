@@ -6,7 +6,7 @@ You can package flat files -- e.g., JPG and EPS assets -- for clients in the `me
 
 Assets must be structured using the same directory scheme as embed pages -- a folder for a valid locale and for a unique slug within the locale. The JPG and EPS filenames can be whatever you want them to be.
 
-```
+```bash
 media-assets/
   en/
     chart/
@@ -19,7 +19,7 @@ media-assets/
 
 If you have an embeddable page using the same locale/slug scheme as a set of flat assets, the publisher will upload the JPG and EPS file with the embeddable version of the same graphic.
 
-```
+```bash
 pages/
   embeds/
     en/

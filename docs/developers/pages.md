@@ -56,7 +56,7 @@ When you create public pages, you should always add SEO to them. Using our pre-b
 
 ```svelte
 <script>
-  import { SEO } from 'reuters-components';
+  import { SEO } from '@reuters-graphics/graphics-svelte-components';
 </script>
 
 <SEO
@@ -103,7 +103,7 @@ Always be sure to include Pym.js on embeddable pages. Using our pre-built compon
 
 ```svelte
 <script>
-  import { PymChild } from 'reuters-components';
+  import { PymChild } from '@reuters-graphics/graphics-svelte-components';
 </script>
 
 <PymChild />

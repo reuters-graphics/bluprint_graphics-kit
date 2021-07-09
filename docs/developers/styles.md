@@ -24,6 +24,7 @@ If you need to import an SCSS partial that will apply to your entire page -- lik
 <style lang="scss">
   :global {
     @import '@reuters-graphics/style-theme-eisbaer/scss/main';
+    @import '../scss/some-other-global-styles.scss';
   }
 </style>
 ```
