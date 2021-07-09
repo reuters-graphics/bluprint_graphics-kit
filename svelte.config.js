@@ -81,8 +81,6 @@ export default {
           'lodash-es',
           'pym.js',
           'classnames',
-          'lodash/get.js',
-          'lodash/throttle.js',
           'ua-parser-js',
         ],
       },
