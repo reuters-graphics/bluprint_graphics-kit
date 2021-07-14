@@ -9,7 +9,7 @@
 
 ### How do I use d3.js?
 
-D3.js recently released version [7.0.0](https://github.com/d3/d3/releases/tag/v7.0.0), which re-bundled all d3 submodules as ES modules.
+D3.js recently released version [7.0.0](https://github.com/d3/d3/releases/tag/v7.0.0), which re-packaged all d3 submodules as ES modules.
 
 Unfortunately, [circular dependencies](https://github.com/d3/d3-selection/issues/168) in d3 itself are not [currently handled](https://github.com/vitejs/vite/issues/2491) by Vite, which is the bundler SvelteKit uses.
 
