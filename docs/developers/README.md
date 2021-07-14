@@ -14,6 +14,6 @@ These docs describe how to use the [Reuters graphics kit](https://github.com/reu
 - **[Translating pages](translation.md)**
 - **[AI graphics](ai.md)** Using ai2html for graphics
 - **[Packaging flat files for media clients](flats.md)**
-- **[Svelte FAQs](svelte-faqs.md)**
+- **[Svelte/SvelteKit FAQs](svelte-faqs.md)**
 - **[Metadata](metadata.md)**
 - **[Automated publishing](automated-publishing.md)** Setting your rig up to republish your project with GitHub Actions
