@@ -17,6 +17,7 @@
 
 <PymChild />
 
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
   @import '~@reuters-graphics/style-main/scss/fonts/font-faces';
   :global {
