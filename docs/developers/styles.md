@@ -40,6 +40,17 @@ You may need to also import font-faces, specifically, if using our house themes:
 </style>
 ```
 
+**Pro-tip:** If you're using global styles, you'll likely also want to silence Svelte's internal warnings for unused styles so they don't clutter up your terminal:
+
+```svelte
+<!-- svelte-ignore css-unused-selector -->
+<style lang="scss">
+  :global {
+    @import '@reuters-graphics/style-theme-eisbaer/scss/main';
+  }
+</style>
+```
+
 ## CSS variables
 
 You can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to use JavaScript values in your styles:
