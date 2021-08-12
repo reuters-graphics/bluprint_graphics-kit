@@ -28,6 +28,9 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md,svelte}": "prettier --write"
   },
+  "resolutions": {
+    "@sveltejs/kit/vite": "^2.5.0-beta.2"
+  },
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.18",
@@ -58,7 +61,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@reuters-graphics/graphics-svelte-components": "^0.1.11",
     "@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
-    "@reuters-graphics/style-theme-eisbaer": "^0.3.0",
+    "@reuters-graphics/style-theme-eisbaer": "^0.3.1",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

@@ -458,6 +458,14 @@
     "@reuters-graphics/style-color" "^1.0.0"
     bootstrap "^4.4.1"
 
+"@reuters-graphics/style-main@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-main/-/style-main-0.3.1.tgz#6f0b394650c798418b1ffcfc951d6acb7a56c561"
+  integrity sha512-PMEaDhf/M4t/Rmi0/BiMgbNlVWc0brVkuekTcqrq7LQ9Rb1WvKKfiuAANc6fkEiBCt3Acc9IkNKi9lj+tSsUQA==
+  dependencies:
+    "@reuters-graphics/style-color" "^1.0.0"
+    bootstrap "^4.4.1"
+
 "@reuters-graphics/style-theme-eisbaer@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.0.tgz#cfae249e1b4d3d2f7af992f7c492e086c3442ec8"
@@ -469,6 +477,20 @@
     "@fortawesome/react-fontawesome" "^0.1.8"
     "@reuters-graphics/style-color" "^1.0.0"
     "@reuters-graphics/style-main" "^0.3.0"
+    classnames "*"
+    copy-to-clipboard "^3.2.0"
+
+"@reuters-graphics/style-theme-eisbaer@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.1.tgz#61f6b889bffff4dbb34e18914c96ac014d433359"
+  integrity sha512-wyQ+nG+zhb9d6XwfElgJaAXD1P2IrL+0PpmHuucDvfJfGMRrQRghoecwQ+CFfVn0GxUItZkRMeY7GbqJykUGLQ==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.26"
+    "@fortawesome/free-brands-svg-icons" "^5.12.0"
+    "@fortawesome/free-solid-svg-icons" "^5.12.0"
+    "@fortawesome/react-fontawesome" "^0.1.8"
+    "@reuters-graphics/style-color" "^1.0.0"
+    "@reuters-graphics/style-main" "^0.3.1"
     classnames "*"
     copy-to-clipboard "^3.2.0"
 
@@ -2015,11 +2037,6 @@ esbuild@^0.12.17:
   version "0.12.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.19.tgz#ab849766705a5093df5acd8ec2f6ba2159a38a6c"
   integrity sha512-5NuT1G6THW7l3fsSCDkcPepn24R0XtyPjKoqKHD8LfhqMXzCdz0mrS9HgO6hIhzVT7zt0T+JGbzCqF5AH8hS9w==
-
-esbuild@^0.12.8:
-  version "0.12.15"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.15.tgz#9d99cf39aeb2188265c5983e983e236829f08af0"
-  integrity sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -5222,19 +5239,7 @@ validator@^13.0.0, validator@^13.6.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.6.0.tgz#1e71899c14cdc7b2068463cb24c1cc16f6ec7059"
   integrity sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg==
 
-vite@^2.4.3:
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.4.4.tgz#8c402a07ad45f168f6eb5428bead38f3e4363e47"
-  integrity sha512-m1wK6pFJKmaYA6AeZIUXyiAgUAAJzVXhIMYCdZUpCaFMGps0v0IlNJtbmPvkUhVEyautalajmnW5X6NboUPsnw==
-  dependencies:
-    esbuild "^0.12.8"
-    postcss "^8.3.6"
-    resolve "^1.20.0"
-    rollup "^2.38.5"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-vite@^2.5.0-beta.2:
+vite@^2.4.3, vite@^2.5.0-beta.2:
   version "2.5.0-beta.2"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.0-beta.2.tgz#3b71eecb17b7e62869366a91e92bd26578bb4f7f"
   integrity sha512-PgPOlTg7w6VGDx1HCUHfDoXeQ6cWKCO2tHz3om27VLjfu/92T1kyhuJf/VM6sa+orPOkTLUZWaHI9bPQjgtLrA==
