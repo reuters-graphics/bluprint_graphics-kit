@@ -28,9 +28,6 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md,svelte}": "prettier --write"
   },
-  "resolutions": {
-    "@sveltejs/kit/vite": "^2.5.0-beta.2"
-  },
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.18",
