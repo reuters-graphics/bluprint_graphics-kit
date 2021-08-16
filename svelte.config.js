@@ -41,9 +41,7 @@ export default {
     paths: {
       assets:
         process.env.NODE_ENV === 'production'
-          ? getRootRelativePath(
-              process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage
-            ) + '/cdn'
+          ? (process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + 'cdn'
           : '',
       base:
         process.env.NODE_ENV === 'production'
