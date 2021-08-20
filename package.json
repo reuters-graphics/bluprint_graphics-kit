@@ -31,7 +31,7 @@
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.18",
-    "@reuters-graphics/graphics-kit-publisher": "^0.0.20",
+    "@reuters-graphics/graphics-kit-publisher": "^0.1.0",
     "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/adapter-static": "1.0.0-next.16",
     "@sveltejs/kit": "1.0.0-next.151",
@@ -56,7 +56,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@reuters-graphics/graphics-svelte-components": "^0.1.14",
+    "@reuters-graphics/graphics-svelte-components": "^0.1.15",
     "@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
     "@reuters-graphics/style-theme-eisbaer": "^0.3.1",
     "classnames": "^2.3.1",
