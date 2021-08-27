@@ -31,7 +31,7 @@
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.18",
-    "@reuters-graphics/graphics-kit-publisher": "^0.1.0",
+    "@reuters-graphics/graphics-kit-publisher": "^0.1.1",
     "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/adapter-static": "1.0.0-next.16",
     "@sveltejs/kit": "1.0.0-next.151",
