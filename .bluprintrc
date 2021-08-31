@@ -43,6 +43,11 @@
       ["yarn", ["start"]]
     ],
     "condition": ["bluprintPart", null]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["chmod", ["ug+x", ".husky/pre-commit"]]
+    ]
   }],
   "parts": {
     "Update the graphics kit": [
