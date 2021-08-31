@@ -7,6 +7,11 @@
 limit=$(( 100 * 2**20 )) # 100MB
 limitInMB=$(( $limit / 2**20 ))
 
+# Highlights
+CYAN='\033[0;36m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 # Move to the repo root so git files paths make sense
 repo_root=$( git rev-parse --show-toplevel )
 cd $repo_root
@@ -24,7 +29,7 @@ fi
 IFS='
 '
 
-echo "Checking staged file sizes"
+echo "Checking file sizes before commit..."
 shouldFail=false
 # `--diff-filter=d` -> skip deletions
 for file in $( git diff-index --cached --diff-filter=d --name-only "$against" ); do
@@ -32,7 +37,14 @@ for file in $( git diff-index --cached --diff-filter=d --name-only "$against" );
 	if [[ -f "$file" ]]; then
 		file_size=$( ls -lan $file | awk '{ print $5 }' )
 		if [ "$file_size" -gt  "$limit" ]; then
-	    	echo File $file is $(( $file_size / 2**20 )) MB, which is larger than our configured limit of $limitInMB MB
+				echo ""
+	    	echo "📁 File ${CYAN}$file${NC} is $(( $file_size / 2**20 )) MB, which is larger than the $limitInMB MB limit"
+				echo ""
+				echo "  To fix:"
+				echo "  1) Add \"$file\" to your ${CYAN}.gitgnore${NC}"
+				echo "  2) Run: ${GREEN}git reset \"$file${NC}\""
+				echo "  3) Try your commit again"
+				echo ""
         	shouldFail=true
 		fi
 	fi
@@ -40,7 +52,8 @@ done
 
 if $shouldFail
 then
-    echo "A file was too big for GitHub. Please add it to your .gitignore."
-	  echo Commit aborted
+		echo "❌ Commit aborted."
+    echo "Found files too big for GitHub! Please fix the files above before trying to commit again."
+		echo ""
     exit 1;
 fi
