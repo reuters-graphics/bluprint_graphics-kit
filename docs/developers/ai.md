@@ -16,7 +16,7 @@ output:one-file
 html_output_path: ../src/lib/ai2html/
 html_output_extension: .svelte
 image_output_path: ../../statics/images/graphics/
-image_ source_path: images/graphics/
+image_source_path: images/graphics/
 png_transparent:yes
 png_number_of_colors: 256
 jpg_quality: 70
@@ -31,7 +31,7 @@ For reference, here are the settings specific to the svelte graphics kit that ch
 html_output_path: ../src/lib/ai2html/
 html_output_extension: .svelte
 image_output_path: ../../statics/images/graphics/
-image_ source_path: images/graphics/
+image_source_path: images/graphics/
 include_resizer_widths: yes
 include_resizer_script: no
 ```
