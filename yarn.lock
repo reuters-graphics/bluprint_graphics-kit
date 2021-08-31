@@ -365,10 +365,10 @@
     trello "^0.10.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-kit-publisher@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.0.20.tgz#37480082dbf9be6c687cad7d88a81d629d4c5c59"
-  integrity sha512-4b1f1osu57ss/W8fKz5LbrVcu9RH7vGCnVEVziU7ZjWbsQCQkDnddHYKdXCfYLOAHEfZxHHfG69pNpF8G78hbw==
+"@reuters-graphics/graphics-kit-publisher@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.1.1.tgz#653d9840dc1d22afaeed637f06db28af9bc54192"
+  integrity sha512-3gOjYjsCuePEnbu16cCI04WRsINeKec/fLXmso8gmMXX5ZtHa51TQ/TW7dbpJ+s6vvvQ4Pe7Ugdis22OZjQMCg==
   dependencies:
     "@reuters-graphics/server-client" "^1.2.2"
     "@reuters-graphics/teams-klaxon" "^0.0.3"
@@ -395,10 +395,10 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.14.tgz#8118188429017be824ef90bc5d3712c4a02029c0"
-  integrity sha512-5O2WhjIFj6nsYVadUeRA9CeYFvIKoUeRB+dKVhoaeDhgffufgfMkqFXoEsGbMA4NrrQ1IMoSKp5rPtD6V0Wd2g==
+"@reuters-graphics/graphics-svelte-components@^0.1.15":
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.15.tgz#30eaa8605165264d9a99c5cef6c2ff622ac20bf6"
+  integrity sha512-myFKr51PgFWw2XNcsteyeNgtV6bfIVz4qzuAK3HgvD+cw5/HahuDl4ZTF8eLuNfcMQnfvu+mAlbrG0BmcYK0NQ==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.3"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
@@ -560,15 +560,15 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.16.tgz#656c90666edd730ccc9bfb89e3f7ece56e7ac7c8"
   integrity sha512-xGFcg+GHF0BL1fyWx2vCzlYj4S4R+Od9cF00soo1TVp/scGOi1G9grSYYW4x5H+iDn1sscoJ65OGBGWIcOgrXg==
 
-"@sveltejs/kit@1.0.0-next.151":
-  version "1.0.0-next.151"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.151.tgz#6cd086e0f73c40de1ed9625a69af0e2f2773749c"
-  integrity sha512-dioqHt4XxqiZ+5dEL6hFG1fBuVMc5t9l9bmvUeJX6neyut432IcVLdl4t3utmD10Lu8fbybJPRkHy1PVAbHWwQ==
+"@sveltejs/kit@1.0.0-next.160":
+  version "1.0.0-next.160"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.160.tgz#e2764c465760cf202fd2f3d0dbd36739a7b2c305"
+  integrity sha512-JmacpK+VsppUKDQu1B3oJ70SnE9BXb/PSAP3f91K/DMnaSEGj7vtHn/3e6l7Mop12t1PkBk5lImh/ULqBO+YfA==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.16"
     cheap-watch "^1.0.3"
     sade "^1.7.4"
-    vite "^2.4.3"
+    vite "^2.5.2"
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.16":
   version "1.0.0-next.17"
@@ -5239,10 +5239,10 @@ validator@^13.0.0, validator@^13.6.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.6.0.tgz#1e71899c14cdc7b2068463cb24c1cc16f6ec7059"
   integrity sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg==
 
-vite@^2.4.3, vite@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.0.tgz#111ba3679432d426e44566acf480005a7914cbd6"
-  integrity sha512-Dn4B+g54PJsMG5WCc4QeFy1ygMXRdTtFrUPegqfk4+vzVQcbF/DqqmI/1bxezArzbujBJg/67QeT5wz8edfJVQ==
+vite@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.2.tgz#3963a4ec1e6ecae49359eddfdd67f6cb1e6e07a1"
+  integrity sha512-JK5uhiVyMqHiAJbgBa8rCvpP8bEhAE9dKDv1gCmP+EUP2FSPmEeW3WXlCXauPB3MDa8behPW+ntyNXqnGaxslg==
   dependencies:
     esbuild "^0.12.17"
     postcss "^8.3.6"
