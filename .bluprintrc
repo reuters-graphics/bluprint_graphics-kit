@@ -40,6 +40,7 @@
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
       ["yarn", ["startup:archie-doc"]],
+      ["yarn", ["startup:ai-templates"]],
       ["yarn", ["husky", "install"]],
       ["yarn", ["start"]]
     ],

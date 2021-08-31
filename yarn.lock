@@ -445,6 +445,15 @@
     validator "^13.0.0"
     winston "^3.2.1"
 
+"@reuters-graphics/style-ai-templates@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-ai-templates/-/style-ai-templates-0.0.5.tgz#e6eedcbcda498364336a650022445ddb687feb10"
+  integrity sha512-vyUj9Xcx0V/nAKjzPbfbZYbRSG46EQxOygQzlue4b32pQLX6j2xCZG7HdiscsW+pMDg4jDsyszp9rWShl2rQPA==
+  dependencies:
+    fs-extra "^10.0.0"
+    glob "^7.1.7"
+    sade "^1.7.4"
+
 "@reuters-graphics/style-color@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@reuters-graphics/style-color/-/style-color-1.0.0.tgz#35fcf41d1c888b8353a0cb3f274bcdb10eea7d4b"
@@ -2435,6 +2444,15 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
+fs-extra@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.0.tgz#9ff61b655dde53fb34a82df84bb214ce802e17c1"
+  integrity sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
 fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
@@ -2595,7 +2613,7 @@ glob-parent@^5.0.0, glob-parent@~5.1.0:
   dependencies:
     is-glob "^4.0.1"
 
-glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
+glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7:
   version "7.1.7"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
   integrity sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==
