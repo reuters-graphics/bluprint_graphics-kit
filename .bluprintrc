@@ -29,8 +29,7 @@
     "action": "execute",
     "cmds": [
       ["yarn"],
-      ["chmod", ["ug+x", ".husky/pre-commit"]],
-      ["yarn", ["husky", "install"]]
+      ["chmod", ["ug+x", ".husky/pre-commit"]]
     ]
   }, {
     "action": "execute",
@@ -40,16 +39,11 @@
       ["git", ["commit", "-m", "initial"]],
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
-      ["yarn", ["startup:trello-create"]],
       ["yarn", ["startup:archie-doc"]],
+      ["yarn", ["husky", "install"]],
       ["yarn", ["start"]]
     ],
     "condition": ["bluprintPart", null]
-  }, {
-    "action": "execute",
-    "cmds": [
-      ["chmod", ["ug+x", ".husky/pre-commit"]]
-    ]
   }],
   "parts": {
     "Update the graphics kit": [
