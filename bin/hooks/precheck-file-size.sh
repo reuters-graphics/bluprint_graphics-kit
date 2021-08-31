@@ -42,7 +42,7 @@ for file in $( git diff-index --cached --diff-filter=d --name-only "$against" );
 				echo ""
 				echo "  To fix:"
 				echo "  1) Add \"$file\" to your ${CYAN}.gitgnore${NC}"
-				echo "  2) Run: ${GREEN}git reset \"$file${NC}\""
+				echo "  2) Run: ${GREEN}git reset \"$file\"${NC}"
 				echo "  3) Try your commit again"
 				echo ""
         	shouldFail=true
