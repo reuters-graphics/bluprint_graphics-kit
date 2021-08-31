@@ -28,7 +28,9 @@
   }, {
     "action": "execute",
     "cmds": [
-      ["yarn"]
+      ["yarn"],
+      ["chmod", ["ug+x", ".husky/pre-commit"]],
+      ["yarn", ["husky", "install"]]
     ]
   }, {
     "action": "execute",
