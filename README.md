@@ -3,7 +3,6 @@
 # bluprint_graphics-kit
 
 A rig for graphics and newsapps.
-Minami
 
 Built with:
 
