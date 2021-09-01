@@ -7,14 +7,14 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
+  import BasicBarchart from './BasicBarchart.svelte';
+  import StackedBarchar from './StackedBarchart.svelte';
 </script>
 
 <article class="container-fluid">
   <!--  Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/ -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
-    <span slot="byline"
-      >By <strong>Jane Doe</strong> & <strong>John Doe</strong></span
-    >
+    <span slot="byline">By {@html content.Byline} </span>
     <span slot="dateline">Published Jan. 1, 2021</span>
   </Headline>
 
@@ -30,9 +30,37 @@
         wide
       />
     {:else if block.Type === 'graphic'}
-      <Chart title="{block.Title}" chatter="{block.Chatter}" />
+      <Chart
+        title="{block.Title}"
+        chatter="{block.Chatter}"
+        source="{block.Source}"
+        note="{block.Note}"
+        size="{block.Size}"
+      />
+    {:else if block.Type === 'graphic-barchart'}
+      <BasicBarchart
+        title="{block.Title}"
+        chatter="{block.Chatter}"
+        source="{block.Source}"
+        note="{block.Note}"
+        size="{block.Size}"
+      />
+    {:else if block.Type === 'graphic-stacked-barchart'}
+      <StackedBarchar
+        title="{block.Title}"
+        chatter="{block.Chatter}"
+        source="{block.Source}"
+        note="{block.Note}"
+        size="{block.Size}"
+      />
     {/if}
   {/each}
 
   <EndNotes text="{content.EndNotes}" />
 </article>
+
+<style lang="scss">
+  :global(aside p) {
+    margin-bottom: 0 !important;
+  }
+</style>

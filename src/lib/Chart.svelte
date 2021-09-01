@@ -4,6 +4,9 @@
   import debounce from 'lodash/debounce.js';
   export let title;
   export let chatter;
+  export let source;
+  export let note;
+  export let size;
 
   const colours = (p) => {
     switch (p.id) {
@@ -40,14 +43,25 @@
         },
       })
       .draw();
-  
-    const resize = debounce(() => { chart.draw(); }, 250);
+
+    const resize = debounce(() => {
+      chart.draw();
+    }, 250);
     window.addEventListener('resize', resize);
   });
 </script>
 
-<section class='graphic'>
+<section class="graphic {size}">
   <h3>{title}</h3>
   <p>{chatter}</p>
-  <div id='parliament-chart'></div>
+  <div id="parliament-chart"></div>
+  <aside>
+    <p class="note mt-3">
+      Note: {@html note}
+    </p>
+    <p class="source">Source: {@html source}</p>
+  </aside>
 </section>
+
+<style lang="scss">
+</style>

@@ -319,6 +319,30 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.3"
 
+"@reuters-graphics/categorical-bar-chart@https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git":
+  version "0.0.1"
+  resolved "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git#554f66e104343df377870691660773c2eb313fea"
+  dependencies:
+    d3 "^6.2.0"
+    d3-appendselect "^0.1.0"
+    d3-array "^2.10.0"
+    d3-axis "^2.0.0"
+    d3-scale "^3.2.3"
+    d3-selection "^2.0.0"
+    lodash "^4.17.20"
+
+"@reuters-graphics/chart-module-line-chart@https://github.com/reuters-graphics/chart-module-line-chart.git":
+  version "0.0.1"
+  resolved "https://github.com/reuters-graphics/chart-module-line-chart.git#5d03c025b892826ed7ff581ff67c80537a7c22e9"
+  dependencies:
+    d3 "^6.2.0"
+    d3-appendselect "^0.1.0"
+    d3-array "^2.10.0"
+    d3-axis "^2.0.0"
+    d3-scale "^3.2.3"
+    d3-selection "^2.0.0"
+    lodash "^4.17.20"
+
 "@reuters-graphics/eslint-config@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@reuters-graphics/eslint-config/-/eslint-config-0.0.2.tgz#0d5b870decc75aa4fc5f5bbd58e0de67daa6ca32"
