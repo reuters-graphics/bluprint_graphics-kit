@@ -9,6 +9,11 @@
   import Chart from './Chart.svelte';
   import BasicBarchart from './BasicBarchart.svelte';
   import StackedBarchar from './StackedBarchart.svelte';
+  import { onMount } from 'svelte';
+  import * as d3 from 'd3';
+  onMount(() => {
+    d3.selectAll('a').attr('target', '_blank');
+  });
 </script>
 
 <article class="container-fluid">
