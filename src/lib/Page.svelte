@@ -1,5 +1,7 @@
 <script>
   import content from '$locales/en/content.json';
+  import { apdate } from 'journalize';
+
   import {
     BodyText,
     Image,
@@ -7,20 +9,25 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
-  import BasicBarchart from './BasicBarchart.svelte';
-  import StackedBarchar from './StackedBarchart.svelte';
+
+  /* Use these lines if you want to use d3 to make all links open in new tabs
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
   onMount(() => {
     d3.selectAll('a').attr('target', '_blank');
-  });
+  }); */
 </script>
 
 <article class="container-fluid">
   <!--  Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/ -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
     <span slot="byline">By {@html content.Byline} </span>
-    <span slot="dateline">Published Jan. 1, 2021</span>
+    <span slot="dateline">
+      Published <time datetime="{content.Published}">
+        {apdate(new Date(content.Published))}</time
+      >
+    </span>
+    <!-- Add new slot for Updated dateline? -->
   </Headline>
 
   <!-- Looping through you Gdoc blocks... -->
@@ -36,22 +43,6 @@
       />
     {:else if block.Type === 'graphic'}
       <Chart
-        title="{block.Title}"
-        chatter="{block.Chatter}"
-        source="{block.Source}"
-        note="{block.Note}"
-        size="{block.Size}"
-      />
-    {:else if block.Type === 'graphic-barchart'}
-      <BasicBarchart
-        title="{block.Title}"
-        chatter="{block.Chatter}"
-        source="{block.Source}"
-        note="{block.Note}"
-        size="{block.Size}"
-      />
-    {:else if block.Type === 'graphic-stacked-barchart'}
-      <StackedBarchar
         title="{block.Title}"
         chatter="{block.Chatter}"
         source="{block.Source}"
