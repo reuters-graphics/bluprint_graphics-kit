@@ -60,7 +60,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@reuters-graphics/graphics-svelte-components": "^0.1.15",
     "@reuters-graphics/parliament-chart": "https://github.com/reuters-graphics/chart-module-parliament-chart.git",
-    "@reuters-graphics/style-theme-eisbaer": "^0.3.1",
+    "@reuters-graphics/style-theme-eisbaer": "^0.3.2",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
