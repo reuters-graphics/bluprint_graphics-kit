@@ -37,8 +37,8 @@ graphicskit: yes
 
 The basic [ai2html](http://ai2html.org/) settings work as expected, but there are additional graphics kit settings to know about:
 
-* **graphicskit** allows adds or removes the asset pathing 
-   * Possible values `no` or `yes`
-   * Default `yes` 
-   *  `no` removes asset store reference used for source pathing in graphics kit rig
-   *  `yes` adds the asset store reference used for source pathing in graphics kit rig
+- **graphicskit** allows adds or removes the asset pathing
+  - Possible values `no` or `yes`
+  - Default `yes`
+  - `no` removes asset store reference used for source pathing in graphics kit rig
+  - `yes` adds the asset store reference used for source pathing in graphics kit rig

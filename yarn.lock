@@ -156,6 +156,11 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz#01dd3d054da07a00b764d78748df20daf2b317e9"
   integrity sha512-IHUfxSEDS9dDGqYwIW7wTN6tn/O8E0n5PcAHz9cAaBoZw6UpG20IG/YM3NNLaGPwPqgjBAFjIURzqoQs3rrtuw==
 
+"@fortawesome/fontawesome-common-types@^0.2.36":
+  version "0.2.36"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
+  integrity sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==
+
 "@fortawesome/fontawesome-svg-core@^1.2.26":
   version "1.2.35"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.35.tgz#85aea8c25645fcec88d35f2eb1045c38d3e65cff"
@@ -169,6 +174,13 @@
   integrity sha512-1hirPcbjj72ZJtFvdnXGPbAbpn3Ox6mH3g5STbANFp3vGSiE5u5ingAKV06mK6ZVqNYxUPlh4DlTnaIvLtF2kw==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.35"
+
+"@fortawesome/free-brands-svg-icons@^5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.4.tgz#ec8a44dd383bcdd58aa7d1c96f38251e6fec9733"
+  integrity sha512-f1witbwycL9cTENJegcmcZRYyawAFbm8+c6IirLmwbbpqz46wyjbQYLuxOc7weXFXfB7QR8/Vd2u5R3q6JYD9g==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
 
 "@fortawesome/free-regular-svg-icons@^5.15.3":
   version "5.15.3"
@@ -319,6 +331,18 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.3"
 
+"@reuters-graphics/categorical-bar-chart@https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git":
+  version "0.0.1"
+  resolved "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git#554f66e104343df377870691660773c2eb313fea"
+  dependencies:
+    d3 "^6.2.0"
+    d3-appendselect "^0.1.0"
+    d3-array "^2.10.0"
+    d3-axis "^2.0.0"
+    d3-scale "^3.2.3"
+    d3-selection "^2.0.0"
+    lodash "^4.17.20"
+
 "@reuters-graphics/eslint-config@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@reuters-graphics/eslint-config/-/eslint-config-0.0.2.tgz#0d5b870decc75aa4fc5f5bbd58e0de67daa6ca32"
@@ -395,15 +419,15 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.1.15":
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.15.tgz#30eaa8605165264d9a99c5cef6c2ff622ac20bf6"
-  integrity sha512-myFKr51PgFWw2XNcsteyeNgtV6bfIVz4qzuAK3HgvD+cw5/HahuDl4ZTF8eLuNfcMQnfvu+mAlbrG0BmcYK0NQ==
+"@reuters-graphics/graphics-svelte-components@^0.1.16":
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.16.tgz#d8bf442f19cd3a9a2d1dc56c6d01dffb11765a55"
+  integrity sha512-AcGOxeAkAX14B5se7+e3dMufTODWlaye/QNLHhu+/rEtYohKaggKES8g1KAGRp5sB2WCqk09N3FGUeL1uNkDlA==
   dependencies:
-    "@fortawesome/free-brands-svg-icons" "^5.15.3"
+    "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
     "@fortawesome/free-solid-svg-icons" "^5.15.3"
-    "@reuters-graphics/style-theme-eisbaer" "^0.3.0"
+    "@reuters-graphics/style-theme-eisbaer" "^0.3.4"
     classnames "^2.3.1"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
@@ -414,18 +438,6 @@
     svelte-i18n "^3.3.9"
     svelte-markdown "^0.1.5"
     ua-parser-js "^0.7.27"
-
-"@reuters-graphics/parliament-chart@https://github.com/reuters-graphics/chart-module-parliament-chart.git":
-  version "0.0.1"
-  resolved "https://github.com/reuters-graphics/chart-module-parliament-chart.git#01291cf83ea35a16d0f15b21e4d340092a1453f9"
-  dependencies:
-    d3 "^6.2.0"
-    d3-appendselect "^0.1.0"
-    d3-array "^2.10.0"
-    d3-axis "^2.0.0"
-    d3-scale "^3.2.3"
-    d3-selection "^2.0.0"
-    lodash "^4.17.20"
 
 "@reuters-graphics/server-client@^1.2.2":
   version "1.2.2"
@@ -445,10 +457,10 @@
     validator "^13.0.0"
     winston "^3.2.1"
 
-"@reuters-graphics/style-ai-templates@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-ai-templates/-/style-ai-templates-0.0.5.tgz#e6eedcbcda498364336a650022445ddb687feb10"
-  integrity sha512-vyUj9Xcx0V/nAKjzPbfbZYbRSG46EQxOygQzlue4b32pQLX6j2xCZG7HdiscsW+pMDg4jDsyszp9rWShl2rQPA==
+"@reuters-graphics/style-ai-templates@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-ai-templates/-/style-ai-templates-0.0.6.tgz#db9062f1dc703fc0228fc5b2dee518cd62294e09"
+  integrity sha512-Xij+xXR1D34d+HejCy1Ssn5ecYWL9ZM95Cj+qQJwDVHjLo9AH2OF3cibTF8DZ78l9zk4BKR/CoMGWmzMOhjcNg==
   dependencies:
     fs-extra "^10.0.0"
     glob "^7.1.7"
@@ -459,14 +471,6 @@
   resolved "https://registry.yarnpkg.com/@reuters-graphics/style-color/-/style-color-1.0.0.tgz#35fcf41d1c888b8353a0cb3f274bcdb10eea7d4b"
   integrity sha512-F3b5Rzepia+kWmVDjtKXhqGkp+gcKw8bDLJyn55dq95jJV3CEExNQTvN66CI5QTQnoDmzeXSQv+/vODTGatzJQ==
 
-"@reuters-graphics/style-main@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-main/-/style-main-0.3.0.tgz#97bf6ad8b6ab08bb21afefd96ab505428078208d"
-  integrity sha512-cPzDlzXXYyOT4tzGe7xgdAbcyC1tu/oayo1BV0iTHmSEEBYvEpAnkMd9ACOED/wFFPNwuzywpb4l3bAAEGft6w==
-  dependencies:
-    "@reuters-graphics/style-color" "^1.0.0"
-    bootstrap "^4.4.1"
-
 "@reuters-graphics/style-main@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@reuters-graphics/style-main/-/style-main-0.3.1.tgz#6f0b394650c798418b1ffcfc951d6acb7a56c561"
@@ -475,24 +479,24 @@
     "@reuters-graphics/style-color" "^1.0.0"
     bootstrap "^4.4.1"
 
-"@reuters-graphics/style-theme-eisbaer@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.0.tgz#cfae249e1b4d3d2f7af992f7c492e086c3442ec8"
-  integrity sha512-tTVO9YjRcKGRMjEj5z392hm/dfzPU+FSD5Ixn2AAsJ8k54UGZuX2NpqEj9FlE7oTb+6uv20CZogwG9ZI595VKQ==
+"@reuters-graphics/style-theme-eisbaer@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.4.tgz#b91adf3757132688426068415f2bf8e4735ee2b0"
+  integrity sha512-Ep8AGE9plthHzCFXiF8nlLn4p2TrPQO5iQ7zrffeHIWP6yowHePOXEKPRBN3QOTTUcX4wvGezty3p5Eb5vZJtA==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.26"
     "@fortawesome/free-brands-svg-icons" "^5.12.0"
     "@fortawesome/free-solid-svg-icons" "^5.12.0"
     "@fortawesome/react-fontawesome" "^0.1.8"
     "@reuters-graphics/style-color" "^1.0.0"
-    "@reuters-graphics/style-main" "^0.3.0"
+    "@reuters-graphics/style-main" "^0.3.1"
     classnames "*"
     copy-to-clipboard "^3.2.0"
 
-"@reuters-graphics/style-theme-eisbaer@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.1.tgz#61f6b889bffff4dbb34e18914c96ac014d433359"
-  integrity sha512-wyQ+nG+zhb9d6XwfElgJaAXD1P2IrL+0PpmHuucDvfJfGMRrQRghoecwQ+CFfVn0GxUItZkRMeY7GbqJykUGLQ==
+"@reuters-graphics/style-theme-eisbaer@^0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-theme-eisbaer/-/style-theme-eisbaer-0.3.5.tgz#e4c5a94159c1e6b6b565df621772bca04c501c90"
+  integrity sha512-3eeN1ULeBtBFx77mRokBeKR1Eg1eFQ0PsnTvBQhDYJxZ29Me0zwrZQ03YQYFk68Jf7XqvtcyhHg6RxB2RYMXJQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.26"
     "@fortawesome/free-brands-svg-icons" "^5.12.0"
@@ -569,15 +573,15 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.18.tgz#e8a89b5cbb39cd5f713fb2cfb066666f6a69cb78"
   integrity sha512-fc6FRSkJSRi5SqYPYFWE4aGFWlF77W8EHUdmkzcQXlWTUZ75D4K4O0f/Cj6v5A3eRYxEUKzUJmkt9WJKkVi6sA==
 
-"@sveltejs/kit@1.0.0-next.164":
-  version "1.0.0-next.164"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.164.tgz#3a98a0ed335fc0a921246dc080ea88219b25efe4"
-  integrity sha512-ohtOWAlOhvdN0wJZjJbpLzbruyBcH0KoTxb+OBXb4UUPXIJYfOw9qSPSZcG4JQFVm4DbxK1tY4RcdOw2gONWEA==
+"@sveltejs/kit@1.0.0-next.165":
+  version "1.0.0-next.165"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.165.tgz#d2cf938f4b4663ed35ffae790795bbad7ee3d562"
+  integrity sha512-yCNDj5C7pAWNFT7U194SlR44JBUjlfjgsDVTwQejRCEn0/+1yGhxr32Q6seBCuRNjJHYFzNSfMvxc/Ui0Y80KA==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.22"
     cheap-watch "^1.0.3"
     sade "^1.7.4"
-    vite "^2.5.3"
+    vite "^2.5.6"
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.22":
   version "1.0.0-next.22"
@@ -3233,6 +3237,11 @@ jmespath@0.15.0:
   resolved "https://registry.yarnpkg.com/jmespath/-/jmespath-0.15.0.tgz#a3f222a9aae9f966f5d27c796510e28091764217"
   integrity sha1-o/Iiqarp+Wb10nx5ZRDigJF2Qhc=
 
+journalize@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/journalize/-/journalize-2.5.1.tgz#d9c70452566e2b40f99b02b0263281c493c8c9b0"
+  integrity sha512-ha19m4ZiRitEsdMuwk0QMyjqTVicsJUJxz9TNkWBFJHIKAgEmXBJ8A6XR/GM1oW9fpRoGCBNLYej5U7ZdnDBMg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -3616,6 +3625,11 @@ marked@^2.0.0:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/marked/-/marked-2.0.7.tgz#bc5b857a09071b48ce82a1f7304913a993d4b7d1"
   integrity sha512-BJXxkuIfJchcXOJWTT2DOL+yFWifFv2yGYOUzvXg8Qz610QKw+sHCvTMYwA+qWGhlA2uivBezChZ/pBy1tWdkQ==
+
+marked@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-3.0.3.tgz#d81ff0f9e29cef0a177327fe009b460f31aa5862"
+  integrity sha512-4oIDhVSQ2s+xNCfek9OnZgCQR/WykGCom02JzIIvi4Pme+MIwPYqvGVW8CQWOXeoZu0TtVB6pTxIuoLm+dKqDA==
 
 memorystream@^0.3.1:
   version "0.3.1"
@@ -4181,10 +4195,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier-plugin-svelte@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.3.1.tgz#926184a490549688dbea0a8d61c1b1ae20218368"
-  integrity sha512-F1/r6OYoBq8Zgurhs1MN25tdrhPw0JW5JjioPRqpxbYdmrZ3gY/DzHGs0B6zwd4DLyRsfGB2gqhxUCbHt/D1fw==
+prettier-plugin-svelte@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.4.0.tgz#482bb6003bf1d5bd7ff002261a42a32b87d42d00"
+  integrity sha512-JwJ9bOz4XHLQtiLnX4mTSSDUdhu12WH8sTwy/XTDCSyPlah6IcV7NWeYBZscPEcceu2YnW8Y9sJCP40Z2UH9GA==
 
 prettier@^2.3.2:
   version "2.3.2"
@@ -4997,10 +5011,10 @@ svelte-markdown@^0.1.5:
   dependencies:
     marked "^2.0.0"
 
-svelte-preprocess@^4.9.2:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.9.2.tgz#ba4a14023e95dd549cd564ac14459aa3c026f549"
-  integrity sha512-Eu/09bEpcBD8a9pGxcILEAZssXifnWoi5ad5GgUAgoT4alblNikOIpKrWDFkepMqjgioXciWbIZOROoTX3ZLdA==
+svelte-preprocess@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.9.4.tgz#1a81c47994b94a8ee8a8cadf10763053dd486e24"
+  integrity sha512-Z0mUQBGtE+ZZSv/HerRSHe7ukJokxjiPeHe7iPOIXseEoRw51H3K/Vh6OMIMstetzZ11vWO9rCsXSD/uUUArmA==
   dependencies:
     "@types/pug" "^2.0.4"
     "@types/sass" "^1.16.0"
@@ -5009,10 +5023,10 @@ svelte-preprocess@^4.9.2:
     sorcery "^0.10.0"
     strip-indent "^3.0.0"
 
-svelte@^3.42.4:
-  version "3.42.4"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.4.tgz#838ed98fa7b26fc5fffe4df0d7ba345f1c54cf4f"
-  integrity sha512-DqC0AmDdBrrbIA+Kzl3yhBb6qCn4vZOAfxye2pTnIpinLegyagC5sLI8Pe9GPlXu9VpHBXIwpDDedpMfu++epA==
+svelte@^3.42.5:
+  version "3.42.5"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.5.tgz#06c27ccdacebb4027b7a625633e7ca285bdff713"
+  integrity sha512-+y9ivcwMojAb0e87W7vR/UP7go44zc/3gtEciIMb8CUoIkUx6UJmPloBvVuO9MDXoGkUZM5SHr5PbLze9fJQVw==
 
 table@^6.0.9:
   version "6.7.1"
@@ -5303,10 +5317,10 @@ validator@^13.0.0, validator@^13.6.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.6.0.tgz#1e71899c14cdc7b2068463cb24c1cc16f6ec7059"
   integrity sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg==
 
-vite@^2.5.3, vite@^2.5.4:
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.4.tgz#2dab98835be64c4157eba225e0becb9d373f608a"
-  integrity sha512-EAdbX8A6MJaqC6UuicZtoxY9+BdaBdcGVaROXvsu+vnlGyzZzm63QQgANJryIB0DvenveHAoCriN+dAnoS+TIQ==
+vite@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.6.tgz#51431bb5b99b041289595300ba15947bad0f89aa"
+  integrity sha512-P++qzXuOPhTql8iDamsatlJfD7/yGi8NCNwzyqkB2p0jrNJC567WEdXiKn3hQ+ZV8amQmB2dTH6svo3Z2tJ6MQ==
   dependencies:
     esbuild "^0.12.17"
     postcss "^8.3.6"
