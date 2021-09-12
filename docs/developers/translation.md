@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Translating pages**
+
 # Translation
 
 This kit does not include any built-in translation utilities like `gettext`. Instead, we recommend creating different [pages or embeds](./pages.md) for each language you're building for and passing the content for each to common Svelte components.
