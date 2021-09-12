@@ -37,9 +37,9 @@ Add a `lang` attibute to any style tags in your svelte components to use SCSS sy
 
 ### Styles from JavaScript
 
-If you want to use JavaScript values to determine how your components are styles, you have a few options.
+If you want to use JavaScript values to style your components, you have a few options.
 
-You can use Svelte's [class directive](https://svelte.dev/tutorial/classes) to set a class conditionally on elements:
+You can use Svelte's [class directive](https://svelte.dev/tutorial/classes) to set a class conditionally:
 
 ```svelte
 <script>
