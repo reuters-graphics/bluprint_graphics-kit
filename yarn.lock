@@ -457,10 +457,10 @@
     validator "^13.0.0"
     winston "^3.2.1"
 
-"@reuters-graphics/style-ai-templates@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-ai-templates/-/style-ai-templates-0.0.5.tgz#e6eedcbcda498364336a650022445ddb687feb10"
-  integrity sha512-vyUj9Xcx0V/nAKjzPbfbZYbRSG46EQxOygQzlue4b32pQLX6j2xCZG7HdiscsW+pMDg4jDsyszp9rWShl2rQPA==
+"@reuters-graphics/style-ai-templates@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/style-ai-templates/-/style-ai-templates-0.0.6.tgz#db9062f1dc703fc0228fc5b2dee518cd62294e09"
+  integrity sha512-Xij+xXR1D34d+HejCy1Ssn5ecYWL9ZM95Cj+qQJwDVHjLo9AH2OF3cibTF8DZ78l9zk4BKR/CoMGWmzMOhjcNg==
   dependencies:
     fs-extra "^10.0.0"
     glob "^7.1.7"
@@ -568,10 +568,10 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
-"@sveltejs/adapter-static@1.0.0-next.17":
-  version "1.0.0-next.17"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.17.tgz#63537e4d2b8c1fabb6db96b56f69ec41e56b6334"
-  integrity sha512-RKYNkQxtsMgt0wD8PhfXR1hGT1Tmq1E5eZeTr1KxIerczITRnWVT8LElfu/9Kusv44yYlyQtNc1mLoYqgloOQw==
+"@sveltejs/adapter-static@1.0.0-next.18":
+  version "1.0.0-next.18"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.18.tgz#e8a89b5cbb39cd5f713fb2cfb066666f6a69cb78"
+  integrity sha512-fc6FRSkJSRi5SqYPYFWE4aGFWlF77W8EHUdmkzcQXlWTUZ75D4K4O0f/Cj6v5A3eRYxEUKzUJmkt9WJKkVi6sA==
 
 "@sveltejs/kit@1.0.0-next.165":
   version "1.0.0-next.165"
@@ -584,9 +584,9 @@
     vite "^2.5.6"
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.22":
-  version "1.0.0-next.23"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.23.tgz#e08682c88e09e4faa5d1ed1adaec23be07a4e3da"
-  integrity sha512-zmguJ9OYYsvZUhzPA3ZeYana2qx/ORadI0LVjzDIuXEXcR7AKj9qJgGCWe5Wi2Z/xg9PsKMHTTCHgiiplphIYg==
+  version "1.0.0-next.22"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.22.tgz#0b988f261bc2de8193a7c281a4750134963de1cc"
+  integrity sha512-B1O/GMIxpE4iJ3/FBUJ3oYGKHhJ99G9uFARsb8kVeReLDPhtZGXTM+7brLDefJuedbKkRkGEEkbGOVuEuEBo3g==
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
     debug "^4.3.2"

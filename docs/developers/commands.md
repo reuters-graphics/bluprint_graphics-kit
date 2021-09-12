@@ -34,7 +34,7 @@ yarn upload
 ### Publish your project in the RNGS server
 
 ```
-yarn publish
+yarn pub
 ```
 
 ## Google docs

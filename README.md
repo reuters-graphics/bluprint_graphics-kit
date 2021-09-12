@@ -41,7 +41,8 @@ Some projects built with this rig:
 
 - [Biden approval tracker](https://graphics.reuters.com/USA-BIDEN/POLL/nmopagnqapa/) (single dotcom page, multiple embeds for clients)
 - [Euros 2020](https://graphics.reuters.com/SOCCER-EURO/yzdvxmjjnpx/) (multiple dotcom pages)
-- [Hot and humid Olympic Summer](https://graphics.reuters.com/OLYMPICS-2020/SUMMER-HEAT/bdwvkogrzvm/index.html) (standard graphic page)
+- [Hot and humid Olympic Summer](https://graphics.reuters.com/OLYMPICS-2020/SUMMER-HEAT/bdwvkogrzvm/index.html) (standard graphic page + client embed)
+- [German election polling tracker](https://graphics.reuters.com/GERMANY-ELECTION/POLLS/jnpweekxypw/) (etc.)
 
 ## 📚 Developer Docs
 
