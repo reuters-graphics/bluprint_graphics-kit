@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Packaging flat files for media clients**
+
 # Packaging flat files
 
 You can package flat files -- e.g., JPG and EPS assets -- for clients in the `media-assets/` directory.
