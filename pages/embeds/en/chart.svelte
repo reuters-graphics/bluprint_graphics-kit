@@ -7,7 +7,13 @@
 <article>
   {#each content.blocks as block}
     {#if block.Type === 'graphic'}
-      <Chart title="{block.Title}" chatter="{block.Chatter}" />
+      <Chart
+        title="{block.Title}"
+        chatter="{block.Chatter}"
+        source="{block.Source}"
+        note="{block.Note}"
+        size="{block.Size}"
+      />
     {/if}
   {/each}
 </article>

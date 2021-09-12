@@ -1,6 +1,6 @@
 <script>
-  import Chart from '@reuters-graphics/categorical-bar-chart';
-  import { onMount, onDestroy } from 'svelte';
+  import BarChart from '@reuters-graphics/categorical-bar-chart';
+  import { onMount } from 'svelte';
   import debounce from 'lodash-es/debounce.js';
   import marked from 'marked';
 
@@ -10,7 +10,7 @@
   export let note;
   export let size;
 
-  const chart = new Chart();
+  const chart = new BarChart();
 
   const resize = debounce(() => {
     chart.draw();
@@ -20,9 +20,6 @@
     chart.selection('#basic-barchart').draw();
     window.addEventListener('resize', resize);
   });
-  onDestroy(() => {
-    window.removeEventListener('resize', resize);
-  });
 </script>
 
 <section class="graphic {size}">
@@ -31,12 +28,13 @@
   <div id="basic-barchart" class="barchart-container"></div>
   <aside>
     <p class="note">
-      Note: {marked.parseInline(note)}
+      Note: {@html marked.parseInline(note)}
     </p>
-    <p class="source">Source: {marked.parseInline(source)}</p>
+    <p class="source">Source: {@html marked.parseInline(source)}</p>
   </aside>
 </section>
 
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
   :global {
     $barChart-container: '.barchart-container';

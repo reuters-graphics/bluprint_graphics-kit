@@ -13,28 +13,42 @@
 </script>
 
 <article class="container-fluid">
-  <!--  Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/ -->
+  <!--
+    This Headline and other components are part of our components library.
+
+    📚 Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/
+  -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
-    <span slot="byline">By {marked.parseInline(content.Byline)} </span>
-    <span slot="dateline">
+    <span slot="byline">By {@html marked.parseInline(content.Byline)} </span>
+    <div slot="dateline">
       Published <time datetime="{content.Published}">
         {apdate(new Date(content.Published))}</time
       >
-    </span>
-    <!-- Add new slot for Updated dateline? -->
+      {#if content.Updated}
+        <br /> Updated
+        <time datetime="{content.Updated}">
+          {apdate(new Date(content.Updated))}
+        </time>
+      {/if}
+    </div>
   </Headline>
 
   <!-- Looping through you Gdoc blocks... -->
   {#each content.blocks as block}
+    <!-- Text block -->
     {#if block.Type === 'text'}
       <BodyText text="{block.Text}" />
+
+      <!-- Photo block -->
     {:else if block.Type === 'photo'}
       <Image
-        src="images/shark.jpg"
+        src="{block.Src}"
         caption="{block.Caption}"
         alt="{block.AltText}"
-        wide
+        wider
       />
+
+      <!-- Graphic block -->
     {:else if block.Type === 'graphic'}
       <Chart
         title="{block.Title}"
