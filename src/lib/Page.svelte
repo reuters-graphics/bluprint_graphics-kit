@@ -9,13 +9,6 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
-
-  /* Use these lines if you want to use d3 to make all links open in new tabs
-  import { onMount } from 'svelte';
-  import * as d3 from 'd3';
-  onMount(() => {
-    d3.selectAll('a').attr('target', '_blank');
-  }); */
 </script>
 
 <article class="container-fluid">
