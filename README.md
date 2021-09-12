@@ -33,7 +33,7 @@ Check out the README in your created project for details on developing.
 
 > <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Traffic-Cone-Clipart-PNG-Image.png" width="80"/>
 >
-> **WARNING:** This rig is still in active development and is also largely based on other people's software, which is still in beta. You are free to use it for projects but assume you will likely need support from me (Jon) before you publish, so build in a little time for troubleshooting, especially close to deadline.
+> **WARNING:** This rig is still in active development and is largely based on other people's software, which is also still in beta. You are free to use it for projects but assume you will likely need support from me (Jon) before you publish, so build in a little time for troubleshooting, especially close to deadline.
 
 The rig improves on our current [graphics rig](https://github.com/reuters-graphics/bluprint_graphics-rig/) by letting you build _multiple_ pages and embeds. It's well-suited for multipage graphics or projects with graphics components that make sense as individual embeds for media clients. It's also perfect for building simple projects with Svelte.
 
