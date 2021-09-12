@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Working with media files**
+
 # Working with media files
 
 - [Where to put media files](#where-to-put-media-files)
