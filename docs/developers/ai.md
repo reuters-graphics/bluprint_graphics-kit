@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **AI graphics**
+
 # Adobe Illustrator graphics
 
 Create an Illustrator graphic using the default [Reuters templates](https://github.com/reuters-graphics/ai2html/tree/master/Reuters-Template).
