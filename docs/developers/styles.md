@@ -4,62 +4,76 @@
 
 # Styles
 
-Write styles in svelte components. Read more [about styling in the svelte docs](https://svelte.dev/tutorial/styling).
+There are two ways to write styles in this kit. The first -- _and preferred_ -- way is to write styles _in_ your Svelte components. The second is to create and import a global stylesheet.
 
-## SCSS
+- [Component styles](#component-styles)
+  - [SCSS](#scss)
+  - [Styles from JavaScript](#styles-from-javascript)
+- [Global styles](#global-styles)
+
+## Component styles
+
+Generally, it's better to write styles directly in your Svelte components because they will be automatically scoped to just the elements in your component and Svelte will also clean up any unused style rules by default, too. Read more [about styling in the Svelte docs](https://svelte.dev/tutorial/styling). 
+
+### SCSS
 
 Add a `lang` attibute to any style tags in your svelte components to use SCSS syntax.
 
 ```svelte
+<div>
+  <p class='purple'>Lorem ipsum...</p>
+</div>
+
 <style lang="scss">
   div {
-    p {
+    p.purple {
       color: purple;
     }
   }
 </style>
 ```
 
-If you need to import an SCSS partial that will apply to your entire page -- like one of our house themes -- you can use the `:global` operator.
 
-```svelte
-<style lang="scss">
-  :global {
-    @import '@reuters-graphics/style-theme-eisbaer/scss/main';
-    @import '../scss/some-other-global-styles.scss';
-  }
-</style>
-```
 
-You may need to also import font-faces, specifically, if using our house themes:
+### Styles from JavaScript
 
-```svelte
-<style lang="scss">
-  @import '@reuters-graphics/style-main/scss/fonts/font-faces';
-  :global {
-    @import '@reuters-graphics/style-theme-eisbaer/scss/main';
-  }
-</style>
-```
+If you want to use JavaScript values to determine how your components are styles, you have a few options.
 
-**Pro-tip:** If you're using global styles, you'll likely also want to silence Svelte's internal warnings for unused styles so they don't clutter up your terminal:
-
-```svelte
-<!-- svelte-ignore css-unused-selector -->
-<style lang="scss">
-  :global {
-    @import '@reuters-graphics/style-theme-eisbaer/scss/main';
-  }
-</style>
-```
-
-## CSS variables
-
-You can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to use JavaScript values in your styles:
+You can use Svelte's [class directive](https://svelte.dev/tutorial/classes) to set a class conditionally on elements:
 
 ```svelte
 <script>
-  let color = '#ff3e00';
+  let purple = true;
+</script>
+
+<p
+  class:purple={purple}
+>Lorem ipsum...</p>
+
+<style lang="scss">
+p.purple {
+  color: purple;
+}
+</style>
+```
+
+...you can write styles inline:
+
+```svelte
+<script>
+  let colour = 'purple';
+</script>
+
+<p
+  style="{`color: ${colour};`}"
+>Lorem ipsum...</p>
+```
+
+...or you can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to use JavaScript values in your styles:
+
+```svelte
+<script>
+  let color = 'purple';
 </script>
 
 <div style="--theme-color: {color};">
@@ -69,6 +83,41 @@ You can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/
 <style>
   p {
     color: var(--theme-color);
+  }
+</style>
+```
+
+## Global styles
+
+If you want to write styles that will apply across several components, you can create an SCSS partial file anywhere in the `src/` directory...
+
+```SCSS
+// src/styles.scss
+
+p.purple {
+  color: purple;
+}
+```
+
+...and then import it and apply it using the `:global` SCSS operator:
+
+```svelte
+<!-- pages/index.svelte -->
+
+<style lang="scss">
+  :global {
+    @import '../src/styles.scss';
+  }
+</style>
+```
+
+**Pro-tip:** You'll likely also want to silence Svelte's internal warnings for unused styles so they don't clutter up your terminal:
+
+```svelte
+<!-- svelte-ignore css-unused-selector -->
+<style lang="scss">
+  :global {
+    @import '../src/styles.scss';
   }
 </style>
 ```
