@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Styling pages**
+
 # Styles
 
 Write styles in svelte components. Read more [about styling in the svelte docs](https://svelte.dev/tutorial/styling).
