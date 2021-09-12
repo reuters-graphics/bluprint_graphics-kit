@@ -3233,6 +3233,11 @@ jmespath@0.15.0:
   resolved "https://registry.yarnpkg.com/jmespath/-/jmespath-0.15.0.tgz#a3f222a9aae9f966f5d27c796510e28091764217"
   integrity sha1-o/Iiqarp+Wb10nx5ZRDigJF2Qhc=
 
+journalize@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/journalize/-/journalize-2.5.1.tgz#d9c70452566e2b40f99b02b0263281c493c8c9b0"
+  integrity sha512-ha19m4ZiRitEsdMuwk0QMyjqTVicsJUJxz9TNkWBFJHIKAgEmXBJ8A6XR/GM1oW9fpRoGCBNLYej5U7ZdnDBMg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"

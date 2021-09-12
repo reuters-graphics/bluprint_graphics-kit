@@ -1,6 +1,7 @@
 <script>
   import content from '$locales/en/content.json';
   import { apdate } from 'journalize';
+  import marked from 'marked';
 
   import {
     BodyText,
@@ -14,7 +15,7 @@
 <article class="container-fluid">
   <!--  Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/ -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
-    <span slot="byline">By {@html content.Byline} </span>
+    <span slot="byline">By {marked.parseInline(content.Byline)} </span>
     <span slot="dateline">
       Published <time datetime="{content.Published}">
         {apdate(new Date(content.Published))}</time
@@ -47,9 +48,3 @@
 
   <EndNotes text="{content.EndNotes}" />
 </article>
-
-<style lang="scss">
-  :global(aside p) {
-    margin-bottom: 0 !important;
-  }
-</style>
