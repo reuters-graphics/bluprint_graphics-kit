@@ -89,7 +89,7 @@ p.purple {
 
 ## Global styles
 
-If you want to write styles that will apply across several components, you can create an SCSS partial file anywhere in the `src/` directory...
+If you want to write styles that will apply across several components, you can create an SCSS file anywhere in the `src/` directory...
 
 ```SCSS
 // src/styles.scss
