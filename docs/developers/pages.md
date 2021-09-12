@@ -1,5 +1,7 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Making pages**
+
 # Making pages
 
 The graphics kit improves on our previous [graphics rig](https://github.com/reuters-graphics/bluprint_graphics-rig/) by letting you build _multiple_ pages and embeds so you can build full-fledged newsapps or projects with several graphics components that make sense as individual embeds for media clients.
