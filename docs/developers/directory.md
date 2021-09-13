@@ -57,7 +57,13 @@ You can import components onto pages using the `$lib` alias. For example:
 <MyComponent />
 ```
 
-The `$lib` alias **does not work** in SCSS.
+Note: The `$lib` alias **does not work** in SCSS, so you'll still need to reference files using relative paths:
+
+```svelte
+<style lang="scss">
+  import "../styles.scss";
+</style>
+```
 
 #### `src/statics/`
 
