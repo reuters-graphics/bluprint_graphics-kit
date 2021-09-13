@@ -34,7 +34,7 @@ yarn preview
 yarn upload
 ```
 
-### Publish your project in the RNGS server
+### 🍻 Publish your project in the RNGS server
 
 ```
 yarn pub
