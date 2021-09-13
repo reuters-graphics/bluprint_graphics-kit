@@ -4,7 +4,7 @@
 
 # Translation
 
-This kit does not include any built-in translation utilities like `gettext`. Instead, we recommend creating different [pages or embeds](./pages.md) for each language you're building for and passing the content for each to common Svelte components.
+This kit does not include any built-in translation utilities like `gettext`. Instead, we recommend creating different [pages or embeds](./pages.md) for each language you're building and passing the translated content to common Svelte components.
 
 Let's use a simple example.
 
