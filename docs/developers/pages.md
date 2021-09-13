@@ -6,6 +6,9 @@
 
 The graphics kit improves on our previous [graphics rig](https://github.com/reuters-graphics/bluprint_graphics-rig/) by letting you build _multiple_ pages and embeds so you can build full-fledged newsapps or projects with several graphics components that make sense as individual embeds for media clients.
 
+- [Public pages](#public-pages)
+- [Embeds](#embeds)
+
 ## How to make pages
 
 Public pages and embeds are both created in the `pages` directory. All pages are Svelte components. To create a new one, you'll add a new `.svelte` file in that directory.
