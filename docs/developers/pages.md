@@ -37,8 +37,8 @@ pages/
 ```
 /index.html
 /second-page/index.html
-/countires/usa/index.html
-/countires/uk/index.html
+/countries/usa/index.html
+/countries/uk/index.html
 ```
 
 Pages can also be named using dynamic parameters that can create multiple pages.
