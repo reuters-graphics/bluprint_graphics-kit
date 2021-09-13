@@ -24,10 +24,10 @@ Build and upload your project to RNGS server.
 yarn upload
 ```
 
-Publish your project in the RNGS server.
+🍻 Publish your project in the RNGS server.
 
 ```
-yarn publish
+yarn pub
 ```
 
 Read more in the [development docs](https://github.com/reuters-graphics/bluprint_graphics-kit/tree/master/docs/developers).
