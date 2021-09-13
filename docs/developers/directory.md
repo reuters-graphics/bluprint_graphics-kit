@@ -61,7 +61,7 @@ Note: The `$lib` alias **does not work** in SCSS, so you'll still need to refere
 
 ```svelte
 <style lang="scss">
-  import "../styles.scss";
+  @import "../styles.scss";
 </style>
 ```
 
