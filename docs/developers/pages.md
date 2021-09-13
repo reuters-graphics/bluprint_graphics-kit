@@ -58,7 +58,7 @@ Read more in [SvelteKit's docs](https://kit.svelte.dev/docs#routing-pages).
 
 #### SEO
 
-When you create public pages, you should always add SEO to them. Using our pre-built SEO component is the easiest way.
+When you create public pages, you should always add SEO to them. Using our pre-built [SEO component](https://reuters-graphics.github.io/graphics-svelte-components/components/seo) is the easiest way. Add it to your page component with the metadata you want for that page.
 
 ```svelte
 <script>
