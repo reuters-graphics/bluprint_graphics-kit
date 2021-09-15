@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   ignorePatterns: ['svelte.config.js'],
   extends: ['standard'],
-  plugins: ['svelte3'],
+  plugins: ['svelte3', '@babel'],
   env: {
     browser: true,
     es2017: true,
@@ -41,6 +41,7 @@ module.exports = {
       },
     },
   ],
+  parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2019,
