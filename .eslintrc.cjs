@@ -45,5 +45,6 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2019,
+    requireConfigFile: false,
   },
 };
