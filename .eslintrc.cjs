@@ -26,6 +26,8 @@ module.exports = {
     ],
     'operator-linebreak': ['error', 'after'],
     'space-before-function-paren': ['error', 'never'],
+    eqeqeq: 'warn',
+    'no-unused-vars': ['warn', { args: 'after-used' }],
   },
   overrides: [
     {
