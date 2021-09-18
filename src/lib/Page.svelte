@@ -10,6 +10,7 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
+  console.log(content);
 </script>
 
 <article class="container-fluid">

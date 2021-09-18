@@ -17,12 +17,16 @@
     {/if}
   {/each}
 </article>
-<PymChild />
+
+<PymChild polling="{500}" />
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
   @import '~@reuters-graphics/style-main/scss/fonts/font-faces';
   :global {
     @import '@reuters-graphics/style-theme-eisbaer/scss/main';
+    article {
+      overflow: auto;
+    }
   }
 </style>
