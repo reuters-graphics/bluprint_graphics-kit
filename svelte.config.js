@@ -80,6 +80,7 @@ export default {
           'pym.js',
           'classnames',
           'ua-parser-js',
+          '@reuters-graphics/graphics-svelte-components',
         ],
       },
       plugins: [dsv(), svelteKitPagesPlugin()],
