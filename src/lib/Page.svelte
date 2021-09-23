@@ -16,7 +16,6 @@
 <article class="container-fluid">
   <!--
     This Headline and other components are part of our components library.
-
     📚 Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/
   -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">

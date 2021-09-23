@@ -1177,10 +1177,10 @@
     eslint-plugin-react-hooks "*"
     eslint-plugin-standard "*"
 
-"@reuters-graphics/graphics-bin@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.18.tgz#248feadbf66332ae749c45c65cec20d4d2f69845"
-  integrity sha512-+Vgf2AQgrNX2hO9PN9VsicT457bJX09n5U/IWQ2KjluKCL5AKC8xc2V79klk7WGOJjm7PcxsEdQyzH13QzLHWQ==
+"@reuters-graphics/graphics-bin@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.19.tgz#8e57bc914304213a80a7f737b9fa92a751082835"
+  integrity sha512-Idwp5yiolw0nrDTSduZqfMCYc33WU4k3ENF8t5BOjV8aCZRq/tP1mQ1nwUnADr43OP/6x0syrXD83gQGJ68PXQ==
   dependencies:
     "@newswire/doc-to-archieml" "^1.0.0"
     "@newswire/sheet-to-data" "^1.0.0"
