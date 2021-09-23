@@ -27,38 +27,6 @@ You can change the css for blurbs in the style section at the bottom.
   $: innerWidth = 0;
   let index = 0; // this starts at 0 by default
   let offset, progress;
-  let ready = false;
-  // let reversedArray;
-
-  // console.log(blurbs);
-
-  import { onMount } from 'svelte';
-  onMount(() => {
-    ready = true;
-    // let ai2SvelteDivs = document.querySelectorAll('.ai2svelte-container > div');
-    // let reversedArray = Array.from(ai2SvelteDivs).reverse();
-
-    // // Add 'step' as an attribute to each div containing ai2svelte
-    // reversedArray.forEach((elem, i) => {
-    //   elem.setAttribute('step', i + 1);
-    // });
-  });
-
-  $: {
-    console.log('index', index + 1);
-
-    // let test = d3.select('.ai2svelte-container');
-
-    // console.log('test', test);
-    // onMount(() => {
-    //   // console.log('index', index + 1);
-    //   // let showThisAi2svelteDiv = document.querySelector(
-    //   //   `.bg > div[step="${index + 1}"]`
-    //   // );
-    //   // showThisAi2svelteDiv.classList.add('show');
-    //   // console.log('showThisAi2svelteDiv', index + 1, showThisAi2svelteDiv);
-    // });
-  }
 </script>
 
 <svelte:window bind:innerWidth />
