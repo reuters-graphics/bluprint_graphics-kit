@@ -1,5 +1,9 @@
 <script>
-  // yarn add @sveltejs/svelte-scroller
+  /*
+If you're getting errors running svelte scroller, try: yarn add @sveltejs/svelte-scroller
+If using ai2svelte, make sure you have the ai2svelt.js: https://github.com/reuters-graphics/ai2svelte/blob/master/ai2svelte.js
+AND change the settings in your ai file to what's listed here: https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/ai.md
+*/
   import Scroller from '@sveltejs/svelte-scroller';
   import marked from 'marked';
   // import SlideContainer from './SlideContainer.svelte';
