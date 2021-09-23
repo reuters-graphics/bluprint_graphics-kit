@@ -65,6 +65,7 @@
     "@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
     "@reuters-graphics/graphics-svelte-components": "^0.1.19",
     "@reuters-graphics/style-theme-eisbaer": "^0.3.5",
+    "@sveltejs/svelte-scroller": "^2.0.7",
     "classnames": "^2.3.1",
     "journalize": "^2.5.1",
     "lodash": "^4.17.21",

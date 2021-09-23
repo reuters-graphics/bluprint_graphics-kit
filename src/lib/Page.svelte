@@ -10,7 +10,8 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
-  console.log(content);
+  import Scroller from './Scroller/index.svelte';
+  // console.log(content);
 </script>
 
 <article class="container-fluid">
@@ -57,6 +58,10 @@
         note="{block.Note}"
         size="{block.Size}"
       />
+
+      <!-- Scroller block -->
+    {:else if block.Type === 'scroller'}
+      <Scroller id="{block.ID}" blurbs="{block.blurbs}" />
     {/if}
   {/each}
 
