@@ -20,7 +20,7 @@ You can change the css for blurbs in the style section at the bottom.
   import marked from 'marked';
   import Ai2SvelteContainer from './Ai2SvelteContainer.svelte';
 
-  export let blurbs; // google doc content
+  export let blurbs; // blurbs from google doc
 
   // innerWidth makes sure the background is full width and doesn't move when it sticks.
   // If your visuals aren't full width, you can adjust width fo [slot='background'] in the scss

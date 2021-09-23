@@ -26,10 +26,10 @@
     width: 100%;
     position: absolute;
     transition: 0.5s opacity ease;
-    opacity: 0;
+    opacity: 1;
 
-    &.visible {
-      opacity: 1;
+    &.hidden {
+      opacity: 0;
     }
   }
 </style>
