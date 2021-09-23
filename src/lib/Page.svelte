@@ -11,7 +11,6 @@
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
   import Scroller from './Scroller/index.svelte';
-  // console.log(content);
 </script>
 
 <article class="container-fluid">
@@ -53,6 +52,7 @@
     {:else if block.Type === 'graphic'}
       <Chart
         title="{block.Title}"
+        id="{block.ID}"
         chatter="{block.Chatter}"
         source="{block.Source}"
         note="{block.Note}"

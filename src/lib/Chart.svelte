@@ -5,6 +5,7 @@
   import marked from 'marked';
 
   export let title;
+  export let id;
   export let chatter;
   export let source;
   export let note;
@@ -17,7 +18,7 @@
   }, 250);
 
   onMount(() => {
-    chart.selection('#basic-barchart').draw();
+    chart.selection(`#${id}`).draw();
     window.addEventListener('resize', resize);
   });
 </script>
@@ -25,7 +26,7 @@
 <section class="graphic {size}">
   <h3>{title}</h3>
   <p>{chatter}</p>
-  <div id="basic-barchart" class="barchart-container"></div>
+  <div id="{id}" class="barchart-container"></div>
   <aside>
     <p class="note">
       Note: {@html marked.parseInline(note)}
