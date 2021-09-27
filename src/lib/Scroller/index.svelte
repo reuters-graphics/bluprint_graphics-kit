@@ -37,7 +37,7 @@ You can change the css for blurbs in the style section at the bottom.
       <!-- Section {index + 1} is now active. -->
 
       <div class="ai2svelte-container">
-        <Ai2SvelteContainer index="{index + 1}" blurbs="{blurbs}" />
+        <Ai2SvelteContainer index="{index + 1}" />
       </div>
     </div>
   </div>
@@ -100,7 +100,6 @@ You can change the css for blurbs in the style section at the bottom.
 
     // &.empty {
     //   height: 200px;
-    //   border: 1px solid red;
     // }
 
     .blurb {
