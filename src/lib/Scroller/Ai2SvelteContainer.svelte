@@ -1,8 +1,8 @@
 <script>
   /* Add ai2svelte files here. */
-  import Ai2Svelte1 from '../ai2html/step-1.svelte';
-  import Ai2Svelte2 from '../ai2html/step-2.svelte';
-  import Ai2Svelte3 from '../ai2html/step-3.svelte';
+  import Step1 from '../ai2html/step-1.svelte';
+  import Step2 from '../ai2html/step-2.svelte';
+  import Step3 from '../ai2html/step-3.svelte';
 
   /* Don't touch the code below. */
   export let index;
@@ -23,17 +23,17 @@
   step="1"
 > -->
 <div class="ai2svelte" step="1">
-  <Ai2Svelte1 />
+  <Step1 />
 </div>
 <!-- <div
   class="ai2svelte {index === 2 ? '' : index === 3 ? '' : 'hidden'}"
   step="2"
 > -->
 <div class="ai2svelte {index === 1 ? 'hidden' : ''}" step="2">
-  <Ai2Svelte2 />
+  <Step2 />
 </div>
 <div class="ai2svelte {index === 3 ? '' : 'hidden'}" step="3">
-  <Ai2Svelte3 />
+  <Step3 />
 </div>
 
 <style lang="scss">
