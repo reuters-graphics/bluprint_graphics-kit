@@ -28,8 +28,8 @@
   */
 </script>
 
-<!-- You can delete the line below -->
-<h2>Step: {index}, total steps: {lastStep}</h2>
+<!-- You can uncomment the line below to see what step you're on -->
+<!-- <h2>Step: {index}, total steps: {lastStep}</h2> -->
 
 <!-- Generally, dont' touch the html codes below -->
 {#each allSteps as stepObj, i}
