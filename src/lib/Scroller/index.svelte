@@ -106,6 +106,7 @@ You can change the css for blurbs in the style section at the bottom.
       max-width: 550px;
       width: 100%;
       padding: 1.2rem 30px 0 30px;
+      background: rgba(255, 255, 255, 0.8);
     }
   }
 </style>

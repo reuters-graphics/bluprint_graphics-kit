@@ -11,6 +11,7 @@
   } from '@reuters-graphics/graphics-svelte-components';
   import Chart from './Chart.svelte';
   import Scroller from './Scroller/index.svelte';
+  import Ai2svelte from './Ai2svelte.svelte';
 </script>
 
 <article class="container-fluid">
@@ -46,6 +47,17 @@
         caption="{block.Caption}"
         alt="{block.AltText}"
         wider
+      />
+
+      <!-- Ai2svelte block -->
+    {:else if block.Type === 'ai2svelte'}
+      <Ai2svelte
+        id="{block.ID}"
+        size="{block.Size}"
+        title="{block.Title ? block.Title : false}"
+        chatter="{block.Chatter ? block.Chatter : false}"
+        source="{block.Source ? block.Source : false}"
+        note="{block.Note ? block.Note : false}"
       />
 
       <!-- Graphic block -->
