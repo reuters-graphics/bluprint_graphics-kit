@@ -38,6 +38,8 @@ export default {
   }),
   kit: {
     appDir: '_app',
+    // Uncomment below to disable SSR app-wide during development
+    // ssr: process.env.NODE_ENV === 'production',
     paths: {
       assets:
         process.env.NODE_ENV === 'production'
