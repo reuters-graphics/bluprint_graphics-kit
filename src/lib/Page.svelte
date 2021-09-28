@@ -9,9 +9,11 @@
     EndNotes,
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
+  import Ai2svelte from './Ai2svelte.svelte';
+
+  // Other pre-written components you can use
   import Chart from './Chart.svelte';
   import Scroller from './Scroller/index.svelte';
-  import Ai2svelte from './Ai2svelte.svelte';
 </script>
 
 <article class="container-fluid">

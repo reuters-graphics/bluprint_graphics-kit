@@ -1,20 +1,21 @@
 <script>
-  /* Add ai2svelte files here. */
+  /* 
+  README!
+  This is where you add your ai2svelte graphics.
+  The only thing you need to do is to import your ai2svelte components and
+  add them to the array allSteps.
+  Make sure you add the components in order inside allSteps.
+  */
+
+  // Add ai2svelte files here.
   import Step1 from '../ai2html/step-1.svelte';
   import Step2 from '../ai2html/step-2.svelte';
   import Step3 from '../ai2html/step-3.svelte';
   import Step4 from '../ai2html/step-4.svelte';
 
-  /* Make sure the name you assign in the import lines above 
-  match what you put in allSteps.
-  */
-  const allSteps = [
-    { step: 1, ai2svelte: Step1 },
-    { step: 2, ai2svelte: Step2 },
-    { step: 3, ai2svelte: Step3 },
-    { step: 4, ai2svelte: Step4 },
-    // add more objects if you have more steps
-  ];
+  // Make sure the name you assign in the import lines
+  // match what you put in allSteps.
+  const allSteps = [Step1, Step2, Step3, Step4];
 
   /* Don't touch the lines below. */
   export let index;
@@ -32,7 +33,7 @@
 <!-- <h2>Step: {index}, total steps: {lastStep}</h2> -->
 
 <!-- Generally, dont' touch the html codes below -->
-{#each allSteps as stepObj, i}
+{#each allSteps as stepComponent, i}
   <!-- <div class="ai2svelte {index === i + 1 ? '' : 'hidden'}" step="{i + 1}"> -->
   <div
     class="ai2svelte-step 
@@ -47,12 +48,12 @@
       : 'hidden'}"
     step="{i + 1}"
   >
-    <svelte:component this="{stepObj.ai2svelte}" />
+    <svelte:component this="{stepComponent}" />
   </div>
 {/each}
 
 <style lang="scss">
-  .ai2svelte {
+  .ai2svelte-step {
     width: 100%;
     position: absolute;
     transition: 0.5s opacity ease;

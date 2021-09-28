@@ -1,19 +1,28 @@
 <script>
   /* 
-If you're getting errors running svelte scroller, try:
-yarn add @sveltejs/svelte-scroller
+  README! 
+If using this scroller component, follow these steps.
 
-If you're getting errors running svelte scroller, try:
-yarn add @sveltejs/svelte-scroller
+1. Run yarn add @sveltejs/svelte-scroller
 
-If using ai2svelte, make sure you have the ai2svelt.js:
+2. If using ai2svelte for the first time, add this to your Adobe Illustrator settings:
 https://github.com/reuters-graphics/ai2svelte/blob/master/ai2svelte.js
+Tip: I like to name the file **ai2svelt.js so that it's easy to differentiate it from the ai2html.js script.
 
-AND change the settings in your ai file to what's listed here: 
+3. If using ai2svelte, change the ai2html settings in your .ai files to what's listed here: 
 https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/ai.md
 
-In general, you don't need to change the code in this file.
-You can change the css for blurbs in the style section at the bottom.
+4. In your google doc, add a section for your scroller. 
+To do this, add the block that starts with Type: scroller in the notes section at the top
+to inside the [blocks] section in your google doc. 
+
+5. Run yarn get-google
+
+6. In Ai2Svelte Container.svelte, import your ai2svelte files (see instructions there).
+
+7. If you want, change the css for blurbs or section.empty in the style section at the bottom.
+
+Otherwise, in general, you don't need to touch the code in this file.
 */
 
   import Scroller from '@sveltejs/svelte-scroller';
@@ -34,8 +43,6 @@ You can change the css for blurbs in the style section at the bottom.
 <Scroller bind:index bind:offset bind:progress>
   <div slot="background" bind:clientWidth="{innerWidth}">
     <div class="bg" id="bg-{index + 1}" style="width:{innerWidth + 30}px">
-      <!-- Section {index + 1} is now active. -->
-
       <div class="ai2svelte-container">
         <Ai2SvelteContainer index="{index + 1}" />
       </div>
@@ -50,15 +57,40 @@ You can change the css for blurbs in the style section at the bottom.
         </div>
       </section>
     {/each}
-    <!-- Add an extra section at the end if you want the last slide to stay on screen for longer -->
-    <!-- <section class="empty"></section> -->
+
+    <!-- Add an extra section at the end to make last slide 
+      stay on screen for longer. Can delete. -->
+    <section class="empty"></section>
   </div>
 </Scroller>
 
 <style lang="scss">
   @import '~@reuters-graphics/style-color/scss/all';
 
-  // Ai2svelte style
+  section {
+    height: 100vh;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center; /* makes text blurbs vertically centred*/
+
+    // This is the extra empty section at the end of the scroll section
+    // That lets the reader stay on the last step for a little longer.
+    &.empty {
+      height: 20vh;
+    }
+
+    // Can customise .blurb styles
+    .blurb {
+      max-width: 550px;
+      width: 100%;
+      padding: 1.2rem 30px 0 30px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  // In general, don't touch the styles below
   .ai2svelte-container {
     width: 100%;
     position: relative;
@@ -88,25 +120,5 @@ You can change the css for blurbs in the style section at the bottom.
     // border: 2px solid red;
     width: 50%;
     float: right;
-  }
-
-  section {
-    height: 100vh;
-    padding: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center; /* makes text blurbs vertically centred*/
-
-    // &.empty {
-    //   height: 200px;
-    // }
-
-    .blurb {
-      max-width: 550px;
-      width: 100%;
-      padding: 1.2rem 30px 0 30px;
-      background: rgba(255, 255, 255, 0.8);
-    }
   }
 </style>
