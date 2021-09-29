@@ -1,10 +1,7 @@
 <script>
-  // import { onMount, beforeUpdate, afterUpdate } from 'svelte';
-
   export let index;
   export let blurbs;
 
-  const componentsArray = [];
   const componentNames = [];
   blurbs.forEach((blurb) => {
     componentNames.push(blurb.ComponentName);
@@ -13,41 +10,33 @@
   const lastStep = componentNames.length;
   let Ai2svelteGraphic = null;
 
-  const fetchComponent = async () => {
-    for (const componentName of componentNames) {
-      try {
-        Ai2svelteGraphic = (await import(`../ai2html/${componentName}.svelte`))
-          .default;
+  $: {
+    let id = index - 1;
+    if (index > lastStep) {
+      id = lastStep;
+    }
 
-        console.log(componentName, Ai2svelteGraphic);
-        componentsArray.push(Ai2svelteGraphic); // this isn't working
+    const fetchComponent = async () => {
+      try {
+        Ai2svelteGraphic = (
+          await import(`../ai2html/${componentNames[id]}.svelte`)
+        ).default;
       } catch (e) {
         console.log(
-          `Unable to load ai2svelte component at: ${componentName}.`,
+          `Unable to load ai2svelte component at: ${componentNames[id]}.`,
           e
         );
       }
-    }
-  };
-
-  fetchComponent();
-  console.log('componentsArray', componentsArray);
-
-  // onMount(() => {});
-
-  /*
-  Check with Feilding:
-  - Should we separate the Ai2SvelteContainer.svelte from the index.svelte?
-- logic ok?
-- Add an small empty section at end by default? Or make the last section taller by default?
-  */
+    };
+    fetchComponent();
+  }
 </script>
 
 <!-- You can uncomment the line below to see what step you're on -->
 <!-- <h2>Step: {index}, total steps: {lastStep}</h2> -->
 
 <!-- Generally, dont' touch the html codes below -->
-{#each componentsArray as component, i}
+{#each componentNames as componentName, i}
   <!-- <div class="ai2svelte {index === i + 1 ? '' : 'hidden'}" step="{i + 1}"> -->
   <div
     class="ai2svelte-step 
