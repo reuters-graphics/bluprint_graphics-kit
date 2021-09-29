@@ -1,30 +1,57 @@
 <script>
-  /* 
-  README!
-  This is where you add your ai2svelte graphics.
-  The only thing you need to do is to import your ai2svelte components and
-  add them to the array allSteps.
-  Make sure you add the components in order inside allSteps.
-  */
+  // import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 
-  // Add ai2svelte files here.
-  import Step1 from '../ai2html/step-1.svelte';
-  import Step2 from '../ai2html/step-2.svelte';
-  import Step3 from '../ai2html/step-3.svelte';
-  import Step4 from '../ai2html/step-4.svelte';
-
-  // Make sure the name you assign in the import lines
-  // match what you put in allSteps.
-  const allSteps = [Step1, Step2, Step3, Step4];
-
-  /* Don't touch the lines below. */
   export let index;
-  const lastStep = allSteps.length;
+  export let blurbs;
 
-  /* 
+  const componentNames = [];
+  blurbs.forEach((blurb) => {
+    componentNames.push(blurb.ComponentName);
+  });
+
+  const lastStep = componentNames.length;
+  let Ai2svelteGraphic = null;
+
+  $: {
+    let id = index - 1;
+    if (index > lastStep) {
+      id = lastStep;
+    }
+
+    const fetchComponent = async () => {
+      try {
+        Ai2svelteGraphic = (
+          await import(`../ai2html/${componentNames[id]}.svelte`)
+        ).default;
+      } catch (e) {
+        console.log(
+          `Unable to load ai2svelte component at: ${componentNames[id]}.`,
+          e
+        );
+      }
+    };
+    fetchComponent();
+  }
+
+  // onMount(() => {
+  //   componentNames.forEach(async (componentName) => {
+  //     try {
+  //       Ai2svelteGraphic = (await import(`../ai2html/${componentName}.svelte`))
+  //         .default;
+  //       components.push(Ai2svelteGraphic);
+  //     } catch (e) {
+  //       console.log(
+  //         `Unable to load ai2svelte component at: ${componentName}.`,
+  //         e
+  //       );
+  //     }
+  //   });
+  // });
+
+  /*
   Check with Feilding:
   - Should we separate the Ai2SvelteContainer.svelte from the index.svelte?
-- logic ok?  
+- logic ok?
 - Add an small empty section at end by default? Or make the last section taller by default?
   */
 </script>
@@ -33,11 +60,11 @@
 <!-- <h2>Step: {index}, total steps: {lastStep}</h2> -->
 
 <!-- Generally, dont' touch the html codes below -->
-{#each allSteps as stepComponent, i}
+{#each componentNames as componentName, i}
   <!-- <div class="ai2svelte {index === i + 1 ? '' : 'hidden'}" step="{i + 1}"> -->
   <div
     class="ai2svelte-step 
-    {i + 1 == 1
+    {i + 1 === 1
       ? 'visible'
       : index === i + 1
       ? 'visible'
@@ -48,7 +75,8 @@
       : 'hidden'}"
     step="{i + 1}"
   >
-    <svelte:component this="{stepComponent}" />
+    <!-- <svelte:component this="{stepComponent}" /> -->
+    <svelte:component this="{Ai2svelteGraphic}" />
   </div>
 {/each}
 

@@ -8,11 +8,12 @@
     Image,
     EndNotes,
     Headline,
+    Ai2svelte,
   } from '@reuters-graphics/graphics-svelte-components';
-  import Ai2svelte from './Ai2svelte.svelte';
 
   // Other pre-written components you can use
   import Chart from './Chart.svelte';
+  import Aifile from './ai2html/ai-chart.svelte';
   import Scroller from './Scroller/index.svelte';
 </script>
 
@@ -54,13 +55,21 @@
       <!-- Ai2svelte block -->
     {:else if block.Type === 'ai2svelte'}
       <Ai2svelte
-        id="{block.ID}"
+        componentName="{block.ComponentName}"
+        component="{Aifile}"
+        id="{block.ComponentName}"
         size="{block.Size}"
-        title="{block.Title ? block.Title : false}"
-        chatter="{block.Chatter ? block.Chatter : false}"
-        source="{block.Source ? block.Source : false}"
-        note="{block.Note ? block.Note : false}"
-      />
+      >
+        <!-- If you don't need title or notes, you can delete the lines below -->
+        <div slot="title" class="title">
+          <h4>{block.Title}</h4>
+          <p>{block.Chatter}</p>
+        </div>
+        <aside slot="notes">
+          <p class="note">Note: {block.Note}</p>
+          <p class="source">Source: {block.Source}</p>
+        </aside>
+      </Ai2svelte>
 
       <!-- Graphic block -->
     {:else if block.Type === 'graphic'}
@@ -81,3 +90,6 @@
 
   <EndNotes text="{content.EndNotes}" />
 </article>
+
+<style lang="scss">
+</style>

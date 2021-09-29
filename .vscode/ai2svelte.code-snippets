@@ -1,0 +1,10 @@
+{
+    "Ai2svelte container component for scroll section": {
+        "scope": "svelte",
+        "prefix": "ai2svelte-container",
+        "body": [
+            "put stuff here"
+            //  use snippet syntax transformer
+        ]
+    }
+}
