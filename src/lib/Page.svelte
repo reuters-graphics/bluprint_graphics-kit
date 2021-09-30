@@ -2,19 +2,29 @@
   import content from '$locales/en/content.json';
   import { apdate } from 'journalize';
   import marked from 'marked';
-
   import {
     BodyText,
     Image,
     EndNotes,
     Headline,
-    Ai2svelte,
   } from '@reuters-graphics/graphics-svelte-components';
 
   // Other pre-written components you can use
   import Chart from './Chart.svelte';
+  import Ai2svelteScroller from './ai2html/Scroller/index.svelte';
+  import Ai2svelte from './ai2html/AiContainer/index.svelte';
+
+  /* Note: You can also directly import the ai2svelte component instead
+  of pulling it from the google doc, like this:
+  
   import Aifile from './ai2html/ai-chart.svelte';
-  import Scroller from './Scroller/index.svelte';
+        <Ai2svelte
+        componentName="{block.ComponentName}"
+        component="{Aifile}" // ADD YOUR MANUALLY IMPORTED COMPONENT HERE
+        id="{block.ComponentName}"
+        size="{block.Size}"
+      >
+*/
 </script>
 
 <article class="container-fluid">
@@ -56,7 +66,6 @@
     {:else if block.Type === 'ai2svelte'}
       <Ai2svelte
         componentName="{block.ComponentName}"
-        component="{Aifile}"
         id="{block.ComponentName}"
         size="{block.Size}"
       >
@@ -84,7 +93,12 @@
 
       <!-- Scroller block -->
     {:else if block.Type === 'scroller'}
-      <Scroller id="{block.ID}" blurbs="{block.blurbs}" />
+      <Ai2svelteScroller
+        id="{block.ID}"
+        blurbs="{block.blurbs}"
+        graphicSize="{block.GraphicSize}"
+        blurbPosition="{block.BlurbPosition}"
+      />
     {/if}
   {/each}
 

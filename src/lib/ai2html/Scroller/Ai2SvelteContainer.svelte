@@ -1,10 +1,11 @@
 <script>
   // import { onMount, beforeUpdate, afterUpdate } from 'svelte';
+  import { assets } from '$app/paths';
 
   export let index;
   export let blurbs;
 
-  const componentsArray = [];
+  let componentsArray = [];
   const componentNames = [];
   blurbs.forEach((blurb) => {
     componentNames.push(blurb.ComponentName);
@@ -13,27 +14,36 @@
   const lastStep = componentNames.length;
   let Ai2svelteGraphic = null;
 
+  /*
+  STYLES
+  - prop for blurb position and alignment
+  - prop for visual position and alignment
+
+  - Nix other components (keep for myself)
+  - delete preview
+  - add scroller yarn to package.json
+  */
+
   const fetchComponent = async () => {
+    const objArray = [];
     for (const componentName of componentNames) {
       try {
-        Ai2svelteGraphic = (await import(`../ai2html/${componentName}.svelte`))
-          .default;
-
-        console.log(componentName, Ai2svelteGraphic);
-        componentsArray.push(Ai2svelteGraphic); // this isn't working
+        Ai2svelteGraphic = (await import(`../${componentName}.svelte`)).default;
       } catch (e) {
         console.log(
           `Unable to load ai2svelte component at: ${componentName}.`,
           e
         );
       }
+      const obj = {};
+      obj.componentName = componentName;
+      obj.component = Ai2svelteGraphic;
+      objArray.push(obj);
     }
+    componentsArray = objArray.slice();
   };
-
   fetchComponent();
-  console.log('componentsArray', componentsArray);
-
-  // onMount(() => {});
+  // $: console.log('componentsArray', componentsArray);
 
   /*
   Check with Feilding:
@@ -62,8 +72,7 @@
       : 'hidden'}"
     step="{i + 1}"
   >
-    <!-- <svelte:component this="{stepComponent}" /> -->
-    <svelte:component this="{Ai2svelteGraphic}" />
+    <svelte:component this="{componentsArray[i].component}" assets="{assets}" />
   </div>
 {/each}
 
