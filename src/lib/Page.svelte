@@ -14,8 +14,8 @@
   import Ai2svelteScroller from './ai2html/Scroller/index.svelte';
   import Ai2svelte from './ai2html/AiContainer/index.svelte';
 
-  /* Note: You can also directly import the ai2svelte component instead
-  of pulling it from the google doc, like this:
+  /* Note: You can also directly import your static (non-scrolly) ai2svelte
+  component instead of pulling it from the google doc, like this:
   
   import Aifile from './ai2html/ai-chart.svelte';
         <Ai2svelte

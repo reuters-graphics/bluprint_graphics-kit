@@ -1,6 +1,7 @@
 <script>
-  import { assets } from '$app/paths';
+  /* This is the component for regular, non-scrolly ai2svelte graphics. */
 
+  import { assets } from '$app/paths';
   export let componentName;
   export let component = null;
   export let id;
