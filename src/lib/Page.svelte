@@ -1,7 +1,8 @@
 <script>
+  // Content from your Google doc
   import content from '$locales/en/content.json';
-  import { apdate } from 'journalize';
-  import marked from 'marked';
+
+  // Reuters Graphics components lib (see below)
   import {
     BodyText,
     Image,
@@ -9,22 +10,16 @@
     Headline,
   } from '@reuters-graphics/graphics-svelte-components';
 
-  // Other pre-written components you can use
-  import Chart from './Chart.svelte';
-  import Ai2svelteScroller from './ai2html/Scroller/index.svelte';
-  import Ai2svelte from './ai2html/AiContainer/index.svelte';
+  // Pre-built wrapper components for Ai2svelte graphics
+  import AiGraphicWrapper from './ai2html/AiGraphicWrapper/index.svelte';
+  import AiScrollerWrapper from './ai2html/AiScrollerWrapper/index.svelte';
 
-  /* Note: You can also directly import your static (non-scrolly) ai2svelte
-  component instead of pulling it from the google doc, like this:
-  
-  import Aifile from './ai2html/ai-chart.svelte';
-        <Ai2svelte
-        componentName="{block.ComponentName}"
-        component="{Aifile}" // ADD YOUR MANUALLY IMPORTED COMPONENT HERE
-        id="{block.ComponentName}"
-        size="{block.Size}"
-      >
-*/
+  // Other dependencies
+  import { apdate } from 'journalize';
+  import marked from 'marked';
+
+  // A custom component written for this project
+  import Chart from './Chart.svelte';
 </script>
 
 <article class="container-fluid">
@@ -47,7 +42,7 @@
     </div>
   </Headline>
 
-  <!-- Looping through you Gdoc blocks... -->
+  <!-- Looping through your Google doc blocks... -->
   {#each content.blocks as block}
     <!-- Text block -->
     {#if block.Type === 'text'}
@@ -62,24 +57,6 @@
         wider
       />
 
-      <!-- Ai2svelte block -->
-    {:else if block.Type === 'ai2svelte'}
-      <Ai2svelte
-        componentName="{block.ComponentName}"
-        id="{block.ComponentName}"
-        size="{block.Size}"
-      >
-        <!-- If you don't need title or notes, you can delete the lines below -->
-        <div slot="title" class="title">
-          <h4>{block.Title}</h4>
-          <p>{block.Chatter}</p>
-        </div>
-        <aside slot="notes">
-          <p class="note">Note: {block.Note}</p>
-          <p class="source">Source: {block.Source}</p>
-        </aside>
-      </Ai2svelte>
-
       <!-- Graphic block -->
     {:else if block.Type === 'graphic'}
       <Chart
@@ -91,14 +68,35 @@
         size="{block.Size}"
       />
 
+      <!-- Ai2svelte block -->
+    {:else if block.Type === 'ai2svelte'}
+      <AiGraphicWrapper
+        componentName="{block.ComponentName}"
+        id="{block.ComponentName}"
+        size="{block.Size}"
+      >
+        <div slot="title" class="title">
+          {#if block.Title}<h4>{block.Title}</h4>{/if}
+          {#if block.Chatter}<p>{block.Chatter}</p>{/if}
+        </div>
+        <aside slot="notes">
+          {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
+          {#if block.Source}<p class="source">Source: {block.Source}</p>{/if}
+        </aside>
+      </AiGraphicWrapper>
+
       <!-- Scroller block -->
-    {:else if block.Type === 'scroller'}
-      <Ai2svelteScroller
+    {:else if block.Type === 'ai-scroller'}
+      <AiScrollerWrapper
         id="{block.ID}"
-        blurbs="{block.blurbs}"
+        steps="{block.steps}"
         graphicSize="{block.GraphicSize}"
-        blurbPosition="{block.BlurbPosition}"
+        textPosition="{block.TextPosition}"
       />
+
+      <!-- ?? -->
+    {:else}
+      {console.warn(`Unknown block type: ${block.Type}`)}
     {/if}
   {/each}
 

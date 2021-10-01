@@ -1,21 +1,21 @@
 <script>
-  /* This is the component for regular, non-scrolly ai2svelte graphics. */
-
+  /* This component wraps ai2svelte graphics. */
   import { assets } from '$app/paths';
+
   export let componentName;
   export let component = null;
-  export let id;
-  export let size;
+  export let id = '';
+  // normal, wide, wider, widest or fluid
+  export let size = 'normal';
 
   let Ai2svelteGraphic = component;
 
   const fetchComponent = async () => {
-    // Allow passing the component directly as a prop
     if (Ai2svelteGraphic) return;
     try {
       Ai2svelteGraphic = (await import(`../${componentName}.svelte`)).default;
     } catch (e) {
-      console.log(
+      console.error(
         `Unable to load ai2svelte component at: ai2html/${componentName}.svelte.`,
         e
       );
@@ -24,7 +24,7 @@
   fetchComponent();
 </script>
 
-<section class="ai2svelte graphic {size}" id="{id}">
+<section class="ai2svelte-container graphic {size}" id="{id}">
   {#if $$slots.title}
     <slot name="title" />
   {/if}
