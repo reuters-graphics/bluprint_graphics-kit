@@ -12,7 +12,7 @@ These docs describe how to use the [Reuters graphics kit](https://github.com/reu
 - **[Working with media files](media.md)** Using images, fonts and other static files
 - **[Google docs and sheets](google-docs-and-sheets.md)**
 - **[Translating pages](translation.md)**
-- **[AI graphics](ai.md)** Using ai2html for graphics
+- **[AI graphics](ai.md)** Using ai2svelte for graphics
 - **[Packaging flat files for media clients](flats.md)**
 - **[Svelte/SvelteKit FAQs](svelte-faqs.md)**
 - **[Metadata](metadata.md)**
