@@ -53,7 +53,7 @@ You'd use the `getPath` function like this:
 
 #### `assets`
 
-You can also prefix the path your self using SvelteKit's [built-in `assets` store](https://kit.svelte.dev/docs#modules-$app-paths):
+You can also prefix the path yourself using SvelteKit's [built-in `assets` store](https://kit.svelte.dev/docs#modules-$app-paths):
 
 ```svelte
 <script>
