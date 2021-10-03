@@ -22,11 +22,17 @@ src/
 
 ## How to use media files in your code
 
-To use media files in your code, you need to prefix the path to them.
+When you reference media files, you should **always use absolute paths** (`https://graphics.reuters.com/.../my-file.jpg`), not relative paths (`./my-file.jpg`).
 
-Import our built-in `getPath` utility and pass to it the path to your image in the `src/statics/` directory.
+So to use media files in your code, you need to prefix the path to them.
 
-So say you have an image like this:
+You have two ways to do that:
+
+#### `getPath`
+
+Import our built-in `getPath` utility function and pass to it the path to your media file in the `src/statics/` directory.
+
+For example, say you have an image like this:
 
 ```
 src/
@@ -45,6 +51,8 @@ You'd use the `getPath` function like this:
 <img alt="" src="{getPath('images/my-image.jpg')}" />
 ```
 
+#### `assets`
+
 You can also prefix the path your self using SvelteKit's [built-in `assets` store](https://kit.svelte.dev/docs#modules-$app-paths):
 
 ```svelte
@@ -55,10 +63,28 @@ You can also prefix the path your self using SvelteKit's [built-in `assets` stor
 <img alt="" src="{`${assets}/images/my-image.jpg`}" />
 ```
 
+### Using media files in CSS
+
 Use inline styles to set CSS styles with your media files.
 
 ```svelte
+<script>
+  import { getPath } from '$utils/statics';
+</script>
+
 <div
   style="{`background-image: url(${getPath('images/my-image.jpg')});`}"
+></div>
+```
+
+... or ...
+
+```svelte
+<script>
+  import { assets } from '$app/paths';
+</script>
+
+<div
+  style="{`background-image: url(${`${assets}/images/my-image.jpg`});`}"
 ></div>
 ```
