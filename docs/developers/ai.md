@@ -15,7 +15,7 @@ ai2html-settings
 image_format: png24
 responsiveness: dynamic
 output:one-file
-html_output_path: ../src/lib/ai2html/
+html_output_path: ../src/lib/ai2svelte/
 html_output_extension: .svelte
 image_output_path: ../../statics/images/graphics/
 image_source_path: images/graphics/
@@ -28,7 +28,7 @@ graphicskit: yes
 For reference, here are the _specific_ settings that must be changed for the graphics kit:
 
 ```
-html_output_path: ../src/lib/ai2html/
+html_output_path: ../src/lib/ai2svelte/
 html_output_extension: .svelte
 image_output_path: ../../statics/images/graphics/
 image_source_path: images/graphics/
