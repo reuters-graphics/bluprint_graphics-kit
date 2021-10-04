@@ -7,7 +7,6 @@
   let Ai2svelteGraphics = [];
 
   const componentNames = steps.map((step) => step.ComponentName);
-
   const fetchComponents = async () => {
     const components = [];
     for (const componentName of componentNames) {
