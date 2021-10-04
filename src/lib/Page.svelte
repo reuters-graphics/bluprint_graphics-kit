@@ -8,18 +8,16 @@
     Image,
     EndNotes,
     Headline,
+    Ai2svelte,
+    Scroller,
   } from '@reuters-graphics/graphics-svelte-components';
-
-  // Pre-built wrapper components for Ai2svelte graphics
-  import AiGraphicWrapper from './ai2html/AiGraphicWrapper/index.svelte';
-  import AiScrollerWrapper from './ai2html/AiScrollerWrapper/index.svelte';
 
   // Other dependencies
   import { apdate } from 'journalize';
   import marked from 'marked';
+  import { fetchComponent, makeScrollerSteps } from '$utils/dynamicComponents';
 
-  // A custom component written for this project
-  import Chart from './Chart.svelte';
+  export let embedded = false;
 </script>
 
 <article class="container-fluid">
@@ -57,42 +55,46 @@
         wider
       />
 
-      <!-- Graphic block -->
-    {:else if block.Type === 'graphic'}
-      <Chart
-        title="{block.Title}"
-        id="{block.ID}"
-        chatter="{block.Chatter}"
-        source="{block.Source}"
-        note="{block.Note}"
-        size="{block.Size}"
-      />
-
       <!-- Ai2svelte block -->
     {:else if block.Type === 'ai2svelte'}
-      <AiGraphicWrapper
-        componentName="{block.ComponentName}"
-        id="{block.ComponentName}"
-        size="{block.Size}"
-      >
-        <div slot="title" class="title">
-          {#if block.Title}<h4>{block.Title}</h4>{/if}
-          {#if block.Chatter}<p>{block.Chatter}</p>{/if}
-        </div>
-        <aside slot="notes">
-          {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
-          {#if block.Source}<p class="source">Source: {block.Source}</p>{/if}
-        </aside>
-      </AiGraphicWrapper>
+      {#await fetchComponent(block.ComponentName)}
+        <div></div>
+      {:then component}
+        <Ai2svelte
+          AiGraphic="{component}"
+          id="{block.ComponentName}"
+          size="{block.Size}"
+        >
+          <div slot="title" class="title">
+            {#if block.Title}<h4>{block.Title}</h4>{/if}
+            {#if block.Chatter}<p>{block.Chatter}</p>{/if}
+          </div>
+          <aside slot="notes">
+            {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
+            {#if block.Source}<p class="source">Source: {block.Source}</p>{/if}
+          </aside>
+        </Ai2svelte>
+      {:catch error}
+        {console.error(
+          `Error fetching component: ./ai2svelte/${block.ComponentName}.svelte`,
+          error
+        )}
+      {/await}
 
       <!-- Scroller block -->
-    {:else if block.Type === 'ai-scroller'}
-      <AiScrollerWrapper
-        id="{block.ID}"
-        steps="{block.steps}"
-        graphicSize="{block.GraphicSize}"
-        textPosition="{block.TextPosition}"
-      />
+    {:else if block.Type === 'ai-scroller' && !embedded}
+      {#await makeScrollerSteps(block.steps)}
+        <div></div>
+      {:then steps}
+        <Scroller
+          steps="{steps}"
+          backgroundSize="{block.BackgroundSize}"
+          foregroundPosition="{block.ForegroundPosition}"
+          id="{block.ID}"
+        />
+      {:catch error}
+        {console.error('Error making steps for scroller', error)}
+      {/await}
 
       <!-- ?? -->
     {:else}

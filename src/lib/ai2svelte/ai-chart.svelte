@@ -1,5 +1,5 @@
 <script>
-  export let assets;
+  import { assets } from '$app/paths';
   let width = null;
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-  export let assets;
+  import { assets } from '$app/paths';
   let width = null;
 </script>
 
@@ -8,61 +8,61 @@
 <div id="g-step-1-box" bind:clientWidth="{width}">
   <!-- Artboard: XL -->
   {#if width && width >= 1200}
-    <div id="g-step-1-XL" class="g-artboard" style="">
+    <div id="g-step-1-xl" class="g-artboard" style="">
       <div style="padding: 0 0 50% 0;"></div>
       <div
-        id="g-step-1-XL-img"
+        id="g-step-1-xl-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-XL.png);"
+        style="background-image: url({assets}/images/graphics/step-1-xl.png);"
       ></div>
     </div>
   {/if}
   <!-- Artboard: LG -->
   {#if width && width >= 930 && width < 1200}
-    <div id="g-step-1-LG" class="g-artboard" style="">
+    <div id="g-step-1-lg" class="g-artboard" style="">
       <div style="padding: 0 0 55.3763% 0;"></div>
       <div
-        id="g-step-1-LG-img"
+        id="g-step-1-lg-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-LG.png);"
+        style="background-image: url({assets}/images/graphics/step-1-lg.png);"
       ></div>
     </div>
   {/if}
   <!-- Artboard: MD -->
   {#if width && width >= 660 && width < 930}
-    <div id="g-step-1-MD" class="g-artboard" style="">
+    <div id="g-step-1-md" class="g-artboard" style="">
       <div style="padding: 0 0 55.7576% 0;"></div>
       <div
-        id="g-step-1-MD-img"
+        id="g-step-1-md-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-MD.png);"
+        style="background-image: url({assets}/images/graphics/step-1-md.png);"
       ></div>
     </div>
   {/if}
   <!-- Artboard: SM -->
   {#if width && width >= 510 && width < 660}
-    <div id="g-step-1-SM" class="g-artboard" style="">
+    <div id="g-step-1-sm" class="g-artboard" style="">
       <div style="padding: 0 0 49.6078% 0;"></div>
       <div
-        id="g-step-1-SM-img"
+        id="g-step-1-sm-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-SM.png);"
+        style="background-image: url({assets}/images/graphics/step-1-sm.png);"
       ></div>
     </div>
   {/if}
   <!-- Artboard: XS -->
   {#if width && width >= 0 && width < 510}
-    <div id="g-step-1-XS" class="g-artboard" style="">
+    <div id="g-step-1-xs" class="g-artboard" style="">
       <div style="padding: 0 0 55.4545% 0;"></div>
       <div
-        id="g-step-1-XS-img"
+        id="g-step-1-xs-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-XS.png);"
+        style="background-image: url({assets}/images/graphics/step-1-xs.png);"
       ></div>
     </div>
   {/if}
@@ -93,23 +93,23 @@
   #g-step-1-box .g-aiPointText p {
     white-space: nowrap;
   }
-  #g-step-1-XL {
+  #g-step-1-xl {
     position: relative;
     overflow: hidden;
   }
-  #g-step-1-LG {
+  #g-step-1-lg {
     position: relative;
     overflow: hidden;
   }
-  #g-step-1-MD {
+  #g-step-1-md {
     position: relative;
     overflow: hidden;
   }
-  #g-step-1-SM {
+  #g-step-1-sm {
     position: relative;
     overflow: hidden;
   }
-  #g-step-1-XS {
+  #g-step-1-xs {
     position: relative;
     overflow: hidden;
   }

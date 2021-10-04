@@ -13,7 +13,7 @@
   lang="en"
 />
 
-<Page />
+<Page embedded="{true}" />
 
 <PymChild polling="{500}" />
 
