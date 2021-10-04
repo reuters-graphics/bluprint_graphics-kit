@@ -14,7 +14,7 @@
         id="g-step-3-xl-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-3-xl.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-3-xl.png);"
       ></div>
       <div
         id="g-ai0-1"
@@ -34,7 +34,7 @@
         id="g-step-3-lg-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-3-lg.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-3-lg.png);"
       ></div>
       <div
         id="g-ai1-1"
@@ -54,7 +54,7 @@
         id="g-step-3-md-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-3-md.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-3-md.png);"
       ></div>
       <div
         id="g-ai2-1"
@@ -74,7 +74,7 @@
         id="g-step-3-sm-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-3-sm.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-3-sm.png);"
       ></div>
       <div
         id="g-ai3-1"
@@ -94,7 +94,7 @@
         id="g-step-3-xs-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-3-xs.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-3-xs.png);"
       ></div>
       <div
         id="g-ai4-1"

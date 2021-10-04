@@ -14,7 +14,7 @@
         id="g-step-1-xl-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-xl.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-1-xl.png);"
       ></div>
     </div>
   {/if}
@@ -26,7 +26,7 @@
         id="g-step-1-lg-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-lg.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-1-lg.png);"
       ></div>
     </div>
   {/if}
@@ -38,7 +38,7 @@
         id="g-step-1-md-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-md.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-1-md.png);"
       ></div>
     </div>
   {/if}
@@ -50,7 +50,7 @@
         id="g-step-1-sm-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-sm.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-1-sm.png);"
       ></div>
     </div>
   {/if}
@@ -62,7 +62,7 @@
         id="g-step-1-xs-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assets}/images/graphics/step-1-xs.png);"
+        style="background-image: url({assets}/images/graphics/ai-scroller-1-xs.png);"
       ></div>
     </div>
   {/if}
