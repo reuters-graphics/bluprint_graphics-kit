@@ -1177,10 +1177,10 @@
     eslint-plugin-react-hooks "*"
     eslint-plugin-standard "*"
 
-"@reuters-graphics/graphics-bin@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.18.tgz#248feadbf66332ae749c45c65cec20d4d2f69845"
-  integrity sha512-+Vgf2AQgrNX2hO9PN9VsicT457bJX09n5U/IWQ2KjluKCL5AKC8xc2V79klk7WGOJjm7PcxsEdQyzH13QzLHWQ==
+"@reuters-graphics/graphics-bin@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-bin/-/graphics-bin-0.0.19.tgz#8e57bc914304213a80a7f737b9fa92a751082835"
+  integrity sha512-Idwp5yiolw0nrDTSduZqfMCYc33WU4k3ENF8t5BOjV8aCZRq/tP1mQ1nwUnADr43OP/6x0syrXD83gQGJ68PXQ==
   dependencies:
     "@newswire/doc-to-archieml" "^1.0.0"
     "@newswire/sheet-to-data" "^1.0.0"
@@ -1238,15 +1238,16 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.19.tgz#9f10335f23a4ae81406e1ac9fc1e36d0d6205646"
-  integrity sha512-8nS7kruP3vb2hDcjbfKdDGSC/uYQEBCM6jsIroPx7B7vzCoczjPK0NJ68HoRRsmwwTkFfNrfpFzjDC9jlkFuUw==
+"@reuters-graphics/graphics-svelte-components@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.26.tgz#5f05897172a22c0d0b69293578712a6cba7d5af7"
+  integrity sha512-7MJaQ9marC4BMglEa72hi7hYB0I60nUBbpll2lohlC7Pvvy+ewnqo73Sz5ZuabbP1tm9whbbcYNk8VJPHOMg1A==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
     "@fortawesome/free-solid-svg-icons" "^5.15.3"
     "@reuters-graphics/style-theme-eisbaer" "^0.3.5"
+    "@sveltejs/svelte-scroller" "^2.0.7"
     classnames "^2.3.1"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
@@ -1387,6 +1388,11 @@
     cheap-watch "^1.0.4"
     sade "^1.7.4"
     vite "^2.5.7"
+
+"@sveltejs/svelte-scroller@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@sveltejs/svelte-scroller/-/svelte-scroller-2.0.7.tgz#1d20bced6d101efe623cbd5b7242cbcbef11f124"
+  integrity sha512-GuVePK4S0ubUJVYw2ixO1/8AVa792rNlhORXLeb2z7JHRKTqxOvg8Ye7sb4nZry/stgZEOlCpDV9qJeqHQKesw==
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.24":
   version "1.0.0-next.24"

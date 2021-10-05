@@ -1,22 +1,28 @@
 <script>
+  // Content from your Google doc
   import content from '$locales/en/content.json';
-  import { apdate } from 'journalize';
-  import marked from 'marked';
 
+  // Reuters Graphics components lib (see below)
   import {
     BodyText,
     Image,
     EndNotes,
     Headline,
+    Ai2svelte,
+    Scroller,
   } from '@reuters-graphics/graphics-svelte-components';
-  import Chart from './Chart.svelte';
-  console.log(content);
+
+  // Other dependencies
+  import { apdate } from 'journalize';
+  import marked from 'marked';
+  import { fetchComponent, makeScrollerSteps } from '$utils/dynamicComponents';
+
+  export let embedded = false;
 </script>
 
 <article class="container-fluid">
   <!--
     This Headline and other components are part of our components library.
-
     📚 Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/
   -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
@@ -34,7 +40,7 @@
     </div>
   </Headline>
 
-  <!-- Looping through you Gdoc blocks... -->
+  <!-- Looping through your Google doc blocks... -->
   {#each content.blocks as block}
     <!-- Text block -->
     {#if block.Type === 'text'}
@@ -49,17 +55,55 @@
         wider
       />
 
-      <!-- Graphic block -->
-    {:else if block.Type === 'graphic'}
-      <Chart
-        title="{block.Title}"
-        chatter="{block.Chatter}"
-        source="{block.Source}"
-        note="{block.Note}"
-        size="{block.Size}"
-      />
+      <!-- Ai2svelte block -->
+    {:else if block.Type === 'ai2svelte'}
+      {#await fetchComponent(block.ComponentName)}
+        <div></div>
+      {:then component}
+        <Ai2svelte
+          AiGraphic="{component}"
+          id="{block.ComponentName}"
+          size="{block.Size}"
+        >
+          <div slot="title" class="title">
+            {#if block.Title}<h4>{block.Title}</h4>{/if}
+            {#if block.Chatter}<p>{block.Chatter}</p>{/if}
+          </div>
+          <aside slot="notes">
+            {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
+            {#if block.Source}<p class="source">Source: {block.Source}</p>{/if}
+          </aside>
+        </Ai2svelte>
+      {:catch error}
+        {console.error(
+          `Error fetching component: ./ai2svelte/${block.ComponentName}.svelte`,
+          error
+        )}
+      {/await}
+
+      <!-- Scroller block -->
+    {:else if block.Type === 'ai-scroller' && !embedded}
+      {#await makeScrollerSteps(block.steps)}
+        <div></div>
+      {:then steps}
+        <Scroller
+          steps="{steps}"
+          backgroundSize="{block.BackgroundSize}"
+          foregroundPosition="{block.ForegroundPosition}"
+          id="{block.ID}"
+        />
+      {:catch error}
+        {console.error('Error making steps for scroller', error)}
+      {/await}
+
+      <!-- ?? -->
+    {:else}
+      {console.warn(`Unknown block type: ${block.Type}`)}
     {/if}
   {/each}
 
   <EndNotes text="{content.EndNotes}" />
 </article>
+
+<style lang="scss">
+</style>
