@@ -39,8 +39,8 @@
     "@reuters-graphics/graphics-kit-publisher": "^0.1.1",
     "@reuters-graphics/style-ai-templates": "latest",
     "@rollup/plugin-dsv": "^2.0.1",
-    "@sveltejs/adapter-static": "1.0.0-next.19",
-    "@sveltejs/kit": "1.0.0-next.169",
+    "@sveltejs/adapter-static": "1.0.0-next.20",
+    "@sveltejs/kit": "1.0.0-next.180",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.24.0",
     "eslint-plugin-svelte3": "^3.2.1",
@@ -51,9 +51,8 @@
     "prettier": "^2.3.2",
     "prettier-plugin-svelte": "^2.4.0",
     "sass": "^1.0.0",
-    "svelte": "^3.42.5",
-    "svelte-preprocess": "^4.9.4",
-    "vite": "^2.5.8"
+    "svelte": "^3.43.1",
+    "svelte-preprocess": "^4.9.4"
   },
   "engines": {
     "node": ">= 14.16.0"
