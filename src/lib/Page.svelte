@@ -108,4 +108,7 @@
 </article>
 
 <style lang="scss">
+  article.container-fluid {
+    overflow-x: hidden;
+  }
 </style>
