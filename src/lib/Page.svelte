@@ -82,7 +82,7 @@
       {/await}
 
       <!-- Scroller block -->
-    {:else if block.Type === 'ai-scroller' && !embedded}
+    {:else if block.Type === 'ai-scroller'}
       {#await makeScrollerSteps(block.steps)}
         <div></div>
       {:then steps}
@@ -91,6 +91,8 @@
           backgroundSize="{block.BackgroundSize}"
           foregroundPosition="{block.ForegroundPosition}"
           id="{block.ID}"
+          embedded="{embedded}"
+          stackBackground="{block.StackBackground}"
         />
       {:catch error}
         {console.error('Error making steps for scroller', error)}
