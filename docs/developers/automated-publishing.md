@@ -46,4 +46,11 @@ All metadata for your project **must** already be filled in before automatically
 
 If you're going to run get-google as part of your workflow you'll need to add the Google credentials file to your repo and set the `GOOGLE_APPLICATION_CREDENTIALS_PATH` environment variable in your workflow config to the path to that file (relative to the root of your project). You can get our Google credentials file from the team 1password account.
 
-**Remember, you must keep this repo PRIVATE.**
+#### 🔒 Security
+
+Google credentials are a secret and must be handled sensitively when added to your project.
+
+You must:
+
+1. Keep your project repo **PRIVATE**.
+2. Add a `secret` suffix to the Google credentials file in your project, e.g., `google-creds.secret.json`, which will exclude this file when the project archive is made for clients.
