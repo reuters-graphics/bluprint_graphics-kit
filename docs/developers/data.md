@@ -9,6 +9,8 @@ Data drives pages. This guide outlines how to work with different types of data,
 - [Static vs. dynamic data](#static-vs-dynamic-data)
 - [Data file types](#data-file-types)
 - [Where to put your static data](#where-to-put-your-static-data)
+  - [Remote static data](#what-if-my-static-data-lives-somewhere-else)  
+- [Fetching dynamic data](#fetching-dynamic-data)
 
 ## Static vs. dynamic data
 
@@ -64,4 +66,77 @@ Now you can import your data just like a regular module in the component that us
 {#each data as d}
   <div style="width: {d.value}%; background: {d.colour};">{d.name}</div>
 {/each}
+```
+
+### What if my static data lives somewhere else?
+
+If your static data lives somewhere other than in your project, then you can use Sveltekit's built-in [load](https://kit.svelte.dev/docs#loading) function to import your data and then pass it to the components that need it through props.
+
+To do that, we're going to go to the component in the `pages/` directory that defines the page that needs the data and export a load function that returns the data in a props object we can then pass to any components that need it:
+
+```svelte
+<!-- pages/index.svelte -->
+<script>
+import Page from '$lib/Page.svelte';
+// ...
+
+// 👇 Define a prop for this data
+export let myData;
+</script>
+
+<!-- 👇 Add this script tag. Note the context="module"! -->
+<script context="module">
+// Export an async load function
+export async function load({ fetch }) {
+  const url = `https://graphics.reuters.com/path/to/my.json`;
+  const res = await fetch(url);
+
+  if (res.ok) {
+    return {
+      props: {
+        myData: await res.json(),
+      }
+    };
+  }
+
+  // Oops!
+  return {
+    status: res.status,
+    error: new Error(`Could not load ${url}`),
+  };
+}
+</script>
+
+<!-- 👇 Pass our data to the Page component, which can in turn pass it
+to any other components that need this data! -->
+<Page myData={myData} />
+```
+
+
+## Fetching dynamic data
+
+If your data is dynamic, you can use the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get it.
+
+Here's an example:
+
+```svelte
+<!-- mychart/index.svelte -->
+<script>
+// Create a variable for your data...
+let myData;
+
+// ... and an async function to get it...
+const fetchMyData = async() => {
+  const resp = await fetch('http://graphics.thomsonreuters.com/data/2021/biden-approval-tracker/approval.json');
+  const data = await resp.json();
+  myData = data;
+};
+
+// ... then call that function!
+fetchMyData();
+</script>
+
+{#if myData}
+  <!-- Do something with your data once it's been fetched! -->
+{/if}
 ```
