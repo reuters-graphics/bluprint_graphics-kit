@@ -38,7 +38,9 @@ In general, we recommend converting your data to JSON, we'll talk more about why
 
 ## Where to put your static data
 
-You might be tempted to put static data with other media files like images or fonts and then fetch them in your code, but **don't**.
+You might be tempted to put static data with other media files like images or fonts and then fetch them in your code...
+
+**But don't!**
 
 If your data is indeed static, then it's actually far better to import your data directly into your components because the content that data makes can then be baked out into the page when we build it, which means faster load times and better for accessibility and SEO.
 
@@ -141,4 +143,4 @@ fetchMyData();
 {/if}
 ```
 
-**Remember**, because we have to wait for the async fetch to get your data, any content made from this data won't be baked out into the page. That means your component will be slower to load and not as accessible or SEO friendly. If your data is static, use one of the patterns above. If not, then that slowness is the cost of keeping your page up to date.
+**Remember**, because we have to wait for the async function to fetch your data, any content made from this data won't be baked out into the page. That means your component will be slower to load and not as accessible or SEO friendly. If your data is static, use one of the patterns above. If not, then that slowness is the cost of keeping your page up-to-date.
