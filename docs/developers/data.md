@@ -11,6 +11,7 @@ Data drives pages. This guide outlines how to work with different types of data,
 - [Where to put your static data](#where-to-put-your-static-data)
   - [Remote static data](#what-if-my-static-data-lives-somewhere-else)  
 - [Fetching dynamic data](#fetching-dynamic-data)
+- [Preparing static data](#preparing-static-data)
 
 ## Static vs. dynamic data
 
@@ -144,3 +145,66 @@ fetchMyData();
 ```
 
 **Remember**, because we have to wait for the async function to fetch your data, any content made from this data won't be baked out into the page. That means your component will be slower to load and not as accessible or SEO friendly. If your data is static, use one of the patterns above. If not, then that slowness is the cost of keeping your page up-to-date.
+
+## Preparing static data
+
+So what if you need to _prepare_ your static data? Say, you need to fetch it from an API or filter it down to just the data you need on the page or otherwise convert it from another format to JSON.
+
+Your best bet is to write a simple script in Node to do what you need and save the resulting JSON in your project.
+
+A good place to put such scripts is the `bin/` folder in your project.
+
+So let's go through an example. Make a `.cjs` file (for CommonJS Node script) in your bin directory:
+
+```bash
+bin/
+  scrapeData.cjs
+```
+
+... And let's say that script calls a simple API and parses the data.
+
+```node
+const axios = require('axios');
+const path = require('path');
+const fs = require('fs');
+
+const fetchData = async () => {
+  const resp = await axios.get('https://some.api');
+  return resp.data;
+};
+
+const filterData = (data) => {
+  return data.filter(d => d.active);
+}
+
+const writeData = (data) => {
+  const outputPath = path.join(process.cwd(), 'src/lib/mychart/data.json');
+  fs.writeFileSync(outputPath, JSON.stringfy(data));
+}
+
+const getData = async() => {
+  const rawData = await fetchData();
+  const filteredData = filterData(rawData);
+  writeData(filteredData);
+}
+```
+
+Now you can call that file from the command line with:
+
+```bash
+node ./bin/scrapeData.cjs
+```
+
+**BONUS**: Let's say you want your script to run and refresh your data everytime before you publish.
+
+You can add it to the front of the `upload` script in `package.json` like this:
+
+```json
+{
+  "scripts": {
+    "upload": "node ./bin/scrapeData.cjs && npm-run-all publish:upload"
+  }
+}
+```
+
+Now your script will refresh your data everytime before you upload your page to the RNGS server.
