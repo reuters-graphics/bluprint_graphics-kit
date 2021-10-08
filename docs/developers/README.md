@@ -10,6 +10,7 @@ These docs describe how to use the [Reuters graphics kit](https://github.com/reu
 - **[Making pages](pages.md)**
 - **[Styling pages](styles.md)**
 - **[Working with media files](media.md)** Using images, fonts and other static files
+- **[Working with data](data.md)** Using data files
 - **[Google docs and sheets](google-docs-and-sheets.md)**
 - **[Translating pages](translation.md)**
 - **[AI graphics](ai.md)** Using ai2svelte for graphics
