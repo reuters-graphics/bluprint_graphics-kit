@@ -62,7 +62,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@reuters-graphics/categorical-bar-chart": "https://github.com/reuters-graphics/chart-module-categorical-bar-chart.git",
-    "@reuters-graphics/graphics-svelte-components": "^0.1.28",
+    "@reuters-graphics/graphics-svelte-components": "^0.1.34",
     "@reuters-graphics/style-theme-eisbaer": "^0.3.5",
     "classnames": "^2.3.1",
     "journalize": "^2.5.1",
