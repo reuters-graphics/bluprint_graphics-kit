@@ -31,6 +31,7 @@ export default {
           return null;
         },
       ],
+      quietDeps: true,
     },
     postcss: {
       plugins: [autoprefixer],
