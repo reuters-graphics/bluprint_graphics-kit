@@ -1,6 +1,8 @@
+# Project files
+
 This directory is a place to keep working files that don't need to be published with your project.
 
-That includes things like Adobe Illustrator templates or large media files.
+That includes things like Adobe Illustrator files or large media files.
 
 By default, anything in this directory **WILL NOT** be packaged to clients who want to customize your code.
 
