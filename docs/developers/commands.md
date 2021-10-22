@@ -6,13 +6,7 @@
 # Commands
 
 - [Development and publishing commands](#development-and-publishing-commands)
-  - [Starting the development server](#starting-the-development-server)
-  - [Build and publish preview pages to AWS](#build-and-publish-preview-pages-to-aws)
-  - [Build and upload your project to the RNGS server](#build-and-upload-your-project-to-the-rngs-server)
-  - [Publish your project in the RNGS server](#publish-your-project-in-the-rngs-server)
 - [Google docs](#google-docs)
-  - [Get data from Google docs and sheets](#get-data-from-google-docs-and-sheets)
-  - [Lock data schema for Google data](#lock-data-schema-for-google-data)
 
 ## Development and publishing commands
 
