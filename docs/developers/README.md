@@ -8,9 +8,9 @@ These docs describe how to use the [Reuters graphics kit](https://github.com/reu
 - **[What's in it?](directory.md)** Directory structure
 - **[Basic commands](commands.md)** Dev, preview, publish, etc.
 - **[Making pages](pages.md)**
-- **[Building with components](components.md)**
-- **[Using Reuters Graphics Components](graphics-components.md)**
-- **[Writing styles](styles.md)**
+- **[Building with components](components.md)** Thinking about the basic structure of your page
+- **[Using Reuters Graphics Components](graphics-components.md)** Pre-written components to fast-track your build
+- **[Writing styles](styles.md)** SCSS
 - **[Working with media files](media.md)** Using images, fonts and other static files
 - **[Working with data](data.md)** Importing, fetching and using data
 - **[Google docs and sheets](google-docs-and-sheets.md)**
