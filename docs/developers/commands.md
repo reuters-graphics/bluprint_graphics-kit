@@ -16,25 +16,25 @@
 
 ## Development and publishing commands
 
-### Starting the development server
+🚀 Start the development server
 
 ```
 yarn start
 ```
 
-### Build and publish preview pages to AWS
+👀 Build and publish preview pages to AWS
 
 ```
 yarn preview
 ```
 
-### Build and upload your project to the RNGS server
+⏫ Build and upload your project to the RNGS server
 
 ```
 yarn upload
 ```
 
-### 🍻 Publish your project in the RNGS server
+🍻 Publish your project in the RNGS server
 
 ```
 yarn pub
