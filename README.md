@@ -27,7 +27,9 @@ mkdir my-project && cd my-project
 bluprint start
 ```
 
-Check out the README in your created project for details on developing.
+## 📚 Developer Docs
+
+Read more in the [developer docs](docs/developers/README.md) about how to use this rig to create graphics pages.
 
 ## When to use this
 
@@ -42,6 +44,4 @@ Some projects built with this rig:
 - [Hot and humid Olympic Summer](https://graphics.reuters.com/OLYMPICS-2020/SUMMER-HEAT/bdwvkogrzvm/index.html) (standard graphic page + client embed)
 - [German election polling tracker](https://graphics.reuters.com/GERMANY-ELECTION/POLLS/jnpweekxypw/) (etc.)
 
-## 📚 Developer Docs
 
-Read more in the [developer docs](docs/developers/README.md) about how to use this rig to create graphics pages.
