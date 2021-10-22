@@ -7,7 +7,6 @@
 - [Code editor](#code-editor)
 - [Node](#node)
 - [Svelte](#svelte)
-- [Components](#components)
 - [ES modules](#es-modules)
 
 ## Code editor
@@ -33,10 +32,6 @@ n 14.16.0
 ## Svelte
 
 This rig uses [Svelte](https://svelte.dev/), and you'll likely want to understand a few basics before diving in. Check out the [official tutorial](https://svelte.dev/tutorial/basics) for an intro to the framework.
-
-## Components
-
-You may want to have a look at some of the pre-built [graphics Svelte components](https://reuters-graphics.github.io/graphics-svelte-components/) we use out-of-the-box.
 
 ## ES modules
 
