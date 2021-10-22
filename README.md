@@ -31,17 +31,19 @@ bluprint start
 
 Read more in the [developer docs](docs/developers/README.md) about how to use this rig to create graphics pages.
 
-## When to use this
+## <img src="https://static.wikia.nocookie.net/joke-battles/images/3/38/Source.gif/revision/latest?cb=20171214063625" height="30" /> Dev status
 
-> **WARNING:** This rig is still in active development and is largely based on other people's software, which is also still in beta. You are free to use it for projects but assume you will likely need support from me (Jon) before you publish, so build in a little time for troubleshooting, especially close to deadline.
+This kit is **now ready for active use**, and we are starting the process of sunsetting the [current, Webpack-based rig](https://github.com/reuters-graphics/bluprint_graphics-rig).
 
-The rig improves on our current [graphics rig](https://github.com/reuters-graphics/bluprint_graphics-rig/) by letting you build _multiple_ pages and embeds. It's well-suited for multipage graphics or projects with graphics components that make sense as individual embeds for media clients. It's also perfect for building simple projects with Svelte.
+That said, there may still be issues as [SvelteKit continues to work towards a 1.0 release](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md) and as we continue to develop the boilerplate projects start from.
 
-Some projects built with this rig:
+**If this is your first time using this kit**, please build in a little extra time around your deadline in case you need any help when building, uploading and publishing your project.
 
-- [Biden approval tracker](https://graphics.reuters.com/USA-BIDEN/POLL/nmopagnqapa/) (single dotcom page, multiple embeds for clients)
-- [Euros 2020](https://graphics.reuters.com/SOCCER-EURO/yzdvxmjjnpx/) (multiple dotcom pages)
-- [Hot and humid Olympic Summer](https://graphics.reuters.com/OLYMPICS-2020/SUMMER-HEAT/bdwvkogrzvm/index.html) (standard graphic page + client embed)
-- [German election polling tracker](https://graphics.reuters.com/GERMANY-ELECTION/POLLS/jnpweekxypw/) (etc.)
+☎️ If you do need help, reach out to one of our developers:
 
+- Jon McClure
+- Minami Funakoshi
+- Fielding Cage
+
+🏷️ If you find a bug, want to see a feature or would like more info documented, please [file an issue](https://github.com/reuters-graphics/bluprint_graphics-kit/issues) on this repo.
 
