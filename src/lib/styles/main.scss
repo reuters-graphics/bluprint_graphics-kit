@@ -7,11 +7,11 @@ just the elements you mean to style.
 
 This stylesheet *is* a good place *if* you're writing styles that will be shared across several components.
 
-You can import and use this partial in your Svelte components like this:
+You can import and use this stylesheet in your Svelte components like this:
 
 <style lang="scss">
   :global{
-    @import './styles/main';
+    @import './styles/main.scss';
   }
 </style>
 **/
