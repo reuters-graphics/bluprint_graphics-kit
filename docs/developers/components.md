@@ -2,10 +2,11 @@
 
 [🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Building with components**
 
-- [What's a component?](#whats-a-component)
-- [Structuring your component's directory](#structuring-your-components-directory)
 
 # Building with components
+
+- [What's a component?](#whats-a-component)
+- [Structuring your component's directory](#structuring-your-components-directory)
 
 ## What's a "component"?
 
