@@ -1,8 +1,8 @@
 ![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
 
-[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Styling pages**
+[🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Writing styles**
 
-# Styles
+# Writing styles
 
 There are two ways to write styles in this kit. The first -- _and preferred_ -- way is to write styles _in_ your Svelte components. The second is to create and import a global stylesheet.
 
