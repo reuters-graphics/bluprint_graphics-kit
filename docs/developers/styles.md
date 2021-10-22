@@ -68,7 +68,7 @@ Here's an example:
 
 Notice we can nest the `:global` operator _inside_ a containing element, which will scope our global styles so they don't conflict with any other elements on the page.
 
-If you inspect the elements, Svelte will create styles for those rules like this:
+If you inspect the elements from this component in your browser, Svelte will create styles for those rules like this:
 
 ```css
 div.my-container.abc123xyz789 p {
