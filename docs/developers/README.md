@@ -6,7 +6,7 @@ These docs describe how to use the [Reuters graphics kit](https://github.com/reu
 
 - **[Preqs](prerequisites.md)** What you need to know before jumping in
 - **[What's in it?](directory.md)** Directory structure
-- **[Basic commands](commands.md)** Dev, preview, publish and more
+- **[Basic commands](commands.md)** Dev, preview, publish, etc.
 - **[Making pages](pages.md)**
 - **[Styling pages](styles.md)**
 - **[Working with media files](media.md)** Using images, fonts and other static files
