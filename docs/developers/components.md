@@ -13,7 +13,7 @@
 
 If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of components.
 
-Components can be as big or as little as you want then, but when you're just starting out, it's useful to think of components as just the _separable parts of your page_.
+While you _could_ write your page as a single, massive component, when you're just starting out, it's useful to think of components as the _separable parts of your page_.
 
 So, for example, a typical graphics page could be composed of the following components:
 - Your headline
@@ -21,7 +21,7 @@ So, for example, a typical graphics page could be composed of the following comp
 - A map
 - A chart
 
-Some of those components may be used several times on your page -- for example, text -- while others are a once-off -- your headline.
+Some of those components may be used several times on your page (text) while others are a once-off (headline).
 
 If you think about your page outlined in components, then, your page may look like this:
 
