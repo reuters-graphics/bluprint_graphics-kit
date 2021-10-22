@@ -10,7 +10,6 @@
     Headline,
     Ai2svelte,
     Scroller,
-    // LottieScroller,
   } from '@reuters-graphics/graphics-svelte-components';
 
   // Other dependencies
@@ -98,20 +97,6 @@
       {:catch error}
         {console.error('Error making steps for scroller', error)}
       {/await}
-
-      <!-- Lottie scroll block -->
-      <!-- {:else if block.Type === 'lottie-scroller'}
-      <LottieScroller
-        id="{block.ID}"
-        steps="{block.steps}"
-        playbackConst="{block.PlaybackConst}"
-        widthRatio="{block.WidthRatio}"
-        fullFrame="{block.FullFrame}"
-        includeSmall="{block.IncludeSmall}"
-        smallWidthRatio="{block.SmallWidthRatio}"
-      />
-
-       -->
       <!-- ?? -->
     {:else}
       {console.warn(`Unknown block type: ${block.Type}`)}
