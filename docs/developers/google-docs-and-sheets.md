@@ -9,3 +9,22 @@ The kit uses the `get-google-docs` command in our [graphics-bin](https://github.
 The config file is located at the root of the project in `google.json`. Read more in [graphics-bin's docs](https://github.com/reuters-graphics/graphics-bin/blob/master/docs/get-google-docs.md) about configuring Google docs and sheets.
 
 On starting a new project, the kit will create a basic Google doc connected to this project and configure it to download to `locales/en/content.json`.
+
+### Google docs config
+
+You Google docs config file should include the ID from the Google doc or sheet and the path to where you'd like data from those docs to be written to locally.
+
+```javascript
+{
+  "docs": {
+    "locales/en/content.json": "XXXX_Google_doc_ID_XXXX"
+  },
+  "sheets": {
+    "src/lib/components/MyChart/data.json": "XXXX_Google_sheet_ID_XXXX"
+  }
+}
+```
+
+To find the ID of you doc or sheet, look for a long string of random characters in the URL of the file in Google Drive. For example:
+
+<https://docs.google.com/spreadsheets/d/>**1h1O8jPScxrUg-xmolKGSPzaePgyG3zbBkAWiijEpi0c**/edit
