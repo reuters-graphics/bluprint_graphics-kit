@@ -7,6 +7,7 @@
 
 - [What's a component?](#whats-a-component)
 - [Structuring your component's directory](#structuring-your-components-directory)
+- [Driving components with Google docs](#driving-components-with-google-docs)
 
 ## What's a "component"?
 
@@ -20,7 +21,7 @@ So, for example, a typical graphics page could be composed of the following comp
 - A map
 - A chart
 
-Some of those components may be used several times on your page -- for example, text -- while others are a once off -- your headline.
+Some of those components may be used several times on your page -- for example, text -- while others are a once-off -- your headline.
 
 If you think about your page outlined in components, then, your page may look like this:
 
@@ -69,3 +70,40 @@ Now you can tie your components together in `Page.svelte`:
 <Chart />
 <BodyText />
 ```
+
+## Driving components with Google docs
+
+In practice, we use Google docs to layout our pages and supply text to our components, so when tying together your components, you may want to make them part of the block structure pre-written in `Page.svelte`. For example:
+
+```svelte
+<script>
+  // Content from your Google doc
+  import content from '$locales/en/content.json';
+  // Pre-made components
+  
+  import Headline from './components/Headline/index.svelte';
+  import BodyText from './components/BodyText/index.svelte';
+  import Chart from './components/Chart/index.svelte';
+  import Map from './components/Map/index.svelte';
+</script>
+
+<Headline hed="{content.Hed}" />
+
+{#each content.blocks as block}
+
+  {#if block.Type === 'text'}
+    <BodyText text="{block.Text}" />
+
+  {:else if block.Type === 'chart'}
+    <Chart title="{block.Title}" note="{block.Note}" />
+  
+  {:else if block.Type === 'map'}
+    <Map title="{block.Title}" note="{block.Note}" />
+
+  {:else}
+    <div />
+  {/if}
+{/each}
+```
+
+This is a simplified example of how you can use components. Read on in these docs for more details on how to build up your graphics page.
