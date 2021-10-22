@@ -36,7 +36,7 @@ Add a `lang` attibute to any style tags in your svelte components to use SCSS sy
 
 ### Scoping and the `:global` SCSS operator
 
-Styles you write in your components are scoped to just the elements in your component, and Svelte will disregard any rules you write that don't correspond to an element Svelte can detect in your component.
+Styles you write in your components are scoped to _just the elements in your component_, and Svelte will disregard any rules you write that don't correspond to an element Svelte can detect.
 
 So if your component imports another JS library or uses the [`@html` tag](https://svelte.dev/tutorial/html-tags) to create any elements that you want to style, you should use the SCSS `:global` operator to make sure Svelte doesn't ignore those styles.
 
