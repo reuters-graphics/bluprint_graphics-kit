@@ -40,7 +40,7 @@
     </div>
   </Headline>
 
-  <!-- Looping through your Google doc blocks... -->
+  <!-- 🔁 Looping through your Google doc blocks... -->
   {#each content.blocks as block}
     <!-- Text block -->
     {#if block.Type === 'text'}
