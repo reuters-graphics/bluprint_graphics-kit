@@ -8,7 +8,7 @@
 
 Most metadata for your project is stored in a `reuters` key in `package.json`.
 
-The kit will prompt you for essential metadata when you first run `yarn upload` and save it in the appropriate structure.
+The kit will prompt you for essential metadata when you first run `yarn upload` and save it in the appropriate structure. If you need to edit any metadata after your first upload, find it in `package.json` and edit it directly there before uploading back to the RNGS server.
 
 #### ↩️ Restarting a graphics pack
 
