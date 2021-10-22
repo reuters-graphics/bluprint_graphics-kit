@@ -54,8 +54,7 @@ Here's an example:
 
 <style lang="scss">
   div.my-container {
-    :global {
-      // 👈
+    :global { // 👈
       p {
         color: grey;
         span {
