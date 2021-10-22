@@ -7,7 +7,7 @@
 
 ### How do I use non-Svelte stuff in Svelte?
 
-Svelte, like all modern JS frameworks, can seem pretty greedy, as though you need to do _everything_ in Svelte. And while there are big advantages to doing _as much as you can_ in Svelte -- including site performance, code organization and lots more -- there's also always a simple pattern you can use as an escape hatch to use non-Svelte libraries.
+Svelte, like all modern JS frameworks, can seem pretty greedy, as though you need to do _everything_ in Svelte. And while there are big advantages to doing _as much as you can_ in Svelte -- including site performance, code organization and lots more -- there's also always a simple pattern you can use as an escape hatch to work with non-Svelte libraries and APIs.
 
 The general idea is to let Svelte create a _container_ and then hook into that container after it's mounted with your third party library and fill it in.
 
