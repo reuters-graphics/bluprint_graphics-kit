@@ -29,7 +29,7 @@ bluprint start
 
 ## 📚 Developer Docs
 
-Read more in the [developer docs](docs/developers/README.md) about how to use this rig to create graphics pages.
+Read more in the **[developer docs](docs/developers/README.md)** about how to use this rig to create graphics pages.
 
 ## <img src="https://static.wikia.nocookie.net/joke-battles/images/3/38/Source.gif/revision/latest?cb=20171214063625" height="30" /> Dev status
 
