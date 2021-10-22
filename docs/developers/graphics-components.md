@@ -28,7 +28,7 @@ Most graphics components can be customized through [props](https://svelte.dev/tu
 
 ### Slots
 
-But one important way our components are written to offer you even more flexibility is through [slots](https://svelte.dev/tutorial/slots).
+One important way our components are written to offer you even more flexibility is through [slots](https://svelte.dev/tutorial/slots).
 
 Be sure to check out the [official tutorial](https://svelte.dev/tutorial/slots) to understand how slots -- and especially, [_named_ slots](https://svelte.dev/tutorial/named-slots) -- work, but let's also go through a very common example to see how much power slots give you to customize the elements and styles in the component.
 
