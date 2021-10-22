@@ -1,0 +1,17 @@
+/**
+This is a global SCSS stylesheet. 
+
+✋ BEFORE YOU USE THIS...
+Remember, it's better to write styles in your components so they'll be safely scoped to
+just the elements you mean to style.
+
+This stylesheet *is* a good place *if* you're writing styles that will be shared across several components.
+
+You can import and use this partial in your Svelte components like this:
+
+<style lang="scss">
+  :global{
+    @import './styles/main';
+  }
+</style>
+**/
