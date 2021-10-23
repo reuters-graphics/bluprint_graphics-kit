@@ -5,6 +5,7 @@
 These docs describe how to use the [Reuters graphics kit](https://github.com/reuters-graphics/bluprint_graphics-kit) to build graphics pages and embeddables. They're designed for Reuters Graphics editors, but can also be used by clients who would like to customize projects built with the graphics kit.
 
 - **[Preqs](prerequisites.md)** What you need to know before jumping in
+- **[Quickstart](quickstart.md)**
 - **[What's in it?](directory.md)** Directory structure
 - **[Basic commands](commands.md)** Dev, preview, publish, etc.
 - **[Making pages](pages.md)**
