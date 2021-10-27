@@ -25,7 +25,7 @@ This doc includes some examples of how basic things you may have done in the pre
 ```
 
 ##### Svelte
-[Read more](https://svelte.dev/tutorial/each-blocks)
+[📖 Read the docs](https://svelte.dev/tutorial/each-blocks)
 
 ```svelte
 <ul>
@@ -48,7 +48,7 @@ This doc includes some examples of how basic things you may have done in the pre
 ```
 
 ##### Svelte
-[Read more](https://svelte.dev/tutorial/if-blocks)
+[📖 Read the docs](https://svelte.dev/tutorial/if-blocks)
 
 ```svelte
 {#if user.active}
