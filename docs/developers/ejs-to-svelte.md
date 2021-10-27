@@ -42,7 +42,7 @@ This doc includes some examples of how basic things you may have done in the pre
 ```ejs
 <% if (user.active) { %>
   <p>Active user</p>
-<% else { %>
+<% } else { %>
   <p>Inactive user</p>
 <% }; %>
 ```
