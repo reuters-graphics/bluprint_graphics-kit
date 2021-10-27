@@ -25,13 +25,13 @@ Some of those components may be used several times on your page (text) while oth
 
 If you think about your page outlined in components, then, your page may look like this:
 
-```svelte
-<Headline />
-<BodyText />
-<Map />
-<BodyText />
-<Chart />
-<BodyText />
+```bash
++ Headline
++ BodyText
++ Map
++ BodyText
++ Chart
++ BodyText
 ```
 
 ## Structuring your component's directory
