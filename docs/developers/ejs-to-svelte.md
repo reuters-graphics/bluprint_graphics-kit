@@ -10,7 +10,7 @@ This doc includes some examples of how basic things you may have done in the pre
 > 💡 **Pro tip:** You can install [Svelte snippets](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-svelte-snippets) in VSCode, which will suggest simple code blocks as you write and should help you while you're learning.
 
 - [For loops](#for-loops)
-- [If/else](#if-else)
+- [If/else](#ifelse)
 
 ## For loops
 
