@@ -52,8 +52,8 @@ This doc includes some examples of how basic things you may have done in the pre
 
 ```svelte
 {#if user.active}
-	<p>Active user</p>
+  <p>Active user</p>
 {:else}
-	<p>Inactive user</p>
+  <p>Inactive user</p>
 {/if}
 ```
