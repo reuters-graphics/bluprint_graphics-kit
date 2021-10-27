@@ -11,6 +11,7 @@ This doc includes some examples of how basic things you may have done in the pre
 
 - [For loops](#for-loops)
 - [If/else](#ifelse)
+- [Importing data](#importing-data)
 
 ## For loops
 
@@ -56,4 +57,24 @@ This doc includes some examples of how basic things you may have done in the pre
 {:else}
   <p>Inactive user</p>
 {/if}
+```
+
+## Importing data
+
+##### EJS
+
+```ejs
+<% const content = require('./myData.json'); %>
+
+<h1><%= content.title %></h1>
+```
+
+##### Svelte
+
+```svelte
+<script>
+import content from './myData.json';
+</script>
+
+<h1>{ content.title }</h1>
 ```
