@@ -40,7 +40,7 @@ This doc includes some examples of how basic things you may have done in the pre
 ##### EJS
 
 ```ejs
-<% if (user.active) { %>
+<% if (user.status === 'active') { %>
   <p>Active user</p>
 <% } else { %>
   <p>Inactive user</p>
@@ -51,7 +51,7 @@ This doc includes some examples of how basic things you may have done in the pre
 [📖 Read the docs](https://svelte.dev/tutorial/if-blocks)
 
 ```svelte
-{#if user.active}
+{#if (user.status === 'active')}
   <p>Active user</p>
 {:else}
   <p>Inactive user</p>
