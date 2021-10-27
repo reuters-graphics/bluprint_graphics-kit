@@ -79,8 +79,8 @@ In practice, we usually use Google docs to outline and layout our pages and to s
 <script>
   // Content from your Google doc
   import content from '$locales/en/content.json';
-  // Pre-made components
   
+  // Your components
   import Headline from './components/Headline/index.svelte';
   import BodyText from './components/BodyText/index.svelte';
   import Chart from './components/Chart/index.svelte';
