@@ -5,5 +5,4 @@
 
 # Quickstart
 
-https://user-images.githubusercontent.com/2772078/138872099-d91168d1-6de2-4105-98d0-0eb0635dfa05.mp4
-
+[![YouTube video](https://img.youtube.com/vi/XIwwNGQxgY4/0.jpg)](https://www.youtube.com/watch?v=XIwwNGQxgY4)
