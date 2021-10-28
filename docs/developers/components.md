@@ -36,6 +36,9 @@ If you think about your page outlined in components, then, your page may look li
 + BodyText
 ```
 
+## Why components?
+![](../../src/statics/images/docs-ai-ps/reusability.jpg "Reusability of code")
+
 ## Structuring your component's directory
 
 Once you know what components your page needs, it's a good idea to structure each component in folders within the `lib/` directory:
