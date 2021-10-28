@@ -11,6 +11,8 @@
 
 ## What's a "component"?
 
+![](../src/statics/images/docs-ai-ps "Components are parts of a page")
+
 If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of components.
 
 While you _could_ write your page as a single, massive component, when you're just starting out, it's useful to think of components as the _separable parts of your page_.
