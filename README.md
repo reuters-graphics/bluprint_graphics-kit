@@ -31,7 +31,7 @@ bluprint start
 
 Read more in the **[developer docs](docs/developers/README.md)** about how to use this rig to create graphics pages.
 
-## <img src="https://static.wikia.nocookie.net/joke-battles/images/3/38/Source.gif/revision/latest?cb=20171214063625" height="30" /> Dev status
+## ![loader](https://user-images.githubusercontent.com/2772078/139318716-1ecee1be-a226-4cd5-8e83-f56b8b22e932.gif) Status
 
 This kit is **now ready for active use**, and we are starting the process of sunsetting the [current, Webpack-based rig](https://github.com/reuters-graphics/bluprint_graphics-rig).
 
