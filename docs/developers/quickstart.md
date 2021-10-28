@@ -5,4 +5,25 @@
 
 # Quickstart
 
+#### Watch 🎥 
 [![YouTube video](https://img.youtube.com/vi/XIwwNGQxgY4/0.jpg)](https://www.youtube.com/watch?v=XIwwNGQxgY4)
+
+
+If you haven't already, add this bluprint to your CLI.
+
+```
+bluprint add reuters-graphics/bluprint_graphics-kit
+```
+
+Make a new directory and use the bluprint.
+
+```
+mkdir my-project && cd my-project
+bluprint start
+```
+
+To start the development server, run:
+
+```
+yarn start
+```
