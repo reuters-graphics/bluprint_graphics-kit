@@ -76,6 +76,10 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 <BodyText />
 ```
 
+## Writing a Svelte component
+![](../../src/statics/images/docs-ai-ps/structure-of-a-component.jpg "Structure of a svelte component")
+
+
 ## Driving components with Google docs
 
 In practice, we usually use Google docs to outline and layout our pages and to supply the text to our components. So when tying together your components, you may want to make them part of the block structure pre-written in `Page.svelte`. For example:
