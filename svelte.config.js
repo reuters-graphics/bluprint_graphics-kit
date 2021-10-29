@@ -67,6 +67,11 @@ export default {
     target: '#svelte-app',
     vite: {
       build: { target: 'es2015' },
+      server: {
+        fs: {
+          allow: ['.'],
+        },
+      },
       resolve: {
         alias: {
           $utils: '/src/utils',
