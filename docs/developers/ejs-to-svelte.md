@@ -2,7 +2,6 @@
 
 [🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Transitioning from EJS to Svelte**
 
-
 # Transitioning from EJS to Svelte
 
 This doc includes some examples of how basic things you may have done in the previous rig using EJS can be done in Svelte.
@@ -26,38 +25,10 @@ This doc includes some examples of how basic things you may have done in the pre
 ```
 
 ##### Svelte
+
 [📖 Read the docs](https://svelte.dev/tutorial/each-blocks)
 
-```svelte
-<ul>
-  {#each users as user}
-    <li>{ user.name }</li>
-  {/each}
-</ul>
-```
-
-## If/else
-
-##### EJS
-
-```ejs
-<% if (user.status === 'active') { %>
-  <p>Active user</p>
-<% } else { %>
-  <p>Inactive user</p>
-<% }; %>
-```
-
-##### Svelte
-[📖 Read the docs](https://svelte.dev/tutorial/if-blocks)
-
-```svelte
-{#if (user.status === 'active')}
-  <p>Active user</p>
-{:else}
-  <p>Inactive user</p>
-{/if}
-```
+![](../../src/statics/images/docs-ai-ps/what-is.jpg 'ejs to svelte for each and if else blocks')
 
 ## Importing data
 
@@ -73,8 +44,8 @@ This doc includes some examples of how basic things you may have done in the pre
 
 ```svelte
 <script>
-import content from './myData.json';
+  import content from './myData.json';
 </script>
 
-<h1>{ content.title }</h1>
+<h1>{content.title}</h1>
 ```
