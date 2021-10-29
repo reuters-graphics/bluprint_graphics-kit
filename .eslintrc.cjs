@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['svelte.config.js'],
+  ignorePatterns: ['svelte.config.js', 'docs/**'],
   extends: ['standard'],
   plugins: ['svelte3', '@babel'],
   env: {
