@@ -110,6 +110,8 @@
 <!-- End ai2html - 2021-09-30 14:28 -->
 
 <!-- ai file: step-3.ai -->
+
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
   #g-step-3-box,
   #g-step-3-box .g-artboard {
