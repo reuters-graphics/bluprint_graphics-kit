@@ -77,6 +77,11 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 ```
 
 ## Writing a Svelte component
+
+In the spirit of dividing your page into "parts" called components, svelte goes a step further.
+Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
+Those styles can be local: specifc to that component *only*, as well as applied globally.
+
 ![](../../src/statics/images/docs-ai-ps/structure-of-a-component.jpg "Structure of a svelte component")
 
 
