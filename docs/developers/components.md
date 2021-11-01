@@ -9,6 +9,13 @@
 - [Structuring your component's directory](#structuring-your-components-directory)
 - [Driving components with Google docs](#driving-components-with-google-docs)
 
+## Watch 🎥 
+
+> **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up. It's a bit longer, but if you're coming in fresh to Svelte and the concept of components, this is as good a spot as any to start.
+
+[![YouTube video](https://img.youtube.com/vi/VTtDTiuY2w4/0.jpg)](https://www.youtube.com/watch?v=VTtDTiuY2w4)
+
+
 ## What's a "component"?
 
 ![](../../src/statics/images/docs-ai-ps/what-is.jpg "Components are parts of a page")
