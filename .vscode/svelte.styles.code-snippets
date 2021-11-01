@@ -4,7 +4,13 @@
 		"prefix": "scss",
 		"body": [
 			"<style lang=\"scss\">",
-			"$1",
+			"  // Uncomment Reuters style library imports below",
+			"  // // https://reuters-graphics.github.io/style/fonts/",
+			"  // @import \"~@reuters-graphics/style-main/scss/fonts/mixins\";",
+			"  // // https://reuters-graphics.github.io/style/colors/",
+			"  // @import \"~@reuters-graphics/style-color/scss/thematic/brand\";",
+			"",
+			"  $1",
 			"</style>"
 		],
 		"description": "Add a Svelte SCSS style tag"
