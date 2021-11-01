@@ -25,8 +25,8 @@ You Google docs config file should include the ID from the Google doc or sheet a
 }
 ```
 
-To find the ID of you doc or sheet, look for a long string of random characters in the URL of the file in Google Drive. For example:
+To find the ID of your doc or sheet, look for a long string of random characters in the URL of the file in Google Drive. For example:
 
-<https://docs.google.com/spreadsheets/d/>**1h1O8jPScxrUg-xmolKGSPzaePgyG3zbBkAWiijEpi0c**/edit
+<https://docs.google.com/spreadsheets/d/>**1h1O8jPSyzrUg-xmolKGSPzaePgyG3zbBkCWiijEpi0c**/edit
 
 Read more in [graphics-bin's docs](https://github.com/reuters-graphics/graphics-bin/blob/master/docs/get-google-docs.md) about more advanced configurations.
