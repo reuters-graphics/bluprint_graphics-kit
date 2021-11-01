@@ -17,7 +17,7 @@
 	},
 	"Reuters Graphics styles theme": {
 		"scope": "svelte",
-		"prefix": "theme",
+		"prefix": "scss-theme",
 		"body": [
 			"<style lang=\"scss\">",
 			"  @import '~@reuters-graphics/style-main/scss/fonts/font-faces';",

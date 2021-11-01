@@ -1,7 +1,7 @@
 {
 	"Static assets path": {
 		"scope": "javascript",
-		"prefix": "static",
+		"prefix": "statics",
 		"body": [
 			"import { getPath } from '$utils/statics';",
       "",
@@ -17,9 +17,17 @@
 		],
 		"description": "SvelteKit $app/env stores"
 	},
-  "Fetch script module": {
+  "SvelteKit $app/paths": {
+    "scope": "javascript",
+    "prefix": "paths",
+		"body": [
+			"import { base, assets } from '$app/paths';"
+		],
+		"description": "SvelteKit $app/paths stores"
+  },
+  "SvelteKit load module": {
     "scope": "svelte",
-    "prefix": "fetch-module",
+    "prefix": "load-module",
     "body": [
       "<script context=\"module\">",
       "  export async function load({ page, fetch, session, context }) {",
