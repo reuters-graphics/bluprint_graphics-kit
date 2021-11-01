@@ -13,7 +13,7 @@
 
 > **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up. It's a bit longer, but if you're coming in fresh to Svelte and the concept of components, this is as good a spot as any to start.
 > 
-> After you're done, be sure to check out the [official Svelte tutorial](https://svelte.dev/tutorial/basics) to round out your Knowledge.
+> After you're done, be sure to check out the [official Svelte tutorial](https://svelte.dev/tutorial/basics) to round out The Knowledge.
 
 [![YouTube video](https://img.youtube.com/vi/VTtDTiuY2w4/0.jpg)](https://www.youtube.com/watch?v=VTtDTiuY2w4)
 
