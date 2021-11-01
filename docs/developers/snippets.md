@@ -23,7 +23,7 @@ The tables below include the prefix you'd type, the file type (or part of a Svel
 |`fonts-mixins`| `.scss` | Insert an import of Reuters Graphics [fonts mixins](https://reuters-graphics.github.io/style/fonts/) |
 |`fonts-variables`| `.scss` | Insert an import of Reuters Graphics [fonts variables](https://reuters-graphics.github.io/style/fonts/) |
 
-### JS snippets
+### Svelte/JS snippets
 
 | Prefix | Type | Description |
 |---|---|---|
