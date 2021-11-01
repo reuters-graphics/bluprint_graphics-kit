@@ -41,20 +41,18 @@ If you think about your page outlined in components, then, your page may look li
 
 ## Structuring your component's directory
 
-Once you know what components your page needs, it's a good idea to structure each component in folders within the `lib/` directory:
+Once you know what components your page needs, it's a good idea to structure each component within the `lib/` directory:
 
 ```bash
 src/
   lib/
     components/
-      Headline/
-        index.svelte 👈
-      BodyText/
-        index.svelte 👈
+      Headline.svelte 👈
+      BodyText.svelte 👈
       Chart/
-        index.svelte 👈
-      Map/
-        index.svelte 👈
+        barchart.js   👈
+        index.svelte  👈
+      Map.svelte      👈
     Page.svelte
 ```
 
@@ -62,10 +60,10 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 
 ```svelte
 <script>
-  import Headline from './components/Headline/index.svelte';
-  import BodyText from './components/BodyText/index.svelte';
+  import Headline from './components/Headline.svelte';
+  import BodyText from './components/BodyText.svelte';
   import Chart from './components/Chart/index.svelte';
-  import Map from './components/Map/index.svelte';
+  import Map from './components/Map.svelte';
 </script>
 
 <Headline />
@@ -95,10 +93,10 @@ In practice, we usually use Google docs to outline and layout our pages and to s
   import content from '$locales/en/content.json';
   
   // Your components
-  import Headline from './components/Headline/index.svelte';
-  import BodyText from './components/BodyText/index.svelte';
+  import Headline from './components/Headline.svelte';
+  import BodyText from './components/BodyText.svelte';
   import Chart from './components/Chart/index.svelte';
-  import Map from './components/Map/index.svelte';
+  import Map from './components/Map.svelte';
 </script>
 
 <Headline hed="{content.Hed}" />
