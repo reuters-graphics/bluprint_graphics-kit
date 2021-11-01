@@ -44,7 +44,7 @@ All metadata for your project **must** already be filled in before automatically
 
 ## Google auth
 
-If you're going to run get-google as part of your workflow you'll need to add the Google credentials file to your repo and set the `GOOGLE_APPLICATION_CREDENTIALS_PATH` environment variable in your workflow config to the path to that file (relative to the root of your project). You can get our Google credentials file from the team 1password account.
+If you're going to run [get-google](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/commands.md#get-data-from-google-docs-and-sheets) as part of your workflow you'll need to add the Google credentials file to your repo and set the `GOOGLE_APPLICATION_CREDENTIALS_PATH` environment variable in your workflow config to the path to that file (relative to the root of your project). You can get our Google credentials file from the team 1password account.
 
 #### 🔒 Security
 
