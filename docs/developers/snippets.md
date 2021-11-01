@@ -27,7 +27,7 @@ The tables below include the prefix you'd type, the file type (or part of a Svel
 
 | Prefix | Type | Description |
 |---|---|---|
-|`statics`| `.svelte` | Import the `getPath` function for referencing static files like images  |
+|`statics`| `.svelte` | Import the [`getPath`](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/media.md#getpath) function for referencing static files like images  |
 |`load-module`| `.svelte` | Insert a module script tag for [loading data](https://kit.svelte.dev/docs#loading) in a SvelteKit page component  |
 |`env`| `.svelte` | Import [`$app/env` SvelteKit stores](https://kit.svelte.dev/docs#modules-$app-env) that tell you what environment (dev, browser, etc.) your code is running in |
 |`paths`| `.svelte` | Import [`$app/paths` SvelteKit stores](https://kit.svelte.dev/docs#modules-$app-env) that give you paths to prefix URLs with |
