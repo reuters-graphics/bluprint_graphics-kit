@@ -5,6 +5,8 @@
 # Building with components
 
 - [What's a component?](#whats-a-component)
+- [Why components?](#why-components)
+- [Props](#props)
 - [Structuring your component's directory](#structuring-your-components-directory)
 - [Driving components with Google docs](#driving-components-with-google-docs)
 
