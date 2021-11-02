@@ -3,7 +3,7 @@
 		"scope": "javascript",
 		"prefix": "statics",
 		"body": [
-			"import { getPath } from '$utils/statics';",
+			"import { getPath } from '\\$utils/statics';",
       "",
 			"getPath('${1:filepath}')"
 		],
@@ -13,7 +13,7 @@
 		"scope": "javascript",
 		"prefix": "env",
 		"body": [
-			"import { browser, dev, prerendering } from '$app/env';"
+			"import { browser, dev, prerendering } from '\\$app/env';"
 		],
 		"description": "SvelteKit $app/env stores"
 	},
@@ -21,7 +21,7 @@
     "scope": "javascript",
     "prefix": "paths",
 		"body": [
-			"import { base, assets } from '$app/paths';"
+			"import { base, assets } from '\\$app/paths';"
 		],
 		"description": "SvelteKit $app/paths stores"
   },

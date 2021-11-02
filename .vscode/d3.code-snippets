@@ -103,7 +103,7 @@
       "      .attr('width', width + margin.left + margin.right)",
       "      .attr('height', height + margin.top + margin.bottom)",
       "      .appendSelect('g.plot')",
-      "      .attr('transform', `translate(${margin.left},${margin.top})`);",
+      "      .attr('transform', `translate(\\${margin.left},\\${margin.top})`);",
       "",
       "    plot",
       "      .appendSelect('g.axis.x')",
