@@ -5,6 +5,10 @@
 
 # Directory structure
 
+#### Watch 🎥 
+[![YouTube video](https://img.youtube.com/vi/tUhs2mc8iow/0.jpg)](https://www.youtube.com/watch?v=tUhs2mc8iow)
+
+
 ```bash
 locales/
 media-assets/

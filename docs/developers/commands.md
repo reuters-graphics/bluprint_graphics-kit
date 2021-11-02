@@ -38,7 +38,7 @@ yarn pub
 
 ### Get data from Google docs and sheets
 
-Fill out your conf in `google.json` with the Google doc/sheet ID and the path to the file you'd like to export data to. [Read more here.](https://github.com/reuters-graphics/graphics-bin/blob/master/docs/get-google-docs.md#conf)
+Fill out your conf in `google.json` with the Google doc/sheet ID and the path to the file you'd like to export data to. Read more in [Google Docs and Sheets](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/google-docs-and-sheets.md).
 
 ```
 yarn get-google

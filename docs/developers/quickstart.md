@@ -6,7 +6,7 @@
 # Quickstart
 
 #### Watch 🎥 
-[![YouTube video](https://img.youtube.com/vi/XIwwNGQxgY4/0.jpg)](https://www.youtube.com/watch?v=XIwwNGQxgY4)
+[![YouTube video](https://img.youtube.com/vi/ho9e_xe4O4k/0.jpg)](https://www.youtube.com/watch?v=ho9e_xe4O4k)
 
 
 If you haven't already, add this bluprint to your CLI.
