@@ -2,22 +2,32 @@
 
 [🏠 Docs](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/docs/developers/README.md) / **Building with components**
 
-
 # Building with components
 
 - [What's a component?](#whats-a-component)
+- [Why components?](#why-components)
+- [Props](#props)
 - [Structuring your component's directory](#structuring-your-components-directory)
 - [Driving components with Google docs](#driving-components-with-google-docs)
 
+## Watch 🎥
+
+> **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up. It's a bit longer, but if you're coming in fresh to Svelte and the concept of components, this is as good a spot as any to start.
+>
+> After you're done, be sure to check out the [official Svelte tutorial](https://svelte.dev/tutorial/basics) to round out The Knowledge.
+
+[![YouTube video](https://img.youtube.com/vi/VTtDTiuY2w4/0.jpg)](https://www.youtube.com/watch?v=VTtDTiuY2w4)
+
 ## What's a "component"?
 
-![](../../src/statics/images/docs-ai-ps/what-is.jpg "Components are parts of a page")
+![](../../src/statics/images/docs-ai-ps/what-is.jpg 'Components are parts of a page')
 
 If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of components.
 
 While you _could_ write your page as a single, massive component, when you're just starting out, it's useful to think of components as the _separable parts of your page_.
 
 So, for example, a typical graphics page could be composed of the following components:
+
 - Your headline
 - Text paragraphs
 - A map
@@ -37,7 +47,20 @@ If you think about your page outlined in components, then, your page may look li
 ```
 
 ## Why components?
-![](../../src/statics/images/docs-ai-ps/reusability.jpg "Reusability of code")
+
+![](../../src/statics/images/docs-ai-ps/reusability.jpg 'Reusability of code')
+
+## Props
+
+At it's core, reusability of a component is driven by these things called "props", which can be really powerful once we learn how to think about them. Let's dive in.
+
+What if I told you you've already been using props without calling them that?
+
+Remember that text component we talked about above? "My name is Adam" and "I like oranges" were just that! Props!
+
+![](../../src/statics/images/docs-ai-ps/props.jpg 'Props')
+
+![](../../src/statics/images/docs-ai-ps/multiple-props.jpg 'Multiple props')
 
 ## Structuring your component's directory
 
@@ -78,10 +101,9 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 
 In the spirit of dividing your page into "parts" called components, svelte goes a step further.
 Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
-Those styles can be local: specifc to that component *only*, as well as applied globally.
+Those styles can be local: specifc to that component _only_, as well as applied globally.
 
-![](../../src/statics/images/docs-ai-ps/structure-of-a-component.jpg "Structure of a svelte component")
-
+![](../../src/statics/images/docs-ai-ps/structure-of-a-component.jpg 'Structure of a svelte component')
 
 ## Driving components with Google docs
 
@@ -91,7 +113,7 @@ In practice, we usually use Google docs to outline and layout our pages and to s
 <script>
   // Content from your Google doc
   import content from '$locales/en/content.json';
-  
+
   // Your components
   import Headline from './components/Headline.svelte';
   import BodyText from './components/BodyText.svelte';
@@ -102,18 +124,14 @@ In practice, we usually use Google docs to outline and layout our pages and to s
 <Headline hed="{content.Hed}" />
 
 {#each content.blocks as block}
-
   {#if block.Type === 'text'}
     <BodyText text="{block.Text}" />
-
   {:else if block.Type === 'chart'}
     <Chart title="{block.Title}" note="{block.Note}" />
-  
   {:else if block.Type === 'map'}
     <Map title="{block.Title}" note="{block.Note}" />
-
   {:else}
-    <div />
+    <div></div>
   {/if}
 {/each}
 ```

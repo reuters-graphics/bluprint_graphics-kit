@@ -9,6 +9,7 @@ This doc includes some examples of how basic things you may have done in the pre
 > 💡 **Pro tip:** You can install [Svelte snippets](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-svelte-snippets) in VSCode, which will suggest simple code blocks as you write and should help you while you're learning.
 
 [📖 Read the docs: for each block](https://svelte.dev/tutorial/each-blocks)
+
 [📖 Read the docs: if block](https://svelte.dev/tutorial/if-blocks)
 
 ![](../../src/statics/images/docs-ai-ps/if-for.jpg 'ejs to svelte for each and if else blocks')
