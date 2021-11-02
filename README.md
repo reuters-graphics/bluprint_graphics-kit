@@ -31,7 +31,7 @@ bluprint start
 
 Read more in the **[developer docs](docs/developers/README.md)** about how to use this rig to create graphics pages.
 
-## ![loader](https://user-images.githubusercontent.com/2772078/139318716-1ecee1be-a226-4cd5-8e83-f56b8b22e932.gif) Status
+## 🚀 Status
 
 This kit is **now ready for active use**, and we are starting the process of sunsetting the [current, Webpack-based rig](https://github.com/reuters-graphics/bluprint_graphics-rig).
 
@@ -45,5 +45,5 @@ That said, there may still be issues as [SvelteKit continues to work towards a 1
 - Minami Funakoshi
 - Fielding Cage
 
-🏷️ If you find a bug, want to see a feature or would like more info documented, please [file an issue](https://github.com/reuters-graphics/bluprint_graphics-kit/issues) on this repo.
+🏷️ If you find a bug, want to see a feature or would like more info documented, please file an issue [here](https://github.com/reuters-graphics/bluprint_graphics-kit/issues).
 
