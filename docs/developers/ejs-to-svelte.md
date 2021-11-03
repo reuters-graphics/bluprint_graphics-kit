@@ -12,7 +12,7 @@ This doc includes some examples of how basic things you may have done in the pre
 
 [📖 Read the docs: if block](https://svelte.dev/tutorial/if-blocks)
 
-![](../../src/statics/images/docs-ai-ps/if-for.jpg 'ejs to svelte for each and if else blocks')
+![](https://user-images.githubusercontent.com/12295494/140011248-2dadbc7e-fd77-4443-9b9c-5b8f73a25b6d.jpg 'ejs to svelte for each and if else blocks')
 
 ## Importing data
 

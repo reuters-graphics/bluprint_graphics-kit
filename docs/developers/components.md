@@ -20,7 +20,7 @@
 
 ## What's a "component"?
 
-![](../../src/statics/images/docs-ai-ps/what-is.jpg 'Components are parts of a page')
+![](https://user-images.githubusercontent.com/12295494/140011259-9aab7e74-151d-4e99-88d5-b2b30c8ade4b.jpg 'Components are parts of a page')
 
 If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of components.
 
@@ -46,9 +46,10 @@ If you think about your page outlined in components, then, your page may look li
 + BodyText
 ```
 
+<!--
 ## Why components?
 
-![](../../src/statics/images/docs-ai-ps/reusability.jpg 'Reusability of code')
+![](../../src/statics/images/docs-ai-ps/reusability.jpg 'Reusability of code') -->
 
 ## Props
 
@@ -58,9 +59,9 @@ What if I told you you've already been using props without calling them that?
 
 Remember that text component we talked about above? "My name is Adam" and "I like oranges" were just that! Props!
 
-![](../../src/statics/images/docs-ai-ps/props.jpg 'Props')
+![](https://user-images.githubusercontent.com/12295494/140011253-3643fae7-ffa3-4229-ab04-b88149d378c7.jpg 'Props')
 
-![](../../src/statics/images/docs-ai-ps/multiple-props.jpg 'Multiple props')
+![](https://user-images.githubusercontent.com/12295494/140011250-520f5fcf-7af8-4d22-9aea-7633b31e02fa.jpg 'Multiple props')
 
 ## Structuring your component's directory
 
@@ -103,7 +104,7 @@ In the spirit of dividing your page into "parts" called components, svelte goes 
 Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
 Those styles can be local: specifc to that component _only_, as well as applied globally.
 
-![](../../src/statics/images/docs-ai-ps/structure-of-a-component.jpg 'Structure of a svelte component')
+![](https://user-images.githubusercontent.com/12295494/140011258-66cfc5c2-d2d2-4318-b84b-352b8c7b806d.jpg 'Structure of a svelte component')
 
 ## Driving components with Google docs
 
