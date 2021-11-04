@@ -1196,10 +1196,10 @@
     trello "^0.10.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-kit-publisher@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.1.1.tgz#653d9840dc1d22afaeed637f06db28af9bc54192"
-  integrity sha512-3gOjYjsCuePEnbu16cCI04WRsINeKec/fLXmso8gmMXX5ZtHa51TQ/TW7dbpJ+s6vvvQ4Pe7Ugdis22OZjQMCg==
+"@reuters-graphics/graphics-kit-publisher@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.1.2.tgz#7aa2b165151ce596cf0e4c6acc0c3b243d5d0882"
+  integrity sha512-X2TL1Nr1NRXQWVgQUdzKHBBw3B3qzzfYQcCuZJ9IYlIeQJYS29zJhybS2p1QFU4+u34tHg1l/9wDExYSnoe6EQ==
   dependencies:
     "@reuters-graphics/server-client" "^1.2.2"
     "@reuters-graphics/teams-klaxon" "^0.0.3"
