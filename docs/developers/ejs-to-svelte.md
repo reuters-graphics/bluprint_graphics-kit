@@ -10,9 +10,11 @@ This doc includes some examples of how basic things you may have done in the pre
 
 [📖 Read the docs: for each block](https://svelte.dev/tutorial/each-blocks)
 
+![](https://user-images.githubusercontent.com/12295494/140286773-97eeb3e4-f3fa-427f-a426-1735b0723528.jpg 'for-loop')
+
 [📖 Read the docs: if block](https://svelte.dev/tutorial/if-blocks)
 
-![](https://user-images.githubusercontent.com/12295494/140011248-2dadbc7e-fd77-4443-9b9c-5b8f73a25b6d.jpg 'ejs to svelte for each and if else blocks')
+![](https://user-images.githubusercontent.com/12295494/140286794-3b4210a0-125d-4526-9615-cf45b5557afd.jpg 'if-else')
 
 ## Importing data
 
