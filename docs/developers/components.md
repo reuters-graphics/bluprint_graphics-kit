@@ -57,11 +57,15 @@ At it's core, reusability of a component is driven by these things called "props
 
 What if I told you you've already been using props without calling them that?
 
-Remember that text component we talked about above? "My name is Adam" and "I like oranges" were just that! Props!
+First, let me start with some jargon.
 
-![](https://user-images.githubusercontent.com/12295494/140011253-3643fae7-ffa3-4229-ab04-b88149d378c7.jpg 'Props')
+![](https://user-images.githubusercontent.com/12295494/140307702-f5f8d06d-1beb-48ff-b547-167425b197db.jpg 'Jargon')
 
-![](https://user-images.githubusercontent.com/12295494/140011250-520f5fcf-7af8-4d22-9aea-7633b31e02fa.jpg 'Multiple props')
+![](https://user-images.githubusercontent.com/12295494/140307683-74727a36-b8e2-45d9-b204-9e42d179f876.jpg 'JS in HTML')
+
+Now, to explain what props are:
+
+![](https://user-images.githubusercontent.com/12295494/140307709-3e9c0b53-cac6-4568-92a8-03e71701f02c.jpg 'Props')
 
 ## Structuring your component's directory
 
