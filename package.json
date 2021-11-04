@@ -61,7 +61,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@reuters-graphics/graphics-svelte-components": "^0.1.38",
+    "@reuters-graphics/graphics-svelte-components": "^0.1.39",
     "@reuters-graphics/style-theme-eisbaer": "^0.3.6",
     "classnames": "^2.3.1",
     "d3": "^7.1.1",
