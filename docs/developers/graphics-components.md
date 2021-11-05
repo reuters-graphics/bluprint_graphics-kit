@@ -9,6 +9,11 @@ Many common components you'll need to make graphics pages are pre-written for yo
 
 Check out the [demo site](https://reuters-graphics.github.io/graphics-svelte-components/) for a list of the components available and docs on how to use them.
 
+## Watch 🎥
+
+[![YouTube video](https://img.youtube.com/vi/GmQla2Ce6VA/0.jpg)](https://www.youtube.com/watch?v=GmQla2Ce6VA)
+
+
 ## Customizing components
 
 ### Props
