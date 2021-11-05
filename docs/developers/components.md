@@ -5,16 +5,16 @@
 # Building with components
 
 - [What's a component?](#whats-a-component)
-- [Why components?](#why-components)
+- [Parts of a Svelte component](#parts-of-a-svelte-component)
 - [Props](#props)
 - [Structuring your component's directory](#structuring-your-components-directory)
 - [Driving components with Google docs](#driving-components-with-google-docs)
 
 ## Watch 🎥
 
-> **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up. It's a bit longer, but if you're coming in fresh to Svelte and the concept of components, this is as good a spot as any to start.
+> **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up by writing a simple before & after image slider. It's a longer video, but if you're coming in fresh to Svelte and the concept of components, it's a good spot to start.
 >
-> After you're done, be sure to check out the [official Svelte tutorial](https://svelte.dev/tutorial/basics) to round out The Knowledge.
+> That said, you'll follow along easier if you've checked out at least the first couple sections of the official [official Svelte tutorial](https://svelte.dev/tutorial/basics).
 
 [![YouTube video](https://img.youtube.com/vi/VTtDTiuY2w4/0.jpg)](https://www.youtube.com/watch?v=VTtDTiuY2w4)
 
@@ -22,16 +22,17 @@
 
 ![](https://user-images.githubusercontent.com/12295494/140011259-9aab7e74-151d-4e99-88d5-b2b30c8ade4b.jpg 'Components are parts of a page')
 
-If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of components.
+If you've gone through any of the [Svelte tutorial](https://svelte.dev/tutorial/basics), you'll know pages in Svelte (and React, Vue and basically any modern JS framework) are made up of **components**.
 
 While you _could_ write your page as a single, massive component, when you're just starting out, it's useful to think of components as the _separable parts of your page_.
 
 So, for example, a typical graphics page could be composed of the following components:
 
 - Your headline
-- Text paragraphs
-- A map
-- A chart
+- A photo
+- Some text
+- A graphic
+- Some referrals
 
 Some of those components may be used several times on your page (text) while others are a once-off (headline).
 
@@ -40,16 +41,19 @@ If you think about your page outlined in components, then, your page may look li
 ```bash
 + Headline
 + BodyText
-+ Map
++ Photo
 + BodyText
 + Chart
 + BodyText
++ Referrals
 ```
 
-<!--
-## Why components?
+## Parts of a Svelte component
 
-![](../../src/statics/images/docs-ai-ps/reusability.jpg 'Reusability of code') -->
+Svelte components include not only have all the component's html but also any JS and SCSS needed for the component all in a single file. This structure makes it easy to work on parts of your page in isolation and encourage strong organization in your project.
+
+![](https://user-images.githubusercontent.com/12295494/140011258-66cfc5c2-d2d2-4318-b84b-352b8c7b806d.jpg 'Structure of a svelte component')
+
 
 ## Props
 
@@ -102,13 +106,6 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 <BodyText />
 ```
 
-## Writing a Svelte component
-
-In the spirit of dividing your page into "parts" called components, svelte goes a step further.
-Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
-Those styles can be local: specifc to that component _only_, as well as applied globally.
-
-![](https://user-images.githubusercontent.com/12295494/140011258-66cfc5c2-d2d2-4318-b84b-352b8c7b806d.jpg 'Structure of a svelte component')
 
 ## Driving components with Google docs
 
