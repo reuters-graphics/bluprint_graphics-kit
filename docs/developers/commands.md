@@ -34,6 +34,8 @@ yarn upload
 yarn pub
 ```
 
+<sup>❌ _NOT_ `yarn publish`!</sup>
+
 ## Google docs
 
 ### Get data from Google docs and sheets
