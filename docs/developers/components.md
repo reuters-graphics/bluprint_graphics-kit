@@ -51,6 +51,16 @@ If you think about your page outlined in components, then, your page may look li
 
 ![](../../src/statics/images/docs-ai-ps/reusability.jpg 'Reusability of code') -->
 
+
+## Writing a Svelte component
+
+In the spirit of dividing your page into "parts" called components, svelte goes a step further.
+Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
+Those styles can be local: specifc to that component _only_, as well as applied globally.
+
+![](https://user-images.githubusercontent.com/12295494/140011258-66cfc5c2-d2d2-4318-b84b-352b8c7b806d.jpg 'Structure of a svelte component')
+
+
 ## Props
 
 At it's core, reusability of a component is driven by these things called "props", which can be really powerful once we learn how to think about them. Let's dive in.
@@ -102,13 +112,6 @@ Now you can tie your components together in `Page.svelte` to follow your outline
 <BodyText />
 ```
 
-## Writing a Svelte component
-
-In the spirit of dividing your page into "parts" called components, svelte goes a step further.
-Svelte components not only have all the component's html in one separate file, but also the JS and SCSS associated with the component.
-Those styles can be local: specifc to that component _only_, as well as applied globally.
-
-![](https://user-images.githubusercontent.com/12295494/140011258-66cfc5c2-d2d2-4318-b84b-352b8c7b806d.jpg 'Structure of a svelte component')
 
 ## Driving components with Google docs
 
