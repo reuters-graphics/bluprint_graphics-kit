@@ -31,7 +31,9 @@ n 14.16.0
 
 ## Svelte
 
-This rig uses [Svelte](https://svelte.dev/), and you'll likely want to understand a few basics before diving in. Check out the [official tutorial](https://svelte.dev/tutorial/basics) for an intro to the framework.
+This rig uses [Svelte](https://svelte.dev/), and you'll want to understand a few basics before diving in.
+
+Check out the first few sections of the [official tutorial](https://svelte.dev/tutorial/basics) for an intro to the framework, and then read further through these docs to learn how to build your pages with Svelte.
 
 ## ES modules
 
