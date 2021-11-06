@@ -7,9 +7,9 @@
 
 ### How do I use non-Svelte stuff in Svelte?
 
-Svelte, like all modern JS frameworks, can seem pretty greedy, as though you need to do _everything_ in Svelte. And while there are big advantages to doing _as much as you can_ in Svelte -- including site performance, code organization and lots more -- there's also always a simple pattern you can use as an escape hatch to work with non-Svelte libraries and APIs.
+Svelte, like all modern JS frameworks, can seem pretty greedy, as though you need to do _everything_ in Svelte. And while there are big advantages to doing _as much as you can_ in Svelte -- including site performance, code organization and lots more -- there's also a simple pattern you can use as an escape hatch to work with non-Svelte libraries and APIs.
 
-The general idea is to let Svelte create a _container_ and then hook into that container after it's mounted with your third party library and fill it in.
+The general idea is to let Svelte create a _container_ and then hook into that container after it's "mounted" -- i.e., after Svelte puts it in the page -- with your third party library and fill in that container with whatever you want.
 
 Let's say we have a library `svelteless` that has a `makeHtmlIn` function that gets passed a div and then puts some HTML in it.
 
