@@ -12,6 +12,10 @@ There are two ways to write styles in this kit. The first -- _and preferred_ -- 
   - [Styles from JavaScript](#styles-from-javascript)
 - [Global styles](#global-styles)
 
+## Watch 🎥
+
+[![YouTube video](https://img.youtube.com/vi/1ugiqcLETXw/0.jpg?z2)](https://www.youtube.com/watch?v=1ugiqcLETXw)
+
 ## Component styles
 
 Generally, it's better to write styles directly in your Svelte components because they will be automatically scoped to just the elements in your component and Svelte will also clean up any unused style rules by default, too. Read more [about styling in the Svelte docs](https://svelte.dev/tutorial/styling).
