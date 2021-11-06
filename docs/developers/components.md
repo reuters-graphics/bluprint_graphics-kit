@@ -14,7 +14,7 @@
 
 > **Tip**: This video is a complete intro to writing Svelte in our new graphics kit from the ground up by writing a simple before & after image slider. It's a longer video, but if you're coming in fresh to Svelte and the concept of components, it's a good spot to start.
 >
-> That said, you'll follow along easier if you've checked out at least the first couple sections of the official [official Svelte tutorial](https://svelte.dev/tutorial/basics).
+> 💡 **You'll follow along more easily if you've checked out the first 3 - 4 sections of the [official Svelte tutorial](https://svelte.dev/tutorial/basics).**
 
 [![YouTube video](https://img.youtube.com/vi/VTtDTiuY2w4/0.jpg)](https://www.youtube.com/watch?v=VTtDTiuY2w4)
 
