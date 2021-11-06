@@ -29,9 +29,9 @@ This doc includes some examples of how basic things you may have done in the pre
 [📖 Read the docs: if blocks](https://svelte.dev/tutorial/if-blocks)
 
 ```svelte
-{#if someCondition === true}
+{#if (someCondition === true)}
   <!-- ... -->
-{:else if anotherCondition === true}
+{:else if (anotherCondition === true)}
   <!-- ... -->
 {:else}
   <!-- ... -->
