@@ -11,7 +11,7 @@
 
 ## Code editor
 
-We recommend using [VS Code](https://code.visualstudio.com/), which will allow you to take advantage of [useful snippets](./snippets.md) and built-in linting/prettifying that will help identify and fix errors in your code.
+We strongly recommend using [VS Code](https://code.visualstudio.com/), which will allow you to take advantage of [useful snippets](./snippets.md) and built-in linting/prettifying that will help identify and fix errors in your code. We also recommend you install the [Svelte 3 Snippets extension](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-svelte-snippets), which will help you write basic Svelte syntax. 
 
 ## Node
 
