@@ -8,13 +8,38 @@ This doc includes some examples of how basic things you may have done in the pre
 
 > 💡 **Pro tip:** You can install [Svelte snippets](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-svelte-snippets) in VSCode, which will suggest simple code blocks as you write and should help you while you're learning.
 
-[📖 Read the docs: for each block](https://svelte.dev/tutorial/each-blocks)
+## Loops
 
 ![](https://user-images.githubusercontent.com/12295494/140286773-97eeb3e4-f3fa-427f-a426-1735b0723528.jpg 'for-loop')
 
-[📖 Read the docs: if block](https://svelte.dev/tutorial/if-blocks)
+[📖 Read the docs: each blocks](https://svelte.dev/tutorial/each-blocks)
+
+```svelte
+{#each someArray as item}
+  <!-- Use item -->
+{/each}
+```
+
+
+
+## Conditionals
 
 ![](https://user-images.githubusercontent.com/12295494/140286794-3b4210a0-125d-4526-9615-cf45b5557afd.jpg 'if-else')
+
+[📖 Read the docs: if blocks](https://svelte.dev/tutorial/if-blocks)
+
+```svelte
+{#if someCondition === true}
+  <!-- ... -->
+{:else if anotherCondition === true}
+  <!-- ... -->
+{:else}
+  <!-- ... -->
+{/if}
+```
+
+
+
 
 ## Importing data
 
