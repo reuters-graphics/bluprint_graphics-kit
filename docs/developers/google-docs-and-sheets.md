@@ -12,7 +12,7 @@ On starting a new project, the kit will create a basic Google doc connected to t
 
 ### Google docs config
 
-You Google docs config file should include the ID from the Google doc or sheet and the path to files you'd like data from those docs to be written to in your project.
+Your Google docs config file should include the ID from the Google doc or sheet and the path to files you'd like data from those docs to be written to in your project.
 
 ```javascript
 {
