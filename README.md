@@ -29,7 +29,7 @@ bluprint start
 
 ## 📚 Developer Docs
 
-Read more in the **[developer docs](docs/developers/README.md)** about how to use this rig to create graphics pages.
+Read more in the **[developer docs](https://reuters-graphics.github.io/docs_graphics-kit/)** about how to use this rig to create graphics pages.
 
 ## 🚀 Status
 
@@ -46,4 +46,3 @@ That said, there may still be issues as [SvelteKit continues to work towards a 1
 - Fielding Cage
 
 🏷️ If you find a bug, want to see a feature or would like more info documented, please file an issue [here](https://github.com/reuters-graphics/bluprint_graphics-kit/issues).
-

@@ -30,4 +30,4 @@ yarn upload
 yarn pub
 ```
 
-Read more in the [development docs](https://github.com/reuters-graphics/bluprint_graphics-kit/tree/master/docs/developers).
+Read more in the [development docs](https://reuters-graphics.github.io/docs_graphics-kit/).
