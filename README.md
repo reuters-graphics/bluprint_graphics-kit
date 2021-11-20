@@ -2,7 +2,7 @@
 
 # bluprint_graphics-kit
 
-A rig for graphics and newsapps.
+A rig for graphics and newsapps. 
 
 Built with:
 
@@ -30,6 +30,10 @@ bluprint start
 ## 📚 Developer Docs
 
 Read more in the **[developer docs](https://reuters-graphics.github.io/docs_graphics-kit/)** about how to use this rig to create graphics pages.
+
+## 👀 Preview
+
+See it on ⚡[StackBlitz](https://stackblitz.com/github/reuters-graphics/bluprint_graphics-kit).
 
 ## 🚀 Status
 
