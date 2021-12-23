@@ -40,7 +40,7 @@ export default {
   kit: {
     appDir: '_app',
     // Uncomment below to disable SSR app-wide during development
-    // ssr: process.env.NODE_ENV === 'production',
+    ssr: process.env.NODE_ENV === 'production',
     paths: {
       assets:
         process.env.NODE_ENV === 'production'
@@ -80,14 +80,13 @@ export default {
         },
       },
       optimizeDeps: {
-        exclude: ['svelte-fa'],
+        exclude: ['svelte-fa', '@reuters-graphics/style-theme-eisbaer'],
         include: [
           'marked',
           'lodash-es',
           'pym.js',
           'classnames',
           'ua-parser-js',
-          '@reuters-graphics/graphics-svelte-components',
         ],
       },
       plugins: [dsv(), svelteKitPagesPlugin()],
