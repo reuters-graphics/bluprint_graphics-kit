@@ -29,10 +29,6 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md,svelte}": "prettier --write"
   },
-  "resolutions": {
-    "vite": "2.6.14",
-    "@sveltejs/vite-plugin-svelte": "1.0.0-next.31"
-  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.4",
