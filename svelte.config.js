@@ -81,13 +81,7 @@ export default {
       },
       optimizeDeps: {
         exclude: ['svelte-fa', '@reuters-graphics/style-theme-eisbaer'],
-        include: [
-          'marked',
-          'lodash-es',
-          'pym.js',
-          'classnames',
-          'ua-parser-js',
-        ],
+        include: ['classnames', 'lodash-es', 'pym.js', 'ua-parser-js'],
       },
       plugins: [dsv(), svelteKitPagesPlugin()],
     },

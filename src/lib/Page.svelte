@@ -14,7 +14,7 @@
 
   // Other dependencies
   import { apdate } from 'journalize';
-  import marked from 'marked';
+  import { marked } from 'marked';
   import { fetchComponent, makeScrollerSteps } from '$utils/dynamicComponents';
 
   export let embedded = false;
