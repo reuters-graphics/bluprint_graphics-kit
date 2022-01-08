@@ -38,9 +38,10 @@
 #       - uses: actions/checkout@v2
 #       - uses: actions/setup-node@v2
 #         with:
-#           node-version: '14'
+#           node-version: '14.17.0'
+#           cache: 'yarn'
 #       - run: git config user.name hobbes7878
 #       - run: git config user.email jon.r.mcclure@gmail.com
-#       - run: npm install
-#       - run: npm run upload
-#       - run: npm run publish:publish
+#       - run: yarn install
+#       - run: yarn upload
+#       - run: yarn publish:publish
