@@ -28,15 +28,15 @@
   }, {
     "action": "execute",
     "cmds": [
+      ["git", ["init"]],
+      ["git", ["add", "."]],
+      ["git", ["commit", "-m", "initial"]],
       ["yarn"],
       ["chmod", ["ug+x", ".husky/pre-commit"]]
     ]
   }, {
     "action": "execute",
     "cmds": [
-      ["git", ["init"]],
-      ["git", ["add", "."]],
-      ["git", ["commit", "-m", "initial"]],
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
       ["yarn", ["startup:archie-doc"]],
