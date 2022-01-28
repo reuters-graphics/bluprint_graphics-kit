@@ -1,13 +1,6 @@
-import 'd3-transition';
-
-import * as d3 from 'd3-selection';
-
-import { axisBottom, axisLeft } from 'd3-axis';
-
+import * as d3 from 'd3';
 import { appendSelect } from 'd3-appendselect';
-import { extent } from 'd3-array';
-import merge from 'lodash/merge';
-import { scaleLinear } from 'd3-scale';
+import {merge} from 'lodash-es';
 
 d3.selection.prototype.appendSelect = appendSelect;
 
@@ -42,7 +35,6 @@ class MyChartClass {
    * empty Array or Object, depending on what your chart expects.
    */
   defaultData = [
-    { x: 0, y: 0, r: 1 },
     { x: 10, y: 35, r: 5 },
     { x: 40, y: 30, r: 10 },
     { x: 70, y: 70, r: 15 },
@@ -59,10 +51,10 @@ class MyChartClass {
     margin: {
       top: 20,
       right: 20,
-      bottom: 25,
-      left: 30,
+      bottom: 30,
+      left: 35,
     },
-    fill: 'grey',
+    fill: '#99cccc',
   };
 
   /**
@@ -82,12 +74,12 @@ class MyChartClass {
     const height =
       containerWidth * props.aspectHeight - margin.top - margin.bottom;
 
-    const xScale = scaleLinear().domain([0, 100]).range([0, width]);
+    const xScale = d3.scaleLinear().domain([0, 100]).range([0, width]);
 
-    const yScale = scaleLinear().domain([0, 100]).range([height, 0]);
+    const yScale = d3.scaleLinear().domain([0, 100]).range([height, 0]);
 
-    const rScale = scaleLinear()
-      .domain(extent(data, (d) => d.r))
+    const rScale = d3.scaleLinear()
+      .domain(d3.extent(data, (d) => d.r))
       .range([10, 25]);
 
     const plot = this.selection()
@@ -97,12 +89,20 @@ class MyChartClass {
       .appendSelect('g.plot')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
+    const xAxis = d3.axisBottom(xScale)
+      .tickSize(10)
+      .ticks(5)
+
+    const yAxis = d3.axisLeft(yScale)
+      .tickSize(10)
+      .ticks(5)
+
     plot
       .appendSelect('g.axis.x')
       .attr('transform', 'translate(0,' + height + ')')
-      .call(axisBottom(xScale));
+      .call(xAxis);
 
-    plot.appendSelect('g.axis.y').call(axisLeft(yScale));
+    plot.appendSelect('g.axis.y').call(yAxis);
 
     const transition = plot.transition().duration(500);
 
