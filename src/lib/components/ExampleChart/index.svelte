@@ -26,9 +26,23 @@
   #chart {
     width: 100%;
     :global {
+      @import '~@reuters-graphics/style-main/scss/fonts/mixins';
+
       circle {
-        stroke: #333;
+        stroke: #777;
         stroke-width: 1px;
+      }
+
+      path.domain,
+      .axis line {
+        stroke: #999;
+      }
+
+      .axis {
+        text {
+          font-size: 0.875rem;
+          font-family: $font-family-sans-serif;
+        }
       }
     }
   }
