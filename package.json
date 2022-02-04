@@ -36,7 +36,7 @@
     "@babel/preset-env": "^7.15.6",
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.21",
-    "@reuters-graphics/graphics-kit-publisher": "^0.1.6",
+    "@reuters-graphics/graphics-kit-publisher": "^0.1.7",
     "@reuters-graphics/style-ai-templates": ">=0.0.8",
     "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/adapter-static": "1.0.0-next.22",
