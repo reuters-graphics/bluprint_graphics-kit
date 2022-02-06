@@ -1163,10 +1163,10 @@
     trello "^0.10.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-kit-publisher@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.1.6.tgz#f2d4e3ea9ae35a7514e3cf5261820a6b274ee08e"
-  integrity sha512-9pS/zoupwB+6jI64FFLABqpvxNpuq9RxXwsKY0oV99tF4Ey/dC/LtiepR4E7dghuUMQoG6vvSnBbXKl7VAxW9A==
+"@reuters-graphics/graphics-kit-publisher@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.1.7.tgz#1842476a1a68bd40fed6585a484253fb0610a01a"
+  integrity sha512-OSLy05eZtrjwI+hKfPoojo3EzB1AH92hQiQkbv4GvVZa8piIXVGUsd2LVqwsyVpbdJV0YnmCeC4kjWe6VVcxSA==
   dependencies:
     "@reuters-graphics/server-client" "^1.2.2"
     "@reuters-graphics/teams-klaxon" "^0.0.3"
@@ -1193,10 +1193,10 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.1.52":
-  version "0.1.52"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.52.tgz#3c3d69a83567c10fde3ff876c8fb1cc181481dae"
-  integrity sha512-JYAE36+FCoh3PB0bCcDNKDvl/k/NdcjZoAgffAwbHSZ9OyMWeAYblKV7IWmNH++6xD+agF77p7n3PwKSqYWNQw==
+"@reuters-graphics/graphics-svelte-components@^0.1.55":
+  version "0.1.55"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.1.55.tgz#fe4a0a7dbc9552c26d698ddf436ee21ac0bbea61"
+  integrity sha512-lr0xn33qYJXJrXp/hPsGbs//RKRnF6l1sclzMih6bul79EiwqRopC5eori6vBpagY8ajIHD4GI+Ft6dwj8308w==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
