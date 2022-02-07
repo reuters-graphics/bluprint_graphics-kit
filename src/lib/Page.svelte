@@ -71,11 +71,11 @@
             {#if block.Chatter}<p>{block.Chatter}</p>{/if}
           </div>
           <div slot="srDescription">
-            {#if block.SRDescription}
+            {#if block.AltText}
               <div class="sr-only">
-                {@html marked.parse(block.SRDescription)}
+                {@html marked.parse(block.AltText)}
               </div>
-            {:else if !block.SRDescription || block.SRDescription == ''}
+            {:else if !block.AltText || block.AltText == ''}
               <h5 class="warning">
                 Screen-reader description is missing. Add SRDescription: in
                 google doc
