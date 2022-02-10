@@ -16,7 +16,7 @@ Anyone outside our team using this library is welcome to submit PRs or issues, *
 
 ## How should Reuters Graphics staff contribute?
 
-### Make an issue
+### 🏷️ Make an issue
 
 We recommend your first step is to create an issue on this repo describing what is missing, broken or could be added or improved. (We'll close that issue when we merge your PR.)
 
@@ -25,17 +25,17 @@ We recommend your first step is to create an issue on this repo describing what 
 - Tag others on the team who may have expertise or would contribute to any needed discussion.
 - **Always tag an editor.**
 
-### Code standards
+### 🧹 Follow code standards
 
 Once you're ready to submit code, be sure it's properly formatted _before_ you ask for a review. The easiest way is to ensure the built-in code formatter (prettier) is working. (It should.)
 
 Be sure to add comments around any tricky bits of logic you're adding. Even better, document your code using [JSDoc](https://devhints.io/jsdoc) comments. (Check out [JSDoc shortcuts](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support) in VS Code for a leg up.)
 
-### Docs
+### 📝 Write docs
 
 New components or features may need to be reflected in the [Graphics Kit docs](https://github.com/reuters-graphics/docs_graphics-kit). Your editor will tell you if/how to submit changes, either through a PR or a direct edit on master, as part of your PR review. You can also create a PR on the docs repo and reference it in your PR before review.
 
-### Submitting code
+### 🍺 Submit code
 
 All code contributions should be made through the normal [GitHub Flow](https://www.w3schools.com/git/git_github_flow.asp#:~:text=The%20GitHub%20flow%20is%20a,Make%20changes%20and%20add%20Commits). Basically, make a branch and submit a pull request.
 
