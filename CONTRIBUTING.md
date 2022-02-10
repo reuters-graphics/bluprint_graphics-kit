@@ -29,7 +29,7 @@ We recommend your first step is to create an issue on this repo describing what 
 
 Once you're ready to submit code, be sure it's properly formatted _before_ you ask for a review. The easiest way is to ensure the built-in code formatter (prettier) is working. (It should.)
 
-Be sure to add comments around any tricky bits of logic you're adding. Even better, document your code using [JSDoc](https://devhints.io/jsdoc) comments. (Check out [JSDoc shortcuts](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support) in VS Code for a leg up.)
+Be sure to add comments around any tricky bits of logic you're adding. Even better, document your code using [JSDoc](https://devhints.io/jsdoc) comments. (Check out [JSDoc shortcuts](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support) in VS Code for a leg-up.)
 
 ### 📝 Write docs
 
