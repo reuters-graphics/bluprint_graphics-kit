@@ -33,7 +33,8 @@
             "Chatter": "Optional chatter describes more about the graphic.",
             "Source": "Optional source of the data",
             "Note": "Optional note clarifying something in the data",
-            "AltText": "#### You can add hierarchy to your screen-reader description by using markdown \nAdd a descriptive line on the chart."
+            "AriaHidden": "true",
+            "AriaDescription": "Add a description of the chart for screen readers."
         },
         {
             "Type": "text",
