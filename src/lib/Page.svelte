@@ -64,10 +64,23 @@
           AiGraphic="{component}"
           id="{block.ComponentName}"
           size="{block.Size}"
+          ariaHidden="{block.AriaHidden}"
         >
           <div slot="title" class="title">
             {#if block.Title}<h4>{block.Title}</h4>{/if}
             {#if block.Chatter}<p>{block.Chatter}</p>{/if}
+          </div>
+          <div slot="srDescription">
+            {#if block.AltText}
+              <div class="sr-only">
+                {@html marked.parse(block.AltText)}
+              </div>
+            {:else if !block.AltText || block.AltText == ''}
+              <h5 class="warning">
+                Screen-reader description is missing. Add SRDescription: in
+                google doc
+              </h5>
+            {/if}
           </div>
           <aside slot="notes">
             {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
@@ -109,5 +122,22 @@
 <style lang="scss">
   article.container-fluid {
     overflow-x: hidden;
+  }
+
+  :global {
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .warning {
+      color: red;
+    }
   }
 </style>
