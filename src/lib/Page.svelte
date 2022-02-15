@@ -64,13 +64,11 @@
           AiGraphic="{component}"
           id="{block.ComponentName}"
           size="{block.Size}"
-          ariaHidden="{block.AriaHidden == 'true'}"
+          ariaHidden="{block.AriaHidden.trim() == 'true'}"
           ariaDescription="{block.AriaDescription}"
         >
           <div slot="title" class="title">
-            {#if block.Title}<h4>
-                {block.Title}
-              </h4>{/if}
+            {#if block.Title}<h4>{block.Title}</h4>{/if}
             {#if block.Chatter}<p>{block.Chatter}</p>{/if}
           </div>
           <aside slot="notes">
