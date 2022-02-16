@@ -65,7 +65,7 @@
           id="{block.ComponentName}"
           size="{block.Size}"
           ariaHidden="{block.AriaHidden.trim() == 'true'}"
-          ariaDescription="{block.AriaDescription}"
+          ariaDescription="{block.AltText}"
         >
           <div slot="title" class="title">
             {#if block.Title}<h4>{block.Title}</h4>{/if}
