@@ -1,68 +1,70 @@
 {
-  "SEOTitle": "My page title for Google",
-  "SEODescription": "My page description for Google",
-  "ShareTitle": "My page title for Twitter",
-  "ShareDescription": "My page description for Twitter",
-  "ShareImgPath": "images/reuters-graphics.jpg",
-  "Hed": "Reuters Graphics Interactive",
-  "Dek": "The beginning of a beautiful page",
-  "Kicker": "Global News",
-  "Byline": "**Jane Doe** and **John Doe**",
-  "Published": "2021-09-01T08:30:00.000Z",
-  "Updated": "",
-  "blocks": [
-    {
-      "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken.\n\nHam hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
-    },
-    {
-      "Type": "photo",
-      "Src": "images/shark.jpg",
-      "AltText": "describe what is happening in the image (for people using screenreaders)",
-      "Caption": "add a caption and source information (for all readers)"
-    },
-    {
-      "Type": "text",
-      "Text": "Ham hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
-    },
-    {
-      "Type": "ai2svelte",
-      "ComponentName": "ai-chart",
-      "Size": "normal",
-      "Title": "Optional title of the graphic",
-      "Chatter": "Optional chatter describes more about the graphic.",
-      "Source": "Optional source of the data",
-      "Note": "Optional note clarifying something in the data"
-    },
-    {
-      "Type": "text",
-      "Text": "## Section header\nPork chislic short loin burgdoggen pork chop capicola flank pancetta. Pork chislic short loin burgdoggen pork chop capicola flank pancetta.\n\nBeef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
-    },
-    {
-      "Type": "ai-scroller",
-      "ID": "scroller-map",
-      "ForegroundPosition": "middle",
-      "BackgroundSize": "fluid",
-      "StackBackground": "true",
-      "steps": [
+    "SEOTitle": "My page title for Google",
+    "SEODescription": "My page description for Google",
+    "ShareTitle": "My page title for Twitter",
+    "ShareDescription": "My page description for Twitter",
+    "ShareImgPath": "images/reuters-graphics.jpg",
+    "Hed": "Reuters Graphics Interactive",
+    "Dek": "The beginning of a beautiful page",
+    "Kicker": "Global News",
+    "Byline": "**Jane Doe** and **John Doe**",
+    "Published": "2021-09-01T08:30:00.000Z",
+    "Updated": "",
+    "blocks": [
         {
-          "Background": "ai-scroller-1",
-          "Foreground": "##### You can add subheads too!\nThis is text for blurb 1. You can **bold** or *italicise* text. You can also add <span class=highlight>span tags</span> in the google doc.\n\nYou can have multiple lines too."
+            "Type": "text",
+            "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken.\n\nHam hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
         },
         {
-          "Background": "ai-scroller-2",
-          "Foreground": "##### Blurb 2\n\nIf you don’t want a blurb, you can leave Foreground: empty or delete it in the Google doc. Make sure you have Background:, though"
+            "Type": "photo",
+            "Src": "images/shark.jpg",
+            "AltText": "describe what is happening in the image (for people using screenreaders)",
+            "Caption": "add a caption and source information (for all readers)"
         },
         {
-          "Background": "ai-scroller-3",
-          "Foreground": "##### Blurb 3\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
+            "Type": "text",
+            "Text": "Ham hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
+        },
+        {
+            "Type": "ai2svelte",
+            "ComponentName": "ai-chart",
+            "Size": "normal",
+            "Title": "Optional title of the graphic",
+            "Chatter": "Optional chatter describes more about the graphic.",
+            "Source": "Optional source of the data",
+            "Note": "Optional note clarifying something in the data",
+            "AriaHidden": "true",
+            "AriaDescription": "Add a description of the chart for screen readers."
+        },
+        {
+            "Type": "text",
+            "Text": "## Section header\nPork chislic short loin burgdoggen pork chop capicola flank pancetta. Pork chislic short loin burgdoggen pork chop capicola flank pancetta.\n\nBeef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
+        },
+        {
+            "Type": "ai-scroller",
+            "ID": "scroller-map",
+            "ForegroundPosition": "middle",
+            "BackgroundSize": "fluid",
+            "StackBackground": "true",
+            "steps": [
+                {
+                    "Background": "ai-scroller-1",
+                    "Foreground": "##### You can add subheads too!\nThis is text for blurb 1. You can **bold** or *italicise* text. You can also add <mark class=highlight>markup or span tags</mark> in the google doc.\n\nYou can have multiple lines too."
+                },
+                {
+                    "Background": "ai-scroller-2",
+                    "Foreground": "##### Blurb 2\n\nIf you don’t want a blurb, you can leave Foreground: empty or delete it in the Google doc. Make sure you have Background:, though"
+                },
+                {
+                    "Background": "ai-scroller-3",
+                    "Foreground": "##### Blurb 3\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
+                }
+            ]
+        },
+        {
+            "Type": "text",
+            "Text": "Beef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage.\n\n> Chicken short loin drumstick bacon, pig sausage kevin frankfurter ribeye tail capicola pastrami. Frankfurter meatball kielbasa pork. Pastrami picanha drumstick tongue t-bone.\n>> Friedrich Hamburger\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
         }
-      ]
-    },
-    {
-      "Type": "text",
-      "Text": "Beef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage.\n\n> Chicken short loin drumstick bacon, pig sausage kevin frankfurter ribeye tail capicola pastrami. Frankfurter meatball kielbasa pork. Pastrami picanha drumstick tongue t-bone.\n>> Friedrich Hamburger\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
-    }
-  ],
-  "EndNotes": "##### Note\nData is current as of today.\n\n##### Sources\nData, Inc.\n\n##### Edited by\nEditor, Copyeditor"
+    ],
+    "EndNotes": "##### Note\nData is current as of today.\n\n##### Sources\nData, Inc.\n\n##### Edited by\nEditor, Copyeditor"
 }
