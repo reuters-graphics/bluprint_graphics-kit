@@ -10,8 +10,8 @@ jobs:
   build-app:
     name: SvelteKit build
     runs-on: ubuntu-latest
-    # env:
-    #   TESTING: true
+    env:
+      TESTING: true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
