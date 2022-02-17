@@ -43,11 +43,11 @@ export default {
     // ssr: process.env.NODE_ENV === 'production',
     paths: {
       assets:
-        process.env.NODE_ENV === 'production'
+        process.env.NODE_ENV === 'production' && !process.env.TESTING
           ? (process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + 'cdn'
           : '',
       base:
-        process.env.NODE_ENV === 'production'
+        process.env.NODE_ENV === 'production' && !process.env.TESTING
           ? getRootRelativePath(
               process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage
             )

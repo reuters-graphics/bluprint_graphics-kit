@@ -12,7 +12,14 @@
     "condition": ["bluprintPart", null]
   }, {
     "action": "remove",
-    "paths": ["README.md", "CONTRIBUTING.md", ".github/PULL_REQUEST_TEMPLATE.md"],
+    "paths": [
+      "README.md",
+      "CONTRIBUTING.md",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      ".github/bluprint_issue.md",
+      ".github/workflows/build.yaml",
+      "test/*"
+    ],
     "condition": ["bluprintPart", null]
   }, {
     "action": "move",
