@@ -8,7 +8,7 @@ const DIST = path.join(__dirname, '../dist/');
 const BUILT_INDEX = path.join(DIST, 'index.html');
 
 describe('GraphicsKit', function() {
-  this.timeout(20000);
+  this.timeout(90000);
 
   before(function() {
     rimraf.sync(DIST);
