@@ -8,7 +8,7 @@ on:
       - master
 jobs:
   build-app:
-    name: SvelteKit build
+    name: SvelteKit builds
     runs-on: ubuntu-latest
     env:
       TESTING: true
@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/bluprint_issue.md
+          filename: .github/COMMIT_ERROR_ISSUE_TEMPLATE.md

@@ -13,12 +13,12 @@
   }, {
     "action": "remove",
     "paths": [
-      "README.md",
-      "CONTRIBUTING.md",
+      ".github/workflows/sveltekit.yaml",
+      ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
-      ".github/bluprint_issue.md",
-      ".github/workflows/build.yaml",
-      "test/*"
+      "test/*",
+      "CONTRIBUTING.md",
+      "README.md"
     ],
     "condition": ["bluprintPart", null]
   }, {
