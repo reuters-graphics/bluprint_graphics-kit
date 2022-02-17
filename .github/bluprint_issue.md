@@ -4,4 +4,4 @@ assignees: hobbes7878
 labels: bug
 ---
 
-A commit caused SvelteKit to fail: {{ ref }}
+A commit caused SvelteKit to fail: {{ sha }}
