@@ -1,5 +1,5 @@
 ---
-title: Build error on master branch
+title: Build error on commit
 assignees: hobbes7878
 labels: bug
 ---

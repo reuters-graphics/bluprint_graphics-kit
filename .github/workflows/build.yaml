@@ -18,9 +18,12 @@ jobs:
         with:
           node-version: '14.17.0'
           cache: 'yarn'
-      - run: yarn install
-      - run: npx mocha
-      - uses: JasonEtco/create-an-issue@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Test build
+        run: npx mocha
+      - name: Create issue on fail
+        uses: JasonEtco/create-an-issue@v2
         if: ${{ failure() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
