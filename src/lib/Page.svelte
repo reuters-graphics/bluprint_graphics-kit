@@ -16,6 +16,7 @@
   import { apdate } from 'journalize';
   import { marked } from 'marked';
   import { fetchComponent, makeScrollerSteps } from '$utils/dynamicComponents';
+  import { truthyString } from '$utils/truthyString';
 
   export let embedded = false;
 </script>
@@ -64,7 +65,7 @@
           AiGraphic="{component}"
           id="{block.ComponentName}"
           size="{block.Size}"
-          ariaHidden="{block.AriaHidden.trim() == 'true'}"
+          ariaHidden="{truthyString(block.AriaHidden)}"
           ariaDescription="{block.AltText}"
         >
           <div slot="title" class="title">
@@ -94,7 +95,7 @@
           foregroundPosition="{block.ForegroundPosition}"
           id="{block.ID}"
           embedded="{embedded}"
-          stackBackground="{block.StackBackground}"
+          stackBackground="{truthyString(block.StackBackground)}"
         />
       {:catch error}
         {console.error('Error making steps for scroller', error)}
