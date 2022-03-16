@@ -9,7 +9,7 @@ export const truthyString = (string) => {
     return true;
   } else if (falseStrings.includes(cleaned)) {
     return false;
-  } else if (string === '') {
+  } else if (cleaned === '') {
     console.log(
       'Value that should be True or False is empty in the Google doc.'
     );
