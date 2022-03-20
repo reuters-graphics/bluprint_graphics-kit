@@ -56,15 +56,15 @@ export default {
     adapter: adapter({
       pages: 'dist',
       assets: 'dist/cdn',
-      fallback: null,
     }),
+    prerender: { default: true, onError: 'continue' },
+    trailingSlash: 'always',
     files: {
       assets: 'src/statics',
       lib: 'src/lib',
       routes: 'pages',
       template: 'src/template.html',
     },
-    target: '#svelte-app',
     vite: {
       build: { target: 'es2015' },
       server: {

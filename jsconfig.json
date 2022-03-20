@@ -1,1 +1,30 @@
-{"compilerOptions":{"target":"es6","module":"es6","baseUrl":".","paths":{"$app/*":[".svelte-kit/dev/runtime/app/*",".svelte-kit/build/runtime/app/*"],"$lib/*":["src/lib/*"],"$utils/*":["src/utils/*"],"$pkg":["package.json"],"$locales/*":["locales/*"]}},"include":["src/**/*.js","src/**/*.svelte"]}
+{
+    "extends": "./.svelte-kit/tsconfig.json",
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es6",
+        "baseUrl": ".",
+        "paths": {
+            "$app/*": [
+                ".svelte-kit/dev/runtime/app/*",
+                ".svelte-kit/build/runtime/app/*"
+            ],
+            "$lib/*": [
+                "src/lib/*"
+            ],
+            "$utils/*": [
+                "src/utils/*"
+            ],
+            "$pkg": [
+                "package.json"
+            ],
+            "$locales/*": [
+                "locales/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.js",
+        "src/**/*.svelte"
+    ]
+}
