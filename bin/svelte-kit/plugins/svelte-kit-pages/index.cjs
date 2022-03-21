@@ -11,6 +11,8 @@ const getPkgRoot = () => {
 
 module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } = {}) {
   const VIRTUAL_MODULE_ID = '@svelte-kit-pages';
+  const RESOLVED_VIRTUAL_MODULE_ID = '\0' + VIRTUAL_MODULE_ID;
+
   const PAGES_DIR = path.join(getPkgRoot(), pages);
 
   let FOUND_PAGES = [];
@@ -30,7 +32,8 @@ module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } =
   };
 
   const reloadModule = (server) => {
-    const plugin = server.moduleGraph.getModuleById(VIRTUAL_MODULE_ID);
+    const plugin = server.moduleGraph.getModuleById(RESOLVED_VIRTUAL_MODULE_ID);
+    if (!plugin) return;
     server.moduleGraph.invalidateModule(plugin);
   };
 
@@ -38,11 +41,11 @@ module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } =
     name: 'svelte-kit-pages-plugin',
 
     resolveId(id) {
-      if (id === VIRTUAL_MODULE_ID) return VIRTUAL_MODULE_ID;
+      if (id === VIRTUAL_MODULE_ID) return RESOLVED_VIRTUAL_MODULE_ID;
     },
 
     load(id) {
-      if (id === VIRTUAL_MODULE_ID) return getPagePaths();
+      if (id === RESOLVED_VIRTUAL_MODULE_ID) return getPagePaths();
     },
 
     configureServer(server) {
