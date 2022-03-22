@@ -18,7 +18,7 @@ export const getAssetsPath = () => {
     base = TESTING_ROOT + 'cdn';
   } else if (process.env.PREVIEW) {
     base = pkg.reuters.preview + 'cdn';
-  } else if (process.env.PRODUCTION) {
+  } else if (process.env.NODE_ENV === 'production') {
     base = pkg.homepage + 'cdn';
   }
   return base;
@@ -31,7 +31,7 @@ export const getBasePath = () => {
     base = TESTING_ROOT;
   } else if (process.env.PREVIEW) {
     base = pkg.reuters.preview;
-  } else if (process.env.PRODUCTION) {
+  } else if (process.env.NODE_ENV === 'production') {
     base = pkg.homepage;
   }
   return getRootRelativePath(base);
