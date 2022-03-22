@@ -9,6 +9,9 @@
                 ".svelte-kit/dev/runtime/app/*",
                 ".svelte-kit/build/runtime/app/*"
             ],
+            "$lib":[
+                "src/lib"
+            ],
             "$lib/*": [
                 "src/lib/*"
             ],
