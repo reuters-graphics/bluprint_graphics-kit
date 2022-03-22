@@ -2,11 +2,12 @@ module.exports = {
   root: true,
   ignorePatterns: ['svelte.config.js'],
   extends: ['standard'],
-  plugins: ['svelte3', '@babel'],
+  plugins: ['svelte3', '@babel', 'mocha'],
   env: {
     browser: true,
     es2017: true,
     node: true,
+    mocha: true,
   },
   settings: {
     'svelte3/ignore-styles': () => true,

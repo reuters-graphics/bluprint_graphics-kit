@@ -3139,6 +3139,14 @@ eslint-plugin-import@*:
     resolve "^1.20.0"
     tsconfig-paths "^3.12.0"
 
+eslint-plugin-mocha@^10.0.3:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-10.0.3.tgz#a4ecf2351828e852156316b7e936e7336fc0ff5e"
+  integrity sha512-9mM7PZGxfejpjey+MrG0Cu3Lc8MyA5E2s7eUCdHXgS4SY/H9zLuwa7wVAjnEaoDjbBilA+0bPEB+iMO7lBUPcg==
+  dependencies:
+    eslint-utils "^3.0.0"
+    ramda "^0.27.1"
+
 eslint-plugin-node@*:
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-node/-/eslint-plugin-node-11.1.0.tgz#c95544416ee4ada26740a30474eefc5402dc671d"
@@ -3210,6 +3218,13 @@ eslint-utils@^2.0.0, eslint-utils@^2.1.0:
   integrity sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==
   dependencies:
     eslint-visitor-keys "^1.1.0"
+
+eslint-utils@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-3.0.0.tgz#8aebaface7345bb33559db0a1f13a1d2d48c3672"
+  integrity sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==
+  dependencies:
+    eslint-visitor-keys "^2.0.0"
 
 eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3.0:
   version "1.3.0"
@@ -5441,6 +5456,11 @@ quick-lru@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
+
+ramda@^0.27.1:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.27.2.tgz#84463226f7f36dc33592f6f4ed6374c48306c3f1"
+  integrity sha512-SbiLPU40JuJniHexQSAgad32hfwd+DRUdwF2PlVuI5RZD0/vahUco7R8vD86J/tcEKKF9vZrUVwgtmGCqlCKyA==
 
 randombytes@^2.1.0:
   version "2.1.0"

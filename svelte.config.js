@@ -1,20 +1,10 @@
+import { getAssetsPath, getBasePath } from './bin/svelte-kit/paths/index.js';
+
 import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import dsv from '@rollup/plugin-dsv';
-import fs from 'fs-extra';
 import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/index.cjs';
 import sveltePreprocess from 'svelte-preprocess';
-import url from 'url';
-
-const getRootRelativePath = (homepageURL) => {
-  if (!homepageURL) return '';
-  const page = new url.URL(homepageURL);
-  return homepageURL
-    .replace(`${page.protocol}//${page.host}`, '')
-    .replace(/\/$/, '');
-};
-
-const pkg = fs.readJSONSync(new URL('./package.json', import.meta.url));
 
 process.env.VITE_DATELINE = new Date().toISOString();
 
@@ -42,22 +32,14 @@ export default {
     // Uncomment below to disable SSR app-wide during development
     // ssr: process.env.NODE_ENV === 'production',
     paths: {
-      assets:
-        process.env.NODE_ENV === 'production' && !process.env.TESTING
-          ? (process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage) + 'cdn'
-          : '',
-      base:
-        process.env.NODE_ENV === 'production' && !process.env.TESTING
-          ? getRootRelativePath(
-              process.env.PREVIEW ? pkg.reuters.preview : pkg.homepage
-            )
-          : '',
+      assets: getAssetsPath(),
+      base: getBasePath(),
     },
     adapter: adapter({
       pages: 'dist',
       assets: 'dist/cdn',
     }),
-    prerender: { default: true },
+    prerender: { default: true, onError: 'continue' },
     trailingSlash: 'always',
     files: {
       assets: 'src/statics',
