@@ -39,7 +39,7 @@ export default {
       pages: 'dist',
       assets: 'dist/cdn',
     }),
-    prerender: { default: true, onError: 'continue' },
+    prerender: { default: true },
     trailingSlash: 'always',
     files: {
       assets: 'src/statics',
