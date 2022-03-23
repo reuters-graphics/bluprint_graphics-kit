@@ -9,6 +9,10 @@
   } from '@reuters-graphics/graphics-svelte-components';
   import Page from '$lib/Page.svelte';
   import content from '$locales/en/content.json';
+
+  // Styles
+  import '@reuters-graphics/style-theme-eisbaer/scss/main.scss';
+  import '$lib/styles/global.scss';
 </script>
 
 <SEO
@@ -28,11 +32,3 @@
 
 <!-- Only visible in dev! -->
 <EmbedPreviewerLink />
-
-<!-- svelte-ignore css-unused-selector -->
-<style lang="scss">
-  @import '~@reuters-graphics/style-main/scss/fonts/font-faces';
-  :global {
-    @import '@reuters-graphics/style-theme-eisbaer/scss/main';
-  }
-</style>
