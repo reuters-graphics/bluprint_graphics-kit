@@ -8,21 +8,24 @@ import sveltePreprocess from 'svelte-preprocess';
 
 process.env.VITE_DATELINE = new Date().toISOString();
 
+// Custom SCSS processor options...
+const scss = {
+  includePaths: ['src/', 'node_modules/bootstrap/scss/'],
+  importer: [
+    (url) => {
+      // Redirect tilde-prefixed imports to node_modules
+      if (/^~/.test(url))
+        return { file: `node_modules/${url.replace('~', '')}` };
+      return null;
+    },
+  ],
+  quietDeps: true,
+};
+
 export default {
   preprocess: sveltePreprocess({
     preserve: ['ld+json'],
-    scss: {
-      includePaths: ['src/', 'node_modules/bootstrap/scss/'],
-      importer: [
-        (url) => {
-          // Redirect tilde-prefixed imports to node_modules
-          if (/^~/.test(url))
-            return { file: `node_modules/${url.replace('~', '')}` };
-          return null;
-        },
-      ],
-      quietDeps: true,
-    },
+    scss,
     postcss: {
       plugins: [autoprefixer],
     },
@@ -60,6 +63,9 @@ export default {
           $pkg: '/package.json',
           $locales: '/locales',
         },
+      },
+      css: {
+        preprocessorOptions: { scss },
       },
       optimizeDeps: {
         exclude: ['svelte-fa', '@reuters-graphics/style-theme-eisbaer'],
