@@ -1,3 +1,6 @@
 {
-  "startCommand": "npm run start"
+  "startCommand": "npm run start",
+  "env": {
+    "STACKBLITZ_ENV": "true"
+  }
 }
