@@ -57,7 +57,8 @@
     "prettier-plugin-svelte": "^2.4.0",
     "sass": "^1.49.0",
     "svelte": "^3.46.4",
-    "svelte-preprocess": "^4.10.4"
+    "svelte-preprocess": "^4.10.4",
+    "vite-imagetools": "^4.0.3"
   },
   "engines": {
     "node": ">= 14.17.0"
@@ -100,7 +101,7 @@
       "updated": null,
       "mediaEditions": []
     },
-    "preview": ""
+    "preview": "https://graphics.thomsonreuters.com/testfiles/2022/CRWLjBMIWyV/"
   },
   "homepage": ""
 }

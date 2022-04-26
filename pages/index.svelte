@@ -7,7 +7,7 @@
     Footer,
     EmbedPreviewerLink,
   } from '@reuters-graphics/graphics-svelte-components';
-  import Page from '$lib/Page.svelte';
+  import App from '$lib/App.svelte';
   import content from '$locales/en/content.json';
 
   // Styles
@@ -25,7 +25,7 @@
 />
 
 <Nav />
-<Page />
+<App />
 <Sharer />
 <Referrals />
 <Footer />
