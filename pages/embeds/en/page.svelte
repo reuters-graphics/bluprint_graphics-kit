@@ -1,5 +1,5 @@
 <script>
-  import Page from '$lib/Page.svelte';
+  import App from '$lib/App.svelte';
   import content from '$locales/en/content.json';
   import { PymChild, SEO } from '@reuters-graphics/graphics-svelte-components';
 
@@ -17,6 +17,6 @@
   lang="en"
 />
 
-<Page embedded="{true}" />
+<App embedded="{true}" />
 
 <PymChild polling="{500}" />
