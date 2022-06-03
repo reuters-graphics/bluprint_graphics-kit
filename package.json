@@ -22,8 +22,7 @@
     "startup": "npm-run-all startup:* get-google",
     "preview": "npm-run-all publish:preview",
     "upload": "npm-run-all publish:upload",
-    "pub": "npm-run-all publish:publish publish:git-commit publish:trello-move",
-    "postinstall": "if test \"$STACKBLITZ_ENV\" != \"true\" ; then npx husky install ; fi "
+    "pub": "npm-run-all publish:publish publish:git-commit publish:trello-move"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
