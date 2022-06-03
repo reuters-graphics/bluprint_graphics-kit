@@ -3,7 +3,6 @@ import { getAssetsPath, getBasePath } from './bin/svelte-kit/paths/index.js';
 import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import dsv from '@rollup/plugin-dsv';
-import { imagetools } from 'vite-imagetools';
 import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/index.cjs';
 import sveltePreprocess from 'svelte-preprocess';
 
@@ -42,6 +41,8 @@ export default {
     adapter: adapter({
       pages: 'dist',
       assets: 'dist/cdn',
+      fallback: null,
+      precompress: false,
     }),
     prerender: { default: true },
     trailingSlash: 'always',
@@ -73,7 +74,7 @@ export default {
         exclude: ['svelte-fa', '@reuters-graphics/style-theme-eisbaer'],
         include: ['classnames', 'lodash-es', 'pym.js', 'ua-parser-js'],
       },
-      plugins: [dsv(), svelteKitPagesPlugin(), imagetools()],
+      plugins: [dsv(), svelteKitPagesPlugin()],
     },
   },
 };

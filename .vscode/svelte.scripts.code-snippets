@@ -1,14 +1,4 @@
 {
-	"Static assets path": {
-		"scope": "javascript",
-		"prefix": "statics",
-		"body": [
-			"import { getPath } from '\\$utils/statics';",
-      "",
-			"getPath('${1:filepath}')"
-		],
-		"description": "Add a static assets file path"
-	},
   "SvelteKit $app/env": {
 		"scope": "javascript",
 		"prefix": "env",
