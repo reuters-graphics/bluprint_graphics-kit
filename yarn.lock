@@ -1254,10 +1254,10 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.3.8.tgz#3b10dcf926d01692bb9d34dacb1a293bd23262ce"
-  integrity sha512-SgQHt4ObnJnYKUp3EaILZgjVSQEOlGVxADqaLCk+wtqGkMRQvmloVd+CI79qbJ5OGENitLBAPrf+VZfr4vhulQ==
+"@reuters-graphics/graphics-svelte-components@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.3.9.tgz#064a37ef13b7bc0088c72a7ec46702ea3df8b9b5"
+  integrity sha512-HJOVrtkfD9YZcs9Hc8VEk/35hkTtuR1IqyW28CcwKMkdhnvbIEWQcawb9aTJwNOhIQFLJvGwYlen2VRNrM9xmA==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
