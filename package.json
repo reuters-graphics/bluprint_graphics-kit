@@ -23,7 +23,7 @@
     "preview": "npm-run-all publish:preview",
     "upload": "npm-run-all publish:upload",
     "pub": "npm-run-all publish:publish publish:git-commit publish:trello-move",
-    "postinstall": "if [[ ${STACKBLITZ_ENV} != \"true\" ]]; then husky install; fi"
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
