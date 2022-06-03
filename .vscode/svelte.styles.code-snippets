@@ -15,19 +15,6 @@
 		],
 		"description": "Add a Svelte SCSS style tag"
 	},
-	"Reuters Graphics styles theme": {
-		"scope": "svelte",
-		"prefix": "scss-theme",
-		"body": [
-			"<style lang=\"scss\">",
-			"  @import '~@reuters-graphics/style-main/scss/fonts/font-faces';",
-			"  :global {",
-			"    @import '@reuters-graphics/style-theme-eisbaer/scss/main';",
-			"  }",
-			"</style>"
-		],
-		"description": "Add Reuters Graphics theme to page"
-	},
 	"Reuters Graphics fonts mixins": {
 		"scope": "scss",
 		"prefix": "fonts-mixins",
