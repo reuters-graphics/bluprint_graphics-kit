@@ -29,7 +29,7 @@ We recommend your first step is to create an issue on this repo describing what 
 
 Once you're ready to submit code, be sure it's properly formatted _before_ you ask for a review. The easiest way is to ensure the built-in code formatter (prettier) is working. (It should.)
 
-Be sure to add comments around any tricky bits of logic you're adding. Even better, document your code using [JSDoc](https://devhints.io/jsdoc) comments. (Check out [JSDoc shortcuts](https://code.visualstudio.com/docs/languages/javascript#_jsdoc-support) in VS Code for a leg-up.)
+Be sure to add comments around any tricky bits of logic you're adding.
 
 ### 📝 Write docs
 
@@ -37,7 +37,16 @@ New components or features may need to be reflected in the [Graphics Kit docs](h
 
 ### 🍺 Submit code
 
-All code contributions should be made through the normal [GitHub Flow](https://www.w3schools.com/git/git_github_flow.asp#:~:text=The%20GitHub%20flow%20is%20a,Make%20changes%20and%20add%20Commits). Basically, make a branch and submit a pull request.
+All code contributions should be made through the normal [GitHub Flow](https://www.w3schools.com/git/git_github_flow.asp#:~:text=The%20GitHub%20flow%20is%20a,Make%20changes%20and%20add%20Commits). Basically, make a branch and submit a pull request, i.e. ...
+
+```bash
+git checkout -b my-cool-new-thing
+# ...
+# Write and commit your code on the new branch and push it up
+git commit -a -m "ready for PR"
+git push origin my-cool-new-thing
+# Make a Pull Request on GitHub!
+```
 
 Generally, it's better to avoid bundling several new features or components in a single PR. Breaking them apart into smaller, individual contributions makes them easier to review and manage.
 
