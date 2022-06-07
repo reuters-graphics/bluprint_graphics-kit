@@ -7,6 +7,14 @@
 		],
 		"description": "SvelteKit $app/env stores"
 	},
+  "Static paths": {
+    "scope": "javascript",
+    "prefix": "statics",
+		"body": [
+			"import { assets } from '\\$app/paths';"
+		],
+		"description": "SvelteKit assets path store"
+  },
   "SvelteKit $app/paths": {
     "scope": "javascript",
     "prefix": "paths",
