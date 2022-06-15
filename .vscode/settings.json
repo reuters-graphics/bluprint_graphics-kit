@@ -11,6 +11,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    "liveshare.launcherClient": "visualStudioCode",
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode"
     }
