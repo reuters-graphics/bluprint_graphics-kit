@@ -38,8 +38,7 @@
       ["git", ["init"]],
       ["git", ["add", "."]],
       ["git", ["commit", "-m", "initial"]],
-      ["yarn"],
-      ["chmod", ["ug+x", ".husky/pre-commit"]]
+      ["yarn"]
     ]
   }, {
     "action": "execute",
@@ -48,7 +47,6 @@
       ["yarn", ["startup:create-repo"]],
       ["yarn", ["startup:archie-doc"]],
       ["yarn", ["startup:ai-templates"]],
-      ["yarn", ["husky", "install"]],
       ["yarn", ["start"]]
     ],
     "condition": ["bluprintPart", null]
