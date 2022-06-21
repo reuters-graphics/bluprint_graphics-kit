@@ -19,6 +19,8 @@
   import { marked } from 'marked';
   import { truthyString } from '$utils/truthyString';
 
+  import img1 from '$images/reuters-graphics.jpg';
+
   export let embedded = false;
 </script>
 
@@ -41,6 +43,8 @@
       {/if}
     </div>
   </Headline>
+
+  <img src="{img1}" width="400" alt="test" />
 
   <!-- 🔁 Looping through your Google doc blocks... -->
   {#each content.blocks as block}

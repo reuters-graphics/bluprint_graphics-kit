@@ -22,6 +22,9 @@
                 "package.json"
             ],
             "$images": [
+                "src/statics/images"
+            ],
+            "$images/*": [
                 "src/statics/images/*"
             ],
             "$locales/*": [
