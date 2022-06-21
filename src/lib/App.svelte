@@ -14,7 +14,7 @@
     Ai2svelte,
   } from '@reuters-graphics/graphics-svelte-components';
 
-  // Other dependencies
+  // Other dependencies you need here
   import { apdate } from 'journalize';
   import { marked } from 'marked';
   import { truthyString } from '$utils/truthyString';
