@@ -941,12 +941,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@evilmartians/lefthook-installer@^1.0.1":
+"@evilmartians/lefthook@^1.0.1":
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook-installer/-/lefthook-installer-1.0.1.tgz#6eef92ed015227b46741ac9628215368a89fb423"
-  integrity sha512-2JSYdIQ1luWJJNFMkNPQRJ+eY1Bm4xecnR6MaacedizRwOH1/aW2a44Pr3jIdlSUU6Xao4uoVIUoksHmUP7F5A==
-  dependencies:
-    node-downloader-helper "^1.0.18"
+  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.0.1.tgz#7b09cd1b41820ba8d4ce39fa2b188dd826b46a9a"
+  integrity sha512-s8yvhcGMvYSYdAGxUZl218gO6A3gVLMYIFHNZEICt0Vn4U66HCp3x+SdPX6YiBEoGbDulh8zRF35eaucHUxYMg==
 
 "@fortawesome/fontawesome-common-types@^0.2.36":
   version "0.2.36"
@@ -4840,11 +4838,6 @@ node-addon-api@^3.2.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.2.1.tgz#81325e0a2117789c0128dab65e7e38f07ceba161"
   integrity sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==
-
-node-downloader-helper@^1.0.18:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/node-downloader-helper/-/node-downloader-helper-1.0.19.tgz#f3313543dfaf6fabc58361886f14dca790f0fb6c"
-  integrity sha512-Bwp8WWDDP5ftg+FmAKU08a9+oiUTPoYzMvXgUqZZPQ7VMo1qKBzW3XdTXHeYnqjGLfkTZ2GPibgAWpApfpeS2g==
 
 node-fetch@^2.3.0, node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
