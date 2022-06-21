@@ -1,5 +1,4 @@
 {
-  "installDependencies": false,
   "startCommand": "npm run start",
   "env": {
     "STACKBLITZ_ENV": "true"
