@@ -13,7 +13,11 @@
   "blocks": [
     {
       "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken.\n\nHam hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
+      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
+    },
+    {
+      "Type": "text",
+      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
     },
     {
       "Type": "ai2svelte-map",
