@@ -17,6 +17,11 @@
   lang="en"
 />
 
+<!-- If making a standalone embed chart, wrap the graphic component in this div: -->
+<!-- <div class='embed-graphic'> -->
+<!-- Put your graphic here -->
+<!-- </div> -->
+
 <App embedded="{true}" />
 
 <PymChild polling="{500}" />
