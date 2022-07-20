@@ -1259,10 +1259,10 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-svelte-components@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.3.9.tgz#064a37ef13b7bc0088c72a7ec46702ea3df8b9b5"
-  integrity sha512-HJOVrtkfD9YZcs9Hc8VEk/35hkTtuR1IqyW28CcwKMkdhnvbIEWQcawb9aTJwNOhIQFLJvGwYlen2VRNrM9xmA==
+"@reuters-graphics/graphics-svelte-components@^0.3.30":
+  version "0.3.30"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-svelte-components/-/graphics-svelte-components-0.3.30.tgz#458bb8eb3fc72a5c12ffc84a6d8caba89b6493b0"
+  integrity sha512-nfKBK5jQSO48zoxlFNVEv1koM9nmS2kil+N6xAf6cQr4R3/6JKkhgu2MqtY1U34n0rCXjXiz18+xWQHBQFiYAQ==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
@@ -1270,12 +1270,14 @@
     "@reuters-graphics/style-theme-eisbaer" "^0.3.5"
     "@sveltejs/svelte-scroller" "^2.0.7"
     classnames "^2.3.1"
+    dayjs "^1.11.3"
     lodash-es "^4.17.21"
     lottie-web "^5.7.13"
     marked "^4.0.8"
     proper-url-join "^2.1.1"
     pym.js "^1.3.2"
-    svelte-fa "^2.2.0"
+    svelte-fa "^2.4.0"
+    svelte-intersection-observer "^0.10.0"
     ua-parser-js "^0.7.27"
 
 "@reuters-graphics/server-client@^1.3.0":
@@ -2604,6 +2606,11 @@ d3@^7.1.1:
     d3-timer "3"
     d3-transition "3"
     d3-zoom "3"
+
+dayjs@^1.11.3:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.4.tgz#3b3c10ca378140d8917e06ebc13a4922af4f433e"
+  integrity sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==
 
 debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
@@ -6013,7 +6020,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-svelte-fa@^2.2.0:
+svelte-fa@^2.2.0, svelte-fa@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/svelte-fa/-/svelte-fa-2.4.0.tgz#d94285151a975b92b29efec6ec9e2c11c57780ef"
   integrity sha512-0bnbMGbsE1LUnlioDcf27tl2O8kjuXlTXMXzIxC7LoIOWmqn0D+zd539HfLiQbdLuOHGTaynwN9V+4ehhEu1Jw==
@@ -6022,6 +6029,11 @@ svelte-hmr@^0.14.12:
   version "0.14.12"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.12.tgz#a127aec02f1896500b10148b2d4d21ddde39973f"
   integrity sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==
+
+svelte-intersection-observer@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/svelte-intersection-observer/-/svelte-intersection-observer-0.10.0.tgz#6f9ff6c235ee80b761c169406e389ff15d1e8f3a"
+  integrity sha512-GdOTMSrRpoBciMe+NbocsHOBvqKJ5OiL5H8Jz4mBoDGHba9VOI4oGeXAmMOmh8mi5gq95+0b0DVI+6alcQ7TCA==
 
 svelte-preprocess@^4.10.6:
   version "4.10.6"

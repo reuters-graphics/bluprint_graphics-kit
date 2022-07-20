@@ -2,9 +2,8 @@
   import {
     SEO,
     Sharer,
-    Referrals,
-    Nav,
-    Footer,
+    SiteHeader,
+    SiteFooter,
     EmbedPreviewerLink,
   } from '@reuters-graphics/graphics-svelte-components';
   import App from '$lib/App.svelte';
@@ -24,11 +23,10 @@
   lang="en"
 />
 
-<Nav />
+<SiteHeader />
 <App />
 <Sharer />
-<Referrals />
-<Footer />
+<SiteFooter />
 
 <!-- Only visible in dev! -->
 <EmbedPreviewerLink />
