@@ -64,6 +64,7 @@ export default {
           $utils: '/src/utils',
           $pkg: '/package.json',
           $locales: '/locales',
+          $assets: '/src/statics',
           $images: '/src/statics/images',
         },
       },
