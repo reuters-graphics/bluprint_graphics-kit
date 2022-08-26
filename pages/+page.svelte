@@ -32,6 +32,7 @@
   authors="{pkg?.reuters?.graphic?.authors}"
   includeAnalytics="{$page.url.hostname === 'graphics.reuters.com'}"
 />
+
 <Theme base="light">
   <SiteHeader />
   <App />
