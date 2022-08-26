@@ -12,9 +12,8 @@
 
 <Framer embeds="{embeds}" />
 
-<!-- svelte-ignore css-unused-selector -->
-<style lang="scss">
-  :global(body) {
+<style global>
+  body {
     padding-bottom: 60px;
     background-color: #fafafa;
   }

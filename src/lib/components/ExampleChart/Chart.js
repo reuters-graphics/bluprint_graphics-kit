@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
+
 import { appendSelect } from 'd3-appendselect';
-import {merge} from 'lodash-es';
+import { merge } from 'lodash-es';
 
 d3.selection.prototype.appendSelect = appendSelect;
 
@@ -91,11 +92,11 @@ class MyChartClass {
 
     const xAxis = d3.axisBottom(xScale)
       .tickSize(10)
-      .ticks(5)
+      .ticks(5);
 
     const yAxis = d3.axisLeft(yScale)
       .tickSize(10)
-      .ticks(5)
+      .ticks(5);
 
     plot
       .appendSelect('g.axis.x')

@@ -1,10 +1,12 @@
 <script>
-  import App from '$lib/App.svelte';
   import content from '$locales/en/content.json';
-  import { PymChild, SEO } from '@reuters-graphics/graphics-components';
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
+  import { PymChild, SEO } from '@reuters-graphics/graphics-components';
+
+  // App or embeddable chart component
+  import App from '$lib/App.svelte';
 
   // Styles
   import '$lib/styles/global.scss';

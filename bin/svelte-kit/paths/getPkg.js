@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+import fs from 'fs';
+import path from 'path';
 
 const getPkgRoot = () => {
   const PKG_PATH = path.join(process.cwd(), 'package.json');
@@ -7,7 +7,7 @@ const getPkgRoot = () => {
   return process.cwd();
 };
 
-module.exports = () => {
+export default () => {
   const PKG_ROOT = getPkgRoot();
   const PKG = JSON.parse(fs.readFileSync(path.join(PKG_ROOT, 'package.json'), 'utf-8'));
   return PKG;

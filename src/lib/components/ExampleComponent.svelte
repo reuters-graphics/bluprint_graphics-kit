@@ -12,7 +12,7 @@
 </section>
 
 <style lang="scss">
-  @import '~@reuters-graphics/style-main/scss/fonts/mixins';
+  @import '@reuters-graphics/graphics-components/dist/scss/fonts/_mixins.scss';
 
   section.graphic {
     h5 {

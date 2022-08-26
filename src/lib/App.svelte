@@ -1,26 +1,31 @@
 <script>
-  // Reuters Graphics components lib (see below)
+  export let embedded = false;
+  // Graphics components
   import {
     Article,
     BodyText,
     NoteText,
     Headline,
     GraphicBlock,
+    Scroller,
+    getScrollerPropsFromDoc as scrollerProps,
   } from '@reuters-graphics/graphics-components';
 
-  // Content from your Google doc
+  // Google doc content
   import content from '$locales/en/content.json';
-
-  // Import components you make here, incuding ai2svelte components.
-  // "$lib" below is shortcut for the src/lib/ directory
-  import MyMap from '$lib/ai2svelte/ai-chart.svelte';
 
   // Other dependencies
   import { apdate } from 'journalize';
   import { marked } from 'marked';
   import { assets } from '$app/paths';
 
-  export let embedded = false;
+  // Import ai2svelte components...
+  import MyMap from '$lib/ai2svelte/ai-chart.svelte';
+
+  // ...and add them to this object.
+  const aiCharts = {
+    MyMap,
+  };
 </script>
 
 <Article>
@@ -50,17 +55,31 @@
       <BodyText text="{block.Text}" />
 
       <!-- Ai2svelte graphic block -->
-    {:else if block.Type === 'ai2svelte-map'}
-      <GraphicBlock
-        id="{block.Type}"
-        width="{block.Size}"
-        title="{block.Title}"
-        description="{block.Chatter}"
-        notes="{`Note: ${block.Note}\n\nSource: ${block.Source}`}"
-        ariaDescription="{block.AltText}"
-      >
-        <MyMap assetsPath="{assets}" />
-      </GraphicBlock>
+    {:else if block.Type === 'ai-graphic'}
+      {#if !aiCharts[block.Chart]}
+        {(console.warn(`Unable to find "${block.Type}" in aiCharts.`), '')}
+      {:else}
+        <GraphicBlock
+          id="{block.Type}"
+          width="{block.Width}"
+          title="{block.Title}"
+          description="{block.Chatter}"
+          notes="{block.Notes}"
+          ariaDescription="{block.AltText}"
+        >
+          <svelte:component
+            this="{aiCharts[block.Chart]}"
+            assetsPath="{assets}"
+          />
+        </GraphicBlock>
+      {/if}
+
+      <!-- Ai2svelte scroller -->
+    {:else if block.Type === 'ai-scroller'}
+      <Scroller
+        {...scrollerProps(block, aiCharts, assets)}
+        embedded="{embedded}"
+      />
     {:else}
       {(console.warn(`Unknown block type: ${block.Type}`), '')}
     {/if}

@@ -13,16 +13,21 @@
   "blocks": [
     {
       "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken.\n\nHam hock turducken kielbasa tri-tip alcatra. Alcatra ball tip swine boudin burgdoggen tail salami shoulder strip steak ground round fatback drumstick rump."
+      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
     },
     {
-      "Type": "ai2svelte-map",
-      "Size": "normal",
+      "Type": "text",
+      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
+    },
+    {
+      "Type": "ai-graphic",
+      "Chart": "MyMap",
+      "Width": "normal",
       "Title": "Optional title of the graphic",
       "Chatter": "Optional chatter describes more about the graphic.",
       "Source": "Optional source of the data",
-      "Note": "Optional note clarifying something in the data",
-      "AriaHidden": "true",
+      "Notes": "\\Note: Optional note clarifying something in the data",
+      "/Source": "Optional source of the data",
       "AltText": "Add a description of the graphic for screen readers. This is invisible on the page."
     },
     {
