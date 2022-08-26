@@ -22,7 +22,7 @@ describe('GraphicsKit', function() {
 
   it('should build the app without error', async function() {
     try {
-      execSync('svelte-kit build', { stdio: 'inherit', stdout: 'inherit' });
+      execSync('vite build', { stdio: 'inherit', stdout: 'inherit' });
     } catch {
       expect(false).to.be(true);
     }
@@ -38,14 +38,14 @@ describe('GraphicsKit', function() {
   });
   it('should prerender homepage content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
-    expect($('div.title h2').text()).to.be('Reuters Graphics Interactive');
+    expect($('div.title h1').text()).to.be('Reuters Graphics Interactive');
   });
   it('should build the embed page', async function() {
     expect(fs.existsSync(path.join(DIST, 'embeds/en/page/index.html'))).to.be(true);
   });
   it('should prerender embed page content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
-    expect($('div.title h2').text()).to.be('Reuters Graphics Interactive');
+    expect($('div.title h1').text()).to.be('Reuters Graphics Interactive');
   });
   it('should not include homepage furniture on embed', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
