@@ -34,9 +34,9 @@ export default function svelteKitPagesPlugin({
     // Remove Svelte-specific extensions
     const pagePaths = pages.map((embed) => {
       const pagePath = path.join(base, embed.replace('.svelte', ''));
-      return /\+page$/.test(pagePath) ?
-        pagePath.replace(/\+page$/, '') :
-        pagePath;
+      return /\+page$/.test(pagePath)
+        ? pagePath.replace(/\+page$/, '')
+        : pagePath;
     });
     // Return as virtual module
     return `export default ['${pagePaths.join("', '")}'];`;

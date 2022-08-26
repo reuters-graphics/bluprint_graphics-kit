@@ -79,7 +79,8 @@ class MyChartClass {
 
     const yScale = d3.scaleLinear().domain([0, 100]).range([height, 0]);
 
-    const rScale = d3.scaleLinear()
+    const rScale = d3
+      .scaleLinear()
       .domain(d3.extent(data, (d) => d.r))
       .range([10, 25]);
 
@@ -90,13 +91,9 @@ class MyChartClass {
       .appendSelect('g.plot')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const xAxis = d3.axisBottom(xScale)
-      .tickSize(10)
-      .ticks(5);
+    const xAxis = d3.axisBottom(xScale).tickSize(10).ticks(5);
 
-    const yAxis = d3.axisLeft(yScale)
-      .tickSize(10)
-      .ticks(5);
+    const yAxis = d3.axisLeft(yScale).tickSize(10).ticks(5);
 
     plot
       .appendSelect('g.axis.x')
