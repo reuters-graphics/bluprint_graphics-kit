@@ -3,10 +3,11 @@ import path from 'path';
 
 const getPkgRoot = () => {
   const PKG_PATH = path.join(process.cwd(), 'package.json');
-  if (!fs.existsSync(PKG_PATH))
+  if (!fs.existsSync(PKG_PATH)) {
     throw new Error(
       'Unable to find package.json in your current working directory. Are you running from the root of your project?'
     );
+  }
   return process.cwd();
 };
 
