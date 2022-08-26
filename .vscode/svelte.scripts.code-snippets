@@ -9,7 +9,7 @@
 	},
   "Static paths": {
     "scope": "javascript",
-    "prefix": "statics",
+    "prefix": "assets",
 		"body": [
 			"import { assets } from '\\$app/paths';"
 		],
@@ -22,28 +22,5 @@
 			"import { base, assets } from '\\$app/paths';"
 		],
 		"description": "SvelteKit $app/paths stores"
-  },
-  "SvelteKit load module": {
-    "scope": "svelte",
-    "prefix": "load-module",
-    "body": [
-      "<script context=\"module\">",
-      "  export async function load({ page, fetch, session, context }) {",
-      "    const url = 'https://$1';",
-      "    const res = await fetch(url);",
-      "    if (res.ok) {",
-      "      return {",
-      "        props: {",
-      "          data: await res.json(),",
-      "        },",
-      "      };",
-      "    }",
-      "    return {",
-      "      status: res.status,",
-      "      error: new Error('Could not fetch!'),",
-      "    };",
-      "  }",
-      "</script>"
-    ]
   }
 }

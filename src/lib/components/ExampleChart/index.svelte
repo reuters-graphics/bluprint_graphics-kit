@@ -23,11 +23,11 @@
 </section>
 
 <style lang="scss">
+  @import '@reuters-graphics/graphics-components/dist/scss/fonts/_mixins.scss';
+
   #chart {
     width: 100%;
     :global {
-      @import '~@reuters-graphics/style-main/scss/fonts/mixins';
-
       circle {
         stroke: #777;
         stroke-width: 1px;

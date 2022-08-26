@@ -1,15 +1,22 @@
-const glob = require('glob');
-const path = require('path');
-const fs = require('fs');
-const { normalizePath } = require('vite');
+import fs from 'fs';
+import glob from 'glob';
+import { normalizePath } from 'vite';
+import path from 'path';
 
 const getPkgRoot = () => {
   const PKG_PATH = path.join(process.cwd(), 'package.json');
-  if (!fs.existsSync(PKG_PATH)) throw new Error('Unable to find package.json in your current working directory. Are you running from the root of your project?');
+  if (!fs.existsSync(PKG_PATH)) {
+    throw new Error(
+      'Unable to find package.json in your current working directory. Are you running from the root of your project?'
+    );
+  }
   return process.cwd();
 };
 
-module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } = {}) {
+export default function svelteKitPagesPlugin({
+  base = '/',
+  pages = 'pages',
+} = {}) {
   const VIRTUAL_MODULE_ID = '@svelte-kit-pages';
   const RESOLVED_VIRTUAL_MODULE_ID = '\0' + VIRTUAL_MODULE_ID;
 
@@ -21,14 +28,18 @@ module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } =
   const getPagePaths = () => {
     const pages = glob.sync('**/*.svelte', { cwd: PAGES_DIR });
     // Reset FOUND_PAGES
-    FOUND_PAGES = pages.map(embed => normalizePath(path.join(PAGES_DIR, embed)));
+    FOUND_PAGES = pages.map((embed) =>
+      normalizePath(path.join(PAGES_DIR, embed))
+    );
     // Remove Svelte-specific extensions
     const pagePaths = pages.map((embed) => {
       const pagePath = path.join(base, embed.replace('.svelte', ''));
-      return /index$/.test(pagePath) ? pagePath.replace(/index$/, '') : pagePath;
+      return /\+page$/.test(pagePath)
+        ? pagePath.replace(/\+page$/, '')
+        : pagePath;
     });
     // Return as virtual module
-    return `export default ['${pagePaths.join('\', \'')}'];`;
+    return `export default ['${pagePaths.join("', '")}'];`;
   };
 
   const reloadModule = (server) => {
@@ -64,4 +75,4 @@ module.exports = function svelteKitPagesPlugin({ base = '/', pages = 'pages' } =
       }
     },
   };
-};
+}

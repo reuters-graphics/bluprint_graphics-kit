@@ -1,4 +1,4 @@
-import getPkg from './getPkg.cjs';
+import getPkg from './getPkg.js';
 import url from 'url';
 
 const TESTING_ROOT = 'https://graphics.reuters.com/test/testing/';

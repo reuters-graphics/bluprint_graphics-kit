@@ -1,7 +1,7 @@
 <script>
   // @ts-ignore
   import pages from '@svelte-kit-pages';
-  import { Framer } from '@reuters-graphics/graphics-svelte-components';
+  import { Framer } from '@reuters-graphics/graphics-components';
   import { base } from '$app/paths';
 
   const embeds = pages
@@ -12,9 +12,8 @@
 
 <Framer embeds="{embeds}" />
 
-<!-- svelte-ignore css-unused-selector -->
-<style lang="scss">
-  :global(body) {
+<style global>
+  body {
     padding-bottom: 60px;
     background-color: #fafafa;
   }
