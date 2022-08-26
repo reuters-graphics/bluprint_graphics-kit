@@ -1,14 +1,7 @@
 {
     "extends": "./.svelte-kit/tsconfig.json",
     "compilerOptions": {
-        "target": "es6",
-        "module": "es2020",
-        "baseUrl": ".",
         "paths": {
-            "$app/*": [
-                ".svelte-kit/dev/runtime/app/*",
-                ".svelte-kit/build/runtime/app/*"
-            ],
             "$lib":[
                 "src/lib"
             ],
@@ -32,8 +25,4 @@
             ]
         }
     },
-    "include": [
-        "src/**/*.js",
-        "src/**/*.svelte"
-    ]
 }

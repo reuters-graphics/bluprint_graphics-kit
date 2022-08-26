@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['svelte.config.js'],
   extends: ['standard'],
   plugins: ['svelte3', '@babel', 'mocha'],
   env: {
@@ -47,7 +46,7 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2019,
+    ecmaVersion: 2020,
     requireConfigFile: false,
   },
 };

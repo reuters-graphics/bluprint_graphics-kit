@@ -1,31 +1,32 @@
 <script>
+  // Reuters Graphics components lib (see below)
+  import {
+    Article,
+    BodyText,
+    NoteText,
+    Headline,
+    GraphicBlock,
+  } from '@reuters-graphics/graphics-components';
+
   // Content from your Google doc
   import content from '$locales/en/content.json';
 
   // Import components you make here, incuding ai2svelte components.
   // "$lib" below is shortcut for the src/lib/ directory
-  import Map from '$lib/ai2svelte/ai-chart.svelte';
-
-  // Reuters Graphics components lib (see below)
-  import {
-    BodyText,
-    EndNotes,
-    Headline,
-    Ai2svelte,
-  } from '@reuters-graphics/graphics-svelte-components';
+  import MyMap from '$lib/ai2svelte/ai-chart.svelte';
 
   // Other dependencies
   import { apdate } from 'journalize';
   import { marked } from 'marked';
-  import { truthyString } from '$utils/truthyString';
+  import { assets } from '$app/paths';
 
   export let embedded = false;
 </script>
 
-<article class="container-fluid" class:embedded>
+<Article>
   <!--
     This Headline and other components are part of our components library.
-    📚 Read the docs: https://reuters-graphics.github.io/graphics-svelte-components/
+    📚 Read the docs: https://reuters-graphics.github.io/graphics-components/
   -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
     <span slot="byline">By {@html marked.parseInline(content.Byline)} </span>
@@ -50,26 +51,20 @@
 
       <!-- Ai2svelte graphic block -->
     {:else if block.Type === 'ai2svelte-map'}
-      <Ai2svelte
-        AiGraphic="{Map}"
+      <GraphicBlock
         id="{block.Type}"
-        size="{block.Size}"
-        ariaHidden="{truthyString(block.AriaHidden)}"
+        width="{block.Size}"
+        title="{block.Title}"
+        description="{block.Chatter}"
+        notes="{`Note: ${block.Note}\n\nSource: ${block.Source}`}"
         ariaDescription="{block.AltText}"
       >
-        <div slot="title" class="title">
-          {#if block.Title}<h4>{block.Title}</h4>{/if}
-          {#if block.Chatter}<p>{block.Chatter}</p>{/if}
-        </div>
-        <aside slot="notes">
-          {#if block.Note}<p class="note">Note: {block.Note}</p>{/if}
-          {#if block.Source}<p class="source">Source: {block.Source}</p>{/if}
-        </aside>
-      </Ai2svelte>
+        <MyMap assetsPath="{assets}" />
+      </GraphicBlock>
     {:else}
-      {console.warn(`Unknown block type: ${block.Type}`)}
+      {(console.warn(`Unknown block type: ${block.Type}`), '')}
     {/if}
   {/each}
 
-  <EndNotes text="{content.EndNotes}" />
-</article>
+  <NoteText text="{content.EndNotes}" />
+</Article>

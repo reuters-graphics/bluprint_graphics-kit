@@ -4,6 +4,7 @@
 // creates on your pages or embeds and to override any defaults that are part
 // of our house style libraries.
 
+@import "@reuters-graphics/graphics-components/scss/main";
 
 // Uncomment Reuters style library imports below
 // // https://reuters-graphics.github.io/style/fonts/
@@ -13,9 +14,3 @@
 
 @import 'colors';
 
-article.container-fluid {
-  overflow-x: hidden;
-  &.embedded {
-    overflow: auto;
-  }
-}
