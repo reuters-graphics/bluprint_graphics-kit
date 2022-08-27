@@ -1219,10 +1219,10 @@
     trello "^0.10.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-components@^0.0.1-beta.21":
-  version "0.0.1-beta.21"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.1-beta.21.tgz#cceb5b45480f6083a9f0d8c6740cd8500695cb14"
-  integrity sha512-0qxMmlz5mB9g6TLVem0vO+29gwegmv1ATNWsgkChoQEjhEkKzcB11ygAn2VZg4nozd8MdTaz3V0iyUfokcmelQ==
+"@reuters-graphics/graphics-components@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.1.tgz#7a3e1354b15736d4075a097d9630e6e9a2feb391"
+  integrity sha512-ZjEyuPwTgV+ZIKnCsuGzfnvAO+q8Ge6jTj57KUJucrNL0L4lyY3uyXnQAZM9e7ghJZIEw7tAU9jjhUwBmTwx/A==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
