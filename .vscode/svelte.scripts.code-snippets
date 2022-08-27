@@ -3,9 +3,9 @@
 		"scope": "javascript",
 		"prefix": "env",
 		"body": [
-			"import { browser, dev, prerendering } from '\\$app/env';"
+			"import { browser, dev, prerendering } from '\\$app/environment';"
 		],
-		"description": "SvelteKit $app/env stores"
+		"description": "SvelteKit $app/environment stores"
 	},
   "Static paths": {
     "scope": "javascript",
