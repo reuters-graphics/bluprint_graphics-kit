@@ -36,7 +36,7 @@
     "@reuters-graphics/style-ai-templates": ">=0.0.14",
     "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/adapter-static": "1.0.0-next.39",
-    "@sveltejs/kit": "1.0.0-next.437",
+    "@sveltejs/kit": "1.0.0-next.444",
     "@types/cookie": "^0.5.1",
     "autoprefixer": "^10.2.5",
     "cheerio": "^1.0.0-rc.10",
