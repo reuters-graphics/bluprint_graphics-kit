@@ -10,7 +10,7 @@
   import App from '$lib/App.svelte';
   import content from '$locales/en/content.json';
   import pkg from '$pkg';
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
 
