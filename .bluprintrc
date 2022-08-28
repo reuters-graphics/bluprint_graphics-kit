@@ -39,8 +39,10 @@
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
       ["yarn", ["startup:archie-doc"]],
-      ["yarn", ["startup:ai-templates"]],
-      ["yarn", ["start"]]
+      ["yarn", ["startup:ai-templates"]]
     ]
+  }, {
+    "action": "log",
+    "msg": "🏁 Finished creating your project!\n\nRun {green yarn start} to begin developing."
   }]
 }
