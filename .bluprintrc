@@ -43,6 +43,6 @@
     ]
   }, {
     "action": "log",
-    "msg": "🏁 Finished creating your project!\n\nRun {green yarn start} to begin developing."
+    "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green yarn start} to begin developing.\n\n"
   }]
 }
