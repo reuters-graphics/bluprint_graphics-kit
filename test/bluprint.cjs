@@ -45,12 +45,6 @@ describe('GraphicsKit bluprint', function() {
         apiKey: 'APIKEY123456789',
       }),
     });
-
-    prompts.inject({
-      projectName: 'test-project',
-      makeDoc: false,
-      org: 'na',
-    });
   });
 
   afterEach(function() {
@@ -58,12 +52,20 @@ describe('GraphicsKit bluprint', function() {
   });
 
   it('Creates a new project from the bluprint', async function() {
+    prompts.inject({
+      projectName: 'test-project',
+      makeDoc: false,
+      org: 'na',
+    });
+
     await bluprint.start('graphics-kit');
 
     expect(fs.existsSync(resolvePath('PROJECT_README.md'))).to.be(false);
     expect(fs.existsSync(resolvePath('README.md'))).to.be(true);
+    expect(fs.existsSync(resolvePath('package.json'))).to.be(true);
 
     const pkg = JSON.parse(fs.readFileSync(resolvePath('package.json'), 'utf-8'));
+    console.log('package', pkg);
     expect(pkg.name).to.be('test-project');
   });
 });

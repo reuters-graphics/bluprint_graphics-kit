@@ -20,6 +20,10 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install
+      - name: Config git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
       - name: Test build
         run: npx mocha
       - name: Create issue on fail
