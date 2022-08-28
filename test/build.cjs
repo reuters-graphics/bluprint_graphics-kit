@@ -9,7 +9,7 @@ const DIST = path.join(__dirname, '../dist/');
 
 process.env.TESTING = true;
 
-describe('GraphicsKit', function() {
+describe('GraphicsKit build', function() {
   this.timeout(90000);
 
   before(function() {
