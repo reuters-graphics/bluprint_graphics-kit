@@ -25,10 +25,31 @@ describe('GraphicsKit bluprint', function() {
 
     mock({
       [userConfigPath]: JSON.stringify(userConfig),
+      [path.join(os.homedir(), '.aws/credentials')]: '[default]\naws_access_key_id=SOMETHING123\naws_secret_access_key=SOMETHINGELSE123',
+      [path.join(os.homedir(), '.reuters-graphics/profile.json')]: JSON.stringify({
+        name: 'Jon Doe',
+        email: 'an-email@thomsonreuters.com',
+        github: {
+          email: 'an-email@email.com',
+        },
+        url: 'https://www.twitter.com',
+        desk: 'london',
+      }),
+      [path.join(os.homedir(), '.reuters-graphics/secrets.json')]: JSON.stringify({
+        trelloApiKey: 'APIKEY',
+        trelloApiToken: 'APITOKEN',
+      }),
+      [path.join(os.homedir(), '.reuters-graphics/graphics-server.json')]: JSON.stringify({
+        username: '0123456',
+        password: 'PASSWORD',
+        apiKey: 'APIKEY123456789',
+      }),
     });
 
     prompts.inject({
       projectName: 'test-project',
+      makeDoc: false,
+      org: 'na',
     });
   });
 
