@@ -35,6 +35,7 @@ describe('GraphicsKit', function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
     expect($('meta[name=description]').attr('content')).to.be('My page description for Google');
     expect($('meta[property=og:image]').attr('content')).to.be('https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg');
+    expect($('link[rel=canonical]').attr('href')).to.be('https://graphics.reuters.com/test/testing/');
   });
   it('should prerender homepage content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
