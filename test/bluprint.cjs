@@ -58,10 +58,10 @@ describe('GraphicsKit bluprint', function() {
 
     expect(fs.existsSync(resolvePath('PROJECT_README.md'))).to.be(false);
     expect(fs.existsSync(resolvePath('README.md'))).to.be(true);
+    expect(fs.existsSync(resolvePath('test/bluprint.cjs'))).to.be(false);
     expect(fs.existsSync(resolvePath('package.json'))).to.be(true);
 
     const pkg = JSON.parse(fs.readFileSync(resolvePath('package.json'), 'utf-8'));
-    console.log('package', pkg);
     expect(pkg.name).to.be('test-project');
   });
 });
