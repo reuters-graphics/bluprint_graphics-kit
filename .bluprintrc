@@ -43,9 +43,9 @@
     ]
   }, {
     "action": "log",
-    "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green yarn start} to begin developing.\n\n"
+    "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green yarn start} to begin developing.\n"
   }, {
     "action": "log",
-    "msg": "{green 📦 New components!}\nGraphics components have a new home. Check out what's new at:\n{yellow https://reuters-graphics.github.io/graphics-components/}\n\n"
+    "msg": "{cyan 📦 New components!}\nGraphics components have a new home. Check out what's new at:\n{yellow https://reuters-graphics.github.io/graphics-components/}\n\n"
   }]
 }
