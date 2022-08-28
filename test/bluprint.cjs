@@ -4,6 +4,7 @@ const path = require('path');
 const bluprint = require('@reuters-graphics/bluprint');
 const os = require('os');
 const fs = require('fs');
+const prompts = require('prompts');
 
 const userConfigPath = path.join(os.homedir(), '.bluprintrc');
 
@@ -25,6 +26,10 @@ describe('GraphicsKit bluprint', function() {
     mock({
       [userConfigPath]: JSON.stringify(userConfig),
     });
+
+    prompts.inject({
+      projectName: 'test-project',
+    });
   });
 
   afterEach(function() {
@@ -32,11 +37,7 @@ describe('GraphicsKit bluprint', function() {
   });
 
   it('Creates a new project from the bluprint', async function() {
-    const inject = {
-      projectName: 'test-project',
-    };
-
-    await bluprint.start('graphics-kit', inject);
+    await bluprint.start('graphics-kit');
 
     expect(fs.existsSync(resolvePath('PROJECT_README.md'))).to.be(false);
     expect(fs.existsSync(resolvePath('README.md'))).to.be(true);
