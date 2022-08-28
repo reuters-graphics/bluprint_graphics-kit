@@ -33,20 +33,21 @@ describe('GraphicsKit', function() {
   });
   it('should correctly form homepage metadata', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
+    expect($('meta[property=og:title]').attr('content')).to.be('My page title for Twitter');
     expect($('meta[name=description]').attr('content')).to.be('My page description for Google');
     expect($('meta[property=og:image]').attr('content')).to.be('https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg');
     expect($('link[rel=canonical]').attr('href')).to.be('https://graphics.reuters.com/test/testing/');
   });
   it('should prerender homepage content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
-    expect($('div.title h1').text()).to.be('Reuters Graphics Interactive');
+    expect($('h1').text()).to.be('Reuters Graphics Interactive');
   });
   it('should build the embed page', async function() {
     expect(fs.existsSync(path.join(DIST, 'embeds/en/page/index.html'))).to.be(true);
   });
   it('should prerender embed page content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
-    expect($('div.title h1').text()).to.be('Reuters Graphics Interactive');
+    expect($('h1').text()).to.be('Reuters Graphics Interactive');
   });
   it('should not include homepage furniture on embed', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
