@@ -72,6 +72,7 @@
     "d3-scale": "^4.0.2",
     "d3-selection": "^3.0.0",
     "journalize": "^2.5.1",
+    "language-tags": "^1.0.5",
     "lodash-es": "^4.17.21",
     "marked": "^4.0.8",
     "proper-url-join": "^2.1.1",

@@ -33,6 +33,7 @@ describe('GraphicsKit', function() {
   });
   it('should correctly form homepage metadata', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
+    expect($('html').attr('lang')).to.be('en');
     expect($('meta[property=og:title]').attr('content')).to.be('My page title for Twitter');
     expect($('meta[name=description]').attr('content')).to.be('My page description for Google');
     expect($('meta[property=og:image]').attr('content')).to.be('https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg');
