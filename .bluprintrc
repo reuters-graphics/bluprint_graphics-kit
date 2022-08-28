@@ -1,6 +1,6 @@
 {
   "bluprint": "^0.6.3",
-  "name": "Graphics kit (svelte)",
+  "name": "Graphics Kit (SvelteKit)",
   "category": "Graphics rigs",
   "actions": [{
     "action": "prompt",
@@ -8,8 +8,7 @@
       "type": "text",
       "name": "projectName",
       "message": "What should we call this project?"
-    }],
-    "condition": ["bluprintPart", null]
+    }]
   }, {
     "action": "remove",
     "paths": [
@@ -19,19 +18,16 @@
       "test/*",
       "CONTRIBUTING.md",
       "README.md"
-    ],
-    "condition": ["bluprintPart", null]
+    ]
   }, {
     "action": "move",
-    "paths": ["PROJECT_README.md", "README.md"],
-    "condition": ["bluprintPart", null]
+    "paths": ["PROJECT_README.md", "README.md"]
   }, {
     "action": "regexreplace",
     "files": ["package.json", "README.md"],
     "replace": [
       ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"]
-    ],
-    "condition": ["bluprintPart", null]
+    ]
   }, {
     "action": "execute",
     "cmds": [
@@ -39,32 +35,12 @@
       ["git", ["add", "."]],
       ["git", ["commit", "-m", "initial"]],
       ["yarn"],
-      ["npx", ["lefthook", "install"]]
-    ]
-  }, {
-    "action": "execute",
-    "cmds": [
+      ["npx", ["lefthook", "install"]],
       ["yarn", ["startup:check-creds"]],
       ["yarn", ["startup:create-repo"]],
       ["yarn", ["startup:archie-doc"]],
       ["yarn", ["startup:ai-templates"]],
       ["yarn", ["start"]]
-    ],
-    "condition": ["bluprintPart", null]
-  }],
-  "parts": {
-    "Update the graphics kit": [
-      ".vscode/**/*",
-      "bin/**/*",
-      "pages/embed-previewer/**/*",
-      "src/utils/**/*",
-      ".eslintrc.cjs",
-      ".npmrc",
-      "assetinfo.json",
-      "jsconfig.json",
-      "package.json",
-      "svelte.config.js"
     ]
-  },
-  "mergeJson": true
+  }]
 }
