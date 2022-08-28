@@ -25,7 +25,7 @@ describe('GraphicsKit bluprint', function() {
 
     mock({
       [userConfigPath]: JSON.stringify(userConfig),
-      [path.join(os.homedir(), '.aws/credentials')]: '[default]\naws_access_key_id=SOMETHING123\naws_secret_access_key=SOMETHINGELSE123',
+      [path.join(os.homedir(), '.aws/credentials')]: '[default]\r\naws_access_key_id=SOMETHING123\r\naws_secret_access_key=SOMETHINGELSE123',
       [path.join(os.homedir(), '.reuters-graphics/profile.json')]: JSON.stringify({
         name: 'Jon Doe',
         email: 'an-email@thomsonreuters.com',
@@ -52,11 +52,7 @@ describe('GraphicsKit bluprint', function() {
   });
 
   it('Creates a new project from the bluprint', async function() {
-    prompts.inject({
-      projectName: 'test-project',
-      makeDoc: false,
-      org: 'na',
-    });
+    prompts.inject(['test-project', 'na', false]);
 
     await bluprint.start('graphics-kit');
 
