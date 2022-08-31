@@ -27,13 +27,12 @@ const config = {
       fallback: null,
       precompress: false,
     }),
-    prerender: { default: true },
     trailingSlash: 'always',
     files: {
       assets: 'src/statics',
       lib: 'src/lib',
       routes: 'pages',
-      template: 'src/template.html',
+      appTemplate: 'src/template.html',
     },
   },
 };
