@@ -37,6 +37,8 @@ describe('GraphicsKit build', function() {
     expect($('meta[property=og:title]').attr('content')).to.be('My page title for Twitter');
     expect($('meta[name=description]').attr('content')).to.be('My page description for Google');
     expect($('meta[property=og:image]').attr('content')).to.be('https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg');
+    expect($('meta[name=twitter:image]').attr('content')).to.be('https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg');
+    expect($('meta[name=twitter:image:alt]').attr('content')).to.be('Alt text for share image');
     expect($('link[rel=canonical]').attr('href')).to.be('https://graphics.reuters.com/test/testing/');
   });
   it('should prerender homepage content', async function() {
