@@ -1239,10 +1239,10 @@
     strip-color "^0.1.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-components@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.3.tgz#5fcb8edb15d705b8e9fcc18cdfceeb6c22cd9b17"
-  integrity sha512-liyeXUcH+vWy3mVL9trnv6VpQsSXAz0LbiCcJymEMWK2pZCgklQJEuTTztMnvhykdHiL0Ptpi0BUtiwH4NZmTQ==
+"@reuters-graphics/graphics-components@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.12.tgz#ab92fcc6f544eda29d0b4c60f1374f6b45ec2e04"
+  integrity sha512-BaJQkyzkeuWozJ3ViPMN/+Tu55zLSiwBUJkytszSolEhDoIWyi1nak4mEcabfJ1bwGVjFamSlDAvQhfxy99Eig==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
@@ -1258,6 +1258,7 @@
     pym.js "^1.3.2"
     svelte-fa "^2.4.0"
     svelte-intersection-observer "^0.10.0"
+    svelte-search "^2.0.1"
     ua-parser-js "^0.7.27"
 
 "@reuters-graphics/graphics-kit-publisher@^0.2.6":
@@ -6210,6 +6211,11 @@ svelte-preprocess@^4.10.7:
     magic-string "^0.25.7"
     sorcery "^0.10.0"
     strip-indent "^3.0.0"
+
+svelte-search@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/svelte-search/-/svelte-search-2.0.1.tgz#d8b5ef9ac152f045a5c74a1b75c9d51c0091c839"
+  integrity sha512-JBoObru/BUk86EmuRtYBa99xnH1RB8jqDuYYJHH0PUzN9BINo1+1GZataC/m5368BG3kZRb3wZI5ztjoi1WWXg==
 
 svelte@^3.49.0:
   version "3.49.0"

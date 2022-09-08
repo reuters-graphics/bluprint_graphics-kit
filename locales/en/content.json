@@ -4,6 +4,7 @@
   "ShareTitle": "My page title for Twitter",
   "ShareDescription": "My page description for Twitter",
   "ShareImgPath": "images/reuters-graphics.jpg",
+  "ShareImgAlt": "Alt text for share image",
   "Hed": "Reuters Graphics Interactive",
   "Dek": "The beginning of a beautiful page",
   "Kicker": "Global News",

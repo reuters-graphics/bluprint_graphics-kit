@@ -27,6 +27,7 @@
   shareTitle="{content.ShareTitle}"
   shareDescription="{content.ShareDescription}"
   shareImgPath="{`${assets}/${content.ShareImgPath}`}"
+  shareImgAlt="{content.ShareImgAlt}"
   publishTime="{pkg?.reuters?.graphic?.published}"
   updateTime="{pkg?.reuters?.graphic?.updated}"
   authors="{pkg?.reuters?.graphic?.authors}"
