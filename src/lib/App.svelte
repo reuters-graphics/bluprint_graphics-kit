@@ -69,7 +69,7 @@
         >
           <svelte:component
             this="{aiCharts[block.Chart]}"
-            assetsPath="{assets}"
+            assetsPath="{assets || '/'}"
           />
         </GraphicBlock>
       {/if}
@@ -77,7 +77,7 @@
       <!-- Ai2svelte scroller -->
     {:else if block.Type === 'ai-scroller'}
       <Scroller
-        {...scrollerProps(block, aiCharts, assets)}
+        {...scrollerProps(block, aiCharts, assets || '/')}
         embedded="{embedded}"
       />
     {:else}
