@@ -14,7 +14,10 @@
         id="g-ai-chart-xs-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assetsPath}/images/graphics/ai-chart-xs.png);"
+        style="background-image: url({assetsPath.replace(
+          new RegExp('/([^/.]+)$'),
+          '/$1/'
+        )}images/graphics/ai-chart-xs.png);"
       ></div>
     </div>
   {/if}
@@ -26,7 +29,10 @@
         id="g-ai-chart-sm-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assetsPath}/images/graphics/ai-chart-sm.png);"
+        style="background-image: url({assetsPath.replace(
+          new RegExp('/([^/.]+)$'),
+          '/$1/'
+        )}images/graphics/ai-chart-sm.png);"
       ></div>
     </div>
   {/if}
@@ -38,7 +44,10 @@
         id="g-ai-chart-md-img"
         class="g-aiImg"
         alt=""
-        style="background-image: url({assetsPath}/images/graphics/ai-chart-md.png);"
+        style="background-image: url({assetsPath.replace(
+          new RegExp('/([^/.]+)$'),
+          '/$1/'
+        )}images/graphics/ai-chart-md.png);"
       ></div>
     </div>
   {/if}

@@ -1239,10 +1239,10 @@
     strip-color "^0.1.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-components@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.12.tgz#ab92fcc6f544eda29d0b4c60f1374f6b45ec2e04"
-  integrity sha512-BaJQkyzkeuWozJ3ViPMN/+Tu55zLSiwBUJkytszSolEhDoIWyi1nak4mEcabfJ1bwGVjFamSlDAvQhfxy99Eig==
+"@reuters-graphics/graphics-components@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-0.0.14.tgz#d00f1d9e94849e4fd48472933f8c18474a666116"
+  integrity sha512-vL+7Bsi4H8JhCC+Tw5orPt0r8MDyhgogob10kBlfTtefrSmJmzmuonhWzLHdoFvEnHThL9p1TCmMUfA5QDgJMA==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
@@ -1251,22 +1251,24 @@
     bootstrap "^5.2.0"
     classnames "^2.3.1"
     dayjs "^1.11.3"
+    journalize "^2.5.1"
     lodash-es "^4.17.21"
     lottie-web "^5.7.13"
     marked "^4.0.8"
     proper-url-join "^2.1.1"
     pym.js "^1.3.2"
+    slugify "^1.6.5"
     svelte-fa "^2.4.0"
     svelte-intersection-observer "^0.10.0"
     svelte-search "^2.0.1"
     ua-parser-js "^0.7.27"
 
-"@reuters-graphics/graphics-kit-publisher@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.2.6.tgz#3246cedcb7a9fc5e5b4b8f0d84f1a23334a36ef5"
-  integrity sha512-7Rjp2e4Xu5bHq1zsm9HNSzoYKW9KpbhNrgA88dobMCK6lUMliaGgpcrKeE+zp07iay+KjjomFTAjUJxOSGP8uw==
+"@reuters-graphics/graphics-kit-publisher@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-0.2.7.tgz#0876e8a8d8eda5be47ab4b0144e2f0ad9ef469be"
+  integrity sha512-YNzqqpL08JQMRi+X/qqCmGRh/Xc02NWbQAVEZ5L7gvvujG9M9IN9u6s0CYcnGpa3w2ppizhIy4sqOts9wiNClA==
   dependencies:
-    "@reuters-graphics/server-client" "^1.3.0"
+    "@reuters-graphics/server-client" "^1.3.2"
     "@reuters-graphics/teams-klaxon" "^0.0.3"
     archiver "^5.3.0"
     ask-json "^0.1.9"
@@ -1292,10 +1294,10 @@
     url-join "^4.0.1"
     winston "^3.3.3"
 
-"@reuters-graphics/server-client@^1.3.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/server-client/-/server-client-1.3.1.tgz#b7b005b058975b81771db2f059ae82c134c5080c"
-  integrity sha512-qWRFebGx8AJ2hiM9yw8R95fIOJmR9oBEffYM14YZcr+0lFUcsFxNHADJsPPP4FALUIXCTJ9SgEq1QpXg1VuzUg==
+"@reuters-graphics/server-client@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/server-client/-/server-client-1.3.2.tgz#f70526b5d34f2c8ca75ed00ee9ab557be0c8fd6e"
+  integrity sha512-ymMMIbjPvCTcYydqzvhPSpK2qJLQV9P18B4s/6dUzbwML57OGsNbxSEcDaNbZNTV/dRpKcqtcftugOZwwHINjA==
   dependencies:
     "@reuters-graphics/teams-klaxon" "^0.0.3"
     ajv "^6.12.2"
@@ -5958,7 +5960,7 @@ sisteransi@^1.0.5:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-slugify@^1.5.0:
+slugify@^1.5.0, slugify@^1.6.5:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.5.tgz#c8f5c072bf2135b80703589b39a3d41451fbe8c8"
   integrity sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==
@@ -6525,7 +6527,7 @@ validator@^13.0.0, validator@^13.7.0:
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
   integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
 
-vite@^3.0.4:
+vite@3.0.9:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.0.9.tgz#45fac22c2a5290a970f23d66c1aef56a04be8a30"
   integrity sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==
