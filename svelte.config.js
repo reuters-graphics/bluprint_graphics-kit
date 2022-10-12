@@ -15,8 +15,6 @@ const config = {
   }),
   kit: {
     appDir: '_app',
-    // Uncomment below to disable SSR app-wide during development
-    // ssr: process.env.NODE_ENV === 'production',
     paths: {
       assets: getAssetsPath(),
       base: getBasePath(),
@@ -27,13 +25,12 @@ const config = {
       fallback: null,
       precompress: false,
     }),
-    prerender: { default: true },
     trailingSlash: 'always',
     files: {
       assets: 'src/statics',
       lib: 'src/lib',
       routes: 'pages',
-      template: 'src/template.html',
+      appTemplate: 'src/template.html',
     },
   },
 };
