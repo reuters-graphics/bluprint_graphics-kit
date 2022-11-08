@@ -31,7 +31,7 @@
   publishTime="{pkg?.reuters?.graphic?.published}"
   updateTime="{pkg?.reuters?.graphic?.updated}"
   authors="{pkg?.reuters?.graphic?.authors}"
-  includeAnalytics="{$page.url.hostname === 'graphics.reuters.com'}"
+  includeAnalytics="{$page.url.hostname.includes('reuters.com')}"
 />
 
 <Theme base="light">
