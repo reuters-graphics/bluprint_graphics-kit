@@ -57,7 +57,7 @@
       <!-- Ai2svelte graphic block -->
     {:else if block.Type === 'ai-graphic'}
       {#if !aiCharts[block.Chart]}
-        {(console.warn(`Unable to find "${block.Type}" in aiCharts.`), '')}
+        {(console.warn(`Unable to find "${block.Chart}" in aiCharts.`), '')}
       {:else}
         <GraphicBlock
           id="{block.Type}"
