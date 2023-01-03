@@ -25,7 +25,6 @@ const config = {
       fallback: null,
       precompress: false,
     }),
-    trailingSlash: 'always',
     files: {
       assets: 'src/statics',
       lib: 'src/lib',
