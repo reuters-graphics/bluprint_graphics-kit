@@ -1,9 +1,11 @@
 <script>
-  import content from '$locales/en/content.json';
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
   import { PymChild, SEO } from '@reuters-graphics/graphics-components';
+
+  // Google doc content
+  import content from '$locales/en/content.json';
 
   // App or embeddable chart component
   import App from '$lib/App.svelte';
@@ -28,6 +30,6 @@
   includeAnalytics="{/\Wreuters\.com$/.test($page.url?.hostname)}"
 />
 
-<App embedded="{true}" />
+<App embedded="{true}" content="{content}" />
 
 <PymChild polling="{500}" />
