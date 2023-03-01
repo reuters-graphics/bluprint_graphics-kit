@@ -8,9 +8,12 @@
   "Hed": "Reuters Graphics Interactive",
   "Dek": "The beginning of a beautiful page",
   "Kicker": "Global News",
+  "By": "By",
   "Byline": "**Jane Doe** and **John Doe**",
-  "Published": "2021-09-01T08:30:00.000Z",
-  "Updated": "",
+  "Published": "Published",
+  "PublishedDate": "2021-09-01T08:30:00.000Z",
+  "Updated": "Updated",
+  "UpdatedDate": "",
   "blocks": [
     {
       "Type": "text",
@@ -26,7 +29,6 @@
       "Width": "normal",
       "Title": "Optional title of the graphic",
       "Chatter": "Optional chatter describes more about the graphic.",
-      "Source": "Optional source of the data",
       "Notes": "Note: Optional note clarifying something in the data\n\nSource: Optional source of the data",
       "AltText": "Add a description of the graphic for screen readers. This is invisible on the page."
     },

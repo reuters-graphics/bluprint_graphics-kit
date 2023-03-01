@@ -11,13 +11,13 @@
     getScrollerPropsFromDoc as scrollerProps,
   } from '@reuters-graphics/graphics-components';
 
-  // Google doc content
-  import content from '$locales/en/content.json';
-
   // Other dependencies
   import { apdate } from 'journalize';
   import { marked } from 'marked';
   import { assets } from '$app/paths';
+
+  export let content; // Google doc content
+  export let locale = 'en'; // Defaults to English
 
   // Import ai2svelte components...
   import MyMap from '$lib/ai2svelte/ai-chart.svelte';
@@ -36,13 +36,15 @@
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
     <span slot="byline">By {@html marked.parseInline(content.Byline)} </span>
     <div slot="dateline">
-      Published <time datetime="{content.Published}">
-        {apdate(new Date(content.Published))}</time
+      {content.Published}
+      <time datetime="{content.PublishedDate}">
+        {apdate(new Date(content.PublishedDate))}</time
       >
-      {#if content.Updated}
-        <br /> Updated
-        <time datetime="{content.Updated}">
-          {apdate(new Date(content.Updated))}
+      {#if content.UpdatedDate}
+        <br />
+        {content.Updated}
+        <time datetime="{content.UpdatedDate}">
+          {apdate(new Date(content.UpdatedDate))}
         </time>
       {/if}
     </div>
