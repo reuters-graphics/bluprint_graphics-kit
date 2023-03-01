@@ -34,7 +34,7 @@
     📚 Read the docs: https://reuters-graphics.github.io/graphics-components/
   -->
   <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
-    <span slot="byline">By {@html marked.parseInline(content.Byline)} </span>
+    <span slot="byline">{@html marked.parseInline(content.Byline)} </span>
     <div slot="dateline">
       {content.Published}
       <time datetime="{content.PublishedDate}">
