@@ -2,7 +2,7 @@
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
-  import { PymChild, SEO } from '@reuters-graphics/graphics-components';
+  import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
 
   // Google doc content
   import content from '$locales/en/content.json';
@@ -30,6 +30,8 @@
   includeAnalytics="{/\Wreuters\.com$/.test($page.url?.hostname)}"
 />
 
-<App embedded="{true}" content="{content}" />
+<Theme base="light">
+  <App embedded="{true}" content="{content}" />
+</Theme>
 
 <PymChild polling="{500}" />
