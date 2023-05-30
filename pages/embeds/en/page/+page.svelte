@@ -2,7 +2,12 @@
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
-  import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
+  import {
+    Analytics,
+    Theme,
+    PymChild,
+    SEO,
+  } from '@reuters-graphics/graphics-components';
 
   // Google doc content
   import content from '$locales/en/content.json';
@@ -13,6 +18,10 @@
   // Styles
   import '$lib/styles/global.scss';
 </script>
+
+{#if /\Wreuters\.com$/.test($page.url?.hostname)}
+  <Analytics authors="{pkg?.reuters?.graphic?.authors}" />
+{/if}
 
 <SEO
   lang="en"
@@ -27,7 +36,6 @@
   publishTime="{pkg?.reuters?.graphic?.published}"
   updateTime="{pkg?.reuters?.graphic?.updated}"
   authors="{pkg?.reuters?.graphic?.authors}"
-  includeAnalytics="{/\Wreuters\.com$/.test($page.url?.hostname)}"
 />
 
 <Theme base="light">

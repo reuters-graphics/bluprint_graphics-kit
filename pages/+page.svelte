@@ -1,5 +1,6 @@
 <script>
   import {
+    Analytics,
     SEO,
     Sharer,
     SiteHeader,
@@ -20,6 +21,10 @@
   import '$lib/styles/global.scss';
 </script>
 
+{#if /\Wreuters\.com$/.test($page.url?.hostname)}
+  <Analytics authors="{pkg?.reuters?.graphic?.authors}" />
+{/if}
+
 <SEO
   lang="en"
   baseUrl="{import.meta.env.BASE_URL}"
@@ -33,7 +38,6 @@
   publishTime="{pkg?.reuters?.graphic?.published}"
   updateTime="{pkg?.reuters?.graphic?.updated}"
   authors="{pkg?.reuters?.graphic?.authors}"
-  includeAnalytics="{/\Wreuters\.com$/.test($page.url?.hostname)}"
 />
 
 <Theme base="light">
