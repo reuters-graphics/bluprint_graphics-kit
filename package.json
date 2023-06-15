@@ -58,7 +58,7 @@
     "vite": "^4.0.0"
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=16.19"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
