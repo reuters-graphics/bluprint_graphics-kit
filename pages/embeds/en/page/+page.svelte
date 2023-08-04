@@ -19,10 +19,6 @@
   import '$lib/styles/global.scss';
 </script>
 
-{#if /\Wreuters\.com$/.test($page.url?.hostname)}
-  <Analytics authors="{pkg?.reuters?.graphic?.authors}" />
-{/if}
-
 <SEO
   lang="en"
   baseUrl="{import.meta.env.BASE_URL}"
