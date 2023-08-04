@@ -3,7 +3,6 @@
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
   import {
-    Analytics,
     Theme,
     PymChild,
     SEO,
