@@ -4,8 +4,7 @@
 		"prefix": "scss",
 		"body": [
 			"<style lang=\"scss\">",
-			"  @import \"@reuters-graphics/graphics-components/dist/scss/fonts/_mixins.scss\";",
-			"  @import \"@reuters-graphics/graphics-components/dist/scss/colours/thematic/_tr.scss\";",
+			"  @import \"@reuters-graphics/graphics-components/dist/scss/mixins\";",
 			"",
 			"  $1",
 			"</style>"
