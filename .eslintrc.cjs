@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
-  extends: ['standard'],
-  plugins: ['svelte3', '@babel', 'mocha'],
+  extends: ['standard', 'plugin:svelte/recommended'],
+  plugins: ['@babel', 'mocha'],
   env: {
     browser: true,
     es2017: true,
@@ -9,7 +9,7 @@ module.exports = {
     mocha: true,
   },
   settings: {
-    'svelte3/ignore-styles': () => true,
+    'svelte/ignore-styles': () => true,
   },
   rules: {
     indent: ['error', 2],
@@ -32,13 +32,14 @@ module.exports = {
   overrides: [
     {
       files: ['*.svelte'],
-      processor: 'svelte3/svelte3',
+      parser: 'svelte-eslint-parser',
       rules: {
         'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 2 }],
         'import/first': 'off',
         'import/no-duplicates': 'off',
         'import/no-mutable-exports': 'off',
         'import/no-unresolved': 'off',
+        'svelte/no-at-html-tags': 'off',
         indent: ['error', 2],
       },
     },

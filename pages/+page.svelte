@@ -18,6 +18,7 @@
   import content from '$locales/en/content.json';
 
   // Styles
+  import '@reuters-graphics/graphics-components/scss/main';
   import '$lib/styles/global.scss';
 </script>
 
@@ -26,7 +27,6 @@
 {/if}
 
 <SEO
-  lang="en"
   baseUrl="{import.meta.env.BASE_URL}"
   pageUrl="{$page.url}"
   seoTitle="{content.SEOTitle}"
@@ -42,10 +42,10 @@
 
 <Theme base="light">
   <SiteHeader />
-  <App content="{content}" />
+  <App {content} />
   <Sharer />
   <SiteFooter />
 </Theme>
 
 <!-- Only visible in dev! -->
-<EmbedPreviewerLink dev="{dev}" />
+<EmbedPreviewerLink {dev} />

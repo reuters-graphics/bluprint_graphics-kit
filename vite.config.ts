@@ -1,4 +1,5 @@
 import dsv from '@rollup/plugin-dsv';
+import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/index.js';
 import { sveltekit } from '@sveltejs/kit/vite';
 
@@ -32,6 +33,7 @@ const config = {
     sveltekit(),
     dsv(),
     svelteKitPagesPlugin(),
+    purgeCss(),
   ],
 };
 

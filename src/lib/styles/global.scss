@@ -2,7 +2,4 @@
 // You can use it to write styles for any elements Svelte or any other library
 // creates on your pages or embeds and to override any defaults that are part
 // of our house style libraries.
-
-@import '@reuters-graphics/graphics-components/scss/main';
-@import 'colors';
-
+@import '@reuters-graphics/graphics-components/scss/mixins';
