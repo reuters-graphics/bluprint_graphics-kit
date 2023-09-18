@@ -1,16 +1,133 @@
 <!DOCTYPE html>
 <html lang="%lang%">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  	<meta http-equiv="cleartype" content="on" />
-		<link rel="icon" type="image/png" href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-16x16.png" sizes="16x16" />
-		%sveltekit.head%
-	</head>
-	<body>
-		<div id='svelte-app'>
-			%sveltekit.body%
-		</div>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="cleartype" content="on" />
+	<link rel="icon" type="image/png" href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-16x16.png"
+		sizes="16x16" />
+	<!-- Fonts -->
+	<style>
+		/* REUTERS KNOWLEDGE */
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-RegularItalic.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-RegularItalic.woff') format('woff');
+			font-weight: normal;
+			font-style: italic;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Black.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Black.woff') format('woff');
+			font-weight: 900;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Light.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Light.woff') format('woff');
+			font-weight: 300;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Regular.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Regular.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-UltraLight.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-UltraLight.woff') format('woff');
+			font-weight: 200;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Bold.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Bold.woff') format('woff');
+			font-weight: bold;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Knowledge';
+			src: url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Medium.woff2') format('woff2'),
+				url('//graphics.thomsonreuters.com/style-assets/fonts/v1/Knowledge2017-Medium.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		/* FREIGHT TEXT */
+		@font-face {
+			font-family: "FreightText";
+			src: url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBold.woff2") format("woff2"),
+				url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBold.woff") format("woff");
+			font-weight: bold;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: "FreightText";
+			src: url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBook.woff2") format("woff2"),
+				url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBook.woff") format("woff");
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: "FreightText";
+			src: url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBookItalic.woff2") format("woff2"),
+				url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextBookItalic.woff") format("woff");
+			font-weight: normal;
+			font-style: italic;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: "FreightText";
+			src: url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextLight.woff2") format("woff2"),
+				url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextLight.woff") format("woff");
+			font-weight: 300;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: "FreightText";
+			src: url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextMedium.woff2") format("woff2"),
+				url("//graphics.thomsonreuters.com/style-assets/fonts/v1/FreightTextMedium.woff") format("woff");
+			font-weight: 500;
+			font-style: normal;
+			font-display: swap;
+		}
+	</style>
+	<!-- -->
+	%sveltekit.head%
+</head>
+
+<body>
+	<div id='svelte-app'>
+		%sveltekit.body%
+	</div>
+</body>
+
 </html>
