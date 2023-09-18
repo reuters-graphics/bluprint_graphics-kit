@@ -12,13 +12,13 @@
 </section>
 
 <style lang="scss">
-  @import '@reuters-graphics/graphics-components/dist/scss/fonts/_mixins.scss';
+  @import '@reuters-graphics/graphics-components/dist/scss/mixins';
 
   section.graphic {
     h5 {
       color: blue;
       span {
-        @include font-monospace;
+        @include font-mono;
       }
     }
   }

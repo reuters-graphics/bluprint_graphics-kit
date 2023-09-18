@@ -50,7 +50,7 @@
         {(console.warn(`Unable to find "${block.Chart}" in aiCharts.`), '')}
       {:else}
         <GraphicBlock
-          id="{block.Type}"
+          id="{block.Chart}"
           width="{block.Width}"
           title="{block.Title}"
           description="{block.Chatter}"

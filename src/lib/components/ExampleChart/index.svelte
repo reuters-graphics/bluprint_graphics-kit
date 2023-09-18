@@ -23,7 +23,7 @@
 </section>
 
 <style lang="scss">
-  @import '@reuters-graphics/graphics-components/dist/scss/fonts/_mixins.scss';
+  @import '@reuters-graphics/graphics-components/dist/scss/mixins';
 
   #chart {
     width: 100%;
@@ -41,7 +41,7 @@
       .axis {
         text {
           font-size: 0.875rem;
-          font-family: $font-family-sans-serif;
+          @include font-sans;
         }
       }
     }
