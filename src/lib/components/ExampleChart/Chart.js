@@ -55,7 +55,7 @@ class MyChartClass {
       bottom: 30,
       left: 35,
     },
-    fill: '#99cccc',
+    fill: 'var(--tr-lighter-blue)',
   };
 
   /**

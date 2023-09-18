@@ -1,6 +1,7 @@
 <script>
   import Chart from './Chart';
   import { onMount } from 'svelte';
+  import { GraphicBlock } from '@reuters-graphics/graphics-components';
 
   let chartContainer;
 
@@ -18,29 +19,29 @@
   });
 </script>
 
-<section class="graphic">
-  <div id="chart" bind:this="{chartContainer}"></div>
-</section>
+<GraphicBlock width="normal">
+  <div class="w-full" id="chart" bind:this="{chartContainer}"></div>
+</GraphicBlock>
 
 <style lang="scss">
   @import '@reuters-graphics/graphics-components/dist/scss/mixins';
 
   #chart {
-    width: 100%;
     :global {
       circle {
-        stroke: #777;
+        stroke: var(--grey-500);
         stroke-width: 1px;
       }
 
       path.domain,
       .axis line {
-        stroke: #999;
+        stroke: var(--grey-300);
       }
 
       .axis {
         text {
-          font-size: 0.875rem;
+          @include text-xxs;
+          fill: var(--grey-500);
           @include font-sans;
         }
       }
