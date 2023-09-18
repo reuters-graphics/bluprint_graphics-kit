@@ -1081,7 +1081,7 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
   integrity sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==
 
-"@fortawesome/free-brands-svg-icons@^5.15.3", "@fortawesome/free-brands-svg-icons@^5.15.4":
+"@fortawesome/free-brands-svg-icons@^5.15.4":
   version "5.15.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.4.tgz#ec8a44dd383bcdd58aa7d1c96f38251e6fec9733"
   integrity sha512-f1witbwycL9cTENJegcmcZRYyawAFbm8+c6IirLmwbbpqz46wyjbQYLuxOc7weXFXfB7QR8/Vd2u5R3q6JYD9g==
@@ -6837,7 +6837,7 @@ supports-preserve-symlinks-flag@^1.0.0:
     postcss "^8.4.28"
     postcss-scss "^4.0.7"
 
-svelte-fa@^2.2.0, svelte-fa@^2.4.0:
+svelte-fa@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/svelte-fa/-/svelte-fa-2.4.0.tgz#d94285151a975b92b29efec6ec9e2c11c57780ef"
   integrity sha512-0bnbMGbsE1LUnlioDcf27tl2O8kjuXlTXMXzIxC7LoIOWmqn0D+zd539HfLiQbdLuOHGTaynwN9V+4ehhEu1Jw==
