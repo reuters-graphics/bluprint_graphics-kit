@@ -8,19 +8,16 @@
   "Hed": "Reuters Graphics Interactive",
   "Dek": "The beginning of a beautiful page",
   "Kicker": "Global News",
-  "Byline": "By **Jane Doe** and **John Doe**",
-  "Published": "Published",
+  "Authors": [
+    "Jane Doe",
+    "John Doe"
+  ],
   "PublishedDate": "2021-09-01T08:30:00.000Z",
-  "Updated": "Updated",
   "UpdatedDate": "",
   "blocks": [
     {
       "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
-    },
-    {
-      "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken."
+      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken. Turkey landjaeger <a href=\"https://www.reuters.com/graphics/\">kevin turducken kielbasa</a> pork loin, filet mignon leberkas meatball cow tenderloin. T-bone meatloaf kielbasa pancetta filet mignon doner.\n\nPig short ribs jerky, meatloaf *turducken ribeye strip steak* bacon pastrami tail pancetta chicken. Shankle pork loin burgdoggen, prosciutto beef ribs turducken ball tip.\n\nBoudin alcatra kevin, jerky swine **brisket pastrami** tail pork chop drumstick tongue."
     },
     {
       "Type": "ai-graphic",
@@ -33,8 +30,21 @@
     },
     {
       "Type": "text",
-      "Text": "Beef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage.\n\n> Chicken short loin drumstick bacon, pig sausage kevin frankfurter ribeye tail capicola pastrami. Frankfurter meatball kielbasa pork. Pastrami picanha drumstick tongue t-bone.\n>> Friedrich Hamburger\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
+      "Text": "Beef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage.\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
     }
   ],
-  "EndNotes": "##### Note\nData is current as of today.\n\n##### Sources\nData, Inc.\n\n##### Edited by\nEditor, Copyeditor"
+  "EndNotes": [
+    {
+      "Title": "Note",
+      "Text": "Data is current as of today."
+    },
+    {
+      "Title": "Sources",
+      "Text": "Data, Inc."
+    },
+    {
+      "Title": "Edited by",
+      "Text": "Editor, Copyeditor"
+    }
+  ]
 }

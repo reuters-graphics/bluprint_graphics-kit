@@ -2,11 +2,7 @@
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
-  import {
-    Theme,
-    PymChild,
-    SEO,
-  } from '@reuters-graphics/graphics-components';
+  import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
 
   // Google doc content
   import content from '$locales/en/content.json';
@@ -15,11 +11,11 @@
   import App from '$lib/App.svelte';
 
   // Styles
+  import '@reuters-graphics/graphics-components/scss/main';
   import '$lib/styles/global.scss';
 </script>
 
 <SEO
-  lang="en"
   baseUrl="{import.meta.env.BASE_URL}"
   pageUrl="{$page.url}"
   seoTitle="{content.SEOTitle}"
@@ -34,7 +30,7 @@
 />
 
 <Theme base="light">
-  <App embedded="{true}" content="{content}" />
+  <App embedded="{true}" {content} />
 </Theme>
 
 <PymChild polling="{500}" />

@@ -1,23 +1,19 @@
 <script>
   export let embedded = false;
-  // Graphics components
+
+  import { assets } from '$app/paths';
   import {
     Article,
     BodyText,
-    NoteText,
+    EndNotes,
     Headline,
     GraphicBlock,
     Scroller,
     getScrollerPropsFromDoc as scrollerProps,
+    getEndNotesPropsFromDoc as endNotesProps,
   } from '@reuters-graphics/graphics-components';
 
-  // Other dependencies
-  import { apdate } from 'journalize';
-  import { marked } from 'marked';
-  import { assets } from '$app/paths';
-
   export let content; // Google doc content
-  export let locale = 'en'; // Defaults to English
 
   // Import ai2svelte components...
   import MyMap from '$lib/ai2svelte/ai-chart.svelte';
@@ -33,22 +29,14 @@
     This Headline and other components are part of our components library.
     📚 Read the docs: https://reuters-graphics.github.io/graphics-components/
   -->
-  <Headline section="{content.Kicker}" hed="{content.Hed}" dek="{content.Dek}">
-    <span slot="byline">{@html marked.parseInline(content.Byline)} </span>
-    <div slot="dateline">
-      {content.Published}
-      <time datetime="{content.PublishedDate}">
-        {apdate(new Date(content.PublishedDate))}</time
-      >
-      {#if content.UpdatedDate}
-        <br />
-        {content.Updated}
-        <time datetime="{content.UpdatedDate}">
-          {apdate(new Date(content.UpdatedDate))}
-        </time>
-      {/if}
-    </div>
-  </Headline>
+  <Headline
+    section="{content.Kicker}"
+    hed="{content.Hed}"
+    dek="{content.Dek}"
+    authors="{content.Authors}"
+    publishTime="{content.PublishedDate}"
+    updateTime="{content.UpdatedDate}"
+  />
 
   <!-- 🔁 Looping through your Google doc blocks... -->
   {#each content.blocks as block}
@@ -78,14 +66,11 @@
 
       <!-- Ai2svelte scroller -->
     {:else if block.Type === 'ai-scroller'}
-      <Scroller
-        {...scrollerProps(block, aiCharts, assets || '/')}
-        embedded="{embedded}"
-      />
+      <Scroller {...scrollerProps(block, aiCharts, assets || '/')} {embedded} />
     {:else}
-      {(console.warn(`Unknown block type: ${block.Type}`), '')}
+      {(console.warn(`Unknown block type: "${block.Type}"`), '')}
     {/if}
   {/each}
 
-  <NoteText text="{content.EndNotes}" />
+  <EndNotes notes="{endNotesProps(content.EndNotes)}" />
 </Article>
