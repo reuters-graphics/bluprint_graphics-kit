@@ -1425,10 +1425,10 @@
     strip-color "^0.1.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-components@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-1.0.3.tgz#aa64b7ddd1929585f86cb54c76f700d281fdf70b"
-  integrity sha512-qE9F+2vJUEkhzYeaQ4cm6OeC7qx3bWEEbtbprkoxiD1zj2pfLos0Ftk1N46kczbQsEn1QzGP5h+iXgTXyMDKPQ==
+"@reuters-graphics/graphics-components@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-1.0.4.tgz#f2d165baff9fa083a5783304c11f95eee842fe32"
+  integrity sha512-zebK1bNrqYs4nnOqxKgseYO89xpDYuT/riOQ13u7kYChOMAlxpWyWezB1P0vxk2wGZacS3h5P9UCjOZdY1UHmg==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
