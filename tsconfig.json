@@ -3,25 +3,25 @@
     "compilerOptions": {
         "paths": {
             "$lib":[
-                "src/lib"
+                "./src/lib"
             ],
             "$lib/*": [
-                "src/lib/*"
+                "./src/lib/*"
             ],
             "$utils/*": [
-                "src/utils/*"
+                "./src/utils/*"
             ],
             "$pkg": [
-                "package.json"
+                "./package.json"
             ],
             "$images": [
-                "src/statics/images"
+                "./src/statics/images"
             ],
             "$images/*": [
-                "src/statics/images/*"
+                "./src/statics/images/*"
             ],
             "$locales/*": [
-                "locales/*"
+                "./locales/*"
             ]
         }
     },
