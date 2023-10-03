@@ -1450,10 +1450,10 @@
     svelte-search "^2.0.1"
     ua-parser-js "^0.7.27"
 
-"@reuters-graphics/graphics-kit-publisher@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-1.0.1.tgz#94a6ddccb8ce23dc83060b2cac446fd017d3a81d"
-  integrity sha512-K9ZLdKlhJrnlYzMxWp7f6/o4zTNtm1i3U6VN08tCMeYaFpcg3zHonPn1FHvtKI/abHsxAb0Q17M/6W758jsrxQ==
+"@reuters-graphics/graphics-kit-publisher@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-1.0.2.tgz#34f65d51daf449c6d3215a7fda005e3e38fa0c90"
+  integrity sha512-0CKEoFL1w0tu10V2S65hc8y7CTV0qCOPB3oV4lGnmDR4EY8sNgUNcexoatdQILMAsXftLsBIvaVDtD0o3nZ+Rg==
   dependencies:
     "@reuters-graphics/server-client" "^1.3.4"
     "@reuters-graphics/teams-klaxon" "^1.0.0"
