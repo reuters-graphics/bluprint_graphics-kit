@@ -31,7 +31,7 @@
     "@reuters-graphics/bluprint": "^0.6.6",
     "@reuters-graphics/eslint-config": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^0.0.27",
-    "@reuters-graphics/graphics-kit-publisher": "^1.0.1",
+    "@reuters-graphics/graphics-kit-publisher": "^1.0.2",
     "@reuters-graphics/style-ai-templates": ">=0.0.14",
     "@rollup/plugin-dsv": "^2.0.1",
     "@sveltejs/adapter-static": "^2.0.3",
