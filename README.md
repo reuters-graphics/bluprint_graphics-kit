@@ -35,18 +35,6 @@ Read more in the **[developer docs](https://reuters-graphics.github.io/docs_grap
 
 See it on ⚡[StackBlitz](https://stackblitz.com/github/reuters-graphics/bluprint_graphics-kit).
 
-## 🚀 Status
-
-This kit is **now ready for active use**, and we are starting the process of sunsetting the [current, Webpack-based rig](https://github.com/reuters-graphics/bluprint_graphics-rig).
-
-That said, there may still be issues as [SvelteKit continues to work towards a 1.0 release](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md) and as we continue to develop the boilerplate projects start from.
-
-**If this is your first time using this kit**, please build in a little extra time around your deadline in case you need any help when building, uploading and publishing your project.
-
-☎️ If you do need help, reach out to one of our developers:
-
-- Jon McClure
-- Minami Funakoshi
-- Fielding Cage
+## 🙌 Contributing
 
 🏷️ If you find a bug, want to see a feature or would like more info documented, please file an issue [here](https://github.com/reuters-graphics/bluprint_graphics-kit/issues).
