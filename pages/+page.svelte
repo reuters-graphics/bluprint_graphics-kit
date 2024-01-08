@@ -22,8 +22,9 @@
   import '@reuters-graphics/graphics-components/scss/main';
   import '$lib/styles/global.scss';
 
-  // Checks if it's on the client side and has access to search params
-  const searchParams = browser && $page.url?.searchParams;
+  // Checks for Reuters mobile app using search params
+  const isReutersMobileApp =
+    browser && $page.url?.searchParams.get('outputType') === 'chromeless';
 </script>
 
 {#if /\Wreuters\.com$/.test($page.url?.hostname)}
@@ -45,13 +46,13 @@
 />
 
 <Theme base="light">
-  {#if searchParams && $page.url?.searchParams.get('outputType') !== 'chromeless'}
+  {#if !isReutersMobileApp}
     <SiteHeader />
   {/if}
 
   <App {content} />
 
-  {#if searchParams && $page.url?.searchParams.get('outputType') !== 'chromeless'}
+  {#if !isReutersMobileApp}
     <Sharer />
     <SiteFooter />
   {/if}
