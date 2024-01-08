@@ -41,16 +41,12 @@
 />
 
 <Theme base="light">
-  {#if $page.url?.searchParams.get('outputType') !== 'chromeless'}
-    <SiteHeader />
-  {/if}
+  <SiteHeader />
 
   <App {content} />
 
-  {#if $page.url?.searchParams.get('outputType') !== 'chromeless'}
-    <Sharer />
-    <SiteFooter />
-  {/if}
+  <Sharer />
+  <SiteFooter />
 </Theme>
 
 <!-- Only visible in dev! -->
