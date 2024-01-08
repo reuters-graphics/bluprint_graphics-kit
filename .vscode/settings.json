@@ -1,18 +1,13 @@
 {
-    "i18n-ally.localesPaths": [
-        "locales"
-    ],
-    "i18n-ally.keystyle": "nested",
-    "eslint.validate": [
-        "javascript",
-        "svelte"
-    ],
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "liveshare.launcherClient": "visualStudioCode",
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
-    }
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested",
+  "eslint.validate": ["javascript", "svelte"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "liveshare.launcherClient": "visualStudioCode",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
 }

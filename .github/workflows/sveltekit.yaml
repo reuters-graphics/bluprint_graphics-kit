@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    types: [opened, reopened]
 jobs:
   build-app:
     name: SvelteKit builds
