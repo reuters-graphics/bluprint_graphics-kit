@@ -6,8 +6,11 @@ on:
   push:
     branches:
       - master
+  pull_request_review:
+    types: [submitted]
 jobs:
   build-app:
+    if: (github.event.review.state == 'APPROVED') || (github.ref_name == 'master')
     name: SvelteKit builds
     runs-on: ubuntu-latest
     env:
