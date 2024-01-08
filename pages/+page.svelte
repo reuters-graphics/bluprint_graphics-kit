@@ -13,6 +13,7 @@
   import { dev } from '$app/environment';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
+  import { browser } from '$app/environment';
 
   // Google doc content
   import content from '$locales/en/content.json';
@@ -20,6 +21,10 @@
   // Styles
   import '@reuters-graphics/graphics-components/scss/main';
   import '$lib/styles/global.scss';
+
+  // Checks for Reuters mobile app using search params
+  const isReutersMobileApp =
+    browser && $page.url?.searchParams.get('outputType') === 'chromeless';
 </script>
 
 {#if /\Wreuters\.com$/.test($page.url?.hostname)}
@@ -41,12 +46,16 @@
 />
 
 <Theme base="light">
-  <SiteHeader />
+  {#if !isReutersMobileApp}
+    <SiteHeader />
+  {/if}
 
   <App {content} />
 
-  <Sharer />
-  <SiteFooter />
+  {#if !isReutersMobileApp}
+    <Sharer />
+    <SiteFooter />
+  {/if}
 </Theme>
 
 <!-- Only visible in dev! -->
