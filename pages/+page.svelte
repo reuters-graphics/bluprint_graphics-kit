@@ -13,6 +13,7 @@
   import { dev } from '$app/environment';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
+  import { browser } from '$app/environment';
 
   // Google doc content
   import content from '$locales/en/content.json';
@@ -20,6 +21,9 @@
   // Styles
   import '@reuters-graphics/graphics-components/scss/main';
   import '$lib/styles/global.scss';
+
+  // Checks if it's on the client side and has access to search params
+  const searchParams = browser && $page.url?.searchParams;
 </script>
 
 {#if /\Wreuters\.com$/.test($page.url?.hostname)}
@@ -41,13 +45,13 @@
 />
 
 <Theme base="light">
-  {#if $page.url?.searchParams.get('outputType') !== 'chromeless'}
+  {#if searchParams && $page.url?.searchParams.get('outputType') !== 'chromeless'}
     <SiteHeader />
   {/if}
 
   <App {content} />
 
-  {#if $page.url?.searchParams.get('outputType') !== 'chromeless'}
+  {#if searchParams && $page.url?.searchParams.get('outputType') !== 'chromeless'}
     <Sharer />
     <SiteFooter />
   {/if}
