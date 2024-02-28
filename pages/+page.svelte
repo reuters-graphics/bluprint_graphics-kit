@@ -2,7 +2,6 @@
   import {
     Analytics,
     SEO,
-    Sharer,
     SiteHeader,
     SiteFooter,
     EmbedPreviewerLink,
@@ -53,7 +52,6 @@
   <App {content} />
 
   {#if !isReutersMobileApp}
-    <Sharer />
     <SiteFooter />
   {/if}
 </Theme>
