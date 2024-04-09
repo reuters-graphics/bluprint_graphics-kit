@@ -98,7 +98,18 @@
       "referrals": [],
       "published": null,
       "updated": null,
-      "mediaEditions": []
+      "mediaEditions": [
+        {
+          "slug": "media-en-page",
+          "title": "Embeddable",
+          "description": "Client-embeddable page"
+        },
+        {
+          "slug": "media-en-referral",
+          "title": "Referral link",
+          "description": "For use on reuters.com only"
+        }
+      ]
     },
     "preview": ""
   },
