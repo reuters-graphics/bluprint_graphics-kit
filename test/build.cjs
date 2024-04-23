@@ -43,14 +43,14 @@ describe('GraphicsKit build', function() {
   });
   it('should prerender homepage content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8'));
-    expect($('h1').text()).to.be('Reuters Graphics Interactive');
+    expect($('h1').text().trim()).to.be('Reuters Graphics Interactive');
   });
   it('should build the embed page', async function() {
     expect(fs.existsSync(path.join(DIST, 'embeds/en/page/index.html'))).to.be(true);
   });
   it('should prerender embed page content', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
-    expect($('h1').text()).to.be('Reuters Graphics Interactive');
+    expect($('h1').text().trim()).to.be('Reuters Graphics Interactive');
   });
   it('should not include homepage furniture on embed', async function() {
     const $ = cheerio.load(fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8'));
