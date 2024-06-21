@@ -1486,10 +1486,10 @@
     strip-color "^0.1.0"
     winston "^3.3.3"
 
-"@reuters-graphics/graphics-components@^1.0.24":
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-1.0.24.tgz#2afa40057b5d008edd79ef2165b06ddbd21c997a"
-  integrity sha512-zHX7oX5uEXI00rWldtrda+kWcI7AevJyhrHLtNfIND+XdEh2rela+XLez9UVzSFLw4uKN2LGxWygnEHHjEA5lA==
+"@reuters-graphics/graphics-components@^1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-components/-/graphics-components-1.0.26.tgz#4eccd4f7dd8a398235a2a29cc7ef1d3815abc6b3"
+  integrity sha512-0B2gIjCUrC8R7EcfkTCbHch/ZTHWUzj04Ka+wqoBbSeeNF/Trg1dtny74HDADxhnqLFBeWr7EAploDXEQfx2Ew==
   dependencies:
     "@fortawesome/free-brands-svg-icons" "^5.15.4"
     "@fortawesome/free-regular-svg-icons" "^5.15.3"
@@ -1512,10 +1512,10 @@
     svelte-search "^2.0.1"
     ua-parser-js "^0.7.27"
 
-"@reuters-graphics/graphics-kit-publisher@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-1.0.7.tgz#17089140aaa11af2b170343395203d5099a2ef6f"
-  integrity sha512-hViYBUe313WsNv2tW72ulWAXxwShyWs3iD51yFg+NWsykgUbwVhJK4ztUc4Y86lym/BlRCxJjiuI/9lwXIKaNg==
+"@reuters-graphics/graphics-kit-publisher@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/graphics-kit-publisher/-/graphics-kit-publisher-1.0.9.tgz#0e842eb7483822b3e5b00481b6f576e52af37793"
+  integrity sha512-MIQlH3m5sSLcG+51OE8gs/N9amxoccijd/8F9N/d3waUbaWixnYJyJwLiPhTkzhJQNM8RNWuqatD+H4NbM5sMw==
   dependencies:
     "@reuters-graphics/server-client" "^2.0.0"
     "@reuters-graphics/teams-klaxon" "^1.0.0"
