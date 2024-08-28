@@ -9,7 +9,7 @@
 
   // Google doc content
   import content from '$locales/en/content.json';
-  import '@reuters-graphics/graphics-components/scss/main';
+  import '@reuters-graphics/graphics-components/scss/main.scss';
 
   // Styles
   import '$lib/styles/global.scss';

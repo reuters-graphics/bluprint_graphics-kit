@@ -11,7 +11,7 @@
   import App from '$lib/App.svelte';
 
   // Styles
-  import '@reuters-graphics/graphics-components/scss/main';
+  import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
 </script>
 

@@ -18,7 +18,7 @@
   import content from '$locales/en/content.json';
 
   // Styles
-  import '@reuters-graphics/graphics-components/scss/main';
+  import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
 
   // Checks for Reuters mobile app using search params
