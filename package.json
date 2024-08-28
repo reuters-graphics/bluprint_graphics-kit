@@ -61,7 +61,7 @@
     "vite-plugin-tailwind-purgecss": "^0.1.3"
   },
   "engines": {
-    "node": ">=16.19"
+    "node": ">=18.20"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
