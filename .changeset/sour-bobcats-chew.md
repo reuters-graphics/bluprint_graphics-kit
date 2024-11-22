@@ -1,5 +1,5 @@
 ---
-'projectName': major
+'@reuters-graphics/graphics-kit': major
 ---
 
 The 1.0 🎉 release of the Reuters Graphics Kit.
