@@ -73,7 +73,7 @@ describe('GraphicsKit build', () => {
     const $ = cheerio.load(
       fs.readFileSync(path.join(DIST, 'embeds/en/page/index.html'), 'utf-8')
     );
-    expect($('h1').text().trim()).toBe('Reuters Graphics Interactive');
+    expect($('h1').text().trim()).toBe('A Reuters Graphics page');
   });
 
   it('should not include homepage furniture on embed', () => {
