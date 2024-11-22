@@ -1,76 +1,91 @@
-<script>
+<script lang="ts">
+  /* Whether the app is being rendered in an embed */
   export let embedded = false;
+  /* ArchieML story content */
+  export let content: (typeof ArchieML)['story'];
 
   import { assets } from '$app/paths';
+  import type ArchieML from '$locales/en/content.json';
+
   import {
     Article,
+    Analytics,
     BodyText,
     EndNotes,
-    Headline,
+    SiteHeadline,
     GraphicBlock,
-    Scroller,
-    getScrollerPropsFromDoc as scrollerProps,
-    getEndNotesPropsFromDoc as endNotesProps,
+    InlineAd,
   } from '@reuters-graphics/graphics-components';
-
-  export let content; // Google doc content
+  import WarnBlock from './components/dev/WarnBlock.svelte';
 
   // Import ai2svelte components...
-  import MyMap from '$lib/ai2svelte/ai-chart.svelte';
+  import AiMap from '$lib/ai2svelte/ai-chart.svelte';
+  import { containerWidth, inlineAdNumber } from '$utils/propValidators';
+  import { isReutersDotcom } from '$utils/env';
+  import { page } from '$app/stores';
+  import pkg from '$pkg';
 
   // ...and add them to this object.
   const aiCharts = {
-    MyMap,
+    AiMap,
   };
 </script>
 
+{#if !embedded && isReutersDotcom($page.url)}
+  <Analytics authors="{pkg?.reuters?.graphic?.authors || []}" />
+{/if}
+
 <Article>
   <!--
-    This Headline and other components are part of our components library.
+    This component and others are part of our components library.
     📚 Read the docs: https://reuters-graphics.github.io/graphics-components/
   -->
-  <Headline
-    section="{content.Kicker}"
-    hed="{content.Hed}"
-    dek="{content.Dek}"
-    authors="{content.Authors}"
-    publishTime="{content.PublishedDate}"
-    updateTime="{content.UpdatedDate}"
+  <SiteHeadline
+    hed="{content.hed}"
+    section="{content.section}"
+    sectionUrl="{content.sectionUrl}"
+    authors="{content.authors}"
+    publishTime="{content.publishedDate}"
+    updateTime="{content.updatedDate}"
   />
 
-  <!-- 🔁 Looping through your Google doc blocks... -->
+  <!-- 🔁 Looping through your ArchieML doc blocks... -->
   {#each content.blocks as block}
     <!-- Text block -->
-    {#if block.Type === 'text'}
-      <BodyText text="{block.Text}" />
+    {#if block.type === 'text'}
+      <BodyText text="{block.text}" />
 
       <!-- Ai2svelte graphic block -->
-    {:else if block.Type === 'ai-graphic'}
-      {#if !aiCharts[block.Chart]}
-        {(console.warn(`Unable to find "${block.Chart}" in aiCharts.`), '')}
+    {:else if block.type === 'ai-graphic'}
+      {#if !aiCharts[block.chart]}
+        <WarnBlock message="{`Unable to find "${block.chart}" in aiCharts`}" />
       {:else}
         <GraphicBlock
-          id="{block.Chart}"
-          width="{block.Width}"
-          title="{block.Title}"
-          description="{block.Chatter}"
-          notes="{block.Notes}"
-          ariaDescription="{block.AltText}"
+          id="{block.chart}"
+          width="{containerWidth(block.width)}"
+          title="{block.title}"
+          description="{block.description}"
+          notes="{block.notes}"
+          ariaDescription="{block.altText}"
         >
           <svelte:component
-            this="{aiCharts[block.Chart]}"
+            this="{aiCharts[block.chart]}"
             assetsPath="{assets || '/'}"
           />
         </GraphicBlock>
       {/if}
 
-      <!-- Ai2svelte scroller -->
-    {:else if block.Type === 'ai-scroller'}
-      <Scroller {...scrollerProps(block, aiCharts, assets || '/')} {embedded} />
+      <!-- Inline ad -->
+    {:else if block.type === 'inline-ad'}
+      {#if isReutersDotcom($page.url)}
+        <InlineAd n="{inlineAdNumber(block.n)}" />
+      {/if}
+
+      <!-- Warning block -->
     {:else}
-      {(console.warn(`Unknown block type: "${block.Type}"`), '')}
+      <WarnBlock message="{`Unknown block type: "${block.type}"`}" />
     {/if}
   {/each}
 
-  <EndNotes notes="{endNotesProps(content.EndNotes)}" />
+  <EndNotes notes="{content.endNotes}" />
 </Article>

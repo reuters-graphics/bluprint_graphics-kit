@@ -8,26 +8,26 @@ Graphics created with [bluprint_graphics-kit](https://github.com/reuters-graphic
 
 Develop your project.
 
-```
-yarn start
+```console
+pnpm start
 ```
 
 Build and publish preview pages to AWS.
 
-```
-yarn preview
-```
-
-Build and upload your project to RNGS server.
-
-```
-yarn upload
+```console
+pnpm preview
 ```
 
-🍻 Publish your project in the RNGS server.
+Build and upload your project to Sphinx Graphics Server.
 
+```console
+pnpm upload
 ```
-yarn pub
+
+🍻 Publish your project in the Sphinx Graphics Server.
+
+```console
+pnpm pub
 ```
 
 Read more in the [development docs](https://reuters-graphics.github.io/docs_graphics-kit/).

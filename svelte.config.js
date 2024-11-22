@@ -2,7 +2,7 @@ import { getAssetsPath, getBasePath } from './bin/svelte-kit/paths/index.js';
 
 import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
-import sveltePreprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -30,6 +30,15 @@ const config = {
       lib: 'src/lib',
       routes: 'pages',
       appTemplate: 'src/template.html',
+    },
+    alias: {
+      $lib: './src/lib',
+      '$lib/*': './src/lib/*',
+      '$utils/*': './src/utils/*',
+      $pkg: './package.json',
+      $images: './src/statics/images',
+      '$images/*': './src/statics/images/*',
+      '$locales/*': './locales/*',
     },
   },
 };

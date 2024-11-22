@@ -1,13 +1,11 @@
-![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
+# The Graphics Kit
 
-# bluprint_graphics-kit
-
-A rig for graphics and newsapps. 
+A rig for Reuters graphics and newsapps.
 
 Built with:
 
-<a href="https://kit.svelte.dev/" target="_blank">
-<img src="https://kit.svelte.dev/images/svelte-kit-horizontal.svg" height="40" />
+<a href="https://svelte.dev/docs/kit/" target="_blank">
+<img src="https://raw.githubusercontent.com/sveltejs/branding/refs/heads/master/svelte-horizontal.svg" height="40" />
 </a>
 
 ## Quickstart
@@ -16,13 +14,13 @@ This rig is best used with [bluprint](https://github.com/reuters-graphics/blupri
 
 If you haven't already, add this bluprint to your CLI.
 
-```
+```console
 bluprint add reuters-graphics/bluprint_graphics-kit
 ```
 
 Make a new directory and use the bluprint.
 
-```
+```console
 mkdir my-project && cd my-project
 bluprint start
 ```

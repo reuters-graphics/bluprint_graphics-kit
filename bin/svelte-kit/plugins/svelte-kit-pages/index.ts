@@ -1,7 +1,8 @@
 import fs from 'fs';
-import glob from 'glob';
+import { glob } from 'glob';
 import { normalizePath } from 'vite';
 import path from 'path';
+import type { ViteDevServer } from 'vite';
 
 const getPkgRoot = () => {
   const PKG_PATH = path.join(process.cwd(), 'package.json');
@@ -22,7 +23,7 @@ export default function svelteKitPagesPlugin({
 
   const PAGES_DIR = path.join(getPkgRoot(), pages);
 
-  let FOUND_PAGES = [];
+  let FOUND_PAGES: string[] = [];
 
   // Gets paths to pages
   const getPagePaths = () => {
@@ -34,15 +35,15 @@ export default function svelteKitPagesPlugin({
     // Remove Svelte-specific extensions
     const pagePaths = pages.map((embed) => {
       const pagePath = path.join(base, embed.replace('.svelte', ''));
-      return /\+page$/.test(pagePath)
-        ? pagePath.replace(/\+page$/, '')
+      return /\+page$/.test(pagePath) ?
+          pagePath.replace(/\+page$/, '')
         : pagePath;
     });
     // Return as virtual module
     return `export default ['${pagePaths.join("', '")}'];`;
   };
 
-  const reloadModule = (server) => {
+  const reloadModule = (server: ViteDevServer) => {
     const plugin = server.moduleGraph.getModuleById(RESOLVED_VIRTUAL_MODULE_ID);
     if (!plugin) return;
     server.moduleGraph.invalidateModule(plugin);
@@ -51,15 +52,15 @@ export default function svelteKitPagesPlugin({
   return {
     name: 'svelte-kit-pages-plugin',
 
-    resolveId(id) {
+    resolveId(id: string) {
       if (id === VIRTUAL_MODULE_ID) return RESOLVED_VIRTUAL_MODULE_ID;
     },
 
-    load(id) {
+    load(id: string) {
       if (id === RESOLVED_VIRTUAL_MODULE_ID) return getPagePaths();
     },
 
-    configureServer(server) {
+    configureServer(server: ViteDevServer) {
       server.watcher.add(normalizePath(PAGES_DIR));
       server.watcher.on('unlink', (f) => {
         const file = normalizePath(f);

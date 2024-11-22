@@ -16,13 +16,13 @@
 </section>
 
 <style lang="scss">
-  @import '@reuters-graphics/graphics-components/dist/scss/mixins';
+  @use '@reuters-graphics/graphics-components/dist/scss/mixins' as mixins;
 
   section.graphic {
     h5 {
       color: blue;
       span {
-        @include font-mono;
+        @include mixins.font-mono;
       }
     }
   }

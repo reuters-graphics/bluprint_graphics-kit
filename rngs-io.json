@@ -1,0 +1,20 @@
+{
+  "storyboards": {
+    "cltmvxt5q0000l908irus4rdd": {
+      "name": "🔒 TEMPLATES",
+      "rngsIo": "https://www.rngs.io/storyboards/cltmvxt5q0000l908irus4rdd/",
+      "stories": {
+        "cltmvzj5m0000lc089jz22aet": {
+          "name": "graphics-page",
+          "rngsIo": "https://www.rngs.io/storyboards/cltmvxt5q0000l908irus4rdd/story/cltmvzj5m0000lc089jz22aet/",
+          "syncPath": "locales/en/content.json",
+          "preview": {
+            "aml": "https://graphics.thomsonreuters.com/apps/graphics-tools/prod/stories/cltmvzj5m0000lc089jz22aet/preview/story.aml",
+            "json": "https://graphics.thomsonreuters.com/apps/graphics-tools/prod/stories/cltmvzj5m0000lc089jz22aet/preview/story.json",
+            "enabled": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,10 @@
-<script>
+<script lang="ts">
   import pkg from '$pkg';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
   import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
 
-  // Google doc content
-  import content from '$locales/en/content.json';
+  import archieML from '$locales/en/content.json';
 
   // App or embeddable chart component
   import App from '$lib/App.svelte';
@@ -13,17 +12,19 @@
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
+
+  $: content = archieML.story;
 </script>
 
 <SEO
   baseUrl="{import.meta.env.BASE_URL}"
   pageUrl="{$page.url}"
-  seoTitle="{content.SEOTitle}"
-  seoDescription="{content.SEODescription}"
-  shareTitle="{content.ShareTitle}"
-  shareDescription="{content.ShareDescription}"
-  shareImgPath="{`${assets}/${content.ShareImgPath}`}"
-  shareImgAlt="{content.ShareImgAlt}"
+  seoTitle="{content.seoTitle}"
+  seoDescription="{content.seoDescription}"
+  shareTitle="{content.shareTitle}"
+  shareDescription="{content.shareDescription}"
+  shareImgPath="{`${assets}/${content.shareImgPath}`}"
+  shareImgAlt="{content.shareImgAlt}"
   publishTime="{pkg?.reuters?.graphic?.published}"
   updateTime="{pkg?.reuters?.graphic?.updated}"
   authors="{pkg?.reuters?.graphic?.authors}"

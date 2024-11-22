@@ -1,10 +1,9 @@
-import dsv from '@rollup/plugin-dsv';
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
-import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/index.js';
+import { purgeStyles } from '@reuters-graphics/vite-plugin-purge-styles';
+import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/';
 import { sveltekit } from '@sveltejs/kit/vite';
+import type { UserConfig } from 'vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
+const config: UserConfig = {
   build: { target: 'es2015' },
   server: {
     open: true,
@@ -13,27 +12,15 @@ const config = {
       allow: ['.'],
     },
   },
-  resolve: {
-    alias: {
-      $utils: '/src/utils',
-      $pkg: '/package.json',
-      $locales: '/locales',
-      $assets: '/src/statics',
-      $images: '/src/statics/images',
-    },
-  },
   css: {
     preprocessorOptions: { scss: { quietDeps: true } },
   },
-  optimizeDeps: {
-    exclude: ['svelte-fa'],
-    include: ['classnames', 'lodash-es', 'pym.js', 'ua-parser-js'],
-  },
   plugins: [
     sveltekit(),
-    dsv(),
     svelteKitPagesPlugin(),
-    purgeCss(),
+    purgeStyles({
+      safeFiles: ['src/lib/styles/**/*.scss'],
+    }),
   ],
 };
 
