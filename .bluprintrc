@@ -12,10 +12,13 @@
   }, {
     "action": "remove",
     "paths": [
+      ".github/workflows/release.yaml",
       ".github/workflows/sveltekit.yaml",
+      ".github/CODEOWNERS",
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
       "test/*",
+      "CHANGELOG.md",
       "CONTRIBUTING.md",
       "README.md",
        "rngs-io.json"

@@ -20,7 +20,7 @@
 #     # Customize to whatever interval you need:
 #     # https://crontab.guru/
 #     - cron: '35 * * * *'
-
+#
 # jobs:
 #   publish-page:
 #     name: Publish page
@@ -35,13 +35,14 @@
 #       # This line will notify a Teams channel everytime your project successfully publishes
 #       # GRAPHICS_SERVER_NOTIFY_TEAMS_CHANNEL: # Add a Teams webhook URL here
 #     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
+#       - uses: actions/checkout@v4
+#       - uses: pnpm/action-setup@v4
+#       - uses: actions/setup-node@v4
 #         with:
-#           node-version: '16.15.0'
-#           cache: 'yarn'
+#           node-version: 20
+#           cache: pnpm
 #       - run: git config user.name github-actions
 #       - run: git config user.email github-actions@github.com
-#       - run: yarn install
-#       - run: yarn upload
-#       - run: yarn publish:publish
+#       - run: pnpm install
+#       - run: pnpm upload
+#       - run: pnpm publish:publish

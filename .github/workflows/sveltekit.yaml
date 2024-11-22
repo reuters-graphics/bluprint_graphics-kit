@@ -5,7 +5,7 @@ permissions:
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, reopened]
 jobs:
@@ -15,20 +15,39 @@ jobs:
     env:
       TESTING: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - id: checkout
+        name: Checkout Repo
+        uses: actions/checkout@v4
         with:
-          node-version: '18'
-          cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install
-      - name: Config git
+          fetch-depth: 0
+
+      - id: pnpm
+        name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - id: setup
+        name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - id: install
+        name: Install dependencies
+        run: pnpm i
+
+      - id: config-git
+        name: Config git
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      - name: Run tests
-        run: npx mocha
-      - name: Create issue on fail
+
+      - id: test
+        name: Run tests
+        run: pnpm test
+
+      - id: report
+        name: Create issue on fail
         uses: JasonEtco/create-an-issue@v2
         if: ${{ failure() }}
         env:

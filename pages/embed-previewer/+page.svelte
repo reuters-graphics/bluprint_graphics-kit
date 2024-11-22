@@ -1,5 +1,5 @@
 <script>
-  // @ts-ignore
+  // @ts-ignore Is OK
   import pages from '@svelte-kit-pages';
   import { Framer } from '@reuters-graphics/graphics-components';
   import { base } from '$app/paths';
@@ -10,7 +10,7 @@
     .map((path) => (/\/$/.test(path) ? path : path + '/'));
 </script>
 
-<Framer embeds="{embeds}" />
+<Framer {embeds} />
 
 <style global>
   body {
