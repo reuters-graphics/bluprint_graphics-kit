@@ -45,7 +45,7 @@
       [
         "npx",
         [
-          "rngs-io stories new --name 'page-en' --template cltmvzj5m0000lc089jz22aet --syncPath 'locales/en/content.json'"
+          "rngs-io stories new --name 'page-en' --template cltmvzj5m0000lc089jz22aet --syncPath 'locales/en/content.json' --askFirst"
         ]
       ],
       ["pnpm", ["startup:ai-templates"]]
