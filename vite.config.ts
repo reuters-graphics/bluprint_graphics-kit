@@ -13,7 +13,7 @@ const config: UserConfig = {
     },
   },
   css: {
-    preprocessorOptions: { scss: { quietDeps: true } },
+    preprocessorOptions: { scss: { quietDeps: true, api: 'modern-compiler' } },
   },
   plugins: [
     sveltekit(),

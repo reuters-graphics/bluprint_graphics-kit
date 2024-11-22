@@ -8,7 +8,7 @@ import { sveltePreprocess } from 'svelte-preprocess';
 const config = {
   preprocess: sveltePreprocess({
     preserve: ['ld+json'],
-    scss: { quietDeps: true },
+    scss: { quietDeps: true, api: 'modern-compiler' },
     postcss: {
       plugins: [autoprefixer],
     },
