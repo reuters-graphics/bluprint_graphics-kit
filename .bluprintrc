@@ -13,7 +13,7 @@
     "action": "remove",
     "paths": [
       ".github/workflows/release.yaml",
-      ".github/workflows/sveltekit.yaml",
+      ".github/workflows/test.yaml",
       ".github/CODEOWNERS",
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
