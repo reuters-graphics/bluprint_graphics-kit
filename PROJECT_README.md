@@ -1,5 +1,3 @@
-![](https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-color-dark.svg)
-
 # projectName
 
 Graphics created with [bluprint_graphics-kit](https://github.com/reuters-graphics/bluprint_graphics-kit).
