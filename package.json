@@ -41,6 +41,7 @@
     "@reuters-graphics/yaks-prettier": "^0.0.4",
     "@sveltejs/adapter-static": "^3.0.6",
     "@sveltejs/kit": "^2.8.1",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@types/language-tags": "^1.0.4",
     "@types/mock-fs": "^4.13.4",
     "@types/prompts": "^2.4.9",
@@ -56,8 +57,8 @@
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "sass": "^1.81.0",
-    "svelte": "^4.2.19",
-    "svelte-preprocess": "^6.0.2",
+    "svelte": "^4.2.18",
+    "svelte-preprocess": "^6.0.3",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vitest": "^2.1.5"

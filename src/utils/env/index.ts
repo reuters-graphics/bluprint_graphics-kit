@@ -1,3 +1,5 @@
+import { building } from '$app/environment';
+
 /**
  * Check if the page is being hosted inside the Reuters app.
  *
@@ -11,6 +13,7 @@
  * @returns `true` if in the Reuters app
  */
 export const isReutersApp = (url: URL) => {
+  if (building) return false;
   return url.searchParams.get('outputType') === 'chromeless';
 };
 
