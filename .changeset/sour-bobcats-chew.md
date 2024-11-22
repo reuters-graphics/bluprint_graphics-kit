@@ -4,6 +4,18 @@
 
 The 1.0 🎉 release of the Reuters Graphics Kit.
 
+## Migration steps
+
+Install [pnpm](https://pnpm.io/) globally:
+
+```console
+npm install -g pnpm
+```
+
+All other updates will be included on new projects when started.
+
+You should not update existing projects or their dependencies as part of this release.
+
 ## New features
 
 ### RNGS.io becomes the default CMS
