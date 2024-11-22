@@ -31,7 +31,7 @@
     "files": ["package.json", "README.md"],
     "replace": [
       ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"],
-      ["@reuters-graphics/graphics-kit", "{{#slugify}}{{ projectName }}{{/slugify}}"]
+      ["\"@reuters-graphics/graphics-kit\"", "\"{{#slugify}}{{ projectName }}{{/slugify}}\""]
     ]
   }, {
     "action": "execute",
