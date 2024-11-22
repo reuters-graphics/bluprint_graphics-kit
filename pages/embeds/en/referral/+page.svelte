@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { assets } from '$app/paths';
   import {
     Article,
@@ -7,13 +7,14 @@
     Block,
   } from '@reuters-graphics/graphics-components';
 
-  // Google doc content
-  import content from '$locales/en/content.json';
-  import '@reuters-graphics/graphics-components/scss/main.scss';
+  import archieML from '$locales/en/content.json';
+  import { homepage } from '$pkg';
 
   // Styles
+  import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
-  import { homepage } from '$pkg';
+
+  $: content = archieML.story;
 </script>
 
 <Theme>
@@ -24,14 +25,14 @@
           <div class="referral-container">
             <div class="image-cell">
               <img
-                src="{assets}/{content.ShareImgPath}"
+                src="{assets}/{content.shareImgPath}"
                 alt="Ukraine counteroffensive map"
               />
             </div>
             <div class="title-cell">
               <p class="overtitle">More from Reuters</p>
               <p class="headline text-primary text-2xl leading-none">
-                {content.ShareTitle}
+                {content.shareTitle}
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 {
   "bluprint": "^0.6.3",
-  "name": "Graphics Kit (SvelteKit)",
+  "name": "Graphics Kit",
   "category": "Graphics rigs",
   "actions": [{
     "action": "prompt",
@@ -12,12 +12,16 @@
   }, {
     "action": "remove",
     "paths": [
-      ".github/workflows/sveltekit.yaml",
+      ".github/workflows/release.yaml",
+      ".github/workflows/test.yaml",
+      ".github/CODEOWNERS",
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
       "test/*",
+      "CHANGELOG.md",
       "CONTRIBUTING.md",
-      "README.md"
+      "README.md",
+       "rngs-io.json"
     ]
   }, {
     "action": "move",
@@ -26,7 +30,8 @@
     "action": "regexreplace",
     "files": ["package.json", "README.md"],
     "replace": [
-      ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"]
+      ["projectName", "{{#slugify}}{{ projectName }}{{/slugify}}"],
+      ["@reuters-graphics/graphics-kit", "{{#slugify}}{{ projectName }}{{/slugify}}"]
     ]
   }, {
     "action": "execute",
@@ -34,18 +39,20 @@
       ["git", ["init"]],
       ["git", ["add", "."]],
       ["git", ["commit", "-m", "initial"]],
-      ["yarn"],
+      ["pnpm", ["install"]],
       ["npx", ["lefthook", "install"]],
-      ["yarn", ["startup:check-creds"]],
-      ["yarn", ["startup:create-repo"]],
-      ["yarn", ["startup:archie-doc"]],
-      ["yarn", ["startup:ai-templates"]]
+      ["pnpm", ["startup:check-creds"]],
+      ["pnpm", ["startup:create-repo"]],
+      [
+        "npx",
+        [
+          "rngs-io stories new --name 'page-en' --template cltmvzj5m0000lc089jz22aet --syncPath 'locales/en/content.json' --askFirst"
+        ]
+      ],
+      ["pnpm", ["startup:ai-templates"]]
     ]
   }, {
     "action": "log",
-    "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green yarn start} to begin developing.\n"
-  }, {
-    "action": "log",
-    "msg": "📦 Graphics components have a new home. Check out what's new at:\n{cyan https://reuters-graphics.github.io/graphics-components/}\n"
+    "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green pnpm start} to begin developing.\n"
   }]
 }

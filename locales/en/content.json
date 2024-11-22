@@ -1,50 +1,78 @@
 {
-  "SEOTitle": "My page title for Google",
-  "SEODescription": "My page description for Google",
-  "ShareTitle": "My page title for Twitter",
-  "ShareDescription": "My page description for Twitter",
-  "ShareImgPath": "images/reuters-graphics.jpg",
-  "ShareImgAlt": "Alt text for share image",
-  "Hed": "Reuters Graphics Interactive",
-  "Dek": "The beginning of a beautiful page",
-  "Kicker": "Global News",
-  "Authors": [
-    "Jane Doe",
-    "John Doe"
-  ],
-  "PublishedDate": "2021-09-01T08:30:00.000Z",
-  "UpdatedDate": "",
-  "blocks": [
-    {
-      "Type": "text",
-      "Text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken. Turkey landjaeger <a href=\"https://www.reuters.com/graphics/\">kevin turducken kielbasa</a> pork loin, filet mignon leberkas meatball cow tenderloin. T-bone meatloaf kielbasa pancetta filet mignon doner.\n\nPig short ribs jerky, meatloaf *turducken ribeye strip steak* bacon pastrami tail pancetta chicken. Shankle pork loin burgdoggen, prosciutto beef ribs turducken ball tip.\n\nBoudin alcatra kevin, jerky swine **brisket pastrami** tail pork chop drumstick tongue."
+  "metadata": {
+    "id": "cltmvzj5m0000lc089jz22aet",
+    "name": "graphics-page",
+    "storyboard": {
+      "id": "cltmvxt5q0000l908irus4rdd",
+      "name": "🔒 TEMPLATES"
     },
-    {
-      "Type": "ai-graphic",
-      "Chart": "MyMap",
-      "Width": "normal",
-      "Title": "Optional title of the graphic",
-      "Chatter": "Optional chatter describes more about the graphic.",
-      "Notes": "Note: Optional note clarifying something in the data\n\nSource: Optional source of the data",
-      "AltText": "Add a description of the graphic for screen readers. This is invisible on the page."
-    },
-    {
-      "Type": "text",
-      "Text": "Beef ribs biltong rump hamburger. Chicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage.\n\nChicken filet mignon cupim, pastrami shankle kielbasa pancetta frankfurter bacon sirloin sausage."
+    "lastSynced": "2024-11-22T16:25:28.665Z",
+    "liveEditing": {
+      "preview": {
+        "aml": "https://graphics.thomsonreuters.com/apps/graphics-tools/prod/stories/cltmvzj5m0000lc089jz22aet/preview/story.aml",
+        "json": "https://graphics.thomsonreuters.com/apps/graphics-tools/prod/stories/cltmvzj5m0000lc089jz22aet/preview/story.json",
+        "enabled": true
+      }
     }
-  ],
-  "EndNotes": [
-    {
-      "Title": "Note",
-      "Text": "Data is current as of today."
-    },
-    {
-      "Title": "Sources",
-      "Text": "Data, Inc."
-    },
-    {
-      "Title": "Edited by",
-      "Text": "Editor, Copyeditor"
-    }
-  ]
+  },
+  "story": {
+    "slug": "ROOT-SLUG/WILD",
+    "seoTitle": "Page title for search",
+    "seoDescription": "Page description for search",
+    "shareTitle": "Page title for social media",
+    "shareDescription": "Page description for social media",
+    "shareImgPath": "images/reuters-graphics.jpg",
+    "shareImgAlt": "Alt text for share image.",
+    "hed": "A Reuters Graphics page",
+    "section": "Graphics",
+    "sectionUrl": "https://www.reuters.com/graphics/",
+    "authors": [
+      "Jane Doe",
+      "John Doe"
+    ],
+    "publishedDate": "2024-04-17T17:00:00.000Z",
+    "updatedDate": "",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken. Turkey landjaeger <a href=\"https://www.reuters.com/graphics/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">kevin turducken kielbasa</a> pork loin, filet mignon leberkas meatball cow tenderloin. T-bone meatloaf kielbasa pancetta filet mignon doner. \r\n\r\nPig short ribs jerky, meatloaf <em>turducken ribeye strip steak</em> bacon pastrami tail pancetta chicken. Shankle pork loin burgdoggen, prosciutto beef ribs turducken ball tip.\r\n\r\nBoudin alcatra kevin, jerky swine <strong>brisket pastrami</strong> tail pork chop drumstick tongue."
+      },
+      {
+        "type": "ai-graphic",
+        "chart": "AiMap",
+        "width": "normal",
+        "textWidth": "normal",
+        "title": "Optional title of the graphic",
+        "description": "Optional chatter describes more about the graphic.",
+        "notes": "Note: Optional note clarifying something in the data.\r\n\r\nSource: Optional source of the data.",
+        "altText": "Add a description of the graphic for screen readers. This is invisible on the page."
+      },
+      {
+        "type": "text",
+        "text": "Quis ea deserunt tempor. Incididunt ipsum culpa laboris. Aliqua culpa excepteur magna. Fugiat aliqua commodo ea ut dolor. Irure deserunt qui commodo sunt elit deserunt culpa. Amet occaecat ipsum cupidatat proident incididunt officia non ea.\r\n\r\nId incididunt laboris cillum eu. Ullamco ipsum mollit ipsum consequat laboris. Pariatur incididunt sit aute nulla enim excepteur ut."
+      },
+      {
+        "type": "inline-ad",
+        "n": "1"
+      },
+      {
+        "type": "text",
+        "text": "Dolor qui dolore nulla pariatur sunt fugiat. Fugiat amet voluptate consequat. Dolore consequat proident commodo. Exercitation occaecat deserunt occaecat ea. Reprehenderit incididunt ad quis proident laboris et dolore.\r\n\r\nSint velit elit do sunt ad voluptate nulla dolore. Deserunt aliquip mollit reprehenderit nulla do ad quis ullamco. Deserunt aliquip aute qui eiusmod aliquip ullamco nostrud incididunt."
+      }
+    ],
+    "endNotes": [
+      {
+        "title": "Note",
+        "text": "Data is current as of today"
+      },
+      {
+        "title": "Sources",
+        "text": "Data, Inc."
+      },
+      {
+        "title": "Edited by",
+        "text": "Editor, Copyeditor"
+      }
+    ]
+  }
 }
