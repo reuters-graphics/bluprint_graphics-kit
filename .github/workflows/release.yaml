@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 concurrency: ${{github.repository}}-${{ github.workflow }}-${{ github.ref }}
 
 permissions:
@@ -24,10 +23,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - id: pnpm
         name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - id: setup
         name: Setup Node.js
@@ -39,7 +40,6 @@ jobs:
       - id: install
         name: Install dependencies
         run: pnpm i
-      
 
       - id: changesets
         name: Create release Pull Request or publish to npm

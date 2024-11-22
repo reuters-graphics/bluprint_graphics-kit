@@ -24,6 +24,8 @@ jobs:
       - id: pnpm
         name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - id: setup
         name: Setup Node.js
