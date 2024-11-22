@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 1.0.1
+
+### Patch Changes
+
+- a1f847a: Updates sass API to use the modern compiler.
+
 ## 1.0.0
 
 ### Major Changes
