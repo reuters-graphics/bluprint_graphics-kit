@@ -51,12 +51,6 @@
   - `pnpn upload`
   - `pnpm pub`
 
-  When _installing_ new packages, you'll use `pnpm install` (or `i` for short) instead of `yarn add`:
-
-  ```console
-  pnpm i d3
-  ```
-
   > **🚨 IMPORTANT:** Before you start your next project, you should install `pnpm` globally. Just run:
   >
   > ```console
