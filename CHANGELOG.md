@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 1.0.2
+
+### Patch Changes
+
+- 672c5fa: Adds live endpoints handler class. Updates minimum Node version to 20.
+
 ## 1.0.1
 
 ### Patch Changes
