@@ -52,7 +52,7 @@ afterEach(() => {
 describe('GraphicsKit bluprint', () => {
   it('Creates a new project from the bluprint', async () => {
     // Mock user inputs
-    prompts.inject(['test-project', 'na', false]);
+    prompts.inject(['test-project', 'na', false, false]);
 
     // Run the bluprint command
     await bluprint.start('graphics-kit');
