@@ -29,16 +29,11 @@ beforeEach(() => {
         name: 'Jon Doe',
         email: 'an-email@thomsonreuters.com',
         github: {
+          username: 'an-user',
           email: 'an-email@email.com',
         },
-        url: 'https://www.twitter.com',
+        url: 'https://reuters.com',
         desk: 'london',
-      }
-    ),
-    [path.join(os.homedir(), '.reuters-graphics/secrets.json')]: JSON.stringify(
-      {
-        trelloApiKey: 'APIKEY',
-        trelloApiToken: 'APITOKEN',
       }
     ),
     [path.join(os.homedir(), '.reuters-graphics/graphics-server.json')]:
