@@ -14,7 +14,7 @@
 
   ## Migration steps
 
-  Install [pnpm](https://pnpm.io/) globally:
+  Upgrade to Node version 20 or 22 and install [pnpm](https://pnpm.io/) globally:
 
   ```console
   npm install -g pnpm
