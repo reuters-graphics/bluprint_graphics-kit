@@ -12,6 +12,9 @@ on:
 jobs:
   build-app:
     name: SvelteKit builds
+    strategy:
+      matrix:
+        version: [20, 22]
     runs-on: ubuntu-latest
     env:
       TESTING: true
@@ -32,7 +35,7 @@ jobs:
         name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.version }}
           cache: pnpm
 
       - id: install
