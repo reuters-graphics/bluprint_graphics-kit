@@ -12,13 +12,15 @@
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
   import { isReutersApp } from '$utils/env';
-  import archieML from '$locales/en/content.json';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
+  import type { PageData } from './$types';
 
-  $: content = archieML.story;
+  export let data: PageData;
+
+  $: content = data.content;
 </script>
 
 <SEO
