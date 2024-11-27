@@ -1,9 +1,11 @@
 <script lang="ts">
   import {
+    AdScripts,
     SEO,
     SiteHeader,
     SiteFooter,
     EmbedPreviewerLink,
+    LeaderboardAd,
     Theme,
   } from '@reuters-graphics/graphics-components';
   import App from '$lib/App.svelte';
@@ -11,7 +13,7 @@
   import { dev } from '$app/environment';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
-  import { isReutersApp } from '$utils/env';
+  import { isReutersApp, isReutersDotcom } from '$utils/env';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
@@ -22,6 +24,10 @@
 
   $: content = data.content;
 </script>
+
+{#if isReutersDotcom($page.url)}
+  <AdScripts />
+{/if}
 
 <SEO
   baseUrl="{import.meta.env.BASE_URL}"
@@ -39,6 +45,9 @@
 
 <Theme base="light">
   {#if !isReutersApp($page.url)}
+    {#if isReutersDotcom($page.url)}
+      <LeaderboardAd />
+    {/if}
     <SiteHeader />
   {/if}
 
