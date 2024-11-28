@@ -22,11 +22,11 @@ importers:
         specifier: ^1.8.4
         version: 1.8.4
       '@reuters-graphics/graphics-bin':
-        specifier: ^1.0.6
-        version: 1.0.6
+        specifier: ^1.0.9
+        version: 1.0.9
       '@reuters-graphics/graphics-kit-publisher':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.1
+        version: 2.0.1
       '@reuters-graphics/rngs-io-client':
         specifier: ^0.1.10
         version: 0.1.10
@@ -819,8 +819,8 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
-  '@reuters-graphics/graphics-bin@1.0.6':
-    resolution: {integrity: sha512-iyHCQgRXHWMMfy9HcTH3CSO7HdVG2qR/lyLynZMuTw8lIuzCrom28Ed6O7Fk2GxjvyQ4YjSivZT+CHdkeLnJMA==}
+  '@reuters-graphics/graphics-bin@1.0.9':
+    resolution: {integrity: sha512-14P1NkcO8TD7PerpK3KNpT8t6ChcldbRBa14hXRbSteTJ1q8HZHDY5zjP2+IA3lQczDcksw+wyuGOD9yMRANoA==}
     hasBin: true
 
   '@reuters-graphics/graphics-components@2.0.0':
@@ -829,8 +829,8 @@ packages:
     peerDependencies:
       svelte: '>=4'
 
-  '@reuters-graphics/graphics-kit-publisher@2.0.0':
-    resolution: {integrity: sha512-brIozXYCDYoAdFIE3VO8uqC5vXghTu100nLx/2QjL87+x88Gh1wuZP8DzyPjn0q2xtWZYpD8heQazP3qpghs4w==}
+  '@reuters-graphics/graphics-kit-publisher@2.0.1':
+    resolution: {integrity: sha512-LdSztwMqh3LltS9YMR8IyN2rqMpw/KhdxkPW9a+Sz56DUP/Ip5lsnSp+NH7DuNIdT7JIL9Bv3yQ13ZDZG46AqQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -5526,7 +5526,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
-  '@reuters-graphics/graphics-bin@1.0.6':
+  '@reuters-graphics/graphics-bin@1.0.9':
     dependencies:
       '@1password/sdk': 0.1.4
       '@aws-sdk/client-s3': 3.698.0
@@ -5573,10 +5573,10 @@ snapshots:
       svelte-intersection-observer: 0.10.2
       svelte-search: 2.1.0
 
-  '@reuters-graphics/graphics-kit-publisher@2.0.0':
+  '@reuters-graphics/graphics-kit-publisher@2.0.1':
     dependencies:
       '@aws-sdk/client-s3': 3.698.0
-      '@reuters-graphics/graphics-bin': 1.0.6
+      '@reuters-graphics/graphics-bin': 1.0.9
       '@reuters-graphics/server-client': 2.0.1
       '@reuters-graphics/teams-klaxon': 1.0.0
       archiver: 7.0.1
