@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^2.0.0
-        version: 2.0.0(svelte@4.2.19)
+        specifier: ^2.0.1
+        version: 2.0.1(svelte@4.2.19)
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -823,8 +823,8 @@ packages:
     resolution: {integrity: sha512-14P1NkcO8TD7PerpK3KNpT8t6ChcldbRBa14hXRbSteTJ1q8HZHDY5zjP2+IA3lQczDcksw+wyuGOD9yMRANoA==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@2.0.0':
-    resolution: {integrity: sha512-gRA9OFSk++j0RwYrfGAyRFvmodcPSOnrbbXIRwTq+w53lO9BmsbxfILK7wYY+zGeWS3RI2pK/r+jpIL1J1LM6w==}
+  '@reuters-graphics/graphics-components@2.0.1':
+    resolution: {integrity: sha512-xFounI7gugdHoL1NJGyLLRHtBM9P0di1Bl8FlZRT9fLD+RPaufg9wuKiBekU1CpJZGallwK0OOxSRQCnkmv57Q==}
     engines: {node: '>=18.20'}
     peerDependencies:
       svelte: '>=4'
@@ -5555,7 +5555,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@2.0.0(svelte@4.2.19)':
+  '@reuters-graphics/graphics-components@2.0.1(svelte@4.2.19)':
     dependencies:
       '@fortawesome/free-regular-svg-icons': 5.15.4
       '@fortawesome/free-solid-svg-icons': 5.15.4

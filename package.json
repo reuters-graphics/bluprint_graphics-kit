@@ -63,7 +63,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@reuters-graphics/graphics-components": "^2.0.0",
+    "@reuters-graphics/graphics-components": "^2.0.1",
     "language-tags": "^1.0.9"
   },
   "reuters": {
