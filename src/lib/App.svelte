@@ -16,7 +16,7 @@
     GraphicBlock,
     InlineAd,
   } from '@reuters-graphics/graphics-components';
-  import WarnBlock from './components/dev/WarnBlock.svelte';
+  import LogBlock from './components/dev/LogBlock.svelte';
 
   // Import ai2svelte components...
   import AiMap from '$lib/ai2svelte/ai-chart.svelte';
@@ -58,7 +58,7 @@
       <!-- Ai2svelte graphic block -->
     {:else if block.type === 'ai-graphic'}
       {#if !aiCharts[block.chart]}
-        <WarnBlock message="{`Unable to find "${block.chart}" in aiCharts`}" />
+        <LogBlock message="{`Unable to find "${block.chart}" in aiCharts`}" />
       {:else}
         <GraphicBlock
           id="{block.chart}"
@@ -79,11 +79,13 @@
     {:else if block.type === 'inline-ad'}
       {#if isReutersDotcom($page.url)}
         <InlineAd n="{inlineAdNumber(block.n)}" />
+      {:else}
+        <LogBlock level="info" message="An ad will appear here on dotcom" />
       {/if}
 
       <!-- Warning block -->
     {:else}
-      <WarnBlock message="{`Unknown block type: "${block.type}"`}" />
+      <LogBlock message="{`Unknown block type: "${block.type}"`}" />
     {/if}
   {/each}
 

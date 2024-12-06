@@ -13,7 +13,8 @@
   import { dev } from '$app/environment';
   import { assets } from '$app/paths';
   import { page } from '$app/stores';
-  import { isReutersApp, isReutersDotcom } from '$utils/env';
+  import { isReutersApp, isReutersDev, isReutersDotcom } from '$utils/env';
+  import LogBlock from '$lib/components/dev/LogBlock.svelte';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
@@ -47,6 +48,8 @@
   {#if !isReutersApp($page.url)}
     {#if isReutersDotcom($page.url)}
       <LeaderboardAd />
+    {:else if isReutersDev($page.url)}
+      <LogBlock level="info" message="An ad will appear here on dotcom" />
     {/if}
     <SiteHeader />
   {/if}
