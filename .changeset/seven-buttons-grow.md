@@ -4,6 +4,8 @@
 
 Bumps graphics-bin and graphics-kit-publisher for our new IHN-approved AWS S3 preview bucket.
 
+Following the planned change to our CloudFront distribution on Dec. 17, projects without this change will not be able to publish preview pages.
+
 ## Migration steps
 
 **If your project was created _before_ the release of the [1.0.0 version](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/main/CHANGELOG.md#100) of the Graphics Kit,** you must create a _new_ project and migrate your app to that.
