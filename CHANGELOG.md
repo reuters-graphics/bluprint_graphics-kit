@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 1.0.4
+
+### Patch Changes
+
+- cdec626: Bumps rngs-io-client to gracefully handle _not_ creating a RNGS.io story on project startup. See #134.
+
 ## 1.0.3
 
 ### Patch Changes
