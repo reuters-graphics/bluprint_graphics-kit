@@ -28,8 +28,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       '@reuters-graphics/rngs-io-client':
-        specifier: ^0.1.10
-        version: 0.1.10
+        specifier: ^0.1.11
+        version: 0.1.11
       '@reuters-graphics/style-ai-templates':
         specifier: '>=0.0.15'
         version: 0.0.15
@@ -834,8 +834,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@reuters-graphics/rngs-io-client@0.1.10':
-    resolution: {integrity: sha512-P/GDc8g8FtaAFTD6JNBgpW/Ux5WyCyBkbox1aiExoqlqnQhrhWp1fT5xmuzN0kPEQG1IgjNqrB5rAD4O86qlHw==}
+  '@reuters-graphics/rngs-io-client@0.1.11':
+    resolution: {integrity: sha512-V/5+vUMAacVPB3t90wf2USh07wFiQ3ZQWupB2ospR3KHF3/L/gXZL5aa37Q+xTgn1DbPZPkr4cwX3CRnMuI0Kw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -5608,7 +5608,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/rngs-io-client@0.1.10':
+  '@reuters-graphics/rngs-io-client@0.1.11':
     dependencies:
       '@types/sade': 1.8.0
       ajv: 8.17.1
