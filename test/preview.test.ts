@@ -4,7 +4,7 @@ import path from 'path';
 import { execSync } from 'child_process';
 import * as cheerio from 'cheerio';
 import * as rimraf from 'rimraf';
-import { utils } from '@reuters-graphics/graphics-bin';
+import { utils, S3Client } from '@reuters-graphics/graphics-bin';
 
 const DIST = path.join(__dirname, '../dist/');
 
@@ -24,8 +24,16 @@ beforeAll(() => {
   rimraf.sync(DIST);
 });
 
-afterAll(() => {
+afterAll(async () => {
   rimraf.sync(DIST);
+
+  const s3 = new S3Client();
+  const previewUrl = utils.getPkgProp('reuters.preview');
+  await s3.dangerouslyDeleteS3Directory(
+    previewUrl.replace('https://graphics.thomsonreuters.com/', ''),
+    true
+  );
+  utils.setPkgProp('reuters.preview', '');
 });
 
 describe('GraphicsKit preview', () => {
