@@ -31,7 +31,7 @@ afterAll(() => {
 describe('GraphicsKit preview', () => {
   it('should preview the app without error', async () => {
     try {
-      execSync('pnpm preview', { stdio: 'inherit' });
+      execSync('pnpm publish:preview', { stdio: 'inherit' });
     } catch {
       expect(false).toBe(true);
     }
