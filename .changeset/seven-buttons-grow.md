@@ -2,7 +2,7 @@
 '@reuters-graphics/graphics-kit': patch
 ---
 
-Bumps graphics-bin and graphics-kit-publisher for new AWS S3 preview bucket.
+Bumps graphics-bin and graphics-kit-publisher for our new IHN-approved AWS S3 preview bucket.
 
 ## Migration steps
 
