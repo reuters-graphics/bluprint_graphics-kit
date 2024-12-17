@@ -8,7 +8,7 @@ Following the planned change to our CloudFront distribution on Dec. 17, projects
 
 ## Migration steps
 
-**If your project was created _before_ the release of the [1.0.0 version](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/main/CHANGELOG.md#100) of the Graphics Kit,** you must create a _new_ project and migrate your app to that.
+**If your project was created _before_ the release of the [1.0.0 version](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/main/CHANGELOG.md#100) of the Graphics Kit,** (check the version number in your project's `package.json`) you must create a _new_ project and migrate your app to that.
 
 When creating a new project, you _should_ create a new repo, but you may skip creating a RNGS.io doc if you have an existing one or are using Google Docs for content.
 
