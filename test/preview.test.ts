@@ -14,6 +14,7 @@ const fetchAndParse = async (url: string) => {
   const response = await fetch(url);
 
   if (!response.ok) {
+    console.log('ERROR FOR URL', url);
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
 
