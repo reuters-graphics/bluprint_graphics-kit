@@ -39,11 +39,17 @@ afterAll(async () => {
 
 describe('GraphicsKit preview', () => {
   it('should preview the app without error', async () => {
+    const originalTesting = process.env.TESTING;
+    const originalVitest = process.env.VITEST;
+    delete process.env.TESTING;
+    delete process.env.VITEST;
     try {
       execSync('pnpm publish:preview', { stdio: 'inherit' });
     } catch {
       expect(false).toBe(true);
     }
+    process.env.TESTING = originalTesting;
+    process.env.VITEST = originalVitest;
     expect(true).toBe(true);
   });
 
