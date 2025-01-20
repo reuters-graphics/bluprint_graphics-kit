@@ -1,5 +1,13 @@
 # @reuters-graphics/graphics-kit
 
+## 1.0.6
+
+### Patch Changes
+
+- 355aa61: Improves S3 upload speed and cache strategy.
+
+  Projects already created can get the same boost by updating `@reuters-graphics/graphics-bin` in package.json's `devDependencies` to at least `^1.1.2`.
+
 ## 1.0.5
 
 ### Patch Changes
