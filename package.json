@@ -34,7 +34,7 @@
     "@reuters-graphics/graphics-bin": "^1.1.2",
     "@reuters-graphics/graphics-kit-publisher": "^2.1.0",
     "@reuters-graphics/rngs-io-client": "^0.1.11",
-    "@reuters-graphics/style-ai-templates": ">=0.0.15",
+    "@reuters-graphics/style-ai-templates": ">=0.0.16",
     "@reuters-graphics/vite-plugin-purge-styles": "^0.0.2",
     "@reuters-graphics/yaks-eslint": "^0.0.6",
     "@reuters-graphics/yaks-prettier": "^0.0.4",
