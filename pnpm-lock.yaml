@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^2.0.1
-        version: 2.0.1(svelte@4.2.19)
+        specifier: ^2.0.2
+        version: 2.0.2(svelte@4.2.19)
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -31,8 +31,8 @@ importers:
         specifier: ^0.1.11
         version: 0.1.11
       '@reuters-graphics/style-ai-templates':
-        specifier: '>=0.0.15'
-        version: 0.0.15
+        specifier: '>=0.0.16'
+        version: 0.0.16
       '@reuters-graphics/vite-plugin-purge-styles':
         specifier: ^0.0.2
         version: 0.0.2(vite@5.4.11(@types/node@22.9.1)(sass@1.81.0))
@@ -823,8 +823,8 @@ packages:
     resolution: {integrity: sha512-86CgcIs3t7cLC+dv8j2I+rg08pps9mqZK1O0FHVFCktZzbEUGMoSXePzjUZTjQoDdVqkeFi8HAAdnhI+tHF0Bw==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@2.0.1':
-    resolution: {integrity: sha512-xFounI7gugdHoL1NJGyLLRHtBM9P0di1Bl8FlZRT9fLD+RPaufg9wuKiBekU1CpJZGallwK0OOxSRQCnkmv57Q==}
+  '@reuters-graphics/graphics-components@2.0.2':
+    resolution: {integrity: sha512-5DUv6Hb0YRponFsdJTtS3UU+9pzeiTih9myR1VcTMrN4d9BYEp9Lj0YDkSxxFTCfPZpjgMtdr0R4MG1/ED+ZQA==}
     engines: {node: '>=18.20'}
     peerDependencies:
       svelte: '>=4'
@@ -843,8 +843,8 @@ packages:
     resolution: {integrity: sha512-QCl4suZxPrGjVQR48gfJQM78LSO4XxfCn9M2GRGKGlNUXZG0Rl2WV7zm7+26Iiynz9ocxLpR0kg53yhFWuOitQ==}
     engines: {node: '>=16.0.0'}
 
-  '@reuters-graphics/style-ai-templates@0.0.15':
-    resolution: {integrity: sha512-57O8SV5mZ3fnOUMd9bAcQsKqGBYqa8lQPmCzb9pL/Js5vzO5Q8q+27qK9uc1Zv1il3GUuGJ7syr8E1kjaFQ6Bw==}
+  '@reuters-graphics/style-ai-templates@0.0.16':
+    resolution: {integrity: sha512-+B7Q93I3R2GtlWkgNMUuT0hVhmFJBEzLKMpvKaIPaDZSM0gXfCLE4rIP285F5TnRVcp8dC3Qi2Kht7OV7KXeag==}
     hasBin: true
 
   '@reuters-graphics/teams-klaxon@1.0.0':
@@ -5565,7 +5565,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@2.0.1(svelte@4.2.19)':
+  '@reuters-graphics/graphics-components@2.0.2(svelte@4.2.19)':
     dependencies:
       '@fortawesome/free-regular-svg-icons': 5.15.4
       '@fortawesome/free-solid-svg-icons': 5.15.4
@@ -5651,7 +5651,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@reuters-graphics/style-ai-templates@0.0.15':
+  '@reuters-graphics/style-ai-templates@0.0.16':
     dependencies:
       fs-extra: 10.1.0
       glob: 7.2.3
