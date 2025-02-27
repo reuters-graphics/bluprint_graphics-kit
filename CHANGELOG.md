@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 1.0.7
+
+### Patch Changes
+
+- f5281e5: Fixes build scripts for pnpm > 10
+
 ## 1.0.6
 
 ### Patch Changes
