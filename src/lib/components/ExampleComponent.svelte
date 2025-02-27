@@ -1,6 +1,6 @@
 <script>
   import { Block } from '@reuters-graphics/graphics-components';
-  let count = 0;
+  let count = $state(0);
 </script>
 
 <section class="graphic">
@@ -8,9 +8,9 @@
     <h5>The count is <span>{count}</span></h5>
     <button
       class="rounded cursor-pointer py-2.5 px-5 uppercase text-secondary font-bold"
-      on:click="{() => {
+      onclick={() => {
         count += 1;
-      }}">Add</button
+      }}>Add</button
     >
   </Block>
 </section>

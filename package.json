@@ -31,36 +31,36 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
     "@evilmartians/lefthook": "^1.8.4",
-    "@reuters-graphics/graphics-bin": "^1.1.4",
+    "@reuters-graphics/graphics-bin": "^1.1.7",
     "@reuters-graphics/graphics-kit-publisher": "^2.1.1",
     "@reuters-graphics/rngs-io-client": "^0.1.11",
     "@reuters-graphics/style-ai-templates": ">=0.0.16",
     "@reuters-graphics/vite-plugin-purge-styles": "^0.0.2",
-    "@reuters-graphics/yaks-eslint": "^0.0.6",
-    "@reuters-graphics/yaks-prettier": "^0.0.4",
+    "@reuters-graphics/yaks-eslint": "^0.1.1",
+    "@reuters-graphics/yaks-prettier": "^0.1.1",
     "@sveltejs/adapter-static": "^3.0.6",
-    "@sveltejs/kit": "^2.8.1",
-    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@sveltejs/kit": "^2.17.3",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@types/language-tags": "^1.0.4",
     "@types/rimraf": "^4.0.5",
     "autoprefixer": "^10.4.20",
     "cheerio": "^1.0.0",
-    "eslint": "^9.14.1",
+    "eslint": "^9.21.0",
     "glob": "^11.0.0",
     "knip": "^5.37.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.49",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.2",
     "rimraf": "^6.0.1",
-    "sass": "^1.81.0",
-    "svelte": "^4.2.18",
+    "sass": "^1.85.0",
+    "svelte": "^5.20.5",
     "svelte-preprocess": "^6.0.3",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11",
-    "vitest": "^2.1.5"
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.18"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

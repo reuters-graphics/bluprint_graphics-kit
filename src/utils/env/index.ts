@@ -28,9 +28,12 @@ export const isReutersApp = (url: URL) => {
  * ```
  *
  * @param url URL of current page
- * @returns `true` if on reuters.com
+ * @returns `true` if on reuters.com and not in an iframe
  */
 export const isReutersDotcom = (url: URL) => {
+  if (typeof window !== 'undefined') {
+    if (window.self !== window.top) return false;
+  }
   return /\Wreuters\.com$/.test(url.hostname);
 };
 
