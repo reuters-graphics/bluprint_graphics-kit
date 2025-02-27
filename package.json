@@ -62,6 +62,19 @@
   "engines": {
     "node": ">=20"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@evilmartians/lefthook",
+      "@fortawesome/fontawesome-common-types",
+      "@fortawesome/free-regular-svg-icons",
+      "@fortawesome/free-solid-svg-icons",
+      "@parcel/watcher",
+      "@sveltejs/kit",
+      "esbuild",
+      "sharp",
+      "svelte-preprocess"
+    ]
+  },
   "dependencies": {
     "@reuters-graphics/graphics-components": "^2.0.3",
     "language-tags": "^1.0.9"
