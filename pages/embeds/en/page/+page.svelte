@@ -1,7 +1,7 @@
 <script lang="ts">
   import pkg from '$pkg';
   import { assets } from '$app/paths';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
 
   import archieML from '$locales/en/content.json';
@@ -13,25 +13,25 @@
   import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
 
-  $: content = archieML.story;
+  let content = $derived(archieML.story);
 </script>
 
 <SEO
-  baseUrl="{import.meta.env.BASE_URL}"
-  pageUrl="{$page.url}"
-  seoTitle="{content.seoTitle}"
-  seoDescription="{content.seoDescription}"
-  shareTitle="{content.shareTitle}"
-  shareDescription="{content.shareDescription}"
-  shareImgPath="{`${assets}/${content.shareImgPath}`}"
-  shareImgAlt="{content.shareImgAlt}"
-  publishTime="{pkg?.reuters?.graphic?.published}"
-  updateTime="{pkg?.reuters?.graphic?.updated}"
-  authors="{pkg?.reuters?.graphic?.authors}"
+  baseUrl={import.meta.env.BASE_URL}
+  pageUrl={page.url}
+  seoTitle={content.seoTitle}
+  seoDescription={content.seoDescription}
+  shareTitle={content.shareTitle}
+  shareDescription={content.shareDescription}
+  shareImgPath={`${assets}/${content.shareImgPath}`}
+  shareImgAlt={content.shareImgAlt}
+  publishTime={pkg?.reuters?.graphic?.published}
+  updateTime={pkg?.reuters?.graphic?.updated}
+  authors={pkg?.reuters?.graphic?.authors}
 />
 
 <Theme base="light">
-  <App embedded="{true}" {content} />
+  <App embedded={true} {content} />
 </Theme>
 
-<PymChild polling="{500}" />
+<PymChild polling={500} />

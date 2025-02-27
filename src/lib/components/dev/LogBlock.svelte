@@ -1,22 +1,26 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { isReutersDev } from '$utils/env';
   import { Block } from '@reuters-graphics/graphics-components';
 
-  /**
-   * A message to display
-   */
-  export let message: string;
-  /**
-   * The level of the message, either `warn` or `info`
-   */
-  export let level: 'warn' | 'info' = 'warn';
+  interface Props {
+    /**
+     * A message to display
+     */
+    message: string;
+    /**
+     * The level of the message, either `warn` or `info`
+     */
+    level?: 'warn' | 'info';
+  }
+
+  let { message, level = 'warn' }: Props = $props();
 </script>
 
-{#if isReutersDev($page.url)}
+{#if isReutersDev(page.url)}
   <!-- This log will only appear in development. -->
   <Block>
-    <div class="{level}">
+    <div class={level}>
       <span>{level.toUpperCase()}</span>
       {message}
     </div>
