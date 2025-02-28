@@ -2,4 +2,4 @@
 '@reuters-graphics/graphics-kit': patch
 ---
 
-Bump @reuters-graphics/graphics-bin
+Bump's @reuters-graphics/graphics-bin for the fix to https://github.com/reuters-graphics/graphics-bin/issues/57.
