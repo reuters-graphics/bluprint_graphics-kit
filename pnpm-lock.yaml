@@ -22,8 +22,8 @@ importers:
         specifier: ^1.8.4
         version: 1.8.4
       '@reuters-graphics/graphics-bin':
-        specifier: ^1.1.7
-        version: 1.1.7
+        specifier: ^1.1.8
+        version: 1.1.8
       '@reuters-graphics/graphics-kit-publisher':
         specifier: ^2.1.1
         version: 2.1.1
@@ -831,8 +831,8 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
-  '@reuters-graphics/graphics-bin@1.1.7':
-    resolution: {integrity: sha512-lbHqogEfxL5yKlWAsm3DrqJja6Jpb6T/4UdbPpxzaETIZuFMRZjSzwBVDXIP/hF3ZuUAlz+nPpaY5SlqFR78dg==}
+  '@reuters-graphics/graphics-bin@1.1.8':
+    resolution: {integrity: sha512-u6Uj2gvsQTmJOKNQ6DAMsyEQCof37r3L8fgqj2xmY0e7BGPq4NRRhvMrMEuwfQ9WgQbmIo73dq6NfrgscPchYQ==}
     hasBin: true
 
   '@reuters-graphics/graphics-components@2.0.3':
@@ -5569,7 +5569,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
-  '@reuters-graphics/graphics-bin@1.1.7':
+  '@reuters-graphics/graphics-bin@1.1.8':
     dependencies:
       '@1password/sdk': 0.1.4
       '@aws-sdk/client-s3': 3.698.0
@@ -5624,7 +5624,7 @@ snapshots:
   '@reuters-graphics/graphics-kit-publisher@2.1.1':
     dependencies:
       '@aws-sdk/client-s3': 3.698.0
-      '@reuters-graphics/graphics-bin': 1.1.7
+      '@reuters-graphics/graphics-bin': 1.1.8
       '@reuters-graphics/server-client': 2.0.1
       '@reuters-graphics/teams-klaxon': 1.0.0
       archiver: 7.0.1
@@ -6383,7 +6383,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7819,7 +7819,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.7
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
