@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 1.1.1
+
+### Patch Changes
+
+- 5b02efc: Bump's @reuters-graphics/graphics-bin for the fix to https://github.com/reuters-graphics/graphics-bin/issues/57.
+
 ## 1.1.0
 
 ### Minor Changes
