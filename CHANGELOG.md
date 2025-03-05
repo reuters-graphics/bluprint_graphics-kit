@@ -1,5 +1,12 @@
 # @reuters-graphics/graphics-kit
 
+## 1.1.2
+
+### Patch Changes
+
+- 3dc489c: Adds prettier-plugin-svelte to devDependencies which fixes:
+  https://github.com/reuters-graphics/bluprint_graphics-kit/issues/160
+
 ## 1.1.1
 
 ### Patch Changes
