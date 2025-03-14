@@ -26,9 +26,12 @@
     "startup:create-repo": "npx graphics github:create-repo",
     "startup": "npm-run-all startup:*",
     "test": "vitest",
-    "knip": "knip"
+    "knip": "knip",
+    "build:docs": "astro build",
+    "docs:dev": "astro dev"
   },
   "devDependencies": {
+    "@astrojs/starlight": "^0.32.2",
     "@changesets/cli": "^2.27.10",
     "@evilmartians/lefthook": "^1.8.4",
     "@reuters-graphics/graphics-bin": "^1.1.8",
@@ -43,6 +46,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@types/language-tags": "^1.0.4",
     "@types/rimraf": "^4.0.5",
+    "astro": "^5.5.2",
     "autoprefixer": "^10.4.20",
     "cheerio": "^1.0.0",
     "eslint": "^9.21.0",
