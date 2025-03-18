@@ -1,6 +1,36 @@
 ---
 title: Prerequisites
-slug: prerequisites
+slug: developers/prerequisites
 sidebar:
   order: 21
 ---
+
+## Code editor
+
+We strongly recommend using [VS Code](https://code.visualstudio.com/) to edit project code.
+
+## Node
+
+The graphics kit requires a minimum version of Node, which will be specified in the `engines` key of `package.json`. We highly recommend using a Node version manager so you can easily switch which version of node you want to use.
+
+[n](https://github.com/tj/n) is a great option and can be installed easily on MacOS using brew:
+
+```console
+brew install n
+```
+
+Once installed, you can use it to download and install any version of node:
+
+```console
+n use 22
+```
+
+## Svelte
+
+The graphics kit uses [Svelte](https://svelte.dev/), and you'll want to understand a few basics before diving in.
+
+Check out the first few sections of the [official tutorial](https://svelte.dev/tutorial/svelte/welcome-to-svelte) for an intro to the framework.
+
+## SvelteKit / Vite
+
+The graphics kit uses [SvelteKit](https://svelte.dev/docs/kit/introduction), which in turn uses a build tool called [Vite](https://vitejs.dev/guide/why.html).

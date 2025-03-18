@@ -1,0 +1,70 @@
+---
+title: Adding more pages
+slug: developers/adding-pages
+sidebar:
+  order: 30
+---
+
+import { FileTree, Card } from '@astrojs/starlight/components';
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+
+You can add additional pages -- whether for dotcom or embeddable graphics -- to your project in the `pages/` directory.
+
+Making pages is generally described in SvelteKit's docs, except the graphics kit uses a `pages/` directory for pages instead of SvelteKit's default `src/routes/`.
+
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="SvelteKit: Routing"
+  description="Read about making pages from SvelteKit's docs"
+  target='_blank'
+  href="https://svelte.dev/docs/kit/routing"
+/>
+
+## Adding pages
+
+<FileTree>
+- pages
+  - +page.svelte Project homepage
+  - another
+    - **+page.svelte** New page
+</FileTree>
+
+## Adding embeds
+
+Embeddable graphics should be created in an `embeds/` directory and then must be two more folders deep. The first must be named after a valid [language code](https://reuters-graphics.github.io/graphics-server-client/types/RNGS.Language.html) and the second must be a slug identifying the embed, for example, `embeds/en/map/` below.
+
+<FileTree>
+- pages
+  - embeds
+    - en Language code
+      - page
+        - +page.svelte
+      - map Embed slug
+        - **+page.svelte** New embeddable page
+</FileTree>
+
+### Required metadata
+
+Embed pages **must** have a canonical link element and should have a [`robots` metatag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) with `noindex, nofollow` to tell search engines not to surface the page in search results.
+
+```svelte
+// 
+<script lang="ts">
+  import { page } from '$app/state';
+
+  // ...
+</script>
+
+<SEO
+  baseUrl={import.meta.env.BASE_URL}
+  pageUrl={page.url}
+/>
+
+<svelte:head>
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
+<!-- ... -->
+```
