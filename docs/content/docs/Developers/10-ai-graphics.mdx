@@ -13,6 +13,24 @@ Many graphics on Reuters Graphics pages are created using Adobe Illustrator.
 
 To translate Illustrator graphics into a format that's ready for the web, we use ai2svelte.
 
+## Adobe Illustrator templates
+
+Look for Adobe Illustrator templates in the `project-files/` directory.
+
+- `ai2html-template.ait`: Standard graphics template
+- `ai2html-template_SREP.ait`: Special Reports graphics template
+
+Create a new `.ai` file for each new graphic you want to create in the root of the `project-files/` directory. The name of the file should be a valid slug (lowercase letters, hyphens instead of spaces).
+
+<FileTree>
+- project-files
+  - ai2html-template.ait
+  - ai2html-template_SREP.ait
+  - **bar-chart.ai**
+  - **locator-map.ai**
+</FileTree>
+
+
 ## ai2svelte
 
 ai2svelte is Reuters Graphics' Svelte port of the popular New York Times ai2html script. 
@@ -23,7 +41,6 @@ All settings described in the NYTimes' docs also apply to ai2svelte.
 
 <LinkCard
   title="ai2html"
-  description="Read more about ai2html"
   color="var(--sl-color-green)"
   icon="open-book"
   href="http://ai2html.org"
@@ -75,19 +92,18 @@ In most cases, you'll use the `GraphicBlock` component from Reuters graphics com
 
 <LinkCard
   title="Graphics components: GraphicBlock"
-  description="Read more about using the GraphicBlock component for ai2svelte graphics"
   color="var(--sl-color-green)"
   icon="open-book"
   href="https://reuters-graphics.github.io/graphics-components/?path=/docs/components-graphics-graphicblock--docs"
   target="_blank"
 />
 
-## Creating _embeddable_ AI graphics
+## Making embeddable AI graphics
 
-Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to create embeddable AI graphics. You'll make an embeddable graphic HTML page that can be embedded on a client's website and other dotcom stories as well as static JPG image and editable EPS versions of your graphic.
+Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to create embeddable AI graphics. You'll make an embeddable graphic HTML page that can be embedded on a client's website and other dotcom stories as well as [static JPG image and editable EPS](/bluprint_graphics-kit/developers/statics-for-media-clients/) versions of your graphic.
 
 <Steps>
-1. If you **only** intent to publish embeddable graphics, convert your project type to **embeds-only** using the ["Change project type"](/bluprint_graphics-kit/developers/mods/#change-project-type) kit mod.
+1. If you **only** intend to publish embeddable graphics, convert your project type to **embeds-only** using the ["Change project type"](/bluprint_graphics-kit/developers/mods/#change-project-type) kit mod.
 
 2. Create an AI graphic from the `.ait` template in `project-files/` with a sluggable name (i.e., lowercase letters, hyphens instead of spaces).
     <FileTree>
@@ -140,3 +156,19 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
                 - **map.jpg**
     </FileTree>
 </Steps>
+
+## Oversize Adobe Illustrator files
+
+**Any files larger than 100 MB cannot be pushed to GitHub.** If your Adobe Illustrator file gets larger than that, you must add it to your project's `.gitignore`.
+
+<FileTree>
+  - project-files
+    - ai2html-template.ait
+    - **locator-map.ai** >100 MB
+</FileTree>
+
+```txt ins={3}
+// .gitignore
+# other ignored files ...
+project-files/locator-map.ai
+```

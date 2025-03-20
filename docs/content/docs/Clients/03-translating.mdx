@@ -5,7 +5,7 @@ sidebar:
   order: 12
 ---
 
-Most text content for pages is located in JSON files in the `locales/` directory of the project. Translating the text in `locales/en/content.json`, for example, and then rebuilding the project (see Building for self-hosting, below) will replace the text on the page in whatever language you choose.
+Most text content for pages is located in JSON files in the `locales/` directory of the project. Translating the text in `locales/en/content.json`, for example, and then rebuilding the project (see [Self-hosting graphics](/bluprint_graphics-kit/clients/self-hosting/)) will replace the text on the page in whatever language you choose.
 
 For example, you could translate the below text in English...
 
@@ -22,6 +22,15 @@ For example, you could translate the below text in English...
 // locales/en/content.json
 {
   "greeting": "Servus!"
+}
+```
+
+Some values may contain one or more `\n` or `\r\n` characters, which represent line breaks separating paragraphs. You should not remove those characters unless there is no longer text following them.
+
+```json "\n\n"
+// locales/en/content.json
+{
+  "text": "Disney’s “Snow White” reaches theaters on Friday.\n\nThe big-budget adaptation of Walt Disney’s original princess story has been in the works since 2016."
 }
 ```
 

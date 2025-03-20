@@ -5,6 +5,7 @@ sidebar:
   order: 22
 ---
 
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
 import { Aside, FileTree } from '@astrojs/starlight/components';
 
 ## Main directories
@@ -31,7 +32,7 @@ import { Aside, FileTree } from '@astrojs/starlight/components';
 </FileTree>
 
 
-The locales directory contains JSON files with text values for pages and graphics, usually from [ArchieML docs](/bluprint_graphics-kit/developers/archieml/).
+The `locales/` directory contains JSON files with text values for pages and graphics, usually downloaded from [ArchieML docs](/bluprint_graphics-kit/developers/archieml/).
 
 ### `media-assets/`
 
@@ -42,6 +43,8 @@ The locales directory contains JSON files with text values for pages and graphic
       - chart.jpg
       - chart.eps
 </FileTree>
+
+The `media-assets/` directory is used to package [static assets for clients](/bluprint_graphics-kit/developers/statics-for-media-clients/), namely JPG and EPS files.
 
 ### `pages/`
 
@@ -59,6 +62,16 @@ The locales directory contains JSON files with text values for pages and graphic
   - +page.svelte Project homepage
 </FileTree>
 
+The `pages/` directory includes the filesystem-based routes for your project, which are the public pages readers will see or clients embed.
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="SvelteKit: Routing"
+  target='_blank'
+  href="https://svelte.dev/docs/kit/routing"
+/>
+
 ### `project-files/`
 
 <FileTree>
@@ -67,24 +80,31 @@ The locales directory contains JSON files with text values for pages and graphic
   - share-card-template.ait Template for social share images
 </FileTree>
 
+The `project-files/` directory includes files used to make graphics components and images, usually Adobe Illustrator templates and files.
+
 ### `src/`
 
 <FileTree>
 - src
   - lib
-    - components
+    - components Project components
       - ...
-    - styles
+    - styles Stylesheets
       - global.scss
     - App.svelte
-  - statics
+  - statics Static assets
     - images
       - reuters-graphics.jpg
 </FileTree>
 
+The `src/` directory includes the component code, stylesheets and other static assets for your pages.
+
 ## Project type
 
-The graphics kit can be used to publish any of the three types of projects we make: dotcom **pages-only**, **embeds-only** or dotcom pages and embeds (**pages+**).
+The graphics kit can be used to publish any of the three types of projects we make:
+- dotcom **pages-only**,
+- **embeds-only** 
+- dotcom pages and embeds (**pages+**)
 
 By default, the graphics kit is configured for **pages+** projects. You can, however, reconfigure your project to be dotcom or embeds-_only_.
 

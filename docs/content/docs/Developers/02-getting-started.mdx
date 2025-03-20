@@ -1,0 +1,52 @@
+---
+title: Getting started
+slug: developers/getting-started
+sidebar:
+  order: 21
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+
+
+## Starting a project from scratch
+
+<Steps>
+1. Make a new directory and change into it.
+
+    ```console
+    mkdir my-project && cd my-project
+    ```
+2. Run the bluprint for the graphics kit and answer all its prompts.
+
+    ```console
+    bluprint start
+    ```
+
+3. After the project is created, start the development server.
+
+    ```console
+    pnpm start
+    ```
+</Steps>
+
+
+## From an existing GitHub repository
+
+<Steps>
+1. Clone the GitHub repo to your computer.
+
+    ```console
+    git clone <url>
+    ```
+2. Change into the project directory and install dependencies.
+    ```console
+    cd my-project
+    pnpm i
+    ```
+3. Start the development server.
+
+    ```console
+    pnpm start
+    ```
+</Steps>
