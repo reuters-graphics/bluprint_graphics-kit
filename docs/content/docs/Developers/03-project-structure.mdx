@@ -1,0 +1,145 @@
+---
+title: Project structure
+slug: developers/project-structure
+sidebar:
+  order: 22
+---
+
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+import { Aside, FileTree } from '@astrojs/starlight/components';
+
+## Main directories
+
+<FileTree>
+- locales
+  - ... Text content from ArchieML docs
+- media-assets
+  - ... Statics for media clients
+- pages
+  - ... Publishable pages and embeds
+- project-files
+  - ... Adobe Illustrator files
+- src
+  - ... Editable components and code
+</FileTree>
+
+### `locales/`
+
+<FileTree>
+- locales
+  - en
+    - content.json
+</FileTree>
+
+
+The `locales/` directory contains JSON files with text values for pages and graphics, usually downloaded from [ArchieML docs](/bluprint_graphics-kit/developers/archieml/).
+
+### `media-assets/`
+
+<FileTree>
+- media-assets
+  - en
+    - chart
+      - chart.jpg
+      - chart.eps
+</FileTree>
+
+The `media-assets/` directory is used to package [static assets for clients](/bluprint_graphics-kit/developers/statics-for-media-clients/), namely JPG and EPS files.
+
+### `pages/`
+
+<FileTree>
+- pages
+  - embed-previewer
+    - +page.svelte A page to preview embeds
+  - embeds
+    - en
+      - page
+        - +page.svelte Embeddable version of project homepage
+      - map
+        - +page.svelte Embeddable graphic
+  - +layout.ts
+  - +page.svelte Project homepage
+</FileTree>
+
+The `pages/` directory includes the filesystem-based routes for your project, which are the public pages readers will see or clients embed.
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="SvelteKit: Routing"
+  target='_blank'
+  href="https://svelte.dev/docs/kit/routing"
+/>
+
+### `project-files/`
+
+<FileTree>
+- project-files
+  - ai2html.ait Template for graphics
+  - dotcom.ait Template for dotcom homepage images
+  - sharecard.ait Template for social share images
+</FileTree>
+
+The `project-files/` directory includes files used to make graphics components and images, usually Adobe Illustrator templates and files.
+
+### `src/`
+
+<FileTree>
+- src
+  - lib
+    - components Project components
+      - ...
+    - styles Stylesheets
+      - global.scss
+    - App.svelte
+  - statics Static assets
+    - images
+      - reuters-graphics.jpg
+</FileTree>
+
+The `src/` directory includes the component code, stylesheets and other static assets for your pages.
+
+## Project type
+
+The graphics kit can be used to publish any of the three types of projects we make:
+- dotcom **pages-only**,
+- **embeds-only** 
+- dotcom pages and embeds (**pages+**)
+
+By default, the graphics kit is configured for **pages+** projects. You can, however, reconfigure your project to be dotcom or embeds-_only_.
+
+### Dotcom pages only
+
+To remove embeds from your published project, update the [graphics kit publisher's](https://reuters-graphics.github.io/graphics-kit-publisher/) `publisher.config.ts` in the root of your project:
+
+```typescript ins={5-7}
+// publisher.config.ts
+import { defineConfig } from '@reuters-graphics/graphics-kit-publisher';
+
+export default defineConfig({
+  packLocations: {
+    embeds: false,
+  },
+  // other config values ...
+});
+```
+
+<Aside type="caution">
+You should _rarely_ publish dotcom-only projects. In most cases, you should _at least_ publish an embeddable version of your project's dotcom homepage, which comes preconfigured when you start a project.
+</Aside>
+
+
+### Embeds-only or pages+
+
+You can switch between **embeds-only** or **pages+** projects using one of our [kit mods](/bluprint_graphics-kit/developers/mods/), which will update several files in your project for the correct project type.
+
+
+<Aside>
+When converting your project to embeds-only, you will still publish a [public interactive edition](https://reuters-graphics.github.io/graphics-kit-publisher/sphinx/#interactive-editions) in the graphics server as though you were publishing a dotcom page, but the homepage will not be discoverable by search engines and will simply redirect to reuters.com.
+
+In development, the homepage will redirect to the embed previewer.
+</Aside>
+
+
+

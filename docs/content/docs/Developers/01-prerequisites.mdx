@@ -1,0 +1,79 @@
+---
+title: Prerequisites
+slug: developers/prerequisites
+sidebar:
+  order: 20
+---
+
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+
+## Code editor
+
+We recommend using [VS Code](https://code.visualstudio.com/) to edit the code in your project and run publishing commands.
+
+## Node
+
+The graphics kit requires a minimum version of node, which will be specified in the `engines` key of your project's `package.json`. We highly recommend using a Node version manager so you can easily switch which version of node you want to use.
+
+[n](https://github.com/tj/n) is a great option and can be installed easily on MacOS using brew:
+
+```console
+brew install n
+```
+
+Once installed, you can use it to download and install any version of node:
+
+```console
+n 22
+```
+
+## pnpm
+
+We use [pnpm](https://pnpm.io/) for package management. You can [install it easily using npm](https://pnpm.io/installation#using-npm).
+
+```console
+npm install -g pnpm
+```
+
+## Svelte
+
+The graphics kit uses [Svelte](https://svelte.dev/) and [SvelteKit](https://svelte.dev/docs/kit/introduction).
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="Learn Svelte"
+  target='_blank'
+  href="https://svelte.dev/tutorial/svelte/welcome-to-svelte"
+/>
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="Learn SvelteKit"
+  target='_blank'
+  href="https://svelte.dev/tutorial/kit/introducing-sveltekit"
+/>
+
+## blüprint
+
+bluprint (sic) is our application scaffolding CLI we use to create new projects from templates stored in GitHub.
+
+You should install bluprint globally ...
+
+```console
+pnpm add --global @reuters-graphics/bluprint
+```
+... and add the bluprint for the graphics kit to your CLI.
+
+```console
+bluprint add reuters-graphics/bluprint_graphics-kit
+```
+
+<LinkCard
+  icon="setting"
+  color="var(--sl-color-blue-high)"
+  title="Learn more about bluprint"
+  target='_blank'
+  href="https://github.com/reuters-graphics/bluprint"
+/>

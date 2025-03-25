@@ -1,0 +1,72 @@
+---
+title: Images, video and other assets
+slug: developers/page-assets
+sidebar:
+  order: 28
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+## Where to put media files
+
+Put images, fonts and other static media files in dedicated folders in the statics directory at `src/statics/`.
+
+<FileTree>
+- src
+  - statics
+    - images
+      - **my-image.jpg**
+    - fonts
+      - **myfont.woff2**
+</FileTree>
+
+
+## How to use media files in your code
+
+When you reference media files, you should **always use absolute paths** (`https://graphics.reuters.com/.../my-file.jpg`), not relative paths (`./my-file.jpg`).
+
+So to use media files in your component code, you need to prefix the path to them using SvelteKit's [built-in `assets` store](https://svelte.dev/docs/kit/$app-paths#assets). Here's how:
+
+```svelte
+<script>
+  import { assets } from '$app/paths';
+</script>
+
+<img alt="" src="{assets}/images/my-image.jpg" />
+```
+
+### Using media files in component SCSS
+
+Use inline styles to set SCSS styles with your media files.
+
+```svelte
+<script>
+  import { assets } from '$app/paths';
+</script>
+
+<div
+  style="background-image: url({assets}/images/my-image.jpg);"
+></div>
+
+<style lang="scss">
+  div {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+```
+
+### Using media files in global SCSS
+
+If you need to load media files in your global SCSS -- for example, to load a font for use across the page -- the graphics kit will automatically resolve CSS `url()` path strings and create the correct absolute URL for you.
+
+```scss
+// src/lib/styles/global.scss
+
+@font-face {
+  font-family: myCustomFont;
+  src: url("/fonts/myFont.woff2") format("woff2");
+}
+```

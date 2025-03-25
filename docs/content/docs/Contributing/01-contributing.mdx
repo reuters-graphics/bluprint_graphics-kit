@@ -1,0 +1,55 @@
+---
+title: Contributing to the kit
+slug: contributing
+sidebar:
+  order: 100
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## File an issue
+
+The best way to request new features, flag a bug you've discovered or ask for updates to docs or templates is to [create an issue on the graphics kit repo](https://github.com/reuters-graphics/bluprint_graphics-kit/issues).
+
+Be sure you've searched through open and previously closed issues on the repo to make sure yours hasn't already been addressed.
+
+
+## Contributing changes
+
+All Reuters graphics staff are welcome to contribute changes to graphics kit code, AI templates and documentation, directly.
+
+<Steps>
+1. Make sure you have the latest version of the graphics kit cloned to a local repo on your computer.
+
+2. Create a new branch for your contribution.
+
+    ```console
+    git checkout -b my-new-feature
+    ```
+
+3. Create changes to the kit on your local branch and commit them.
+
+    ```console
+    git commit -am "Cool new feature that does something awesome"
+    ```
+4. The graphics kit uses [changesets](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md) for versioning and to update our changelog. You should generally make a `patch` changeset unless specifically asked to make a more serious change by one of the project maintainers.
+
+    ```console
+    pnpm changeset
+    ```
+5. Push your new branch to the repo and create a pull request in GitHub.
+
+    ```console
+    git push origin my-new-feature
+    ```
+</Steps>
+
+### Working with graphics kit docs
+
+Graphics kit documentation is created with the Astro [Starlight](https://starlight.astro.build/) framework.
+
+To work on documentation, run the following command and then edit the appropriate `.mdx` page in the `docs/` directory:
+
+```console
+pnpm astro dev
+```

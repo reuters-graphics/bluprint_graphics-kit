@@ -14,6 +14,7 @@
     "paths": [
       ".github/workflows/release.yaml",
       ".github/workflows/test.yaml",
+      ".github/workflows/docs.yaml",
       ".github/CODEOWNERS",
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
@@ -21,7 +22,9 @@
       "CHANGELOG.md",
       "CONTRIBUTING.md",
       "README.md",
-       "rngs-io.json"
+      "rngs-io.json",
+      "docs/*",
+      "astro.config.mjs"
     ]
   }, {
     "action": "move",

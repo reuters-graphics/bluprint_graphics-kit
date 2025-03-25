@@ -1,0 +1,174 @@
+---
+title: ArchieML docs
+slug: developers/archieml
+sidebar:
+  order: 25
+tableOfContents:
+  maxHeadingLevel: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+
+Text content for pages and embeds should be contained in a separate document, usually written in ArchieML syntax.
+
+[ArchieML](https://archieml.org/) is a loose markup language developed at the New York Times to quickly create structured data for web pages and graphics. It is designed to be "a format that could survive being edited by users who may never have seen ArchieML or any other markup language at all before."
+
+You can read more about [ArchieML syntax basics on the project's website](https://archieml.org/#demo).
+
+ArchieML documents are downloaded as JSON files in your project, where they can then be added to pages and graphics as code.
+
+Read more about working with ArchieML in conjunction with our graphics components [here](https://reuters-graphics.github.io/graphics-components/?path=/docs/guides-using-with-archieml-docs--docs).
+
+<Aside>
+**Clients do not have access** to our ArchieML docs. They _do_ have access to the JSON files parsed from those docs. 
+
+Look for them in the `locales/` directory in the root of the project source code and read more about using those files to translate or otherwise change the text in pages and graphics in the [Translating text](/bluprint_graphics-kit/clients/translating-text/) page.
+</Aside>
+
+## RNGS.io
+
+[RNGS.io](https://www.rngs.io) is our preferred platform to write ArchieML docs for graphics. It includes a collaborative editor with many extra features for handling ArchieML "blocks" that correspond to our [Reuters Graphics components](https://reuters-graphics.github.io/graphics-components/).
+
+Documents are called "stories" and are organised by project on "storyboards".
+
+When creating a new project, you will be prompted to create a new RNGS.io story and storyboard. You can also create stories using commands from your local project or in RNGS.io, directly.
+
+
+### RNGS.io client commands
+
+<LinkCard
+  title="rngs-io-client"
+  color="var(--sl-color-green)"
+  icon="open-book"
+  href="https://reuters-graphics.github.io/rngs-io-client/"
+  target="_blank"
+/>
+
+
+#### sync
+
+Sync all RNGS.io stories configured in your project with local JSON files.
+
+```console
+pnpm stories:sync
+```
+
+#### new
+
+Create a new story in RNGS.io.
+
+```console
+pnpm stories:new
+```
+
+#### connect
+
+Connect your project with a story created in RNGS.io.
+
+```console
+pnpm stories:connect
+```
+
+#### live
+
+Enable live updates from one or more RNGS.io stories. Read more in the section below.
+
+```console
+pnpm stories:live
+```
+
+### Live RNGS.io stories
+
+You can create a live connection between your project and RNGS.io stories, meaning you won't need to run the `stories:sync` command in your project to update your page.
+
+This is useful for creating preview pages that can be updated directly from RNGS.io by other editors.
+
+#### Live docs in production
+
+You can also create a live connection to the production version of your page, allowing others to update the content of your page without needing to republish it.
+
+<Aside type="caution">
+This is a powerful feature for trackers and other projects that see regular updates, but changes to the RNGS.io story _can_ break your page. Use this feature with caution and be sure to carefully train other editors how to edit the content in RNGS.io so they don't break your project with updates.
+</Aside>
+
+## Google docs
+
+Google docs is also a supported ArchieML editing platform.
+
+While Google docs do not have many of the features that make RNGS.io a more powerful tool for publishing graphics pages (especially on deadline), they may be preferred if you need rich versioning features for your document.
+
+To use Google docs, however, you'll need to configure them yourself.
+
+### Configuring Google docs
+
+Google docs are configured in a `google.json` file in the root of your project.
+
+To connect Google docs to your project, create one with the following structure.
+
+```json
+// google.json
+{
+  "docs": {},
+  "sheets": {}
+}
+```
+
+Now add the docs you'd like to connect as key, value pairs to your config file. 
+
+The key should be the relative path to a local JSON file where you'd like to sync your Google doc. The value, the ID of your Google doc, which you can get from its URL.
+
+```json ins={4}
+// google.json
+{
+  "docs": {
+    "locales/en/content.json": "XXXX_Google_doc_ID_XXXX"
+  },
+  "sheets": {}
+}
+```
+### Configuring Google sheets
+
+You can also connect your project to Google sheets using the same key/value structure. 
+
+```json ins={7}
+// google.json
+{
+  "docs": {
+    "locales/en/content.json": "XXXX_Google_doc_ID_XXXX"
+  },
+  "sheets": {
+    "locales/en/data.json": "XXXX_Google_sheet_ID_XXXX"
+  }
+}
+```
+
+<LinkCard
+  title="@newswire/sheet-to-data"
+  description="Read more about setting up Google sheets data in the @newswire/sheet-to-data docs, which is the library we use under the hood."
+  color="var(--sl-color-green)"
+  icon="open-book"
+  href="https://www.npmjs.com/package/@newswire/sheet-to-data"
+  target="_blank"
+/>
+
+
+### Google docs commands
+
+
+#### get-google
+
+Fetch the latest text from your Google docs and sheets and save it to the JSON files configured in your `google.json`.
+
+```console
+pnpm get-google
+```
+
+<LinkCard
+  title="@reuters-graphics/graphics-bin"
+  description="Read more about Google docs commands and config in the developer docs for the graphics-bin library"
+  color="var(--sl-color-green)"
+  icon="open-book"
+  href="https://reuters-graphics.github.io/graphics-bin/classes/GoogleClient.html#getGoogleDocs"
+  target="_blank"
+/>

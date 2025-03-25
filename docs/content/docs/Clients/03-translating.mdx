@@ -1,0 +1,69 @@
+---
+title: Translating text
+slug: clients/translating-text
+sidebar:
+  order: 12
+---
+
+You can translate Reuters graphics into whatever language you prefer directly in the project's source files.
+
+## Translating content files
+
+Most text content for graphics pages is located in JSON files in the `locales/` directory of the project. Translating the text in `locales/en/content.json`, for example, and then rebuilding the project (see [Self-hosting graphics](/bluprint_graphics-kit/clients/self-hosting/)) will replace the text on the page with whatever language you choose.
+
+For example, you could translate the below text in English...
+
+```json
+// locales/en/content.json
+{
+  "greeting": "Hello!"
+}
+```
+
+... into German, being sure **not** to translate the _keys_ in the JSON, just the values.
+
+```json
+// locales/en/content.json
+{
+  "greeting": "Servus!"
+}
+```
+
+Some values may contain one or more `\n` or `\r\n` characters, which represent line breaks separating paragraphs. You should not remove those characters unless there is no longer text following them.
+
+```json "\n\n"
+// locales/en/content.json
+{
+  "someText": "Disney’s “Snow White” reaches theaters on Friday.\n\nThe big-budget adaptation of Walt Disney’s original princess story has been in the works since 2016."
+}
+```
+
+## Other text content
+
+Some text content for things like annotations on individual charts may be located in components that live in the `src/lib/` directory. You can also edit this text within the code and rebuild the project to replace the text with your translation.
+
+You can also translate text on graphics created with Adobe Illustrator and re-export them using [ai2svelte](/bluprint_graphics-kit/developers/adobe-illustrator-graphics/#ai2svelte).
+
+## RTL languages
+
+If you're translating into a right-to-left language like Arabic or Hebrew, you'll likely want to set the [text direction](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir) and [language](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) properties in the HTML template shell in the `src/template.html` file.
+
+```html ins={4} del={3}
+<!-- src/template.html -->
+<!DOCTYPE html>
+<html lang="%lang%">
+<html lang="ar" dir="rtl">
+  <!-- ... -->
+</html>
+```
+
+You _may_ also need to override right or left-oriented style rules within the project. In most cases, you should be able to do this by (carefully) adding important rules in the `global.scss` file.
+
+```scss ins={2-5}
+// src/lib/styles/global.scss
+.a-left-padded-element {
+  padding-left: 0;
+  padding-inline-start: 10px !important;
+}
+```
+

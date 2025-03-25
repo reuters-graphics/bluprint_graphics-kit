@@ -1,0 +1,53 @@
+---
+title: Publishing
+slug: developers/publishing
+sidebar:
+  order: 32
+---
+
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+import { Aside } from '@astrojs/starlight/components';
+
+Publishing a preview of your project and uploading and publishing through the Sphinx graphics server is handled by the graphics kit publisher.
+
+<LinkCard
+  title="Graphics kit publisher"
+  color="var(--sl-color-green)"
+  icon="open-book"
+  href="https://reuters-graphics.github.io/graphics-kit-publisher/"
+  target="_blank"
+/>
+
+## Commands
+
+### Preview
+
+Create a shareable preview of your project.
+
+```console
+pnpm preview
+```
+
+### Upload
+
+Upload your project to the Sphinx graphics server.
+
+```console
+pnpm upload
+```
+
+<Aside type="tip">
+Some code errors are only discovered when building your project for preview or during upload to the Sphinx graphics server.
+
+It's always a good idea to **upload your project well ahead of when you intend to publish it** so you have time to solve any potential issues with your code before your deadline.
+</Aside>
+
+### Publish
+
+Publish your previously uploaded project in the Sphinx graphics server.
+
+```console
+pnpm pub
+```
+
+

@@ -1,0 +1,193 @@
+---
+title: Styling pages
+slug: developers/styling-pages
+sidebar:
+  order: 27
+---
+
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+import { FileTree } from '@astrojs/starlight/components';
+
+
+## Graphics design system
+
+The graphics design system is a [Tailwind](https://tailwindcss.com/docs/)-like, token-based style system you can use to design graphics pages and embeds.
+
+<LinkCard
+  title="Reuters graphics styles"
+  color="var(--sl-color-green)"
+  icon="open-book"
+  href="https://reuters-graphics.github.io/graphics-components/?path=/docs/styles-intro--docs"
+  target="_blank"
+/>
+
+## Global styles
+
+You can write global styles in the `global.scss` stylesheet located in the `src/lib/styles/` directory.
+
+```scss
+// src/lib/styles/global.scss
+section.body-text p {
+  color: #666;
+  &.purple {
+    color: purple;
+  }
+}
+```
+
+The graphics kit already imports this stylesheet in all your pages and embeds.
+
+If you want to create _other_ global stylesheets -- say to only apply to a particular page -- simply create another `.scss` file and import it in the page that you want to apply it to.
+
+```scss
+// src/lib/styles/second.scss
+body {
+  background-color: #333;
+}
+```
+
+```svelte
+<!-- pages/second/+page.svelte -->
+<script>
+  // ...
+  import '$lib/styles/second.scss';
+</script>
+```
+
+## Component styles
+
+It's often better to write styles directly in your Svelte components because they will be automatically scoped to just the elements in your component so they don't conflict with any other global styles. Svelte will also clean up any unused style rules by default, too. It also makes it easy to copy components between projects because the styles travel with the component code.
+
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="Svelte: Scoped styling"
+  target='_blank'
+  href="https://svelte.dev/docs/kit/routing"
+/>
+
+### SCSS
+
+Add a `lang` attibute to any style tags in your svelte components to use SCSS syntax.
+
+```svelte
+<div>
+  <p class="purple">Lorem ipsum...</p>
+</div>
+
+<style lang="scss">
+  div {
+    p.purple {
+      color: purple;
+    }
+  }
+</style>
+```
+
+### Scoping and the `:global` SCSS operator
+
+Styles you write in your components are scoped to _just the elements in your component_, and Svelte will disregard any rules you write that don't correspond to an element Svelte can detect.
+
+So if your component imports another JS library or uses the [`@html` tag](https://svelte.dev/docs/svelte/@html) to create any elements that you want to style, you should use the SCSS `:global` operator to make sure Svelte doesn't ignore those styles.
+
+Here's an example:
+
+```svelte
+<script>
+  // Some JS that makes elements
+  const sayHello = () => `<p>Hello <span>world</span>!</p>`;
+</script>
+
+<div class="my-container">
+  {@html sayHello()}
+</div>
+
+<style lang="scss">
+  div.my-container {
+    :global(p) {
+      color: grey;
+    }
+    :global(p span) {
+      color: blue;
+    }
+  }
+</style>
+```
+
+Now, if you inspect the elements from this component in your browser, Svelte will create styles for those rules like this:
+
+```css
+div.my-container.abc123xyz789 p {
+  color: grey;
+}
+div.my-container.abc123xyz789 p span {
+  color: blue;
+}
+```
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="Svelte: Global styles"
+  target='_blank'
+  href="https://svelte.dev/docs/svelte/global-styles"
+/>
+
+
+### Styles from JavaScript
+
+If you want to use JavaScript values to style your components, you have a few options.
+
+You can use a class conditionally:
+
+```svelte
+<script>
+  let purple = true;
+</script>
+
+<p class:purple>Lorem ipsum...</p>
+
+<style lang="scss">
+  p.purple {
+    color: purple;
+  }
+</style>
+```
+
+<LinkCard
+  icon="seti:svelte"
+  color="#f96743"
+  title="Svelte: Class"
+  target='_blank'
+  href="https://svelte.dev/docs/svelte/class"
+/>
+
+...you can write styles inline:
+
+```svelte
+<script>
+  let colour = 'purple';
+</script>
+
+<p style="color: {colour};">Lorem ipsum...</p>
+```
+
+...or you can use inline [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties):
+
+```svelte
+<script>
+  let color = 'purple';
+</script>
+
+<div style="--theme-color: {color};">
+  <p>the color is set using a CSS variable</p>
+</div>
+
+<style>
+  p {
+    color: var(--theme-color);
+  }
+</style>
+```
+
