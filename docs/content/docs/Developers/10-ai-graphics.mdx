@@ -7,7 +7,7 @@ sidebar:
 
 import LinkCard from '../../../components/LinkCardWithIcon.astro';
 
-import { Steps, FileTree } from '@astrojs/starlight/components';
+import { Steps, FileTree, Aside } from '@astrojs/starlight/components';
 
 Many graphics on Reuters Graphics pages are created using Adobe Illustrator.
 
@@ -17,15 +17,15 @@ To translate Illustrator graphics into a format that's ready for the web, we use
 
 Look for Adobe Illustrator templates in the `project-files/` directory.
 
-- `ai2html-template.ait`: Standard graphics template
-- `ai2html-template_SREP.ait`: Special Reports graphics template
+- `ai2html.ait`: Standard graphics template for embeddable or inline graphics
+- `dotcom.ait`: Template for making images at the ideal size for the reuters.com homepage
+- `sharecard.ait`: Template for making images at the ideal size for teasers on social media and in search results
 
 Create a new `.ai` file for each new graphic you want to create in the root of the `project-files/` directory. The name of the file should be a valid slug (lowercase letters, hyphens instead of spaces).
 
 <FileTree>
 - project-files
-  - ai2html-template.ait
-  - ai2html-template_SREP.ait
+  - ai2html.ait
   - **bar-chart.ai**
   - **locator-map.ai**
 </FileTree>
@@ -88,7 +88,7 @@ All settings described in the NYTimes' docs also apply to ai2svelte.
 
 ## Adding AI graphics to your page
 
-In most cases, you'll use the `GraphicBlock` component from Reuters graphics component to add ai2svelte graphics to your page.
+In most cases, you'll use the `GraphicBlock` component from Reuters graphics components library to add ai2svelte-exported graphics to your page.
 
 <LinkCard
   title="Graphics components: GraphicBlock"
@@ -108,13 +108,13 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
 2. Create an AI graphic from the `.ait` template in `project-files/` with a sluggable name (i.e., lowercase letters, hyphens instead of spaces).
     <FileTree>
       - project-files
-        - ai2html-template.ait Template
+        - ai2html.ait Template
         - **map.ai** New graphic
     </FileTree>
 3. Export the graphic using [ai2svelte](#ai2svelte).
     <FileTree>
       - project-files
-        - ai2html-template.ait
+        - ai2html.ait
         - map.ai
       - src
         - lib
@@ -129,7 +129,7 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
             - map
               - **+page.svelte**
       - project-files
-        - ai2html-template.ait
+        - ai2html.ait
         - map.ai
       - src
         - lib
@@ -146,7 +146,7 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
             - **graphic.jpg**
             - **graphic.eps**
       - project-files
-        - ai2html-template.ait
+        - ai2html.ait
         - map.ai
       - src
         - statics
@@ -157,18 +157,40 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
     </FileTree>
 </Steps>
 
+
+
+## Image layers
+
+If you've imported images into your Illustrator file, make sure they are [**embedded, rather than linked**](https://helpx.adobe.com/uk/illustrator/using/manage-linked-and-embedded-files.html), wherever possible.
+
+If you need to link large images -- for example, satellite images edited in Photoshop -- make sure the image is in a folder inside the `project-files/` directory and linked from there to the Illustrator file.
+
+<FileTree>
+- project-files
+  - layers
+    - **satellite.jpg** Linked image
+  - map.ai AI file using linked image
+  
+</FileTree>
+
 ## Oversize Adobe Illustrator files
 
 **Any files larger than 100 MB cannot be pushed to GitHub.** If your Adobe Illustrator file gets larger than that, you must add it to your project's `.gitignore`.
 
 <FileTree>
   - project-files
-    - ai2html-template.ait
+    - ai2html.ait
     - **locator-map.ai** >100 MB
 </FileTree>
 
-```txt ins={3}
+```yaml ins={3}
 // .gitignore
 # other ignored files ...
 project-files/locator-map.ai
 ```
+
+<Aside type="tip">
+Often, large embedded images are responsible for bloating Illustrator file sizes past 100 MB. 
+
+You should **re-rasterise hi-res images** to a lower resolution, which will significantly reduce your `.ai` filesize. A good rule of thumb is to try a medium resolution like `150ppi`, which will still preserve details for print.
+</Aside>

@@ -5,4 +5,19 @@ sidebar:
   order: 13
 ---
 
-External files may have been used to generate the components used in pages and embeds. These can often include Adobe Illustrator files.
+External files may have been used to generate the graphics components used in pages and embeds. These most often include Adobe Illustrator files, which may be too large to include with the project source files.
+
+You can retrieve these files as a separate ZIP file at the URL stored in the `reuters.separateAssets` key in `package.json`.
+
+```json {4}
+// package.json
+{
+  "reuters": {
+    "separateAssets": "https://graphics.thomsonreuters.com/.../assets.zip"
+  }
+}
+```
+
+Once downloaded, you can unzip the file and replace the `project-files/` directory with its contents.
+
+From there, you can edit Adobe Illustrator graphics and re-export them using [ai2svelte](/bluprint_graphics-kit/developers/adobe-illustrator-graphics/#ai2svelte).

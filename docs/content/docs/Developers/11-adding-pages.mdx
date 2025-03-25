@@ -32,6 +32,38 @@ Making pages is generally described in SvelteKit's docs, except the graphics kit
 
 Add new pages at least one directory below your project homepage.
 
+### Required metadata
+
+Be sure you new page includes required metadata, usually provided by the [SEO component](https://reuters-graphics.github.io/graphics-components/?path=/docs/components-ads-analytics-seo--docs) from the Reuters graphics components library. Your new page should have **unique** title and description for SEO and share metadata as well as, preferrably, a unique share image.
+
+It's probably a good idea to include this metadata in a _separate_ ArchieML doc.
+
+```svelte {7-8}
+<!-- pages/another/+page.svelte -->
+<script>
+import { SEO } from '@reuters-graphics/graphics-components';
+import pkg from '$pkg';
+import { page } from '$app/state';
+
+// A separate RNGS.io story doc
+import { story as content } from '$locales/en/anotherPage.json';
+</script>
+
+<SEO
+  baseUrl={import.meta.env.BASE_URL}
+  pageUrl={page.url}
+  seoTitle={content.seoTitle}
+  seoDescription={content.seoDescription}
+  shareTitle={content.shareTitle}
+  shareDescription={content.shareDescription}
+  shareImgPath="{assets}/another-page-share.jpg"
+  shareImgAlt={content.shareImgAlt}
+  publishTime={pkg?.reuters?.graphic?.published}
+  updateTime={pkg?.reuters?.graphic?.updated}
+  authors={pkg?.reuters?.graphic?.authors}
+/>
+```
+
 ## Adding embeds
 
 Embeddable graphics should be created in an `embeds/` directory and then must be two more folders deep. The first must be named after a valid [language code](https://reuters-graphics.github.io/graphics-server-client/types/RNGS.Language.html) and the second must be a slug identifying the embed, for example, `embeds/en/map/` below.
