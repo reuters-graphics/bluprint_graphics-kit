@@ -24,16 +24,12 @@ Look for Adobe Illustrator templates in the `project-files/` directory.
 Create a new `.ai` file for each new graphic you want to create in the root of the `project-files/` directory. The name of the file should be a valid slug (lowercase letters, hyphens instead of spaces).
 
 <FileTree>
-- project-files
-  - ai2html.ait
-  - **bar-chart.ai**
-  - **locator-map.ai**
+  - project-files - ai2html.ait - **bar-chart.ai** - **locator-map.ai**
 </FileTree>
-
 
 ## ai2svelte
 
-ai2svelte is Reuters Graphics' Svelte port of the popular New York Times ai2html script. 
+ai2svelte is Reuters Graphics' Svelte port of the popular New York Times ai2html script.
 
 ai2svelte allows us to export Adobe Illustrator graphics for the web, with crisp text and responsive sizing whether readers are viewing our graphics on a phone, desktop or anything in between.
 
@@ -69,22 +65,9 @@ All settings described in the NYTimes' docs also apply to ai2svelte.
 1. After installing ai2svelte, you should be able to run the script from within your Illustrator file by choosing `File > Scripts > ai2svelte`
 
 2. A svelte component and images will be exported within the graphics kit.
-    <FileTree>
-      - project-files
-        - **map.ai** Illustrator file
-      - src
-        - lib
-          - ai2svelte
-            - **map.svelte** Exported Svelte component
-        - statics
-          - images
-            - graphics
-              - **map-xs.jpg** Exported graphic images
-              - **map-sm.jpg** 
-              - **map-md.jpg** 
-              - ...
-      </FileTree>
-</Steps>
+   <FileTree> - project-files - **map.ai** Illustrator file - src - lib - ai2svelte - **map.svelte** Exported Svelte component - statics - images - graphics - **map-xs.jpg** Exported graphic images - **map-sm.jpg** - **map-md.jpg** - ...
+   </FileTree>
+   </Steps>
 
 ## Adding AI graphics to your page
 
@@ -106,58 +89,25 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
 1. If you **only** intend to publish embeddable graphics, convert your project type to **embeds-only** using the ["Change project type"](/bluprint_graphics-kit/developers/mods/#change-project-type) kit mod.
 
 2. Create an AI graphic from the `.ait` template in `project-files/` with a sluggable name (i.e., lowercase letters, hyphens instead of spaces).
-    <FileTree>
-      - project-files
-        - ai2html.ait Template
-        - **map.ai** New graphic
-    </FileTree>
+   <FileTree>
+     - project-files - ai2html.ait Template - **map.ai** New graphic
+   </FileTree>
 3. Export the graphic using [ai2svelte](#ai2svelte).
-    <FileTree>
-      - project-files
-        - ai2html.ait
-        - map.ai
-      - src
-        - lib
-          - ai2svelte
-            - **map.svelte**
-    </FileTree>
+   <FileTree>
+     - project-files - ai2html.ait - map.ai - src - lib - ai2svelte -
+     **map.svelte**
+   </FileTree>
 4. Make an embeddable graphic page using the ["Make ai2svelte embeds"](/bluprint_graphics-kit/developers/mods/#make-ai2svelte-embeds) kit mod.
-    <FileTree>
-      - pages
-        - embeds
-          - en
-            - map
-              - **+page.svelte**
-      - project-files
-        - ai2html.ait
-        - map.ai
-      - src
-        - lib
-          - ai2svelte
-            - map.svelte
-    </FileTree>
+   <FileTree>
+     - pages - embeds - en - map - **+page.svelte** - project-files -
+     ai2html.ait - map.ai - src - lib - ai2svelte - map.svelte
+   </FileTree>
 5. Add embed metadata to the `embeds` story in RNGS.io for this graphic and [sync](/bluprint_graphics-kit/developers/archieml/#sync) your project with RNGS.io.
 
 6. Before publishing, run ["Export AI statics"](/bluprint_graphics-kit/developers/mods/#export-ai-statics) kit mod to create JPG and EPS media assets and Sphinx preview image for your graphic.
-    <FileTree>
-      - media-assets
-        - en
-          - map
-            - **graphic.jpg**
-            - **graphic.eps**
-      - project-files
-        - ai2html.ait
-        - map.ai
-      - src
-        - statics
-          - images
-            - embeds
-              - en
-                - **map.jpg**
-    </FileTree>
-</Steps>
-
-
+   <FileTree> - media-assets - en - map - **graphic.jpg** - **graphic.eps** - project-files - ai2html.ait - map.ai - src - statics - images - embeds - en - **map.jpg**
+   </FileTree>
+   </Steps>
 
 ## Image layers
 
@@ -166,22 +116,15 @@ If you've imported images into your Illustrator file, make sure they are [**embe
 If you need to link large images -- for example, satellite images edited in Photoshop -- make sure the image is in a folder inside the `project-files/` directory and linked from there to the Illustrator file.
 
 <FileTree>
-- project-files
-  - layers
-    - **satellite.jpg** Linked image
-  - map.ai AI file using linked image
-  
+  - project-files - layers - **satellite.jpg** Linked image - map.ai AI file
+  using linked image
 </FileTree>
 
 ## Oversize Adobe Illustrator files
 
 **Any files larger than 100 MB cannot be pushed to GitHub.** If your Adobe Illustrator file gets larger than that, you must add it to your project's `.gitignore`.
 
-<FileTree>
-  - project-files
-    - ai2html.ait
-    - **locator-map.ai** >100 MB
-</FileTree>
+<FileTree>- project-files - ai2html.ait - **locator-map.ai** >100 MB</FileTree>
 
 ```yaml ins={3}
 // .gitignore
@@ -190,7 +133,8 @@ project-files/locator-map.ai
 ```
 
 <Aside type="tip">
-Often, large embedded images are responsible for bloating Illustrator file sizes past 100 MB. 
+Often, large embedded images are responsible for bloating Illustrator file sizes past 100 MB.
 
 You should **re-rasterise hi-res images** to a lower resolution, which will significantly reduce your `.ai` filesize. A good rule of thumb is to try a medium resolution like `150ppi`, which will still preserve details for print.
+
 </Aside>

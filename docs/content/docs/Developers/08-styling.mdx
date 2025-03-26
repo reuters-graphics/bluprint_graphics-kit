@@ -8,7 +8,6 @@ sidebar:
 import LinkCard from '../../../components/LinkCardWithIcon.astro';
 import { FileTree } from '@astrojs/starlight/components';
 
-
 ## Graphics design system
 
 The graphics design system is a [Tailwind](https://tailwindcss.com/docs/)-like, token-based style system you can use to design graphics pages and embeds.
@@ -58,12 +57,11 @@ body {
 
 It's often better to write styles directly in your Svelte components because they will be automatically scoped to just the elements in your component so they don't conflict with any other global styles. Svelte will also clean up any unused style rules by default, too. It also makes it easy to copy components between projects because the styles travel with the component code.
 
-
 <LinkCard
   icon="seti:svelte"
   color="#f96743"
   title="Svelte: Scoped styling"
-  target='_blank'
+  target="_blank"
   href="https://svelte.dev/docs/kit/routing"
 />
 
@@ -130,10 +128,9 @@ div.my-container.abc123xyz789 p span {
   icon="seti:svelte"
   color="#f96743"
   title="Svelte: Global styles"
-  target='_blank'
+  target="_blank"
   href="https://svelte.dev/docs/svelte/global-styles"
 />
-
 
 ### Styles from JavaScript
 
@@ -159,7 +156,7 @@ You can use a class conditionally:
   icon="seti:svelte"
   color="#f96743"
   title="Svelte: Class"
-  target='_blank'
+  target="_blank"
   href="https://svelte.dev/docs/svelte/class"
 />
 
@@ -190,4 +187,3 @@ You can use a class conditionally:
   }
 </style>
 ```
-

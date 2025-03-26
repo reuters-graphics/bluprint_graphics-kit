@@ -27,6 +27,8 @@
     "startup:create-repo": "npx graphics github:create-repo",
     "startup": "npm-run-all startup:*",
     "test": "vitest",
+    "lint": "eslint --fix .",
+    "format": "prettier . --write",
     "knip": "knip"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ Built with:
 
 ## 📚 Docs
 
-Read more in the **[developer docs](https://reuters-graphics.github.io/bluprint_graphics-kit/)** about how to use this rig to create graphics pages and embeds.
+Read more in the **[developer docs](https://reuters-graphics.github.io/bluprint_graphics-kit/)** about how to use the graphics kit to create graphics pages and embeds.
 
 ## 👀 Preview
 

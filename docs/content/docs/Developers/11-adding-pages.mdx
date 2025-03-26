@@ -12,22 +12,18 @@ You can add additional pages -- whether for dotcom or embeddable graphics -- to 
 
 Making pages is generally described in SvelteKit's docs, except the graphics kit uses a `pages/` directory for pages instead of SvelteKit's default `src/routes/`.
 
-
 <LinkCard
   icon="seti:svelte"
   color="#f96743"
   title="SvelteKit: Routing"
-  target='_blank'
+  target="_blank"
   href="https://svelte.dev/docs/kit/routing"
 />
 
 ## Adding pages
 
 <FileTree>
-- pages
-  - +page.svelte Project homepage
-  - another
-    - **+page.svelte** New page
+  - pages - +page.svelte Project homepage - another - **+page.svelte** New page
 </FileTree>
 
 Add new pages at least one directory below your project homepage.
@@ -41,12 +37,12 @@ It's probably a good idea to include this metadata in a _separate_ ArchieML doc.
 ```svelte {7-8}
 <!-- pages/another/+page.svelte -->
 <script>
-import { SEO } from '@reuters-graphics/graphics-components';
-import pkg from '$pkg';
-import { page } from '$app/state';
+  import { SEO } from '@reuters-graphics/graphics-components';
+  import pkg from '$pkg';
+  import { page } from '$app/state';
 
-// A separate RNGS.io story doc
-import { story as content } from '$locales/en/anotherPage.json';
+  // A separate RNGS.io story doc
+  import { story as content } from '$locales/en/anotherPage.json';
 </script>
 
 <SEO
@@ -69,13 +65,8 @@ import { story as content } from '$locales/en/anotherPage.json';
 Embeddable graphics should be created in an `embeds/` directory and then must be two more folders deep. The first must be named after a valid [language code](https://reuters-graphics.github.io/graphics-server-client/types/RNGS.Language.html) and the second must be a slug identifying the embed, for example, `embeds/en/map/` below.
 
 <FileTree>
-- pages
-  - embeds
-    - en Language code
-      - page
-        - +page.svelte
-      - map Embed slug
-        - **+page.svelte** New embeddable page
+  - pages - embeds - en Language code - page - +page.svelte - map Embed slug -
+  **+page.svelte** New embeddable page
 </FileTree>
 
 ### Required metadata
@@ -83,17 +74,14 @@ Embeddable graphics should be created in an `embeds/` directory and then must be
 Embed pages **must** have a canonical link element and should have a [`robots` metatag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) with `noindex, nofollow` to tell search engines not to surface the page in search results.
 
 ```svelte
-// 
 <script lang="ts">
   import { page } from '$app/state';
 
   // ...
 </script>
 
-<SEO
-  baseUrl={import.meta.env.BASE_URL}
-  pageUrl={page.url}
-/>
+//
+<SEO baseUrl={import.meta.env.BASE_URL} pageUrl={page.url} />
 
 <svelte:head>
   <meta name="robots" content="noindex, nofollow" />

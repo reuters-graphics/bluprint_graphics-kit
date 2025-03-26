@@ -24,7 +24,8 @@
       "README.md",
       "rngs-io.json",
       "docs/*",
-      "astro.config.mjs"
+      "astro.config.mjs",
+      ".changeset/*"
     ]
   }, {
     "action": "move",

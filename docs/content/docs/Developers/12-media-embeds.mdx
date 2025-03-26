@@ -6,51 +6,34 @@ sidebar:
 ---
 
 import LinkCard from '../../../components/LinkCardWithIcon.astro';
-import { FileTree, Aside } from  '@astrojs/starlight/components';
+import { FileTree, Aside } from '@astrojs/starlight/components';
 
 <Aside title="Making statics for Adobe Illustrator graphics?">
-Follow the steps in ["Making embeddable AI graphics"](/bluprint_graphics-kit/developers/adobe-illustrator-graphics/#making-embeddable-ai-graphics), which follows the rules for packaging those assets listed below.
+  Follow the steps in ["Making embeddable AI
+  graphics"](/bluprint_graphics-kit/developers/adobe-illustrator-graphics/#making-embeddable-ai-graphics),
+  which follows the rules for packaging those assets listed below.
 </Aside>
 
 You can package static files -- e.g., JPG and EPS assets -- for clients in the `media-assets/` directory.
 
 Assets must be structured using the same directory scheme as [embeddable pages](/bluprint_graphics-kit/developers/adding-pages/#adding-embeds) -- a folder for a valid language code and another for a unique slug. The JPG and EPS filenames can be whatever you want them to be.
 
-
 <FileTree>
-- media-assets
-  - en Language code
-    - chart Slug
-      - **chart.eps**
-      - **chart.jpg**
-    - map Slug
-      - **my-map.eps**
-      - **map-preview.jpg**
+  - media-assets - en Language code - chart Slug - **chart.eps** - **chart.jpg**
+  - map Slug - **my-map.eps** - **map-preview.jpg**
 </FileTree>
 
 If you have an [embeddable page](https://reuters-graphics.github.io/docs_graphics-kit/for_developers/pages) using the same language code/slug scheme as a set of static assets ...
 
 <FileTree>
-- pages
-  - embeds
-    - **en**
-      - **chart**
-        - +page.svelte
-- media-assets
-  - **en**
-    - **chart**
-      - chart.eps
-      - chart.jpg
+  - pages - embeds - **en** - **chart** - +page.svelte - media-assets - **en** -
+  **chart** - chart.eps - chart.jpg
 </FileTree>
 
 ... the publisher will upload the JPG and EPS file with the embeddable version of the same graphic in a single [archive](https://reuters-graphics.github.io/graphics-kit-publisher/sphinx/#archives).
 
 <FileTree title="Graphics server">
-- media-en-chart.zip
-  - interactive
-  - media-interactive
-  - EPS
-  - JPG
+  - media-en-chart.zip - interactive - media-interactive - EPS - JPG
 </FileTree>
 
 <LinkCard

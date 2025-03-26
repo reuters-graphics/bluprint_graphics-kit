@@ -26,10 +26,7 @@
     "hed": "A Reuters Graphics page",
     "section": "Graphics",
     "sectionUrl": "https://www.reuters.com/graphics/",
-    "authors": [
-      "Jane Doe",
-      "John Doe"
-    ],
+    "authors": ["Jane Doe", "John Doe"],
     "publishedDate": "2024-04-17T17:00:00.000Z",
     "updatedDate": "",
     "blocks": [

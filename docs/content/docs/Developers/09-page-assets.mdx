@@ -12,14 +12,8 @@ import { FileTree } from '@astrojs/starlight/components';
 Put images, fonts and other static media files in dedicated folders in the statics directory at `src/statics/`.
 
 <FileTree>
-- src
-  - statics
-    - images
-      - **my-image.jpg**
-    - fonts
-      - **myfont.woff2**
+  - src - statics - images - **my-image.jpg** - fonts - **myfont.woff2**
 </FileTree>
-
 
 ## How to use media files in your code
 
@@ -44,9 +38,7 @@ Use inline styles to set SCSS styles with your media files.
   import { assets } from '$app/paths';
 </script>
 
-<div
-  style="background-image: url({assets}/images/my-image.jpg);"
-></div>
+<div style="background-image: url({assets}/images/my-image.jpg);"></div>
 
 <style lang="scss">
   div {
@@ -67,6 +59,6 @@ If you need to load media files in your global SCSS -- for example, to load a fo
 
 @font-face {
   font-family: myCustomFont;
-  src: url("/fonts/myFont.woff2") format("woff2");
+  src: url('/fonts/myFont.woff2') format('woff2');
 }
 ```
