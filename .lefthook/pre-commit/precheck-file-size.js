@@ -5,7 +5,7 @@ import dedent from 'dedent';
 
 const MAX_SIZE = 100 * 1024 * 1024; // 100MB
 
-console.log(`💾 Checking staged files for any oversized...\n`);
+console.log(`💾 Checking staged files for any oversized ...\n`);
 
 const stagedFiles = execSync('git diff --cached --name-only', {
   encoding: 'utf-8',
