@@ -45,14 +45,39 @@
       ["git", ["commit", "-m", "initial"]],
       ["pnpm", ["install"]],
       ["npx", ["lefthook", "install"]],
-      ["pnpm", ["startup:check-creds"]],
-      ["pnpm", ["startup:create-repo"]],
+      ["pnpm", ["startup:check-creds"]]
+    ]
+  }, {
+    "action": "prompt",
+    "questions": [{
+      "type": "confirm",
+      "name": "makeRngsDocs",
+      "message": "Would you like to create a story in RNGS.io (usually, yes)?",
+      "initial": true
+    }]
+  }, {
+    "action": "execute",
+    "cmds": [
       [
         "npx",
         [
-          "rngs-io stories new --name 'page-en' --template cltmvzj5m0000lc089jz22aet --syncPath 'locales/en/content.json' --askFirst"
+          "rngs-io stories new --name 'page-en' --template cltmvzj5m0000lc089jz22aet --syncPath 'locales/en/content.json'"
         ]
-      ]
+      ],
+      [
+        "npx",
+        [
+          "rngs-io stories new --name 'embeds' --template cm8q3vr0e0000l803tfleu4t4 --syncPath 'locales/en/embeds.json'"
+        ]
+      ],
+      ["git", ["add", "."]],
+      ["git", ["commit", "-m", "adds RNGS stories"]]
+    ],
+    "condition": ["makeRngsDocs", true]
+  }, {
+    "action": "execute",
+    "cmds": [
+      ["pnpm", ["startup:create-repo"]]
     ]
   }, {
     "action": "log",
