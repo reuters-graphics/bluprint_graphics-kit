@@ -15,6 +15,8 @@ const stagedFiles = execSync('git diff --cached --name-only', {
 
 let hasOversizeFile = false;
 
+console.log(stagedFiles);
+
 for (const file of stagedFiles) {
   const filePath = path.resolve(process.cwd(), file);
   if (!fs.existsSync(filePath)) continue;
