@@ -1,5 +1,5 @@
 ---
-title: Adobe Illustrator graphics
+title: Adobe Illustrator (AI) graphics
 slug: developers/adobe-illustrator-graphics
 sidebar:
   order: 29
@@ -19,9 +19,9 @@ Look for Adobe Illustrator templates in the `project-files/` directory.
 
 - `ai2html.ait`: Standard graphics template for embeddable or inline graphics
 - `dotcom.ait`: Template for making images at the ideal size for the reuters.com homepage
-- `sharecard.ait`: Template for making images at the ideal size for teasers on social media and in search results
+- `sharecard.ait`: Template for making images at the ideal size for thumbnails on social media and in search results
 
-Create a new `.ai` file for each new graphic you want to create in the root of the `project-files/` directory. The name of the file should be a valid slug (lowercase letters, hyphens instead of spaces).
+Create a new `.ai` file in the root of the `project-files/` directory by opening the template file in Illustrator for each new graphic you want to create. The name of the file should be a valid slug (lowercase letters, hyphens instead of spaces), e.g. `ukraine-map.ai`.
 
 <FileTree>
 - project-files
@@ -105,7 +105,7 @@ Follow these steps using [kit mods](/bluprint_graphics-kit/developers/mods/) to 
 <Steps>
 1. If you **only** intend to publish embeddable graphics, convert your project type to **embeds-only** using the ["Change project type"](/bluprint_graphics-kit/developers/mods/#change-project-type) kit mod.
 
-2. Create an AI graphic from the `.ait` template in `project-files/` with a sluggable name (i.e., lowercase letters, hyphens instead of spaces).
+2. Create an AI graphic from the `.ait` template in `project-files/` with a sluggable name (i.e., lowercase letters, hyphens instead of spaces), e.g. `ukraine-map.ai`.
     <FileTree>
       - project-files
         - ai2html.ait Template
@@ -192,5 +192,5 @@ project-files/locator-map.ai
 <Aside type="tip">
 Often, large embedded images are responsible for bloating Illustrator file sizes past 100 MB. 
 
-You should **re-rasterise hi-res images** to a lower resolution, which will significantly reduce your `.ai` filesize. A good rule of thumb is to try a medium resolution like `150ppi`, which will still preserve details for print.
+You should **re-rasterise hi-res images** to a lower resolution, which will significantly reduce your `.ai` filesize. A good rule of thumb is to try a resolution of `300ppi` or a medium one like `150ppi`, which will still preserve details for print.
 </Aside>
