@@ -28,4 +28,4 @@ pnpm upload
 pnpm pub
 ```
 
-Read more in the [development docs](https://reuters-graphics.github.io/docs_graphics-kit/).
+Read more in the [development docs](https://reuters-graphics.github.io/bluprint_graphics-kit/).
