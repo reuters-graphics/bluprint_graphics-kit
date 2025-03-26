@@ -10,7 +10,7 @@
     .map((path) => (/\/$/.test(path) ? path : path + '/'));
 </script>
 
-{#if !embeds.length}
+{#if embeds.length}
   <Framer {embeds} />
 {:else}
   <container>
