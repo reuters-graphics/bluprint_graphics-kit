@@ -5,7 +5,7 @@ sidebar:
   order: 11
 ---
 
-import { FileTree } from '@astrojs/starlight/components';
+import { FileTree, Aside } from '@astrojs/starlight/components';
 
 When you're ready to publish the project, change the `homepage` prop in `package.json` to the URL where you'd like to host the files.
 
@@ -26,21 +26,33 @@ npm run build
 The files you'll need to host on your server will be built in the `dist` directory of the project. They'll look something like this:
 
 <FileTree>
-
 - dist
   - cdn
     - ... JS, CSS, images, etc.
-  - embeds
-    - ... Embeddable pages
-  - index.html
-
+  - embeds Embeddable pages and graphics
+    - en
+      - page
+        - index.html Embeddable page without Reuters branding
+  - index.html Page with Reuters branding
 </FileTree>
 
 You're now ready to upload the project to your server. Be sure to upload _all_ the files in the `dist` directory to the location on your server you specified in `homepage` in `package.json`.
 
+<Aside>
+For **full-page graphics** projects, without directly changing the source code, the outermost `index.html` in the `dist/` directory will include Reuters branding. The `embeds/en/page/index.html` will be the same page **without** Reuters branding.
+</Aside>
+
 ## Self-hosting embeddable graphics
 
-After building the project and uploading it to your servers, you can add _embeddable graphics_ to your pages using the following embed code template by updating the URL to the embeddable graphic hosted on your servers.
+After building the project and uploading it to your servers, you can add _embeddable graphics_ to your pages using an embed code and the URL to the embeddable graphic hosted on your servers.
+
+<FileTree>
+- dist
+  - embeds
+    - en
+      - map
+        - **index.html** Embeddable graphic
+</FileTree>
 
 ```html "https://your-site.com/this-project/embeds/en/map/"
 <script>
