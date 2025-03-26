@@ -10,11 +10,35 @@
     .map((path) => (/\/$/.test(path) ? path : path + '/'));
 </script>
 
-<Framer {embeds} />
+{#if !embeds.length}
+  <Framer {embeds} />
+{:else}
+  <container>
+    <div>
+      <div>No embeds found.</div>
+      <div>
+        <a href="{base}/">Go back</a>
+      </div>
+    </div>
+  </container>
+{/if}
 
-<style global>
-  body {
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/dist/scss/mixins' as mixins;
+
+  :global(body) {
     padding-bottom: 60px;
     background-color: #fafafa;
+  }
+  container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80svh;
+    width: 100%;
+    & > div {
+      text-align: center;
+      font-family: sans-serif;
+    }
   }
 </style>
