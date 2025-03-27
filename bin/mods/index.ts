@@ -4,6 +4,7 @@ import { intro } from '@reuters-graphics/clack';
 import { cancel, isCancel, log, outro, select } from '@clack/prompts';
 import { exportAiStatics } from './export-ai-statics';
 import { makeAiEmbed } from './make-ai-embed';
+import { unconfigRngsIo } from './rngs-io';
 
 const prog = sade('kit-mods');
 
@@ -45,6 +46,10 @@ prog.command('mods').action(async () => {
   if (mod === 'make-ai-embed') await makeAiEmbed();
   if (mod === 'project-type') await changeProjectType();
   outro('Done.');
+});
+
+prog.command('unconfig-rngs-io').action(() => {
+  unconfigRngsIo();
 });
 
 prog.parse(process.argv);

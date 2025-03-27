@@ -81,6 +81,12 @@
   }, {
     "action": "execute",
     "cmds": [
+      ["tsx", ["./bin/mods/index.ts", "unconfig-rngs-io"]]
+    ],
+    "condition": ["makeRngsDocs", false]
+  }, {
+    "action": "execute",
+    "cmds": [
       ["pnpm", ["startup:create-repo"]]
     ]
   }, {
