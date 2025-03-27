@@ -7,6 +7,7 @@ export default defineConfig({
       wildSlug: false,
       title: false,
       description: false,
+      byline: 'locales/en/embeds.json?story.authors',
     },
   },
   publishingLocations: [
