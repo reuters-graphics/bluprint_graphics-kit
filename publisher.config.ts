@@ -6,7 +6,6 @@ export default defineConfig({
       rootSlug: false,
       wildSlug: false,
       title: 'locales/en/content.json?story.seoTitle',
-      description: 'locales/en/content.json?story.seoDescription',
     },
   },
   publishingLocations: [
