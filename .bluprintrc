@@ -71,8 +71,12 @@
         ]
       ],
       ["git", ["add", "."]],
-      ["git", ["commit", "-m", "adds RNGS stories"]]
+      ["git", ["commit", "-m", "\"adds RNGS stories\""]]
     ],
+    "condition": ["makeRngsDocs", true]
+  }, {
+    "action": "log",
+    "msg": "RNGS.io storyboard created at: https://www.rngs.io/storyboards/",
     "condition": ["makeRngsDocs", true]
   }, {
     "action": "execute",
