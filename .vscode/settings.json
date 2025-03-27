@@ -12,6 +12,7 @@
     "publish.*",
     "startup.*",
     "stories:autolink",
+    "stories:unconfig",
     "knip",
     "test",
     "lint",
