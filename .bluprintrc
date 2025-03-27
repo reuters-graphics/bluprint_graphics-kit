@@ -81,7 +81,7 @@
   }, {
     "action": "execute",
     "cmds": [
-      ["npx", ["tsx", "./bin/mods/index.ts", "unconfig-rngs-io"]]
+      ["pnpm", ["stories:unconfig"]]
     ],
     "condition": ["makeRngsDocs", false]
   }, {

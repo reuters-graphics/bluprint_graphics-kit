@@ -13,6 +13,7 @@
     "build": "vite build",
     "build:preview": "PREVIEW=true vite build",
     "mods": "tsx ./bin/mods/index.ts mods",
+    "stories:unconfig": "tsx ./bin/mods/index.ts unconfig-rngs-io",
     "stories:new": "npx rngs-io stories new --template",
     "stories:connect": "npx rngs-io stories connect",
     "stories:autolink": "npx rngs-io stories autolink",
