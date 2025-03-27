@@ -76,7 +76,7 @@
     "condition": ["makeRngsDocs", true]
   }, {
     "action": "log",
-    "msg": "RNGS.io storyboard created at: https://www.rngs.io/storyboards/",
+    "msg": "\n{cyan RNGS.io} storyboard created at: {green https://www.rngs.io/storyboards/}\n",
     "condition": ["makeRngsDocs", true]
   }, {
     "action": "execute",
