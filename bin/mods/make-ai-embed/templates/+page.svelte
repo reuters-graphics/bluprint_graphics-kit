@@ -73,3 +73,9 @@
 </Theme>
 
 <PymChild polling={500} />
+
+<style>
+  :global(h3) {
+    margin-top: 0 !important;
+  }
+</style>

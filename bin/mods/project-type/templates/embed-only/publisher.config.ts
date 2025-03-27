@@ -7,6 +7,7 @@ export default defineConfig({
       wildSlug: false,
       title: false,
       description: false,
+      byline: 'locales/en/embeds.json?story.authors',
     },
   },
   publishingLocations: [
@@ -27,8 +28,8 @@ export default defineConfig({
   ],
   archiveEditions: {
     docs: {
-      'README.txt': 'bin/docs/README.txt',
-      'EMBED.txt': 'bin/docs/EMBED.txt',
+      'README.txt': 'bin/connect-docs/README.txt',
+      'EMBED.txt': 'bin/connect-docs/EMBED.txt',
     },
   },
 });
