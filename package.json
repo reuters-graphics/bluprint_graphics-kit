@@ -5,12 +5,12 @@
   "private": true,
   "scripts": {
     "start": "vite dev --open",
+    "stories:sync": "npx rngs-io stories sync",
     "preview": "npm-run-all publish:preview stories:autolink",
     "upload": "npm-run-all publish:upload",
     "pub": "npm-run-all publish:publish stories:autolink publish:git-commit",
     "build": "vite build",
     "build:preview": "PREVIEW=true vite build",
-    "stories:sync": "npx rngs-io stories sync",
     "mods": "tsx ./bin/mods/index.ts mods",
     "stories:new": "npx rngs-io stories new --template",
     "stories:connect": "npx rngs-io stories connect",
