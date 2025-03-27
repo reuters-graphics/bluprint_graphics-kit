@@ -43,16 +43,16 @@ describe('GraphicsKit build', () => {
       'Page description for search'
     );
     expect($('meta[property=og:image]').attr('content')).toBe(
-      'https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg'
+      'https://www.reuters.com/graphics/testing/cdn/images/reuters-graphics.jpg'
     );
     expect($('meta[name=twitter:image]').attr('content')).toBe(
-      'https://graphics.reuters.com/test/testing/cdn/images/reuters-graphics.jpg'
+      'https://www.reuters.com/graphics/testing/cdn/images/reuters-graphics.jpg'
     );
     expect($('meta[name=twitter:image:alt]').attr('content')).toBe(
       'Alt text for share image.'
     );
     expect($('link[rel=canonical]').attr('href')).toBe(
-      'https://graphics.reuters.com/test/testing/'
+      'https://www.reuters.com/graphics/testing/'
     );
   });
 

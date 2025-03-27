@@ -1,4 +1,4 @@
-# The Graphics Kit
+# The Reuters graphics kit
 
 A rig for Reuters graphics and newsapps.
 
@@ -8,31 +8,10 @@ Built with:
 <img src="https://raw.githubusercontent.com/sveltejs/branding/refs/heads/master/svelte-horizontal.svg" height="40" />
 </a>
 
-## Quickstart
+## 📚 Docs
 
-This rig is best used with [bluprint](https://github.com/reuters-graphics/bluprint), our in-house templating tool.
-
-If you haven't already, add this bluprint to your CLI.
-
-```console
-bluprint add reuters-graphics/bluprint_graphics-kit
-```
-
-Make a new directory and use the bluprint.
-
-```console
-mkdir my-project && cd my-project
-bluprint start
-```
-
-## 📚 Developer Docs
-
-Read more in the **[developer docs](https://reuters-graphics.github.io/docs_graphics-kit/)** about how to use this rig to create graphics pages.
+Read more in the **[developer docs](https://reuters-graphics.github.io/bluprint_graphics-kit/)** about how to use the graphics kit to create graphics pages and embeds.
 
 ## 👀 Preview
 
 See it on ⚡[StackBlitz](https://stackblitz.com/github/reuters-graphics/bluprint_graphics-kit).
-
-## 🙌 Contributing
-
-🏷️ If you find a bug, want to see a feature or would like more info documented, please file an issue [here](https://github.com/reuters-graphics/bluprint_graphics-kit/issues).

@@ -1,17 +1,11 @@
-### What's in this pull request
+### What's in this pull request?
 
-- [ ] Bug fix
-- [ ] New component/feature
-- [ ] Documentation update
-- [ ] Other
+Tell us what this PR contains and link to any related issues that describe the goal here.
 
-### Description
+### Before submitting, please check that you've ...
 
-Tell us what this PR does or link to any related issues that describe the goal here.
-
-### Before submitting, please check that you've
-
-- [ ] Read our [contributing guide](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/CONTRIBUTING.md) at some point
-- [ ] Formatted you code correctly (i.e., prettier cleaned it up)
+- [ ] Read our [contributing guide](https://github.com/reuters-graphics/bluprint_graphics-kit/blob/master/CONTRIBUTING.md)
+- [ ] Formatted and linted your code (`pnpm lint` & `pnpm format`)
 - [ ] Documented any new components or features
-- [ ] Tagged an editor to review
+- [ ] Assigned an editor to review this PR
+- [ ] If this PR changes code, added a changeset (`npx changeset`)

@@ -1,26 +1,22 @@
 {
   "SvelteKit $app/env": {
-		"scope": "javascript",
-		"prefix": "env",
-		"body": [
-			"import { browser, dev, prerendering } from '\\$app/environment';"
-		],
-		"description": "SvelteKit $app/environment stores"
-	},
+    "scope": "javascript",
+    "prefix": "env",
+    "body": [
+      "import { browser, dev, prerendering } from '\\$app/environment';",
+    ],
+    "description": "SvelteKit $app/environment stores",
+  },
   "Static paths": {
     "scope": "javascript",
     "prefix": "assets",
-		"body": [
-			"import { assets } from '\\$app/paths';"
-		],
-		"description": "SvelteKit assets path store"
+    "body": ["import { assets } from '\\$app/paths';"],
+    "description": "SvelteKit assets path store",
   },
   "SvelteKit $app/paths": {
     "scope": "javascript",
     "prefix": "paths",
-		"body": [
-			"import { base, assets } from '\\$app/paths';"
-		],
-		"description": "SvelteKit $app/paths stores"
-  }
+    "body": ["import { base, assets } from '\\$app/paths';"],
+    "description": "SvelteKit $app/paths stores",
+  },
 }

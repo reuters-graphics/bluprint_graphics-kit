@@ -1,11 +1,8 @@
 pre-commit:
   scripts:
-    'precheck-file-size.sh':
-      runner: bash
+    'precheck-file-size.js':
+      runner: node
   commands:
-    eslint:
-      glob: '*.js'
-      run: npx eslint --cache --fix {staged_files} && git add .
     prettier:
       glob: '*.{js,css,md,svelte}'
       run: npx prettier --write {staged_files} && git add .

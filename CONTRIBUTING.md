@@ -31,7 +31,7 @@ Be sure to add comments around any tricky bits of logic you're adding.
 
 ### 📝 Write docs
 
-New components or features may need to be reflected in the [Graphics Kit docs](https://github.com/reuters-graphics/docs_graphics-kit). Your editor will tell you if/how to submit changes, either through a PR or a direct edit on master, as part of your PR review. You can also create a PR on the docs repo and reference it in your PR before review.
+New components or features may need to be reflected in the [graphics kit docs](https://reuters-graphics.github.io/bluprint_graphics-kit/). Your editor will tell you if/how to submit docs changes.
 
 ### 🍺 Submit code
 
@@ -50,4 +50,4 @@ Generally, it's better to avoid bundling several new features or components in a
 
 Once you've submitted your PR, tag an editor to review it.
 
-An editor will approve your PR after addressing any issues they see. Once an editor approves and there are no code conflicts, you can merge your PR into master.
+An editor will approve your PR after addressing any issues they see. Once an editor approves and there are no code conflicts, you can merge your PR into main.

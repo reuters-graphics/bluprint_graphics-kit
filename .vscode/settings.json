@@ -13,7 +13,9 @@
     "startup.*",
     "stories:autolink",
     "knip",
-    "test"
+    "test",
+    "lint",
+    "format"
   ],
   "liveshare.launcherClient": "visualStudioCode",
   "[svelte]": {

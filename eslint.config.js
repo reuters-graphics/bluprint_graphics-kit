@@ -11,6 +11,15 @@ export default [
       'pages/**/*.{js,ts,svelte',
     ],
   },
+  {
+    ignores: [
+      'node_modules/',
+      'docs/',
+      '.changeset/',
+      '.svelte-kit/',
+      '.astro/',
+    ],
+  },
   ...svelte,
   {
     rules: {

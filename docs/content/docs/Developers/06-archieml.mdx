@@ -21,9 +21,10 @@ ArchieML documents are downloaded as JSON files in your project, where they can 
 Read more about working with ArchieML in conjunction with our graphics components [here](https://reuters-graphics.github.io/graphics-components/?path=/docs/guides-using-with-archieml-docs--docs).
 
 <Aside>
-**Clients do not have access** to our ArchieML docs. They _do_ have access to the JSON files parsed from those docs. 
+**Clients do not have access** to our ArchieML docs. They _do_ have access to the JSON files parsed from those docs.
 
 Look for them in the `locales/` directory in the root of the project source code and read more about using those files to translate or otherwise change the text in pages and graphics in the [Translating text](/bluprint_graphics-kit/clients/translating-text/) page.
+
 </Aside>
 
 ## RNGS.io
@@ -34,7 +35,6 @@ Documents are called "stories" and are organised by project on "storyboards".
 
 When creating a new project, you will be prompted to create a new RNGS.io story and storyboard. You can also create stories using commands from your local project or in RNGS.io, directly.
 
-
 ### RNGS.io client commands
 
 <LinkCard
@@ -44,7 +44,6 @@ When creating a new project, you will be prompted to create a new RNGS.io story 
   href="https://reuters-graphics.github.io/rngs-io-client/"
   target="_blank"
 />
-
 
 #### sync
 
@@ -89,7 +88,10 @@ This is useful for creating preview pages that can be updated directly from RNGS
 You can also create a live connection to the production version of your page, allowing others to update the content of your page without needing to republish it.
 
 <Aside type="caution">
-This is a powerful feature for trackers and other projects that see regular updates, but changes to the RNGS.io story _can_ break your page. Use this feature with caution and be sure to carefully train other editors how to edit the content in RNGS.io so they don't break your project with updates.
+  This is a powerful feature for trackers and other projects that see regular
+  updates, but changes to the RNGS.io story _can_ break your page. Use this
+  feature with caution and be sure to carefully train other editors how to edit
+  the content in RNGS.io so they don't break your project with updates.
 </Aside>
 
 ## Google docs
@@ -114,7 +116,7 @@ To connect Google docs to your project, create one with the following structure.
 }
 ```
 
-Now add the docs you'd like to connect as key, value pairs to your config file. 
+Now add the docs you'd like to connect as key, value pairs to your config file.
 
 The key should be the relative path to a local JSON file where you'd like to sync your Google doc. The value, the ID of your Google doc, which you can get from its URL.
 
@@ -127,9 +129,10 @@ The key should be the relative path to a local JSON file where you'd like to syn
   "sheets": {}
 }
 ```
+
 ### Configuring Google sheets
 
-You can also connect your project to Google sheets using the same key/value structure. 
+You can also connect your project to Google sheets using the same key/value structure.
 
 ```json ins={7}
 // google.json
@@ -152,9 +155,7 @@ You can also connect your project to Google sheets using the same key/value stru
   target="_blank"
 />
 
-
 ### Google docs commands
-
 
 #### get-google
 

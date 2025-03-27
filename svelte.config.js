@@ -1,8 +1,13 @@
-import { getAssetsPath, getBasePath } from './bin/svelte-kit/paths/index.js';
-
 import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import { sveltePreprocess } from 'svelte-preprocess';
+import { getBasePath } from '@reuters-graphics/graphics-kit-publisher';
+
+const mode =
+  process.env.TESTING ? 'test'
+  : process.env.PREVIEW ? 'preview'
+  : process.env.NODE_ENV === 'production' ? 'prod'
+  : 'dev';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,11 +18,22 @@ const config = {
       plugins: [autoprefixer],
     },
   }),
+  vitePlugin: {
+    experimental: {
+      disableSvelteResolveWarnings: true,
+    },
+  },
   kit: {
     appDir: '_app',
     paths: {
-      assets: getAssetsPath(),
-      base: getBasePath(),
+      assets: getBasePath(mode, 'cdn', {
+        trailingSlash: false,
+        rootRelative: false,
+      }),
+      base: getBasePath(mode, {
+        trailingSlash: false,
+        rootRelative: true,
+      }),
     },
     adapter: adapter({
       pages: 'dist',
