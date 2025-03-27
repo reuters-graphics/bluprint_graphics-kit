@@ -27,8 +27,8 @@ export default defineConfig({
   ],
   archiveEditions: {
     docs: {
-      'README.txt': 'bin/docs/README.txt',
-      'EMBED.txt': 'bin/docs/EMBED.txt',
+      'README.txt': 'bin/connect-docs/README.txt',
+      'EMBED.txt': 'bin/connect-docs/EMBED.txt',
     },
   },
 });
