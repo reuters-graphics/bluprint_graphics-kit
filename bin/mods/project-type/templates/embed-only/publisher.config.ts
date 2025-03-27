@@ -5,6 +5,8 @@ export default defineConfig({
     pack: {
       rootSlug: false,
       wildSlug: false,
+      title: false,
+      description: false,
     },
   },
   publishingLocations: [
