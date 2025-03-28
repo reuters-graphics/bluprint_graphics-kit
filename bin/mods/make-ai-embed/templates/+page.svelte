@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { PageProps } from './$types';
   import { assets } from '$app/paths';
   import { page } from '$app/state';
   import {
@@ -8,34 +9,14 @@
     GraphicBlock,
   } from '@reuters-graphics/graphics-components';
   import LogBlock from '$lib/components/dev/LogBlock.svelte';
-
-  interface EmbedsArchieML {
-    story: {
-      embeds: {
-        locale: string;
-        slug: string;
-        title?: string;
-        description?: string;
-        notes?: string;
-        altText?: string;
-      }[];
-    };
-  }
-
-  import archieML from '$locales/en/embeds.json';
+  import Graphic from '$lib/ai2svelte/ai-graphic.svelte';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
-  import Graphic from '$lib/ai2svelte/ai-graphic.svelte';
 
-  let content = $derived(archieML.story as EmbedsArchieML['story']);
-
-  const embed = $derived.by(() =>
-    content.embeds.find(({ locale, slug }) => {
-      return page.route.id === `/embeds/${locale?.trim()}/${slug?.trim()}`;
-    })
-  );
+  let { data }: PageProps = $props();
+  let { embed } = data;
 </script>
 
 <SEO
