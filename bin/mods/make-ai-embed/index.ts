@@ -46,13 +46,11 @@ export const makeAiEmbed = async () => {
   if (isCancel(locale)) return cancel();
 
   const aiSlug = slugify(path.basename(aiComponent, '.svelte'));
-  const componentPath = path.join(
-    ROOT,
-    'pages/embeds',
-    locale,
-    aiSlug,
-    '+page.svelte'
-  );
+
+  const pageDirectory = path.join(ROOT, 'pages/embeds', locale, aiSlug);
+  const componentPath = path.join(pageDirectory, '+page.svelte');
+  const loaderPath = path.join(pageDirectory, '+page.server.ts');
+
   if (fs.existsSync(componentPath)) {
     log.error('An embed already exists for this ai2svelte component');
     return;
@@ -67,6 +65,10 @@ export const makeAiEmbed = async () => {
     path.basename(aiComponent)
   );
   fs.writeFileSync(componentPath, replacedString);
+  fs.copyFileSync(
+    path.join(__dirname, 'templates/+page.server.ts'),
+    loaderPath
+  );
   log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
   note(dedent`Be sure to add this graphic to your ${c.cyan('"embeds"')} ArchieML
     doc and export AI statics for it before publishing.
