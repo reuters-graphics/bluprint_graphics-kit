@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.0.1
+
+### Patch Changes
+
+- a0e6828: Fixes a bug on embeds where metadata was being lost on dotcom, closing #196.
+
 ## 2.0.0
 
 ### Major Changes
