@@ -34,8 +34,8 @@ importers:
         specifier: ^1.1.8
         version: 1.1.8
       '@reuters-graphics/graphics-kit-publisher':
-        specifier: ^3.0.3
-        version: 3.0.3(typescript@5.8.2)
+        specifier: ^3.0.4
+        version: 3.0.4(typescript@5.8.2)
       '@reuters-graphics/illustrator-exports':
         specifier: ^0.0.2
         version: 0.0.2
@@ -1100,8 +1100,8 @@ packages:
     peerDependencies:
       svelte: '>=4'
 
-  '@reuters-graphics/graphics-kit-publisher@3.0.3':
-    resolution: {integrity: sha512-maHSbMHW1nUVhH8avbdYU9tIdG5V0P44dktrILJRTmrdbJ33BA1mTS7sx0Mrgxe76Ef0VcVhqwwzEj0iFHShvw==}
+  '@reuters-graphics/graphics-kit-publisher@3.0.4':
+    resolution: {integrity: sha512-ukNewNCSxGEac3/mxonACEsFxdHfvmRjWnhKH1Ziw2Q8XvDTO5b3gRID669G7sgSqjDRlGsxb1++LrG9CrFbPg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -7012,7 +7012,7 @@ snapshots:
       svelte-intersection-observer: 0.10.2
       svelte-search: 2.1.0
 
-  '@reuters-graphics/graphics-kit-publisher@3.0.3(typescript@5.8.2)':
+  '@reuters-graphics/graphics-kit-publisher@3.0.4(typescript@5.8.2)':
     dependencies:
       '@aws-sdk/client-s3': 3.698.0
       '@clack/prompts': 0.10.0
@@ -7038,6 +7038,7 @@ snapshots:
       ordinal: 1.0.3
       package-manager-detector: 0.2.11
       picocolors: 1.1.1
+      prompts: 2.4.2
       rimraf: 5.0.10
       sade: 1.8.1
       sharp: 0.32.6
