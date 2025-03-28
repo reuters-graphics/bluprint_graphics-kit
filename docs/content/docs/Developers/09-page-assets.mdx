@@ -5,6 +5,7 @@ sidebar:
   order: 28
 ---
 
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
 import { FileTree } from '@astrojs/starlight/components';
 
 ## Where to put media files
@@ -70,3 +71,21 @@ If you need to load media files in your global SCSS -- for example, to load a fo
   src: url("/fonts/myFont.woff2") format("woff2");
 }
 ```
+
+## Optimising images
+
+Always scale images down to a web-friendly size before publishing your project.
+
+[Savile](https://github.com/reuters-graphics/savile/) is built-in to the graphics kit to help easily resize, optimise or reformat your images.
+
+```console
+pnpm savile
+```
+
+<LinkCard
+  title="Try an online demo of Savile"
+  color="var(--sl-color-blue-high)"
+  icon="setting"
+  href="https://savile.vercel.app/"
+  target="_blank"
+/>
