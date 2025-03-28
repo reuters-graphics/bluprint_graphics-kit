@@ -42,6 +42,9 @@ importers:
       '@reuters-graphics/rngs-io-client':
         specifier: ^0.1.11
         version: 0.1.11
+      '@reuters-graphics/savile':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@reuters-graphics/vite-plugin-purge-styles':
         specifier: ^0.0.2
         version: 0.0.2(vite@6.2.3(@types/node@22.9.1)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
@@ -12144,7 +12147,7 @@ snapshots:
       is-npm: 6.0.0
       latest-version: 9.0.0
       pupa: 3.1.0
-      semver: 7.6.3
+      semver: 7.7.1
       xdg-basedir: 5.1.0
 
   uri-js@4.4.1:
