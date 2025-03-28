@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.0.2
+
+### Patch Changes
+
+- 7bc1dc0: Adds Savile for resizing, optimising or reformating images.
+
 ## 2.0.1
 
 ### Patch Changes
