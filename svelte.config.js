@@ -19,6 +19,12 @@ const config = {
     },
   }),
   vitePlugin: {
+    onwarn: (warning, handler) => {
+      // Triggered by our use of SCSS mixins ...
+      if (warning.code === 'vite-plugin-svelte-preprocess-many-dependencies')
+        return;
+      handler(warning);
+    },
     experimental: {
       disableSvelteResolveWarnings: true,
     },
