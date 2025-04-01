@@ -35,3 +35,12 @@
 </Theme>
 
 <PymChild polling={500} />
+
+<style>
+  :global(.headline-container) {
+    margin-top: 0;
+  }
+  :global(.headline) {
+    margin-top: 0;
+  }
+</style>
