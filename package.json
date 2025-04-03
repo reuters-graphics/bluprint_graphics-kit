@@ -39,7 +39,7 @@
     "@evilmartians/lefthook": "^1.11.5",
     "@reuters-graphics/clack": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^1.1.8",
-    "@reuters-graphics/graphics-kit-publisher": "^3.0.4",
+    "@reuters-graphics/graphics-kit-publisher": "^3.0.5",
     "@reuters-graphics/illustrator-exports": "^0.0.2",
     "@reuters-graphics/rngs-io-client": "^0.1.11",
     "@reuters-graphics/savile": "^0.0.4",
