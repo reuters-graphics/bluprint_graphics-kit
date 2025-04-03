@@ -16,6 +16,10 @@
   let content = $derived(archieML.story);
 </script>
 
+<svelte:head>
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <SEO
   baseUrl={import.meta.env.BASE_URL}
   pageUrl={page.url}

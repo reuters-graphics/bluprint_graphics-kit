@@ -34,8 +34,8 @@ importers:
         specifier: ^1.1.8
         version: 1.1.8
       '@reuters-graphics/graphics-kit-publisher':
-        specifier: ^3.0.4
-        version: 3.0.4(typescript@5.8.2)
+        specifier: ^3.0.5
+        version: 3.0.5(typescript@5.8.2)
       '@reuters-graphics/illustrator-exports':
         specifier: ^0.0.2
         version: 0.0.2
@@ -1104,8 +1104,8 @@ packages:
     peerDependencies:
       svelte: '>=4'
 
-  '@reuters-graphics/graphics-kit-publisher@3.0.4':
-    resolution: {integrity: sha512-ukNewNCSxGEac3/mxonACEsFxdHfvmRjWnhKH1Ziw2Q8XvDTO5b3gRID669G7sgSqjDRlGsxb1++LrG9CrFbPg==}
+  '@reuters-graphics/graphics-kit-publisher@3.0.5':
+    resolution: {integrity: sha512-Ki8loudRxmAEqrwXtQjR8xRWilPCPd4306GiD49+nxbgdThdMGKXslk6sCUU/TSIoqSEcLrhXqFVd4ksCn4s/w==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -7054,7 +7054,7 @@ snapshots:
       svelte-intersection-observer: 0.10.2
       svelte-search: 2.1.1
 
-  '@reuters-graphics/graphics-kit-publisher@3.0.4(typescript@5.8.2)':
+  '@reuters-graphics/graphics-kit-publisher@3.0.5(typescript@5.8.2)':
     dependencies:
       '@aws-sdk/client-s3': 3.777.0
       '@clack/prompts': 0.10.0
