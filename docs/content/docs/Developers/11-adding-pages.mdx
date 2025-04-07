@@ -44,6 +44,7 @@ It's probably a good idea to include this metadata in a _separate_ ArchieML doc.
 import { SEO } from '@reuters-graphics/graphics-components';
 import pkg from '$pkg';
 import { page } from '$app/state';
+import { assets } from '$app/paths';
 
 // A separate RNGS.io story doc
 import { story as content } from '$locales/en/anotherPage.json';
@@ -85,14 +86,17 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 ```svelte
 // 
 <script lang="ts">
+  import { SEO } from '@reuters-graphics/graphics-components';
   import { page } from '$app/state';
-
+  import { assets } from '$app/paths';
+  import { PymChild } from '@reuters-graphics/graphics-components';
   // ...
 </script>
 
 <SEO
   baseUrl={import.meta.env.BASE_URL}
   pageUrl={page.url}
+  shareImgPath="{assets}/another-page-share.jpg"
 />
 
 <svelte:head>
@@ -100,4 +104,6 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 </svelte:head>
 
 <!-- ... -->
+
+<PymChild polling={500} />
 ```
