@@ -22,6 +22,16 @@ export default defineConfig({
       },
       favicon:
         'https://graphics.thomsonreuters.com/style-assets/images/logos/favicon/favicon.ico',
+      head: [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'icon',
+            href: 'https://graphics.thomsonreuters.com/style-assets/images/logos/favicon/favicon.ico',
+            sizes: '32x32',
+          },
+        },
+      ],
       social: {
         github: 'https://github.com/reuters-graphics/bluprint_graphics-kit/',
       },
