@@ -56,6 +56,9 @@
 <PymChild polling={500} />
 
 <style>
+  :global(body) {
+    background-color: #ffffff;
+  }
   :global(h3) {
     margin-top: 0 !important;
   }
