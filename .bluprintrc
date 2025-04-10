@@ -44,6 +44,7 @@
       ["git", ["add", "."]],
       ["git", ["commit", "-m", "initial"]],
       ["pnpm", ["install"]],
+      ["pnpm", ["svelte-kit", "sync"]],
       ["npx", ["lefthook", "install"]],
       ["pnpm", ["startup:check-creds"]]
     ]
