@@ -27,5 +27,15 @@ describe('Mods: make-ai-embed', () => {
     expect(
       fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/map/+page.svelte'))
     ).toBe(true);
+    expect(
+      fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/map/+page.ts'))
+    ).toBe(true);
+    const pageContent = fs.readFileSync(
+      path.join(twd.TWD, 'pages/embeds/en/map/+page.svelte'),
+      'utf-8'
+    );
+    expect(pageContent).toMatch(
+      `import Graphic from '$lib/ai2svelte/map.svelte';`
+    );
   });
 });
