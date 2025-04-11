@@ -27,7 +27,7 @@
     "startup:check-creds": "npx graphics dotfile:check",
     "startup:create-repo": "npx graphics github:create-repo",
     "startup": "npm-run-all startup:*",
-    "test": "vitest",
+    "test": "vitest --no-file-parallelism",
     "lint": "eslint --fix .",
     "format": "prettier . --write",
     "knip": "knip"

@@ -1,10 +1,12 @@
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
 import { changeProjectType } from '.';
-import fs from 'fs';
+import fs from 'fs-extra';
 import path from 'path';
 import * as url from 'url';
 import { execSync } from 'child_process';
+
+process.env.TESTING = 'true';
 
 const twd = new TestWorkingDirectory();
 
@@ -14,15 +16,15 @@ const templatesDir = path.join(__dirname, 'templates');
 const pagePlusTemplates = path.join(templatesDir, 'page+embed');
 const embedTemplates = path.join(templatesDir, 'embed-only');
 
-beforeAll(async () => {
-  await twd.setup();
-});
-
-afterAll(async () => {
-  await twd.cleanup();
-});
-
 describe('Mods: project-type', () => {
+  beforeAll(async () => {
+    await twd.setup();
+  });
+
+  afterAll(async () => {
+    await twd.cleanup();
+  });
+
   it('should change project type to embeds-only', async () => {
     await changeProjectType(true);
     // Removes page embed
@@ -93,6 +95,7 @@ describe('Mods: project-type', () => {
   });
 
   it('should build pages+ pages', async () => {
+    await fs.remove(path.join(twd.TWD, 'dist'));
     try {
       execSync('vite build');
     } catch {
