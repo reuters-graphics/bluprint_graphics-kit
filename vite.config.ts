@@ -1,9 +1,9 @@
 import { purgeStyles } from '@reuters-graphics/vite-plugin-purge-styles';
 import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/';
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
 
-const config: UserConfig = {
+export default defineConfig({
   build: { target: 'es2015', sourcemap: true },
   server: {
     open: true,
@@ -11,6 +11,9 @@ const config: UserConfig = {
     fs: {
       allow: ['.'],
     },
+  },
+  test: {
+    fileParallelism: false,
   },
   css: {
     preprocessorOptions: { scss: { quietDeps: true, api: 'modern-compiler' } },
@@ -22,6 +25,4 @@ const config: UserConfig = {
       safeFiles: ['src/lib/styles/**/*.scss'],
     }),
   ],
-};
-
-export default config;
+});

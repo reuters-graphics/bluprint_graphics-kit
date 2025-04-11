@@ -72,6 +72,9 @@ importers:
       '@types/language-tags':
         specifier: ^1.0.4
         version: 1.0.4
+      '@types/mock-fs':
+        specifier: ^4.13.4
+        version: 4.13.4
       '@types/rimraf':
         specifier: ^4.0.5
         version: 4.0.5
@@ -105,6 +108,12 @@ importers:
       knip:
         specifier: ^5.37.2
         version: 5.46.3(@types/node@22.13.14)(typescript@5.8.2)
+      magic-string:
+        specifier: ^0.30.17
+        version: 0.30.17
+      mock-fs:
+        specifier: ^5.5.0
+        version: 5.5.0
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -1612,6 +1621,9 @@ packages:
 
   '@types/mdx@2.0.13':
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
+
+  '@types/mock-fs@4.13.4':
+    resolution: {integrity: sha512-mXmM0o6lULPI8z3XNnQCpL0BGxPwx1Ul1wXYEPBGl4efShyxW2Rln0JOPEWGyZaYZMM6OVXM/15zUuFMY52ljg==}
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
@@ -3957,6 +3969,10 @@ packages:
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
+
+  mock-fs@5.5.0:
+    resolution: {integrity: sha512-d/P1M/RacgM3dB0sJ8rjeRNXxtapkPCUnMGmIN0ixJ16F/E4GUZCvWcSGfWGz8eaXYvn1s9baUwNjI4LOPEjiA==}
+    engines: {node: '>=12.0.0'}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -7781,6 +7797,10 @@ snapshots:
 
   '@types/mdx@2.0.13': {}
 
+  '@types/mock-fs@4.13.4':
+    dependencies:
+      '@types/node': 22.13.14
+
   '@types/ms@2.1.0': {}
 
   '@types/nlcst@2.0.3':
@@ -10820,6 +10840,8 @@ snapshots:
   mkdirp@0.5.6:
     dependencies:
       minimist: 1.2.8
+
+  mock-fs@5.5.0: {}
 
   mri@1.2.0: {}
 

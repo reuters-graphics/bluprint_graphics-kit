@@ -9,8 +9,11 @@ import * as url from 'url';
 import { note } from '@reuters-graphics/clack';
 import dedent from 'dedent';
 import c from 'picocolors';
+import { Mod } from '../_utils/mod';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+const mod = new Mod();
 
 const promptForAiComponent = async () => {
   const { ROOT } = getLocations();
@@ -69,28 +72,25 @@ export const makeAiEmbed = async (aiComponent?: string, locale?: string) => {
 
   const aiSlug = slugify(path.basename(aiComponent, '.svelte'));
 
-  const pageDirectory = path.join(ROOT, 'pages/embeds', locale, aiSlug);
-  const componentPath = path.join(pageDirectory, '+page.svelte');
-  const loaderPath = path.join(pageDirectory, '+page.server.ts');
+  const pagesDir = path.join(ROOT, 'pages/embeds', locale, aiSlug);
+  const componentPath = path.join(pagesDir, '+page.svelte');
+  const loaderPath = path.join(pagesDir, '+page.server.ts');
 
   if (fs.existsSync(componentPath)) {
     log.error('An embed already exists for this ai2svelte component');
     return;
   }
   utils.fs.ensureDir(componentPath);
-  const templateString = fs.readFileSync(
-    path.join(__dirname, 'templates/+page.svelte'),
-    'utf-8'
-  );
-  const replacedString = templateString.replaceAll(
-    'ai-chart.svelte',
-    path.basename(aiComponent)
-  );
-  fs.writeFileSync(componentPath, replacedString);
-  fs.copyFileSync(
-    path.join(__dirname, 'templates/+page.server.ts'),
-    loaderPath
-  );
+
+  mod.fs.copy([__dirname, 'templates/+page.svelte'], componentPath);
+
+  mod
+    .magicFile(componentPath)
+    .replaceAll('ai-chart.svelte', path.basename(aiComponent))
+    .saveFile();
+
+  mod.fs.copy([__dirname, 'templates/+page.server.ts'], loaderPath);
+
   if (!process.env.TESTING)
     log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
   if (!process.env.TESTING)
