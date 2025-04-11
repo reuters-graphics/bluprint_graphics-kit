@@ -1,31 +1,33 @@
-import { describe, it, beforeAll, afterAll, expect } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import * as cheerio from 'cheerio';
-import * as rimraf from 'rimraf';
+import { TestWorkingDirectory } from './utils/twd';
 
-const DIST = path.join(__dirname, '../dist/');
+const twd = new TestWorkingDirectory();
+
+const DIST = path.join(twd.TWD, 'dist/');
 
 process.env.TESTING = 'true';
 
-beforeAll(() => {
-  rimraf.sync(DIST);
+beforeAll(async () => {
+  await twd.setup();
 });
 
-afterAll(() => {
-  rimraf.sync(DIST);
+afterAll(async () => {
+  await twd.cleanup();
 });
 
 describe('GraphicsKit build', () => {
   it('should build the app without error', async () => {
     try {
-      execSync('vite build', { stdio: 'inherit' });
+      execSync('vite build');
     } catch {
       expect(false).toBe(true);
     }
     expect(true).toBe(true);
-  });
+  }, 30_000);
 
   it('should build the homepage', () => {
     expect(fs.existsSync(path.join(DIST, 'index.html'))).toBe(true);

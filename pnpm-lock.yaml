@@ -66,6 +66,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
         version: 5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
       '@types/language-tags':
         specifier: ^1.0.4
         version: 1.0.4
@@ -90,9 +93,15 @@ importers:
       eslint:
         specifier: ^9.21.0
         version: 9.23.0(jiti@2.4.2)
+      fs-extra:
+        specifier: ^11.3.0
+        version: 11.3.0
       glob:
         specifier: ^11.0.0
         version: 11.0.1
+      ignore:
+        specifier: ^7.0.3
+        version: 7.0.3
       knip:
         specifier: ^5.37.2
         version: 5.46.3(@types/node@22.13.14)(typescript@5.8.2)
@@ -1577,6 +1586,9 @@ packages:
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
+
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
@@ -1585,6 +1597,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
@@ -7737,6 +7752,11 @@ snapshots:
 
   '@types/estree@1.0.7': {}
 
+  '@types/fs-extra@11.0.4':
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 22.13.14
+
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.3
@@ -7744,6 +7764,10 @@ snapshots:
   '@types/js-yaml@4.0.9': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 22.13.14
 
   '@types/keyv@3.1.4':
     dependencies:
@@ -7785,7 +7809,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.13.14
 
   '@types/triple-beam@1.3.5': {}
 

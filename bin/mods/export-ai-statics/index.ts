@@ -1,13 +1,15 @@
 import { cancel, isCancel, log, select } from '@clack/prompts';
 import { utils } from '@reuters-graphics/graphics-bin';
 import { AiExport } from '@reuters-graphics/illustrator-exports';
-import { ROOT } from '../_utils/locations';
+import { getLocations } from '../_utils/locations';
 import fs from 'fs';
 import { globSync } from 'glob';
 import path from 'path';
 import slugify from '@sindresorhus/slugify';
 
 export const exportAiStatics = async () => {
+  const { ROOT } = getLocations();
+
   const aiFiles = globSync('*.ai', {
     cwd: path.join(ROOT, 'project-files'),
     absolute: true,
