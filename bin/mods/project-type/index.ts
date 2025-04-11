@@ -4,32 +4,34 @@ import * as url from 'url';
 import { cancel, confirm, isCancel } from '@clack/prompts';
 import c from 'picocolors';
 import { getLocations } from '../_utils/locations';
-import { swap } from '../_utils/swap';
+import { Mod } from '../_utils/mod';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-const templatesDir = path.join(__dirname, 'templates');
-const pagePlusTemplates = path.join(templatesDir, 'page+embed');
-const embedTemplates = path.join(templatesDir, 'embed-only');
+const templateDirs = {
+  embedsOnly: path.join(__dirname, 'templates/embed-only'),
+  pagesPlus: path.join(__dirname, 'templates/page+embed'),
+};
+
+const mod = new Mod();
 
 const changeToEmbedOnly = () => {
   const { ROOT } = getLocations();
   const pagesDir = path.join(ROOT, 'pages');
 
-  swap(
-    [embedTemplates, '+page.svelte'],
+  mod.fs.swap(
+    [templateDirs.embedsOnly, '+page.svelte'],
     [pagesDir, '+page.svelte'],
-    [pagePlusTemplates, '+page.svelte']
+    [templateDirs.pagesPlus, '+page.svelte']
   );
-  swap(
-    [],
+  mod.fs.move(
     [pagesDir, 'embeds/en/page/+page.svelte'],
-    [pagePlusTemplates, 'embeds/en/page/+page.svelte']
+    [templateDirs.pagesPlus, 'embeds/en/page/+page.svelte']
   );
-  swap(
-    [embedTemplates, 'publisher.config.ts'],
+  mod.fs.swap(
+    [templateDirs.embedsOnly, 'publisher.config.ts'],
     [ROOT, 'publisher.config.ts'],
-    [pagePlusTemplates, 'publisher.config.ts']
+    [templateDirs.pagesPlus, 'publisher.config.ts']
   );
 };
 
@@ -37,26 +39,25 @@ const changeToPagesPlus = () => {
   const { ROOT } = getLocations();
   const pagesDir = path.join(ROOT, 'pages');
 
-  swap(
-    [pagePlusTemplates, '+page.svelte'],
+  mod.fs.swap(
+    [templateDirs.pagesPlus, '+page.svelte'],
     [pagesDir, '+page.svelte'],
-    [embedTemplates, '+page.svelte']
+    [templateDirs.embedsOnly, '+page.svelte']
   );
-  swap(
-    [pagePlusTemplates, 'embeds/en/page/+page.svelte'],
-    [pagesDir, 'embeds/en/page/+page.svelte'],
-    []
+  mod.fs.move(
+    [templateDirs.pagesPlus, 'embeds/en/page/+page.svelte'],
+    [pagesDir, 'embeds/en/page/+page.svelte']
   );
-  swap(
-    [pagePlusTemplates, 'publisher.config.ts'],
+  mod.fs.swap(
+    [templateDirs.pagesPlus, 'publisher.config.ts'],
     [ROOT, 'publisher.config.ts'],
-    [embedTemplates, 'publisher.config.ts']
+    [templateDirs.embedsOnly, 'publisher.config.ts']
   );
 };
 
 export const changeProjectType = async (force = false) => {
   const isEmbedOnly = fs.existsSync(
-    path.join(pagePlusTemplates, '+page.svelte')
+    path.join(templateDirs.pagesPlus, '+page.svelte')
   );
   const typeLabel = isEmbedOnly ? 'pages + embeds' : 'embeds-only';
 
