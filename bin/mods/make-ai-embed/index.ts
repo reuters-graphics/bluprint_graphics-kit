@@ -91,8 +91,10 @@ export const makeAiEmbed = async (aiComponent?: string, locale?: string) => {
     path.join(__dirname, 'templates/+page.server.ts'),
     loaderPath
   );
-  log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
-  note(dedent`Be sure to add this graphic to your ${c.cyan('"embeds"')} ArchieML
+  if (!process.env.TESTING)
+    log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
+  if (!process.env.TESTING)
+    note(dedent`Be sure to add this graphic to your ${c.cyan('"embeds"')} ArchieML
     doc and export AI statics for it before publishing.
     `);
 };

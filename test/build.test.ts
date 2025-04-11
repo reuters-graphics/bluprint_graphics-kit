@@ -11,15 +11,15 @@ const DIST = path.join(twd.TWD, 'dist/');
 
 process.env.TESTING = 'true';
 
-beforeAll(async () => {
-  await twd.setup();
-});
-
-afterAll(async () => {
-  await twd.cleanup();
-});
-
 describe('GraphicsKit build', () => {
+  beforeAll(async () => {
+    await twd.setup();
+  });
+
+  afterAll(async () => {
+    await twd.cleanup();
+  });
+
   it('should build the app without error', async () => {
     try {
       execSync('vite build');

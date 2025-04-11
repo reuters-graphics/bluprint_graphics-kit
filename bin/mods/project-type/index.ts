@@ -4,7 +4,7 @@ import * as url from 'url';
 import { cancel, confirm, isCancel } from '@clack/prompts';
 import c from 'picocolors';
 import { getLocations } from '../_utils/locations';
-import { swap } from './utils/swap';
+import { swap } from '../_utils/swap';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 

@@ -1,5 +1,5 @@
 import { getLocations } from '../_utils/locations';
-import { swap } from '../project-type/utils/swap';
+import { swap } from '../_utils/swap';
 import * as url from 'url';
 import path from 'path';
 
