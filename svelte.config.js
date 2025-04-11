@@ -61,6 +61,7 @@ const config = {
       $images: './src/statics/images',
       '$images/*': './src/statics/images/*',
       '$locales/*': './locales/*',
+      '$test/*': './test/*',
     },
   },
 };

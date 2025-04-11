@@ -9,7 +9,7 @@
     GraphicBlock,
   } from '@reuters-graphics/graphics-components';
   import LogBlock from '$lib/components/dev/LogBlock.svelte';
-  import Graphic from '$lib/ai2svelte/ai-graphic.svelte';
+  import Graphic from '$lib/ai2svelte/ai-chart.svelte';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';

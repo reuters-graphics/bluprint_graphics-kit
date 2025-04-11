@@ -1,7 +1,7 @@
 import { globSync } from 'glob';
 import path from 'path';
 import fs from 'fs';
-import { ROOT } from '../_utils/locations';
+import { getLocations } from '../_utils/locations';
 import { cancel, isCancel, log, select } from '@clack/prompts';
 import slugify from '@sindresorhus/slugify';
 import { utils } from '@reuters-graphics/graphics-bin';
@@ -12,7 +12,9 @@ import c from 'picocolors';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-export const makeAiEmbed = async () => {
+const promptForAiComponent = async () => {
+  const { ROOT } = getLocations();
+
   const aiComponents = globSync('*.svelte', {
     cwd: path.join(ROOT, 'src/lib/ai2svelte'),
     absolute: true,
@@ -26,8 +28,14 @@ export const makeAiEmbed = async () => {
       value: filePath,
     })),
   });
-  if (isCancel(aiComponent)) return cancel();
+  if (isCancel(aiComponent)) {
+    cancel();
+    return;
+  }
+  return aiComponent;
+};
 
+const promptForLocale = async () => {
   const locale = await select({
     message: "What's the language for this graphic embed?",
     initialValue: 'en',
@@ -43,7 +51,21 @@ export const makeAiEmbed = async () => {
       { value: 'ru', label: 'Russian' },
     ],
   });
-  if (isCancel(locale)) return cancel();
+  if (isCancel(locale)) {
+    cancel();
+    return;
+  }
+  return locale;
+};
+
+export const makeAiEmbed = async (aiComponent?: string, locale?: string) => {
+  const { ROOT } = getLocations();
+
+  if (!aiComponent) aiComponent = await promptForAiComponent();
+  if (!locale) locale = await promptForLocale();
+
+  if (!fs.existsSync(aiComponent)) return;
+  if (!locale) return;
 
   const aiSlug = slugify(path.basename(aiComponent, '.svelte'));
 
@@ -61,7 +83,7 @@ export const makeAiEmbed = async () => {
     'utf-8'
   );
   const replacedString = templateString.replaceAll(
-    'ai-graphic.svelte',
+    'ai-chart.svelte',
     path.basename(aiComponent)
   );
   fs.writeFileSync(componentPath, replacedString);
@@ -69,8 +91,10 @@ export const makeAiEmbed = async () => {
     path.join(__dirname, 'templates/+page.server.ts'),
     loaderPath
   );
-  log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
-  note(dedent`Be sure to add this graphic to your ${c.cyan('"embeds"')} ArchieML
+  if (!process.env.TESTING)
+    log.info(`Embed created: ${path.relative(ROOT, componentPath)}`);
+  if (!process.env.TESTING)
+    note(dedent`Be sure to add this graphic to your ${c.cyan('"embeds"')} ArchieML
     doc and export AI statics for it before publishing.
     `);
 };
