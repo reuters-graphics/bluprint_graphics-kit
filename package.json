@@ -43,7 +43,7 @@
     "@reuters-graphics/illustrator-exports": "^0.0.2",
     "@reuters-graphics/rngs-io-client": "^0.1.11",
     "@reuters-graphics/savile": "^0.0.4",
-    "@reuters-graphics/vite-plugin-purge-styles": "^0.0.2",
+    "@reuters-graphics/vite-plugin-purge-styles": "^0.0.3",
     "@reuters-graphics/yaks-eslint": "^0.1.1",
     "@reuters-graphics/yaks-prettier": "^0.1.1",
     "@sindresorhus/slugify": "^2.2.1",
@@ -99,7 +99,7 @@
     ]
   },
   "dependencies": {
-    "@reuters-graphics/graphics-components": "^2.0.3",
+    "@reuters-graphics/graphics-components": "^3.0.0",
     "language-tags": "^1.0.9"
   },
   "reuters": {

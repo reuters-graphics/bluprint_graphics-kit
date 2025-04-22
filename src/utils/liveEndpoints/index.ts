@@ -1,5 +1,3 @@
-import { building } from '$app/environment';
-import { staticMarkdown } from '@reuters-graphics/graphics-components';
 
 interface ConfigLiveEndpoint {
   enabled: boolean;
@@ -155,10 +153,7 @@ export class LiveEndpoints {
    * @returns The latest content
    */
   async getLiveContent<T>(localeFilePath: string, localContent: T): Promise<T> {
-    const liveEndpoints = await this.fetchLiveEndPoints();
-    // If there are any active live endpoints, set the staticMarkdown store (see Markdown component docs)
-    if (liveEndpoints.length) staticMarkdown.set(building);
-
+    const liveEndpoints = await this.fetchLiveEndPoints(); 
     const pathParts = localeFilePath.split('/');
     if (pathParts.length !== 2) {
       throw new Error(
