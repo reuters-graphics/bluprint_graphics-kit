@@ -30,8 +30,8 @@
       "Jane Doe",
       "John Doe"
     ],
-    "publishedDate": "2024-04-17T17:00:00.000Z",
-    "updatedDate": "",
+    "publishTime": "2024-04-17T17:00:00.000Z",
+    "updateTime": "",
     "blocks": [
       {
         "type": "text",

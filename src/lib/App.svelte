@@ -50,8 +50,8 @@
     section={content.section}
     sectionUrl={content.sectionUrl}
     authors={content.authors}
-    publishTime={content.publishedDate}
-    updateTime={content.updatedDate}
+    publishTime={content.publishTime}
+    updateTime={content.updateTime}
   />
 
   <!-- 🔁 Looping through your ArchieML doc blocks... -->
