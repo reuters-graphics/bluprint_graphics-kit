@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.1.0
+
+### Minor Changes
+
+- deecfb9: Updates graphics-components to 3.0, vite-plugin-purge-styles to 0.0.3
+
 ## 2.0.2
 
 ### Patch Changes
