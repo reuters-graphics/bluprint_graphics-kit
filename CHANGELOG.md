@@ -6,6 +6,16 @@
 
 - deecfb9: Updates graphics-components to 3.0, vite-plugin-purge-styles to 0.0.3
 
+  ## New features
+
+  ### Updated graphics components 
+
+  Updates the graphics components to `3.0`.
+  
+  While all components in the `graphics-components` library are now written in Svelte 5, the graphics kit is compatible with both Svelte 4 and 5, so you can continue writing components in Svelte 4 syntax for now.
+  
+  Read more in the graphics comopnents's [new documentation site](https://reuters-graphics.github.io/graphics-components/?path=/docs/intro--docs).
+
 ## 2.0.2
 
 ### Patch Changes
