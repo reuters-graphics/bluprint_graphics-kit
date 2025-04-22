@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^2.0.3
-        version: 2.0.3(svelte@5.20.5)
+        specifier: ^3.0.0
+        version: 3.0.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -46,8 +46,8 @@ importers:
         specifier: ^0.0.4
         version: 0.0.4
       '@reuters-graphics/vite-plugin-purge-styles':
-        specifier: ^0.0.2
-        version: 0.0.2(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
+        specifier: ^0.0.3
+        version: 0.0.3(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
       '@reuters-graphics/yaks-eslint':
         specifier: ^0.1.1
         version: 0.1.1(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3)(svelte@5.20.5)(typescript@5.8.2)
@@ -659,16 +659,16 @@ packages:
   '@expressive-code/plugin-text-markers@0.40.2':
     resolution: {integrity: sha512-/XoLjD67K9nfM4TgDlXAExzMJp6ewFKxNpfUw4F7q5Ecy+IU3/9zQQG/O70Zy+RxYTwKGw2MA9kd7yelsxnSmw==}
 
-  '@fortawesome/fontawesome-common-types@0.2.36':
-    resolution: {integrity: sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==}
+  '@fortawesome/fontawesome-common-types@6.7.2':
+    resolution: {integrity: sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg==}
     engines: {node: '>=6'}
 
-  '@fortawesome/free-regular-svg-icons@5.15.4':
-    resolution: {integrity: sha512-9VNNnU3CXHy9XednJ3wzQp6SwNwT3XaM26oS4Rp391GsxVYA+0oDR2J194YCIWf7jNRCYKjUCOduxdceLrx+xw==}
+  '@fortawesome/free-regular-svg-icons@6.7.2':
+    resolution: {integrity: sha512-7Z/ur0gvCMW8G93dXIQOkQqHo2M5HLhYrRVC0//fakJXxcF1VmMPsxnG6Ee8qEylA8b8Q3peQXWMNZ62lYF28g==}
     engines: {node: '>=6'}
 
-  '@fortawesome/free-solid-svg-icons@5.15.4':
-    resolution: {integrity: sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==}
+  '@fortawesome/free-solid-svg-icons@6.7.2':
+    resolution: {integrity: sha512-GsBrnOzU8uj0LECDfD5zomZJIjrPhIlWU82AHwa2s40FKH+kcxQaBvBo3Z4TxyZHIyX8XTDxsyA33/Vx9eFuQA==}
     engines: {node: '>=6'}
 
   '@humanfs/core@0.19.1':
@@ -1116,11 +1116,11 @@ packages:
     resolution: {integrity: sha512-u6Uj2gvsQTmJOKNQ6DAMsyEQCof37r3L8fgqj2xmY0e7BGPq4NRRhvMrMEuwfQ9WgQbmIo73dq6NfrgscPchYQ==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@2.0.3':
-    resolution: {integrity: sha512-da1A0xyqFeMWhCbnR/uPtZ5y1bT6YWovKIR4uweDMwfPGE9DuLIrGtmyOZpsSiSd/NiKwVL/AYpyyfeyVlZj4A==}
-    engines: {node: '>=18.20'}
+  '@reuters-graphics/graphics-components@3.0.0':
+    resolution: {integrity: sha512-TkPPFfNBkZi21zQ4u3AsF1oVyNcncdpLUwzL+54LZcFOT0bpmD/mDkD//E7opql74qmDZyp29IT1XNd3XzIHfA==}
+    engines: {node: '>=20.18'}
     peerDependencies:
-      svelte: '>=4'
+      svelte: ^5.0.0
 
   '@reuters-graphics/graphics-kit-publisher@3.0.5':
     resolution: {integrity: sha512-Ki8loudRxmAEqrwXtQjR8xRWilPCPd4306GiD49+nxbgdThdMGKXslk6sCUU/TSIoqSEcLrhXqFVd4ksCn4s/w==}
@@ -1144,10 +1144,15 @@ packages:
     resolution: {integrity: sha512-fmBIYh4CA1Q5kUa62/xtRRzcARzyFSOIzx1G8fBOpSXQUKwfa/GAKLirT2lvEiRNFqLsKN7vJUm3ZttD4CkPTA==}
     engines: {node: '>=16.0.0'}
 
-  '@reuters-graphics/vite-plugin-purge-styles@0.0.2':
-    resolution: {integrity: sha512-Eqvy9ujTPPcxHsiVxthrKlNPGp64XGbuVWHLF/redPrY8NlDdqAtwxTECqgjloJd7r1mrPQzn4POszRFD3cnDQ==}
+  '@reuters-graphics/svelte-markdown@0.0.3':
+    resolution: {integrity: sha512-K3DWKjm1XZxnwua+Vz9c7BRFrkFVWpVU+DnMKBPu3eadhCpT09Z0y+1MhJgs/573h4BpraZFuUVCl1h4XUxd1Q==}
     peerDependencies:
-      vite: ^5.0.0
+      svelte: ^5.0.0
+
+  '@reuters-graphics/vite-plugin-purge-styles@0.0.3':
+    resolution: {integrity: sha512-qYMDTDzdKF1v3eAlmW6rJhwcu0MyIIISrggKf2EANVQUru8UO4Ot9+0OeZNyp52V91Cujrlz6+0F6NQkGPth0A==}
+    peerDependencies:
+      vite: ^5.0.0 || ^6.0.0
 
   '@reuters-graphics/yaks-eslint@0.1.1':
     resolution: {integrity: sha512-cECaoVOAR/nMZPfT7lLY/WvcBjY7rlvSKD59QhpV3Yq2mSmoBwMDHAugjp1ndcQBRt9r/pM7aGL1iZouz4CxVQ==}
@@ -1541,12 +1546,6 @@ packages:
     engines: {node: '>=8.10'}
     hasBin: true
 
-  '@splidejs/splide@4.1.4':
-    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
-
-  '@splidejs/svelte-splide@0.2.9':
-    resolution: {integrity: sha512-04ekJnDIJKEAhklKQMhkg4Yx0Ihtkk18eA9JeHPON0lDTngQxlOYdEYTJWH2UON45VxmVqoLHv04I++JphO36w==}
-
   '@sveltejs/adapter-static@3.0.8':
     resolution: {integrity: sha512-YaDrquRpZwfcXbnlDsSrBQNCChVOT9MGuSg+dMAyfsAa1SmiAhrA5jUYUiIMC59G92kIbY/AaQOWcBdq+lh+zg==}
     peerDependencies:
@@ -1560,9 +1559,6 @@ packages:
       '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1 || ^5.0.0
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.3 || ^6.0.0
-
-  '@sveltejs/svelte-scroller@2.0.7':
-    resolution: {integrity: sha512-GuVePK4S0ubUJVYw2ixO1/8AVa792rNlhORXLeb2z7JHRKTqxOvg8Ye7sb4nZry/stgZEOlCpDV9qJeqHQKesw==}
 
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1':
     resolution: {integrity: sha512-J/Nmb2Q2y7mck2hyCX4ckVHcR5tu2J+MtBEQqpDrrgELZ2uvraQcK/ioCV61AqkdXFgriksOKIceDcQmqnGhVw==}
@@ -2605,6 +2601,9 @@ packages:
 
   es-toolkit@1.34.1:
     resolution: {integrity: sha512-OA6cd94fJV9bm8dWhIySkWq4xV+rAQnBZUr2dnpXam0QJ8c+hurLbKA8/QooL9Mx4WCAxvIDsiEkid5KPQ5xgQ==}
+
+  es-toolkit@1.35.0:
+    resolution: {integrity: sha512-kVHyrRoC0eLc1hWJ6npG8nNFtOG+nWfcMI+XE0RaFO0gxd6Ions8r0O/U64QyZgY7IeidUnS5oZlRZYUgMGCAg==}
 
   es6-promise@4.2.8:
     resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==}
@@ -3737,9 +3736,14 @@ packages:
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
-  marked@4.3.0:
-    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
-    engines: {node: '>= 12'}
+  marked-smartypants@1.1.9:
+    resolution: {integrity: sha512-VPeuaUr5IWptI7nJdgQ9ugrLWYGv13NdzEXTtKY3cmB4aRWOI2RzhLlf+xQp6Wnob9SAPO2sNVlfSJr+nflk/A==}
+    peerDependencies:
+      marked: '>=4 <16'
+
+  marked@15.0.9:
+    resolution: {integrity: sha512-9AW/bn9DxQeZVjR52l5jsc0W2pwuhP04QaQewPvylil12Cfr2GBfWmgp6mu8i9Jy8UlBjqDZ9uMTDuJ8QOGZJA==}
+    engines: {node: '>= 18'}
     hasBin: true
 
   math-intrinsics@1.1.0:
@@ -4423,8 +4427,8 @@ packages:
     resolution: {integrity: sha512-FLpr4flz5xZTSJxSeaheeMKN/EDzMdK7b8PTOC6a5PYFKTucWbdqjgqaEyH0shFiSJrVB1+Qqi4Tk19ccU6Aug==}
     engines: {node: '>=12.20'}
 
-  purgecss@6.0.0:
-    resolution: {integrity: sha512-s3EBxg5RSWmpqd0KGzNqPiaBbWDz1/As+2MzoYVGMqgDqRTLBhJW6sywfTBek7OwNfoS/6pS0xdtvChNhFj2cw==}
+  purgecss@7.0.2:
+    resolution: {integrity: sha512-4Ku8KoxNhOWi9X1XJ73XY5fv+I+hhTRedKpGs/2gaBKU8ijUiIKF/uyyIyh7Wo713bELSICF5/NswjcuOqYouQ==}
     hasBin: true
 
   pym.js@1.3.2:
@@ -4823,6 +4827,10 @@ packages:
     resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
     engines: {node: '>=8.0.0'}
 
+  smartypants@0.2.2:
+    resolution: {integrity: sha512-TzobUYoEft/xBtb2voRPryAUIvYguG0V7Tt3de79I1WfXgCwelqVsGuZSnu3GFGRZhXR90AeEYIM+icuB/S06Q==}
+    hasBin: true
+
   smol-toml@1.3.1:
     resolution: {integrity: sha512-tEYNll18pPKHroYSmLLrksq233j021G0giwW7P3D24jC54pQ5W5BXMsQ/Mvw1OJCmEYDgY+lrzT+3nNUtoNfXQ==}
     engines: {node: '>= 18'}
@@ -4837,6 +4845,9 @@ packages:
 
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+
+  spark-md5@3.0.2:
+    resolution: {integrity: sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==}
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
@@ -4976,11 +4987,13 @@ packages:
       svelte:
         optional: true
 
-  svelte-fa@2.4.0:
-    resolution: {integrity: sha512-0bnbMGbsE1LUnlioDcf27tl2O8kjuXlTXMXzIxC7LoIOWmqn0D+zd539HfLiQbdLuOHGTaynwN9V+4ehhEu1Jw==}
+  svelte-fa@4.0.4:
+    resolution: {integrity: sha512-85BomCGkTrH8kPDGvb8JrVwq9CqR9foprbKjxemP4Dtg3zPR7OXj5hD0xVYK0C+UCzFI1zooLoK/ndIX6aYXAw==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0
 
-  svelte-intersection-observer@0.10.2:
-    resolution: {integrity: sha512-aGGyRacrp+zK34AcST0h4T32QW+94vH1jNhMmOueVP1ZQk6XpgBzoKl5WEgAF5H4Afzb8B6vEOXotVa5I9TVBA==}
+  svelte-intersection-observer@1.0.0:
+    resolution: {integrity: sha512-AoxSog8fSt9sSN8ajMYM1I48ndq+rmPlaZSkJFCRbZ7I3KO8IPX6pl5mewWxdYL1JDI06hHu/7epn3h5tlJV9w==}
 
   svelte-preprocess@6.0.3:
     resolution: {integrity: sha512-PLG2k05qHdhmRG7zR/dyo5qKvakhm8IJ+hD2eFRQmMLHp7X3eJnjeupUtvuRpbNiF31RjVw45W+abDwHEmP5OA==}
@@ -5018,9 +5031,6 @@ packages:
         optional: true
       typescript:
         optional: true
-
-  svelte-search@2.1.1:
-    resolution: {integrity: sha512-DpjZyk4Z7KsLJb3ZFGAS0zDEMrJZ/cBZT2UelHSED4ZTMnTLLV0+M0j7mKitHZnH+du8wdYyymJHDuja4CKLnQ==}
 
   svelte@5.20.5:
     resolution: {integrity: sha512-dpu2lTPVsAAgZFKpF7A9741sBCdXGogfxFU4aQeVgun7GVNCSVheTzj0FsT7g9OsLhBaMX4lKLwVIvmzQGytmQ==}
@@ -6568,15 +6578,15 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.40.2
 
-  '@fortawesome/fontawesome-common-types@0.2.36': {}
+  '@fortawesome/fontawesome-common-types@6.7.2': {}
 
-  '@fortawesome/free-regular-svg-icons@5.15.4':
+  '@fortawesome/free-regular-svg-icons@6.7.2':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 0.2.36
+      '@fortawesome/fontawesome-common-types': 6.7.2
 
-  '@fortawesome/free-solid-svg-icons@5.15.4':
+  '@fortawesome/free-solid-svg-icons@6.7.2':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 0.2.36
+      '@fortawesome/fontawesome-common-types': 6.7.2
 
   '@humanfs/core@0.19.1': {}
 
@@ -7067,23 +7077,24 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@2.0.3(svelte@5.20.5)':
+  '@reuters-graphics/graphics-components@3.0.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
     dependencies:
-      '@fortawesome/free-regular-svg-icons': 5.15.4
-      '@fortawesome/free-solid-svg-icons': 5.15.4
-      '@splidejs/svelte-splide': 0.2.9
-      '@sveltejs/svelte-scroller': 2.0.7
+      '@fortawesome/free-regular-svg-icons': 6.7.2
+      '@fortawesome/free-solid-svg-icons': 6.7.2
+      '@reuters-graphics/svelte-markdown': 0.0.3(svelte@5.20.5)
+      '@sveltejs/kit': 2.20.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
       dayjs: 1.11.13
+      es-toolkit: 1.35.0
       journalize: 2.6.0
-      lodash-es: 4.17.21
-      marked: 4.3.0
       proper-url-join: 2.1.2
       pym.js: 1.3.2
       slugify: 1.6.6
       svelte: 5.20.5
-      svelte-fa: 2.4.0
-      svelte-intersection-observer: 0.10.2
-      svelte-search: 2.1.1
+      svelte-fa: 4.0.4(svelte@5.20.5)
+      svelte-intersection-observer: 1.0.0
+    transitivePeerDependencies:
+      - '@sveltejs/vite-plugin-svelte'
+      - vite
 
   '@reuters-graphics/graphics-kit-publisher@3.0.5(typescript@5.8.2)':
     dependencies:
@@ -7185,13 +7196,22 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@reuters-graphics/vite-plugin-purge-styles@0.0.2(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
+  '@reuters-graphics/svelte-markdown@0.0.3(svelte@5.20.5)':
+    dependencies:
+      es-toolkit: 1.35.0
+      marked: 15.0.9
+      marked-smartypants: 1.1.9(marked@15.0.9)
+      parse5: 7.2.1
+      spark-md5: 3.0.2
+      svelte: 5.20.5
+
+  '@reuters-graphics/vite-plugin-purge-styles@0.0.3(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
     dependencies:
       estree-walker: 3.0.3
       glob: 11.0.1
       postcss: 8.5.3
-      postcss-selector-parser: 6.1.2
-      purgecss: 6.0.0
+      postcss-selector-parser: 7.1.0
+      purgecss: 7.0.2
       vite: 6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)
 
   '@reuters-graphics/yaks-eslint@0.1.1(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3)(svelte@5.20.5)(typescript@5.8.2)':
@@ -7701,12 +7721,6 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@splidejs/splide@4.1.4': {}
-
-  '@splidejs/svelte-splide@0.2.9':
-    dependencies:
-      '@splidejs/splide': 4.1.4
-
   '@sveltejs/adapter-static@3.0.8(@sveltejs/kit@2.20.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))':
     dependencies:
       '@sveltejs/kit': 2.20.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
@@ -7727,8 +7741,6 @@ snapshots:
       sirv: 3.0.1
       svelte: 5.20.5
       vite: 6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)
-
-  '@sveltejs/svelte-scroller@2.0.7': {}
 
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.20.5)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
     dependencies:
@@ -8952,6 +8964,8 @@ snapshots:
       is-symbol: 1.1.1
 
   es-toolkit@1.34.1: {}
+
+  es-toolkit@1.35.0: {}
 
   es6-promise@4.2.8: {}
 
@@ -10333,7 +10347,12 @@ snapshots:
 
   markdown-table@3.0.4: {}
 
-  marked@4.3.0: {}
+  marked-smartypants@1.1.9(marked@15.0.9):
+    dependencies:
+      marked: 15.0.9
+      smartypants: 0.2.2
+
+  marked@15.0.9: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -11266,10 +11285,10 @@ snapshots:
     dependencies:
       escape-goat: 4.0.0
 
-  purgecss@6.0.0:
+  purgecss@7.0.2:
     dependencies:
       commander: 12.1.0
-      glob: 10.4.5
+      glob: 11.0.1
       postcss: 8.5.3
       postcss-selector-parser: 6.1.2
 
@@ -11862,6 +11881,8 @@ snapshots:
 
   slugify@1.6.6: {}
 
+  smartypants@0.2.2: {}
+
   smol-toml@1.3.1: {}
 
   source-map-js@1.2.1: {}
@@ -11869,6 +11890,8 @@ snapshots:
   source-map@0.7.4: {}
 
   space-separated-tokens@2.0.2: {}
+
+  spark-md5@3.0.2: {}
 
   spawndamnit@3.0.1:
     dependencies:
@@ -12022,9 +12045,11 @@ snapshots:
     optionalDependencies:
       svelte: 5.20.5
 
-  svelte-fa@2.4.0: {}
+  svelte-fa@4.0.4(svelte@5.20.5):
+    dependencies:
+      svelte: 5.20.5
 
-  svelte-intersection-observer@0.10.2: {}
+  svelte-intersection-observer@1.0.0: {}
 
   svelte-preprocess@6.0.3(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(sass@1.86.0)(svelte@5.20.5)(typescript@5.8.2):
     dependencies:
@@ -12034,8 +12059,6 @@ snapshots:
       postcss-load-config: 3.1.4(postcss@8.5.3)
       sass: 1.86.0
       typescript: 5.8.2
-
-  svelte-search@2.1.1: {}
 
   svelte@5.20.5:
     dependencies:
