@@ -2,8 +2,6 @@ import fs from 'fs';
 import MagicString from 'magic-string';
 
 export class MagicFile extends MagicString {
-  private content: string;
-  private lines: string[];
   private filePath: string;
 
   constructor(filePath: string) {
@@ -11,9 +9,6 @@ export class MagicFile extends MagicString {
     const content = fs.readFileSync(filePath, 'utf-8');
     super(content);
     this.filePath = filePath;
-    this.content = fs.readFileSync(filePath, 'utf-8');
-    this.lines = this.content.split('\n');
-    this.content = content;
   }
 
   saveFile() {
@@ -21,11 +16,12 @@ export class MagicFile extends MagicString {
   }
 
   private getLineOffset(lineNumber: number) {
-    if (lineNumber < 0 || lineNumber >= this.lines.length) {
+    const lines = this.original.split('\n');
+    if (lineNumber < 0 || lineNumber >= lines.length) {
       throw new Error('Line number out of range');
     }
 
-    return this.lines
+    return lines
       .slice(0, lineNumber)
       .reduce((offset, line) => offset + line.length + 1, 0); // +1 for the newline character
   }
@@ -38,11 +34,12 @@ export class MagicFile extends MagicString {
    * @returns MagicString instance
    */
   findOffsetLine(search: string | RegExp, offsetLineNumber: number = 0) {
-    if (offsetLineNumber < 0 || offsetLineNumber >= this.lines.length) {
+    const lines = this.original.split('\n');
+    if (offsetLineNumber < 0 || offsetLineNumber >= lines.length) {
       throw new Error('Offset line number out of range');
     }
 
-    const lineIndex = this.lines
+    const lineIndex = lines
       .slice(offsetLineNumber + 1)
       .findIndex((line) =>
         typeof search === 'string' ? line.includes(search) : search.test(line)
@@ -66,7 +63,8 @@ export class MagicFile extends MagicString {
    * @returns MagicString instance
    */
   offsetLine(lineNumber: number) {
-    if (lineNumber <= 0 || lineNumber > this.lines.length) {
+    const lines = this.original.split('\n');
+    if (lineNumber <= 0 || lineNumber > lines.length) {
       throw new Error('Line number out of range');
     }
 
@@ -94,5 +92,12 @@ export class MagicFile extends MagicString {
 
   prependToLine(content: string) {
     return this.appendLeft(0, content);
+  }
+
+  locations(search: string) {
+    const start = this.original.indexOf(search);
+    if (start === -1) throw new Error('Search string not found');
+    const end = start + search.length;
+    return { start, end };
   }
 }
