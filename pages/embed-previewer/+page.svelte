@@ -1,8 +1,9 @@
 <script>
   // @ts-ignore Is OK
   import pages from '@svelte-kit-pages';
-  import { Framer } from '@reuters-graphics/graphics-components';
+  import { Theme, Framer } from '@reuters-graphics/graphics-components';
   import { base } from '$app/paths';
+  import '@reuters-graphics/graphics-components/scss/main.scss';
 
   const embeds = pages
     .filter((p) => /^\/embeds\//.test(p))
@@ -10,18 +11,20 @@
     .map((path) => (/\/$/.test(path) ? path : path + '/'));
 </script>
 
-{#if embeds.length}
-  <Framer {embeds} />
-{:else}
-  <container>
-    <div>
-      <div>No embeds found.</div>
+<Theme>
+  {#if embeds.length}
+    <Framer {embeds} />
+  {:else}
+    <container>
       <div>
-        <a href="{base}/">Go back</a>
+        <div>No embeds found.</div>
+        <div>
+          <a href="{base}/">Go back</a>
+        </div>
       </div>
-    </div>
-  </container>
-{/if}
+    </container>
+  {/if}
+</Theme>
 
 <style lang="scss">
   @use '@reuters-graphics/graphics-components/dist/scss/mixins' as mixins;
