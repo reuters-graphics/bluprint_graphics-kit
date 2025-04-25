@@ -19,5 +19,8 @@
     // Mods
     "bin/mods/**/*.svelte",
     "bin/mods/**/*.ts"
-	]
+	],
+	"compilerOptions": {
+		"skipLibCheck": true,
+	}
 }

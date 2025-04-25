@@ -49,6 +49,12 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
+      - id: svelte-check
+        name: Run svelte-check
+        run: |
+          pnpm svelte-kit sync
+          pnpm svelte-check --output machine
+
       - id: test
         name: Run tests
         run: pnpm test

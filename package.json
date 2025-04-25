@@ -28,6 +28,7 @@
     "startup:create-repo": "npx graphics github:create-repo",
     "startup": "npm-run-all startup:*",
     "test": "vitest",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint": "eslint --fix .",
     "format": "prettier . --write",
     "knip": "knip"
@@ -75,6 +76,7 @@
     "sass": "^1.86.0",
     "sharp": "^0.33.5",
     "svelte": "^5.28.2",
+    "svelte-check": "^4.1.6",
     "svelte-preprocess": "^6.0.3",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
