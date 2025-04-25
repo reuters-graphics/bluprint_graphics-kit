@@ -1,5 +1,4 @@
 <script>
-  // @ts-ignore Is OK
   import pages from '@svelte-kit-pages';
   import { Theme, Framer } from '@reuters-graphics/graphics-components';
   import { base } from '$app/paths';
