@@ -1,0 +1,401 @@
+## Graphics components
+
+The `@reuters-graphics/graphics-components` library includes pre-styled components for easily adding graphics or other elements to a page.
+
+### Adding new components to a page
+
+Components from the `@reuters-graphics/graphics-components` library are often added to the `#each` loop in `src/lib/App.svelte` that loops over `content.blocks`.
+
+`content` represents text content pulled from our CMS as JSON that is passed into components via props.
+
+Each block in `content.blocks` (i.e., "content block") is usually an object with a `type` property and additional properties specific to the block type. For example:
+
+- **Text Block**:
+  ```json
+  {
+    "type": "text",
+    "text": "This is a text block."
+  }
+  ```
+- **AI Graphic Block**
+  ```json
+  {
+    "type": "ai-graphic",
+    "chart": "AiMap",
+    "width": "normal",
+    "textWidth": "normal",
+    "title": "Optional title of the graphic",
+    "description": "Optional chatter describes more about the graphic.",
+    "notes": "Note: Optional note clarifying something in the data.\r\n\r\nSource: Optional source of the data.",
+    "altText": "Add a description of the graphic for screen readers. This is invisible on the page."
+  }
+  ```
+
+To add a new component to the loop:
+
+1. Import the component in the script portion of the Svelte component.
+2. Add a new `else if` condition in the `{#each content.blocks as block}` loop to handle the new block type.
+3. Pass the required props to the component, ensuring they match the structure of the content block object.
+
+For example, to add a new FeaturePhoto:
+
+```svelte
+<script lang="ts">
+  // ...
+
+  import { assets } from '$app/paths';
+
+  import {
+    Article,
+    Analytics,
+    BodyText,
+    EndNotes,
+    SiteHeadline,
+    GraphicBlock,
+    InlineAd,
+    FeautePhoto, // Add the component to others already imported
+  } from '@reuters-graphics/graphics-components';
+
+  // ...
+</script>
+
+{#each content.blocks as block}
+  <!-- Text block -->
+  {#if block.type === 'text'}
+    <BodyText text={block.text} />
+
+    <!-- Other block types -->
+
+    <!-- Add new FeaturePhoto block -->
+  {:else if block.type === 'feature-photo'}
+    <FeaturePhoto
+      src="{assets}/{block.src}"
+      alt={block.alt}
+      caption={block.caption}
+      credit={block.credit}
+    />
+  {:else}
+    <LogBlock message={`Unknown block type: "${block.type}"`} />
+  {/if}
+{/each}
+```
+
+### Paths to multimedia files
+
+Notice in the example above, we append the `assets` variable from SvelteKit's `$app/paths` module to the `src` path we got from the content block.
+
+Always assume that paths to local multimedia files including images and videos specified in content blocks are relative and must be prefixed with the `assets` variable to make them absolute. For example:
+
+```svelte
+<FeaturePhoto
+  src="{assets}/{block.src}"
+  alt={block.alt}
+  caption={block.caption}
+  credit={block.credit}
+/>
+```
+
+### Adding AI Graphics
+
+AI (i.e., Adobe Illustrator) graphics are added to the page by importing a component from the `src/lib/ai2svelte/` directory and then adding that graphic to the `aiCharts` object in `src/lib/App.svelte`. Then the object key for that chart is included in the content block's `chart` property.
+
+For example, to use an AI graphic from `src/lib/ai2svelte/map.svelte`:
+
+- The AI graphic component is imported and added to the `aiCharts` object in `src/lib/App.svelte`:
+
+  ```svelte
+  <script lang="ts">
+    // ...
+    import Map from './ai2svelte/map.svelte';
+
+    // ...
+
+    const aiCharts = {
+      // Other AI graphics ...
+      Map, // Added to the object
+    };
+  </script>
+  ```
+
+- Now the content block will specify the key to the chart in `aiCharts` in the `chart` property:
+
+  ```json
+  {
+    "type": "ai-graphic",
+    "chart": "Map",
+    "width": "normal",
+    "textWidth": "normal",
+    "title": "My map",
+    "description": "A map of the area",
+    "notes": "Source: DataSource.org",
+    "altText": "A map of a specific area showing something interesting"
+  }
+  ```
+
+- Now the `{:else if block.type === 'ai-graphic'}` block in `src/lib/App.svelte` uses that key to get the component:
+
+  ```svelte
+  {#each content.blocks as block}
+    <!-- Text block -->
+    {#if block.type === 'text'}
+      <BodyText text={block.text} />
+
+      <!-- Ai2svelte graphic block -->
+    {:else if block.type === 'ai-graphic'}
+      {#if !aiCharts[block.chart]}
+        <LogBlock message={`Unable to find "${block.chart}" in aiCharts`} />
+      {:else}
+        {@const AiChart = aiCharts[block.chart]}
+        <GraphicBlock
+          id={block.chart}
+          width={containerWidth(block.width)}
+          title={block.title}
+          description={block.description}
+          notes={block.notes}
+          ariaDescription={block.altText}
+        >
+          <AiChart assetsPath={assets || '/'} />
+        </GraphicBlock>
+      {/if}
+
+      <!-- Other block types -->
+    {/if}
+  {/each}
+  ```
+
+### Refer to graphics components Storybook
+
+If you're unsure how to implement a particular graphics component, suggest the user check the Storybook documentation site, which is hosted on GitHub at https://reuters-graphics.github.io/graphics-components/.
+
+### Writing content blocks in our CMS
+
+While the text content in the `content` object is formatted as JSON, that data is written into our CMS (which is called "RNGS.io") using ArchieML syntax.
+
+**When suggesting what content blocks to add for components, please also suggest how to write that content in our CMS (RNGS.io) using ArchieML.**
+
+#### ArchieML
+
+ArchieML is a lightweight and intuitive markup language that allows for easy structuring of data within text documents. It is designed to be human-readable, very flexible, and is particularly useful for creating structured data by users who may never have seen ArchieML or any other markup language before.
+
+##### Basic Syntax
+
+- **Keys and Values**
+
+  - Definition: Key-value pairs are defined by a line starting with a key followed by a colon. Keys can include any unicode character except whitespace and specific characters used within ArchieML ({ } [ ] : . +).
+
+  - Example:
+
+    ```
+    key: This is a value
+    ☃: Unicode Snowman for you and you and you!
+    ```
+
+  - Parsed JSON:
+
+    ```json
+    {
+      "key": "This is a value",
+      "☃": "Unicode Snowman for you and you and you!"
+    }
+    ```
+
+  - Whitespace around keys and values is ignored. Keys are case-sensitive.
+
+- **Multi-line Values**: Multi-line values are anchored with `:end`. All whitespace is preserved.
+
+  - Example:
+
+    ```
+    key: value
+    More value
+
+    Even more value
+    :end
+    ```
+
+  - Parsed JSON:
+    ```json
+    {
+      "key": "value\n More value\n\nEven more value"
+    }
+    ```
+  - Escape Characters: Lines that would be interpreted as keys or commands can be escaped with a backslash `\`.
+    - Example:
+      ```
+      key: value
+      \:end
+      :end
+      ```
+    - Parsed JSON:
+      ```json
+      {
+        "key": "value\n:end"
+      }
+      ```
+
+- **Nested Structures**
+
+  - **Dot-Notation**: Use dot-notation for creating nested objects.
+    - Example:
+      ```
+      colors.red: #f00
+      colors.green: #0f0
+      colors.blue: #00f
+      ```
+    - Parsed JSON:
+      ```json
+      {
+        "colors": {
+          "red": "#f00",
+          "green": "#0f0",
+          "blue": "#00f"
+        }
+      }
+      ```
+  - **Object Blocks**: Group keys using object blocks defined by {}. Close an object with {} or by starting a new object.
+
+    - Example:
+
+      ```
+      {colors}
+      red: #f00
+      green: #0f0
+      blue: #00f
+      {}
+
+      {numbers}
+      one: 1
+      ten: 10
+      one-hundred: 100
+      {}
+      ```
+
+    - Parsed JSON:
+      ```json
+      {
+        "colors": {
+          "red": "#f00",
+          "green": "#0f0",
+          "blue": "#00f"
+        },
+        "numbers": {
+          "one": "1",
+          "ten": "10",
+          "one-hundred": "100"
+        }
+      }
+      ```
+
+- **Arrays**
+
+  - **Arrays of Objects**: Define arrays with brackets [arrayName]. New objects start when the first key is re-encountered.
+
+    - Example:
+
+      ```
+      [arrayName]
+      name: Amanda
+      age: 26
+
+      name: Tessa
+      age: 30
+      []
+      ```
+
+    - Parsed JSON:
+      ```json
+      {
+        "arrayName": [
+          {
+            "name": "Amanda",
+            "age": "26"
+          },
+          {
+            "name": "Tessa",
+            "age": "30"
+          }
+        ]
+      }
+      ```
+
+  - **Arrays of Strings**: Simple arrays use _ for elements. If _ is first, the array ignores key-value pairs.
+    - Example:
+      ```
+      [days]
+      * Sunday
+      * Monday
+      * Tuesday
+      * Wednesday
+      * Thursday
+      * Friday
+      * Saturday
+      []
+      ```
+    - Parsed JSON:
+      ```json
+      {
+        "days": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ]
+      }
+      ```
+  - **Nested Arrays**: Nested arrays use dot notation and are closed with `[]`.
+
+    - Example:
+
+      ```
+      [days]
+      name: Monday
+      [.tasks]
+      * Clean dishes
+      * Pick up room
+      []
+
+      name: Tuesday
+      [.tasks]
+      * Buy milk
+      []
+      ```
+
+    - Parsed JSON:
+      ```json
+      {
+        "days": [
+          {
+            "name": "Monday",
+            "tasks": ["Clean dishes", "Pick up room"]
+          },
+          {
+            "name": "Tuesday",
+            "tasks": ["Buy milk"]
+          }
+        ]
+      }
+      ```
+
+#### ArchieML conventions in our CMS
+
+Usually, content blocks are written in our CMS as objects inside an ArchieML array called `blocks` and always start with a `type:` key/value pair that defines the type of the content block object.
+
+For example, a user adding a content block for a FeaturePhoto component, might add the following to the existing `[blocks]` array in our CMS:
+
+```
+[blocks]
+
+type: feature-photo
+src: images/myPhoto.jpg
+alt: Alt text for my photo...
+
+... which extends over multiple lines.
+:end
+caption: A photo of something interesting.
+credit: Jane Doe
+
+[]
+```
