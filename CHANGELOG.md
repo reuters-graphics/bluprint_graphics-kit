@@ -18,17 +18,17 @@
 
   ### ✨ Try it out!
 
-  Open up a new Copilot chat window and try a prompt like:
+  Open up a new [Copilot chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat) and try a specific prompt like:
 
   > How can I add an AI graphic component called myMap.svelte to my page?
 
-  You should get a response showing how to correctly add the AI graphic component to `App.svelte` in the `content.blocks` loop AND examples of how to write the block that feeds that component in RNGS.io.
+  You should get a response that demonstrates the AI model now knows a bit about our graphics components, about common conventions we use in the graphics kit, about our design system, even a bit about our CMS, RNGS.io.
 
   ### 📢 Open call for contributions
 
-  Is there a particular task you're always tripping over in the graphics kit that you'd like an LLM to know how to do when you're asking for help?
+  Adding hints to Large Language Models is very much more art than a science. You can help us make Copilot smarter by reporting back things it _does_ or _doesn't_ do well as you're building your project.
 
-  Make a [new issue](https://github.com/reuters-graphics/bluprint_graphics-kit/issues) on the graphics kit repo telling us what that is, and we'll work on adding examples of how to do it right to our llms.txt files.
+  Make a [new issue](https://github.com/reuters-graphics/bluprint_graphics-kit/issues) on the graphics kit repo telling us what those tasks are, and we'll work on adding examples of how to do them right to our llms.txt files.
 
 ## 2.1.0
 

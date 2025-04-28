@@ -402,24 +402,40 @@ credit: Jane Doe
 
 ### Graphics components style tokens
 
-As well as Svelte components, the graphics components library includes a tailwind-like style system that can be used to style components and other page elements. The heart of the style system is **style tokens.**
+As well as Svelte components, the graphics components library includes a tailwind-like style system that can be used to style components and other page elements by adding a class or through SCSS mixins.
 
-A token represents the value for an individual style rule, like `font-size` or `color`, that can be applied to an HTML element. Each token sets just one style rule, and multiple tokens are combined together to style an element, like a `<div>`.
+These classes and mixins are defined as individual "tokens" representing the value for an individual style rule, like `font-size` or `color`. Each token sets just one style rule, and multiple tokens are combined together to style an element, like a `<div>`.
 
 Each set of tokens has several levels that represent the different values a style rule can take in our design system and are grouped in how they're named to make them easier to remember.
 
-For example, text align tokens include `text-left`, `text-center`, and `text-right` which correspond to the style rules `text-align: left;`, `text-align: center;`, and `text-align: right;`, respectively.
-
-Tokens can be applied to elements either through class names directly on the element or through SCSS mixins.
-
-**Please use the tokens included in this section liberally in instructions and code samples.**
-
-#### Using tokens
-
-To use the text align token to style an element, you can apply it directly to the element through a class name. For example:
+For example, font weight tokens include `font-thin`, `font-light`, and `font-bold` which correspond to the style rules `font-weight: 100;`, `font-weight: 300;`, and `font-weight: 700;`, respectively. And those tokens can be applied via class name or SCSS mixin. For example:
 
 ```svelte
-<p class="text-center">Lorem ipsum...</p>
+<!-- Bold text applied via class -->
+<p class="font-bold">Here is some bold text with some <span>thin text</span> in it!</p>
+
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
+  
+  // Thin text applied via SCSS mixin
+  span {
+    @include mixins.font-thin;
+  }
+</style>
+```
+
+Not all our style tokens have both class names as well as SCSS mixins available to apply them.
+
+**Please use the tokens defined in the SCSS partials in the [@reuters-graphics/graphics-components/dist/scss/tokens/ directory](./../../../node_modules/@reuters-graphics/graphics-components/dist/scss/tokens/) liberally in instructions and code samples, BUT be sure the token exists before suggesting it. DO NOT MAKE UP TOKENS, CLASS NAMES OR SCSS MIXINS!**
+
+If you're not sure if there is a token to apply a particular style, you can refer the user to our Storybook documentation site for them at: https://reuters-graphics.github.io/graphics-components/?path=/docs/styles-intro--docs.
+
+#### Using style tokens
+
+To use a token to style an element, you can apply it directly to the element through a class name. For example, to apply the `text-primary` token (controlling font colour) you can apply it like this:
+
+```svelte
+<p class="text-primary">Lorem ipsum...</p>
 ```
 
 OR you can apply some tokens via an SCSS mixin. For example:
@@ -431,375 +447,33 @@ OR you can apply some tokens via an SCSS mixin. For example:
   @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
 
   p {
-    @include mixins.text-center;
+    @include mixins.text-primary;
   }
 </style>
 ```
 
-**Be sure to always include the `@use` line that imports the SCSS mixins from the library in your suggestions.**
+**Be sure to always include the `@use` line that imports the SCSS mixins from the library in your SCSS/styling suggestions.**
 
-#### Token reference
+Please consider the SCSS mixins and classes defined in the [@reuters-graphics/graphics-components/dist/scss/tokens/ directory](./../../../node_modules/@reuters-graphics/graphics-components/dist/scss/tokens/).
 
-The following is a list of the tokens available which can be applied either through a class name, an SCSS mixin or both.
+#### Spacing tokens
 
-##### Typography tokens
+We have a special set of tokens to control spacing, i.e., paddings and margins. They operate like tailwind's padding and margin system. For example, `mt-1` represents `margin-top: 0.25rem;` and `px-2` represents `padding-right: 0.5rem; padding-left: 0.5rem;`, etc. These tokens can be applied only through a class.
 
-- Text Role Tokens
-  - h1
-    - Class: `h1`
-    - SCSS Mixin: `@include mixins.h1;`
-  - h2
-    - Class: `h2`
-    - SCSS Mixin: `@include mixins.h2;`
-  - h3
-    - Class: `h3`
-    - SCSS Mixin: `@include mixins.h3;`
-  - h4
-    - Class: `h4`
-    - SCSS Mixin: `@include mixins.h4;`
-  - body-text
-    - Class: `body-text`
-    - SCSS Mixin: `@include mixins.body-text;`
-  - body-note
-    - Class: `body-note`
-    - SCSS Mixin: `@include mixins.body-note;`
-  - body-caption
-    - Class: `body-caption`
-    - SCSS Mixin: `@include mixins.body-caption;`
-  - body-link
-    - Class: `body-link`
-    - SCSS Mixin: `@include mixins.body-link;`
-  - drop-cap
-    - Class: `drop-cap`
-    - SCSS Mixin: `@include mixins.drop-cap;`
-- Text Colour Tokens
-  - text-primary
-    - Class: `text-primary`
-    - SCSS Mixin: `@include mixins.text-primary;`
-  - text-secondary
-    - Class: `text-secondary`
-    - SCSS Mixin: `@include mixins.text-secondary;`
-  - text-accent
-    - Class: `text-accent`
-    - SCSS Mixin: `@include mixins.text-accent;`
-- Font Family Tokens
-  - font-serif
-    - Class: `font-serif`
-    - SCSS Mixin: `@include mixins.font-serif;`
-  - font-sans
-    - Class: `font-sans`
-    - SCSS Mixin: `@include mixins.font-sans;`
-  - font-mono
-    - Class: `font-mono`
-    - SCSS Mixin: `@include mixins.font-mono;`
-  - font-hed
-    - Class: `font-hed`
-    - SCSS Mixin: `@include mixins.font-hed;`
-  - font-subhed
-    - Class: `font-subhed`
-    - SCSS Mixin: `@include mixins.font-subhed;`
-  - font-body
-    - Class: `font-body`
-    - SCSS Mixin: `@include mixins.font-body;`
-  - font-note
-    - Class: `font-note`
-    - SCSS Mixin: `@include mixins.font-note;`
-- Font Size Tokens
-  - text-xxs
-    - Class: `text-xxs`
-    - SCSS Mixin: `@include mixins.text-xxs;`
-  - text-xs
-    - Class: `text-xs`
-    - SCSS Mixin: `@include mixins.text-xs;`
-  - text-sm
-    - Class: `text-sm`
-    - SCSS Mixin: `@include mixins.text-sm;`
-  - text-base
-    - Class: `text-base`
-    - SCSS Mixin: `@include mixins.text-base;`
-  - text-lg
-    - Class: `text-lg`
-    - SCSS Mixin: `@include mixins.text-lg;`
-  - text-xl
-    - Class: `text-xl`
-    - SCSS Mixin: `@include mixins.text-xl;`
-  - text-2xl
-    - Class: `text-2xl`
-    - SCSS Mixin: `@include mixins.text-2xl;`
-  - text-3xl
-    - Class: `text-3xl`
-    - SCSS Mixin: `@include mixins.text-3xl;`
-  - text-4xl
-    - Class: `text-4xl`
-    - SCSS Mixin: `@include mixins.text-4xl;`
-  - text-5xl
-    - Class: `text-5xl`
-    - SCSS Mixin: `@include mixins.text-5xl;`
-  - text-6xl
-    - Class: `text-6xl`
-    - SCSS Mixin: `@include mixins.text-6xl;`
-- Additional Typography Tokens
-  - italic
-    - Class: `italic`
-  - not-italic
-    - Class: `not-italic`
-  - font-weight
-    - Classes: `font-thin`, `font-extralight`, `font-light`, `font-regular`, `font-medium`, `font-semibold`, `font-bold`, `font-extrabold`, `font-black`
-    - SCSS Mixins: `@include mixins.font-thin;`, `@include mixins.font-extralight;`, `@include mixins.font-light;`, `@include mixins.font-regular;`, `@include mixins.font-medium;`, `@include mixins.font-semibold;`, `@include mixins.font-bold;`, `@include mixins.font-extrabold;`, `@include mixins.font-black;`
-  - tracking
-    - Classes: `tracking-tighter`, `tracking-tight`, `tracking-normal`, `tracking-wide`, `tracking-wider`, `tracking-widest`
-    - SCSS Mixins: `@include mixins.tracking-tighter;`, `@include mixins.tracking-tight;`, `@include mixins.tracking-normal;`, `@include mixins.tracking-wide;`, `@include mixins.tracking-wider;`, `@include mixins.tracking-widest;`
-  - leading
-    - Classes: `leading-none`, `leading-tighter`, `leading-tight`, `leading-normal`, `leading-loose`, `leading-looser`
-    - SCSS Mixins: `@include mixins.leading-none;`, `@include mixins.leading-tighter;`, `@include mixins.leading-tight;`, `@include mixins.leading-normal;`, `@include mixins.leading-loose;`, `@include mixins.leading-looser;`
-  - text-align
-    - Classes: `text-left`, `text-center`, `text-right`, `text-justify`, `text-start`, `text-end`
-  - text-decoration
-    - Classes: `underline`, `overline`, `line-through`, `no-underline`
-  - text-stroke
-    - Classes: `text-stroke-black`, `text-stroke-black-2`, `text-stroke-black-3`, `text-stroke-black-4`, `text-stroke-black-6`, `text-stroke-black-8`, `text-stroke-white`, `text-stroke-white-2`, `text-stroke-white-3`, `text-stroke-white-4`, `text-stroke-white-6`, `text-stroke-white-8`
-  - text-transform
-    - Classes: `uppercase`, `lowercase`
-  - vertical-align
-    - Classes: `align-baseline`, `align-top`, `align-middle`, `align-bottom`, `align-text-top`, `align-text-bottom`, `align-sub`, `align-super`
-  - white-space
-    - Classes: `whitespace-normal`, `whitespace-nowrap`
-  - word-break
-    - Classes: `break-normal`, `break-words`
+These tokens are all defined as a combination of a prefix and a level. The prefix is something like `mb` for bottom margin or `py` for padding top and bottom. The level is a number representing how large the padding are margin should be. The levels go like this: 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, then increasing by 4 each time up to 96. For example, the full token set for top margin would be `mt-0`, `mt-0.5`, `mt-1`, `mt-1.5`, and so on.
 
-##### Flexbox Tokens
+We also have a set of spacing tokens designed to work with _fluid_ typography. These are prefixed beginning with the letter `f`, for example, `fmb-1` represents a _fluid_ margin bottom, `margin-bottom: clamp(0.31rem, 0.31rem + 0vw, 0.31rem);`. These tokens can be applied through a class AND an SCSS mixin. For example:
 
-The following tokens can only be applied as classes.
+```svelte
+<p class="fmy-3">Some text with margin and padding</p>
 
-- **Align Content**
-  - `content-normal`: `align-content: normal;`
-  - `content-center`: `align-content: center;`
-  - `content-start`: `align-content: flex-start;`
-  - `content-end`: `align-content: flex-end;`
-  - `content-between`: `align-content: space-between;`
-  - `content-around`: `align-content: space-around;`
-  - `content-evenly`: `align-content: space-evenly;`
-  - `content-baseline`: `align-content: baseline;`
-  - `content-stretch`: `align-content: stretch;`
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
 
-- **Align Items**
-  - `items-start`: `align-items: flex-start;`
-  - `items-end`: `align-items: flex-end;`
-  - `items-center`: `align-items: center;`
-  - `items-baseline`: `align-items: baseline;`
-  - `items-stretch`: `align-items: stretch;`
+  p {
+    @include mixins.fpx-1;
+  }
+</style>
+```
 
-- **Align Self**
-  - `self-auto`: `align-self: auto;`
-  - `self-start`: `align-self: flex-start;`
-  - `self-end`: `align-self: flex-end;`
-  - `self-center`: `align-self: center;`
-  - `self-stretch`: `align-self: stretch;`
-  - `self-baseline`: `align-self: baseline;`
-
-- **Flex Direction**
-  - `flex-row`: `flex-direction: row;`
-  - `flex-row-reverse`: `flex-direction: row-reverse;`
-  - `flex-col`: `flex-direction: column;`
-  - `flex-col-reverse`: `flex-direction: column-reverse;`
-
-- **Flex Grow**
-  - `grow`: `flex-grow: 1;`
-  - `grow-0`: `flex-grow: 0;`
-
-- **Flex Shrink**
-  - `shrink`: `flex-shrink: 1;`
-  - `shrink-0`: `flex-shrink: 0;`
-
-- **Flex Wrap**
-  - `flex-wrap`: `flex-wrap: wrap;`
-  - `flex-wrap-reverse`: `flex-wrap: wrap-reverse;`
-  - `flex-nowrap`: `flex-wrap: nowrap;`
-
-- **Flex**
-  - `flex-1`: `flex: 1 1 0%;`
-  - `flex-auto`: `flex: 1 1 auto;`
-  - `flex-initial`: `flex: 0 1 auto;`
-  - `flex-none`: `flex: none;`
-
-- **Justify Content**
-  - `justify-normal`: `justify-content: normal;`
-  - `justify-start`: `justify-content: flex-start;`
-  - `justify-end`: `justify-content: flex-end;`
-  - `justify-center`: `justify-content: center;`
-  - `justify-between`: `justify-content: space-between;`
-  - `justify-around`: `justify-content: space-around;`
-  - `justify-evenly`: `justify-content: space-evenly;`
-  - `justify-stretch`: `justify-content: stretch;`
-
-- **Justify Items**
-  - `justify-items-start`: `justify-items: start;`
-  - `justify-items-end`: `justify-items: end;`
-  - `justify-items-center`: `justify-items: center;`
-  - `justify-items-stretch`: `justify-items: stretch;`
-
-- **Justify Self**
-  - `justify-self-auto`: `justify-self: auto;`
-  - `justify-self-start`: `justify-self: start;`
-  - `justify-self-end`: `justify-self: end;`
-  - `justify-self-center`: `justify-self: center;`
-  - `justify-self-stretch`: `justify-self: stretch;`
-
-##### Sizing Tokens
-
-Sizing tokens provide utility classes for setting width, height, and their min/max values. These tokens can only be applied as classes to elements.
-
-- **Width**
-  - `w-full`: `width: 100%;`
-  - `w-full-fluid`: `width: calc(100% + 30px); margin-left: -15px;`
-  - `w-screen`: `width: 100vw;`
-  - `w-1/2`: `width: 50%;`
-  - `w-1/3`: `width: 33.333333%;`
-  - `w-2/3`: `width: 66.666667%;`
-  - `w-1/4`: `width: 25%;`
-  - `w-2/4`: `width: 50%;`
-  - `w-3/4`: `width: 75%;`
-  - `w-1/5`: `width: 20%;`
-  - `w-2/5`: `width: 40%;`
-  - `w-3/5`: `width: 60%;`
-  - `w-4/5`: `width: 80%;`
-  - `w-1/6`: `width: 16.666667%;`
-  - `w-2/6`: `width: 33.333333%;`
-  - `w-3/6`: `width: 50%;`
-  - `w-4/6`: `width: 66.666667%;`
-  - `w-5/6`: `width: 83.333333%;`
-  - `w-1/12`: `width: 8.333333%;`
-  - `w-2/12`: `width: 16.666667%;`
-  - `w-3/12`: `width: 25%;`
-  - `w-4/12`: `width: 33.333333%;`
-  - `w-5/12`: `width: 41.666667%;`
-  - `w-6/12`: `width: 50%;`
-  - `w-7/12`: `width: 58.333333%;`
-  - `w-8/12`: `width: 66.666667%;`
-  - `w-9/12`: `width: 75%;`
-  - `w-10/12`: `width: 83.333333%;`
-  - `w-11/12`: `width: 91.666667%;`
-
-- **Max-width**
-  - `max-w-full`: `max-width: 100%;`
-  - `max-w-screen`: `max-width: 100vw;`
-
-- **Min-width**
-  - `min-w-full`: `min-width: 100%;`
-
-- **Height**
-  - `h-full`: `height: 100%;`
-  - `h-screen`: `height: 100svh;`
-  - `h-1/2`: `height: 50%;`
-  - `h-1/3`: `height: 33.333333%;`
-  - `h-2/3`: `height: 66.666667%;`
-  - `h-1/4`: `height: 25%;`
-  - `h-2/4`: `height: 50%;`
-  - `h-3/4`: `height: 75%;`
-  - `h-1/5`: `height: 20%;`
-  - `h-2/5`: `height: 40%;`
-  - `h-3/5`: `height: 60%;`
-  - `h-4/5`: `height: 80%;`
-  - `h-1/6`: `height: 16.666667%;`
-  - `h-2/6`: `height: 33.333333%;`
-  - `h-3/6`: `height: 50%;`
-  - `h-4/6`: `height: 66.666667%;`
-  - `h-5/6`: `height: 83.333333%;`
-  - `h-1/12`: `height: 8.333333%;`
-  - `h-2/12`: `height: 16.666667%;`
-  - `h-3/12`: `height: 25%;`
-  - `h-4/12`: `height: 33.333333%;`
-  - `h-5/12`: `height: 41.666667%;`
-  - `h-6/12`: `height: 50%;`
-  - `h-7/12`: `height: 58.333333%;`
-  - `h-8/12`: `height: 66.666667%;`
-  - `h-9/12`: `height: 75%;`
-  - `h-10/12`: `height: 83.333333%;`
-  - `h-11/12`: `height: 91.666667%;`
-
-- **Max-height**
-  - `max-h-full`: `max-height: 100%;`
-  - `max-h-screen`: `max-height: 100svh;`
-
-- **Min-height**
-  - `min-h-full`: `min-height: 100%;`
-  - `min-h-screen`: `min-height: 100svh;`
-
-##### Layout Tokens
-
-Layout tokens provide utility classes for controlling layout properties such as display, position, overflow, float, box sizing, and object fit/position. These tokens can only be applied as classes to elements.
-
-- **Display**
-  - `block`: `display: block;`
-  - `inline-block`: `display: inline-block;`
-  - `inline`: `display: inline;`
-  - `flex`: `display: flex;`
-  - `inline-flex`: `display: inline-flex;`
-  - `table`: `display: table;`
-  - `inline-table`: `display: inline-table;`
-  - `table-caption`: `display: table-caption;`
-  - `table-cell`: `display: table-cell;`
-  - `table-column`: `display: table-column;`
-  - `table-column-group`: `display: table-column-group;`
-  - `table-footer-group`: `display: table-footer-group;`
-  - `table-header-group`: `display: table-header-group;`
-  - `table-row-group`: `display: table-row-group;`
-  - `table-row`: `display: table-row;`
-  - `flow-root`: `display: flow-root;`
-  - `grid`: `display: grid;`
-  - `inline-grid`: `display: inline-grid;`
-  - `contents`: `display: contents;`
-  - `list-item`: `display: list-item;`
-  - `hidden`: `display: none;`
-
-- **Position**
-  - `static`: `position: static;`
-  - `fixed`: `position: fixed;`
-  - `absolute`: `position: absolute;`
-  - `relative`: `position: relative;`
-  - `sticky`: `position: sticky;`
-
-- **Overflow**
-  - `overflow-auto`: `overflow: auto;`
-  - `overflow-hidden`: `overflow: hidden;`
-  - `overflow-clip`: `overflow: clip;`
-  - `overflow-visible`: `overflow: visible;`
-  - `overflow-scroll`: `overflow: scroll;`
-  - `overflow-x-auto`: `overflow-x: auto;`
-  - `overflow-y-auto`: `overflow-y: auto;`
-  - `overflow-x-hidden`: `overflow-x: hidden;`
-  - `overflow-y-hidden`: `overflow-y: hidden;`
-  - `overflow-x-clip`: `overflow-x: clip;`
-  - `overflow-y-clip`: `overflow-y: clip;`
-  - `overflow-x-visible`: `overflow-x: visible;`
-  - `overflow-y-visible`: `overflow-y: visible;`
-  - `overflow-x-scroll`: `overflow-x: scroll;`
-  - `overflow-y-scroll`: `overflow-y: scroll;`
-
-- **Float**
-  - `float-right`: `float: right;`
-  - `float-left`: `float: left;`
-  - `float-none`: `float: none;`
-
-- **Box Sizing**
-  - `box-border`: `box-sizing: border-box;`
-  - `box-content`: `box-sizing: content-box;`
-
-- **Object Fit**
-  - `object-contain`: `object-fit: contain;`
-  - `object-cover`: `object-fit: cover;`
-  - `object-fill`: `object-fit: fill;`
-  - `object-none`: `object-fit: none;`
-  - `object-scale-down`: `object-fit: scale-down;`
-
-- **Object Position**
-  - `object-bottom`: `object-position: bottom;`
-  - `object-center`: `object-position: center;`
-  - `object-left`: `object-position: left;`
-  - `object-left-bottom`: `object-position: left bottom;`
-  - `object-left-top`: `object-position: left top;`
-  - `object-right`: `object-position: right;`
-  - `object-right-bottom`: `object-position: right bottom;`
-  - `object-right-top`: `object-position: right top;`
-  - `object-top`: `object-position: top;`
-
+You should recommend fluid margin and padding tokens for spacing fluidly-sized typographical elements or elements that are spaced _next to_ fluidly-sized typographical elements. Typographical elements include page headings, paragraphs or elements containing text, generally.
