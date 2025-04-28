@@ -399,3 +399,81 @@ credit: Jane Doe
 
 []
 ```
+
+### Graphics components style tokens
+
+As well as Svelte components, the graphics components library includes a tailwind-like style system that can be used to style components and other page elements by adding a class or through SCSS mixins.
+
+These classes and mixins are defined as individual "tokens" representing the value for an individual style rule, like `font-size` or `color`. Each token sets just one style rule, and multiple tokens are combined together to style an element, like a `<div>`.
+
+Each set of tokens has several levels that represent the different values a style rule can take in our design system and are grouped in how they're named to make them easier to remember.
+
+For example, font weight tokens include `font-thin`, `font-light`, and `font-bold` which correspond to the style rules `font-weight: 100;`, `font-weight: 300;`, and `font-weight: 700;`, respectively. And those tokens can be applied via class name or SCSS mixin. For example:
+
+```svelte
+<!-- Bold text applied via class -->
+<p class="font-bold">Here is some bold text with some <span>thin text</span> in it!</p>
+
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
+  
+  // Thin text applied via SCSS mixin
+  span {
+    @include mixins.font-thin;
+  }
+</style>
+```
+
+Not all our style tokens have both class names as well as SCSS mixins available to apply them.
+
+**Please use the tokens defined in the SCSS partials in the [@reuters-graphics/graphics-components/dist/scss/tokens/ directory](./../../../node_modules/@reuters-graphics/graphics-components/dist/scss/tokens/) liberally in instructions and code samples, BUT be sure the token exists before suggesting it. DO NOT MAKE UP TOKENS, CLASS NAMES OR SCSS MIXINS!**
+
+If you're not sure if there is a token to apply a particular style, you can refer the user to our Storybook documentation site for them at: https://reuters-graphics.github.io/graphics-components/?path=/docs/styles-intro--docs.
+
+#### Using style tokens
+
+To use a token to style an element, you can apply it directly to the element through a class name. For example, to apply the `text-primary` token (controlling font colour) you can apply it like this:
+
+```svelte
+<p class="text-primary">Lorem ipsum...</p>
+```
+
+OR you can apply some tokens via an SCSS mixin. For example:
+
+```svelte
+<p>Lorem ipsum...</p>
+
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
+
+  p {
+    @include mixins.text-primary;
+  }
+</style>
+```
+
+**Be sure to always include the `@use` line that imports the SCSS mixins from the library in your SCSS/styling suggestions.**
+
+Please consider the SCSS mixins and classes defined in the [@reuters-graphics/graphics-components/dist/scss/tokens/ directory](./../../../node_modules/@reuters-graphics/graphics-components/dist/scss/tokens/).
+
+#### Spacing tokens
+
+We have a special set of tokens to control spacing, i.e., paddings and margins. They operate like tailwind's padding and margin system. For example, `mt-1` represents `margin-top: 0.25rem;` and `px-2` represents `padding-right: 0.5rem; padding-left: 0.5rem;`, etc. These tokens can be applied only through a class.
+
+These tokens are all defined as a combination of a prefix and a level. The prefix is something like `mb` for bottom margin or `py` for padding top and bottom. The level is a number representing how large the padding are margin should be. The levels go like this: 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, then increasing by 4 each time up to 96. For example, the full token set for top margin would be `mt-0`, `mt-0.5`, `mt-1`, `mt-1.5`, and so on.
+
+We also have a set of spacing tokens designed to work with _fluid_ typography. These are prefixed beginning with the letter `f`, for example, `fmb-1` represents a _fluid_ margin bottom, `margin-bottom: clamp(0.31rem, 0.31rem + 0vw, 0.31rem);`. These tokens can be applied through a class AND an SCSS mixin. For example:
+
+```svelte
+<p class="fmy-3">Some text with margin and padding</p>
+
+<style lang="scss">
+  @use '@reuters-graphics/graphics-components/scss/mixins' as mixins;
+
+  p {
+    @include mixins.fpx-1;
+  }
+</style>
+```
+
+You should recommend fluid margin and padding tokens for spacing fluidly-sized typographical elements or elements that are spaced _next to_ fluidly-sized typographical elements. Typographical elements include page headings, paragraphs or elements containing text, generally.
