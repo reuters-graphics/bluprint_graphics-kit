@@ -8,7 +8,7 @@ export default [
     files: [
       'bin/**/*.{js,ts}',
       'src/**/*.{js,ts,svelte}',
-      'pages/**/*.{js,ts,svelte',
+      'pages/**/*.{js,ts,svelte}',
     ],
   },
   {
