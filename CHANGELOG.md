@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.1.2
+
+### Patch Changes
+
+- e5d44cd: Adds an automatic git commit when publishing a preview of a project, per #238.
+
 ## 2.1.1
 
 ### Patch Changes
