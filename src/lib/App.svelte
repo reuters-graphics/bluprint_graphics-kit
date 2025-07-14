@@ -69,6 +69,7 @@
         <GraphicBlock
           id={block.chart}
           width={containerWidth(block.width)}
+          textWidth={containerWidth(block.textWidth)}
           title={block.title}
           description={block.description}
           notes={block.notes}
