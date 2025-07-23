@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.1.3
+
+### Patch Changes
+
+- 7976b68: Updates svelte, svelte-check, prettifier-plugin-svelte dependencies
+
 ## 2.1.2
 
 ### Patch Changes
