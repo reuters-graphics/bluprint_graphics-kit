@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^3.0.10
-        version: 3.0.10(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
+        specifier: ^3.0.11
+        version: 3.0.11(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -1116,8 +1116,8 @@ packages:
     resolution: {integrity: sha512-u6Uj2gvsQTmJOKNQ6DAMsyEQCof37r3L8fgqj2xmY0e7BGPq4NRRhvMrMEuwfQ9WgQbmIo73dq6NfrgscPchYQ==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@3.0.10':
-    resolution: {integrity: sha512-kEO2vejahSZ0+qpv93zXUoOr43QcHli1mZRXBv41DQVAp7mCbtLog3cqNIsPtVkqpB6AAQIGTa4LsuFuB/vkRw==}
+  '@reuters-graphics/graphics-components@3.0.11':
+    resolution: {integrity: sha512-stSqU56T5ncS8Yq8aMxUvfvSxwCp7QzTXwSeNaO5/UuIAsYy/y3lIYvgwlnf63lOgQegsAu3pFQnRiTeA2Z6CA==}
     engines: {node: '>=20.18'}
     peerDependencies:
       svelte: ^5.0.0
@@ -7084,7 +7084,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@3.0.10(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
+  '@reuters-graphics/graphics-components@3.0.11(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3)))(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(sass@1.86.0)(tsx@4.19.3))':
     dependencies:
       '@fortawesome/free-regular-svg-icons': 6.7.2
       '@fortawesome/free-solid-svg-icons': 6.7.2
