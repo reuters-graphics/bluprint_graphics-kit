@@ -4,6 +4,7 @@
   import { page } from '$app/state';
   import {
     Theme,
+    Article,
     PymChild,
     SEO,
     GraphicBlock,
@@ -36,26 +37,46 @@
 </svelte:head>
 
 <Theme base="light">
-  {#if !embed}
-    <LogBlock level="warn" message="Missing embed in ArchieML doc" />
-  {/if}
-  {#if embed && !embed?.altText}
-    <LogBlock level="warn" message="Missing altText in embeds ArchieML doc" />
-  {/if}
-  <GraphicBlock
-    class="!my-0"
-    title={embed?.title}
-    description={embed?.description}
-    notes={embed?.notes}
-    ariaDescription={embed?.altText}
+  <Article
+    embedded={true}
+    columnWidths={{
+      narrower: 330,
+      narrow: 510,
+      normal: 708,
+      wide: 930,
+      wider: 1076,
+    }}
   >
-    <Graphic assetsPath={assets} />
-  </GraphicBlock>
+    {#if !embed}
+      <LogBlock level="warn" message="Missing embed in ArchieML doc" />
+    {/if}
+    {#if embed && !embed?.altText}
+      <LogBlock level="warn" message="Missing altText in embeds ArchieML doc" />
+    {/if}
+    <GraphicBlock
+      class="!my-0 !ml-0"
+      width="normal"
+      textWidth="normal"
+      snap={false}
+      title={embed?.title}
+      description={embed?.description}
+      notes={embed?.notes}
+      ariaDescription={embed?.altText}
+    >
+      <Graphic assetsPath={assets} />
+    </GraphicBlock>
+  </Article>
 </Theme>
 
 <PymChild polling={500} />
 
 <style>
+  :global(article.embedded) {
+    padding: 0 !important;
+  }
+  :global(.article-block.notes) {
+    margin-inline-start: 0;
+  }
   :global(body) {
     background-color: #ffffff;
   }
