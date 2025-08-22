@@ -1,4 +1,3 @@
-
 interface ConfigLiveEndpoint {
   enabled: boolean;
   json: string;
@@ -153,7 +152,7 @@ export class LiveEndpoints {
    * @returns The latest content
    */
   async getLiveContent<T>(localeFilePath: string, localContent: T): Promise<T> {
-    const liveEndpoints = await this.fetchLiveEndPoints(); 
+    const liveEndpoints = await this.fetchLiveEndPoints();
     const pathParts = localeFilePath.split('/');
     if (pathParts.length !== 2) {
       throw new Error(
