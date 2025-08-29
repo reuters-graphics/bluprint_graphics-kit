@@ -54,7 +54,7 @@
       <LogBlock level="warn" message="Missing altText in embeds ArchieML doc" />
     {/if}
     <GraphicBlock
-      class="!my-0 !ml-0"
+      class="!my-0"
       width="normal"
       textWidth="normal"
       snap={false}
@@ -75,7 +75,12 @@
     padding: 0 !important;
   }
   :global(.article-block.notes) {
-    margin-inline-start: 0;
+    margin-inline-start: 0 !important;
+  }
+  @media (max-width: 1023.98px) {
+    :global(.article-block.graphic) {
+      margin-inline-start: 0 !important;
+    }
   }
   :global(body) {
     background-color: #ffffff;
