@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.0
+
+### Minor Changes
+
+- 44236fd: Updates the embeds page template for better compatibility with Arc CMS
+
 ## 2.1.3
 
 ### Patch Changes
