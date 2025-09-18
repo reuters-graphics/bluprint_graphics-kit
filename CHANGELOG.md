@@ -1,5 +1,15 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.0
+
+### Minor Changes
+
+- 44236fd: Updates the embeds page template for better compatibility with Arc CMS
+
+### Patch Changes
+
+- 23e774e: Updates graphics-components for new GDPR analytics scripts
+
 ## 2.1.3
 
 ### Patch Changes
