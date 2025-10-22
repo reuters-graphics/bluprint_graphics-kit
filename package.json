@@ -40,7 +40,7 @@
     "@evilmartians/lefthook": "^1.11.5",
     "@reuters-graphics/clack": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^1.1.8",
-    "@reuters-graphics/graphics-kit-publisher": "^3.0.6",
+    "@reuters-graphics/graphics-kit-publisher": "^3.1.0",
     "@reuters-graphics/illustrator-exports": "^0.0.2",
     "@reuters-graphics/rngs-io-client": "^0.1.11",
     "@reuters-graphics/savile": "^0.0.4",
@@ -100,7 +100,7 @@
     ]
   },
   "dependencies": {
-    "@reuters-graphics/graphics-components": "^3.0.18",
+    "@reuters-graphics/graphics-components": "^3.0.20",
     "language-tags": "^1.0.9"
   },
   "reuters": {
