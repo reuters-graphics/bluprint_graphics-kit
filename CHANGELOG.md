@@ -1,5 +1,12 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.1
+
+### Patch Changes
+
+- 9e533a9: - Bumps graphics-kit-publisher for new LSEG embed manifests and SRI integrity attributes on all embed pages.
+  - Bumps graphics-components, which fixes Google Analytics for GDPR compliance.
+
 ## 2.2.0
 
 ### Minor Changes
