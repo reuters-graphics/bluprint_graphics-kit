@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.2
+
+### Patch Changes
+
+- dd6af1a: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.2.1
 
 ### Patch Changes
