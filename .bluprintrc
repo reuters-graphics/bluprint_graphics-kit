@@ -12,9 +12,10 @@
   }, {
     "action": "remove",
     "paths": [
+      ".github/workflows/docs.yaml",
       ".github/workflows/release.yaml",
       ".github/workflows/test.yaml",
-      ".github/workflows/docs.yaml",
+      ".github/workflows/update-dependencies.yaml",
       ".github/CODEOWNERS",
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
