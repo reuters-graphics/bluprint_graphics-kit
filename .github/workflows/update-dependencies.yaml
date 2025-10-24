@@ -1,0 +1,67 @@
+name: Update dependencies
+
+on:
+  repository_dispatch:
+    types: [dependency-updated]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-dependencies:
+    name: Update dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Update dependencies
+        run: |
+          pnpm update @reuters-graphics/graphics-components --latest
+          pnpm update @reuters-graphics/graphics-kit-publisher --latest
+
+      - name: Create changeset
+        run: |
+          cat << EOF > .changeset/update-dependencies-$(date +%s).md
+          ---
+          '@reuters-graphics/graphics-kit': patch
+          ---
+
+          Updates @reuters-graphics dependencies to latest versions.
+          EOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update dependencies'
+          branch: update-dependencies
+          delete-branch: true
+          title: 'chore: Update dependencies'
+          body: |
+            ## Summary
+            Automated update triggered by upstream release.
+
+            ## Changes
+            - Updates @reuters-graphics/graphics-components to the latest version
+            - Updates @reuters-graphics/graphics-kit-publisher to the latest version
+
+            ---
+            🤖 This PR was automatically created by the dependency update workflow.
+          labels: |
+            dependencies
+            automated
