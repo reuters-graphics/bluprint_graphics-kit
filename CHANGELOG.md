@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.4
+
+### Patch Changes
+
+- 6bc5dd5: Updates rngs-io-client.
+
 ## 2.2.3
 
 ### Patch Changes
