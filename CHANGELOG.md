@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.3
+
+### Patch Changes
+
+- 15918b4: Adds a last publish time check to live endpoints so the app uses the latest version of the story, either locally synced or published via the live endpoint.
+
 ## 2.2.2
 
 ### Patch Changes
