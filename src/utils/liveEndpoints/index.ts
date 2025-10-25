@@ -163,6 +163,35 @@ export class LiveEndpoints {
     const liveContent = liveEndpoints.find(
       (endPoint) => endPoint.localFile === `locales/${localeFilePath}.json`
     );
-    return (liveContent as typeof localContent) || localContent;
+
+    // If no live content found, return local content
+    if (!liveContent) {
+      return localContent;
+    }
+
+    // Compare lastPublished dates to determine which content is more recent
+    const localContentWithMetadata = localContent as {
+      metadata?: { lastSynced?: string };
+    };
+
+    const liveLastPublished = liveContent.metadata?.lastPublished;
+    const localLastSynced = localContentWithMetadata.metadata?.lastSynced;
+
+    // If local content doesn't have lastSynced return live content
+    if (!localLastSynced) {
+      return liveContent as typeof localContent;
+    }
+
+    // If live content doesn't have lastPublished, return local content
+    if (!liveLastPublished) {
+      return localContent;
+    }
+
+    // Compare dates - return live content if it's more recent, otherwise return local
+    const liveDate = new Date(liveLastPublished);
+    const localDate = new Date(localLastSynced);
+
+    if (liveDate > localDate) return liveContent as typeof localContent;
+    return localContent;
   }
 }
