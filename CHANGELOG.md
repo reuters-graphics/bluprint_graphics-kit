@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.6
+
+### Patch Changes
+
+- bf502bd: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.2.5
 
 ### Patch Changes
