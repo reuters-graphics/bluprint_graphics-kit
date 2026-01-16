@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.7
+
+### Patch Changes
+
+- 8dc305e: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.2.6
 
 ### Patch Changes
