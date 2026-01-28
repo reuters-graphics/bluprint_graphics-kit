@@ -36,10 +36,12 @@ const config = {
         trailingSlash: false,
         rootRelative: false,
       }),
-      base: getBasePath(mode, {
-        trailingSlash: false,
-        rootRelative: true,
-      }),
+      base: decodeURI(
+        getBasePath(mode, {
+          trailingSlash: false,
+          rootRelative: true,
+        })
+      ),
     },
     adapter: adapter({
       pages: 'dist',
