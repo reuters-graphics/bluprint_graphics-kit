@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.8
+
+### Patch Changes
+
+- cc0fd46: Fixing handling for pages where one of the Reuters slugs contains a space character.
+
 ## 2.2.7
 
 ### Patch Changes
