@@ -64,7 +64,7 @@ const changeToBlogFormat = (createBlogRngsIoStories = true) => {
     force: true,
   });
   fs.cpSync(
-    path.join(templatesDir, 'Post/index.svelte'),
+    path.join(templatesDir, 'Post.svelte'),
     path.join(ROOT, 'src/lib/Post.svelte'),
     { force: true }
   );
@@ -80,11 +80,9 @@ const changeToBlogFormat = (createBlogRngsIoStories = true) => {
   if (fs.existsSync(appPath)) fs.removeSync(appPath);
 };
 
-export const changeProjectTypeToBlog = async (
-  force = false,
-  createBlogRngsIoStories = true
-) => {
-  let shouldCreateBlogRngsIoStories = createBlogRngsIoStories;
+export const changeProjectTypeToBlog = async (force = false) => {
+  // Force mode skips prompts, but should still create fresh RNGS.io stories from the blog template.
+  let shouldCreateBlogRngsIoStories = true;
 
   if (!force) {
     const confirmed = await confirm({

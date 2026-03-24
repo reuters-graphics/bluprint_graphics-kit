@@ -23,13 +23,26 @@ Switch your [project type](/bluprint_graphics-kit/developers/project-structure/#
 
 ### Convert to blog format
 
-Convert a graphics-kit project into the blog format. Do this with a fresh project, not with an existing project you want to keep, as it will make large changes to your project structure and files.
+Convert a graphics-kit project into the Reuters Graphics blog format. Do this with a new project, not with an existing project, as it will make large changes to your project structure and files.
 
 This mod will:
 
 - Replace the [pages route structure](developers/project-structure/#pages) with blog-style routes, including dynamic post pages.
 - Replace `src/lib/App.svelte` with a minimal `src/lib/Post.svelte` blog post component.
-- Rewrite `rngs-io.json` to point at storyboard `clrkyrv3j0003jw084m0t3nd4`.
+- Generate a new Rngs.io storyboard formatted in the blog style and wire up the metadata to `rngs-io.json`.
+
+Creating new posts:
+- Create a new branch in your repository for each new post, titled `post-1`, `post-2`, etc.
+- Create a new Rngs.io document for each post, by duplicating an existing blog post document.
+    - To duplicate, click on an existing blog document in Rngs.io, then click on the gear icon on the top right, and copy key.
+    - At the root of the storyboard, click "Create a new story" and paste the copy key. Title it clearly, i.e. "Post 1: Maps", etc.
+- Connect the newly created Rngs.io document to the new branch by running `pnpm run stories:connect` and following the prompts.
+- Make a pull request and merge it into main when the post is ready for publication.
+
+Tips:
+- Remember to update the `publishedDate` field for each post in Rngs.io. This field controls the order of the posts in the table of contents.
+- Add the blog post number to the names of Adobe Illustrator files and sharecards for organisation, e.g. `post-1-map.ai`, `sharecard-post-1.jpg`.
+- Edit the clocks in the blog by updating the `cities` array passed to the [`ClockWall` component](https://reuters-graphics.github.io/graphics-components/?path=/docs/components-blog-clockwall--docs) in `pages/+page.svelte`.
 
 ### Make ai2svelte embeds
 

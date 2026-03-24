@@ -1,13 +1,25 @@
-import { describe, it, beforeAll, afterAll, expect } from 'vitest';
+import { describe, it, beforeAll, afterAll, expect, vi } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
 import { changeProjectTypeToBlog } from '.';
 import fs from 'fs-extra';
 import path from 'path';
-import { execSync } from 'child_process';
+import { execSync, execFileSync } from 'node:child_process';
+
+vi.mock('node:child_process', async () => {
+  const actual = (await vi.importActual(
+    'node:child_process'
+  )) as typeof import('node:child_process');
+
+  return {
+    ...actual,
+    execFileSync: vi.fn(() => Buffer.from('')),
+  };
+});
 
 process.env.TESTING = 'true';
 
 const twd = new TestWorkingDirectory();
+const execFileSyncMock = vi.mocked(execFileSync);
 
 describe('Mods: project-type-blog', () => {
   beforeAll(async () => {
@@ -19,7 +31,7 @@ describe('Mods: project-type-blog', () => {
   });
 
   it('converts the project pages to blog format', async () => {
-    await changeProjectTypeToBlog(true, false);
+    await changeProjectTypeToBlog(true);
 
     expect(fs.existsSync(path.join(twd.TWD, 'pages/+layout.svelte'))).toBe(
       true
@@ -41,12 +53,27 @@ describe('Mods: project-type-blog', () => {
     ).toMatch('<BlogPost');
   });
 
-  it('keeps rngs-io.json in force mode', async () => {
+  it('creates new rngs-io docs in force mode', async () => {
     const rngsIoJson = fs.readFileSync(
       path.join(twd.TWD, 'rngs-io.json'),
       'utf8'
     );
-    expect(rngsIoJson).toMatch('cltmvxt5q0000l908irus4rdd');
+    expect(rngsIoJson).toMatch('{\n  "storyboards": {}\n}');
+    expect(execFileSyncMock).toHaveBeenCalledTimes(2);
+    expect(execFileSyncMock).toHaveBeenNthCalledWith(
+      1,
+      'npx',
+      expect.arrayContaining([
+        'rngs-io',
+        'stories',
+        'new',
+        '--name',
+        'Main page',
+        '--template',
+        'clrkyrv3j0003jw084m0t3nd4',
+      ]),
+      expect.objectContaining({ cwd: twd.TWD })
+    );
   });
 
   it('builds after conversion', async () => {
