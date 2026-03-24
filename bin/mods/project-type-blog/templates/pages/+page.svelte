@@ -1,9 +1,10 @@
-<script>
-  // Utils and libraries
+<script lang="ts">
+  // Utils, libraries and types
   import pkg from '$pkg';
   import { base, assets } from '$app/paths';
   import { page } from '$app/state';
   import { isReutersDotcom } from '$utils/env';
+  import type { PageData } from './$types';
 
   // Content
   import { story as content } from '$locales/en/content.json';
@@ -24,7 +25,7 @@
   } from '@reuters-graphics/graphics-components';
   import Post from '$lib/Post.svelte';
 
-  let { data } = $props();
+  let { data }: { data: PageData } = $props();
 
   let tocPosts = $derived(
     (data.posts || [])
@@ -58,7 +59,7 @@
 
 <Headline
   section={content.section}
-  hed={content.mainHeadline || content.hed}
+  hed={content.mainHeadline}
   hedSize="big"
   width="normal"
   class="mb-2"
