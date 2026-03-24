@@ -17,8 +17,7 @@
   import '@reuters-graphics/graphics-components/scss/main.scss';
   import '$lib/styles/global.scss';
 
-  // Components — Post.svelte is created when the blog mod is applied.
-  // @ts-ignore
+  // Components
   import Post from '$lib/Post.svelte';
 
   let { data }: { data: PageData } = $props();

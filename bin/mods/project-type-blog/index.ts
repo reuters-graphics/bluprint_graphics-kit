@@ -30,7 +30,7 @@ const createRngsIoStories = (cwd: string) => {
       '--name',
       'Main page',
       '--template',
-      'clrkyrv3j0003jw084m0t3nd4',
+      'clrkyulv80004jw085d8w0388',
       '--syncPath',
       'locales/en/content.json',
     ],
