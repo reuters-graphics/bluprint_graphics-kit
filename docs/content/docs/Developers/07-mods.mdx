@@ -36,7 +36,7 @@ Creating new posts:
 - Create a new Rngs.io story for each post by duplicating an existing blog post.
     - To duplicate, click on an existing blog story in Rngs.io, then click on the gear icon on the top right, and copy key.
     - At the root of the storyboard, click "Create a new story" and paste the copied key. Title the new story clearly, i.e. "Post 1: Maps", etc.
-- Connect the newly created Rngs.io story to the new branch by running `pnpm run stories:connect` and following the prompts.
+- Connect the newly created Rngs.io story to the new branch by running `pnpm run stories:connect` and following the prompts. All posts must be named `locales/en/post-[ADD NUMBER OR DESCRIPTIVE NAME].json` to be recognised as blog posts.
 - Add additional blocks to the Rngs.io stories and `src/lib/Post.svelte` as needed to render different types of content in the blog post.
 - Make a pull request and merge it into main when the post is ready for publication.
 

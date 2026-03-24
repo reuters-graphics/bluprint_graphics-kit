@@ -16,9 +16,12 @@
     "tests/**/*.js",
     "tests/**/*.ts",
     "tests/**/*.svelte",
-    // Mods
-    "bin/mods/**/*.svelte",
-    "bin/mods/**/*.ts"
+    // Mods: Only include mod core files (templates are checked by tests)
+    "bin/mods/**/*.ts",
+    "bin/mods/**/*.svelte"
+  ],
+  "exclude": [
+    "bin/mods/*/templates/**"
   ],
   "compilerOptions": {
     "skipLibCheck": true

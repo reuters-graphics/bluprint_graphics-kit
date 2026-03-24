@@ -70,7 +70,7 @@ describe('Mods: project-type-blog', () => {
         '--name',
         'Main page',
         '--template',
-        'clrkyrv3j0003jw084m0t3nd4',
+        'clrkyulv80004jw085d8w0388',
       ]),
       expect.objectContaining({ cwd: twd.TWD })
     );
