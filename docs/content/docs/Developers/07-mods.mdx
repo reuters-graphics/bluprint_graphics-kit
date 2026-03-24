@@ -27,17 +27,17 @@ Convert a graphics-kit project into the Reuters Graphics blog format. Do this wi
 
 This mod will:
 
-- Replace the [pages route structure](developers/project-structure/#pages) with blog-style routes, including dynamic post pages.
-- Replace `src/lib/App.svelte` with a minimal `src/lib/Post.svelte` blog post component.
+- Replace the [pages route structure](developers/project-structure/#pages) with blog-style structure.
+- Replace `src/lib/App.svelte` with a minimal `src/lib/Post.svelte` component.
 - Generate a new Rngs.io storyboard formatted in the blog style and wire up the metadata to `rngs-io.json`.
 
 Creating new posts:
-- Create a new branch in your repository for each new post, titled `post-1`, `post-2`, etc.
-- Create a new Rngs.io document for each post, by duplicating an existing blog post document.
-    - To duplicate, click on an existing blog document in Rngs.io, then click on the gear icon on the top right, and copy key.
-    - At the root of the storyboard, click "Create a new story" and paste the copy key. Title it clearly, i.e. "Post 1: Maps", etc.
-- Connect the newly created Rngs.io document to the new branch by running `pnpm run stories:connect` and following the prompts.
-- Add additional blocks to the Rngs.io posts and `src/lib/Post.svelte` as needed to render different types of content in the blog post.
+- Create a new branch in your repository for each new post, named `post-1`, `post-2`, etc.
+- Create a new Rngs.io story for each post by duplicating an existing blog post.
+    - To duplicate, click on an existing blog story in Rngs.io, then click on the gear icon on the top right, and copy key.
+    - At the root of the storyboard, click "Create a new story" and paste the copied key. Title the new story clearly, i.e. "Post 1: Maps", etc.
+- Connect the newly created Rngs.io story to the new branch by running `pnpm run stories:connect` and following the prompts.
+- Add additional blocks to the Rngs.io stories and `src/lib/Post.svelte` as needed to render different types of content in the blog post.
 - Make a pull request and merge it into main when the post is ready for publication.
 
 Tips:
