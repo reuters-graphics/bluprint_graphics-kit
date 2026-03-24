@@ -1,5 +1,6 @@
 import sade from 'sade';
 import { changeProjectType } from './project-type';
+import { changeProjectTypeToBlog } from './project-type-blog';
 import { intro } from '@reuters-graphics/clack';
 import { cancel, isCancel, log, outro, select } from '@clack/prompts';
 import { exportAiStatics } from './export-ai-statics';
@@ -15,6 +16,16 @@ prog
     intro('Kit mods');
     log.step('Change project type');
     await changeProjectType(!!opts.force);
+    outro('Done.');
+  });
+
+prog
+  .command('project-type-blog')
+  .option('-f, --force', 'Force the change', false)
+  .action(async (opts) => {
+    intro('Kit mods');
+    log.step('Change project type to blog');
+    await changeProjectTypeToBlog(!!opts.force);
     outro('Done.');
   });
 
@@ -38,6 +49,10 @@ prog.command('mods').action(async () => {
         label: 'Change my project type',
         hint: 'to embeds-only or pages+',
       },
+      {
+        value: 'project-type-blog',
+        label: 'Change my project type to a blog',
+      },
     ],
     initialValue: 'export-ai-statics',
   });
@@ -45,6 +60,7 @@ prog.command('mods').action(async () => {
   if (mod === 'export-ai-statics') await exportAiStatics();
   if (mod === 'make-ai-embed') await makeAiEmbed();
   if (mod === 'project-type') await changeProjectType();
+  if (mod === 'project-type-blog') await changeProjectTypeToBlog();
   outro('Done.');
 });
 
