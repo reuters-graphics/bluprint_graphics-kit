@@ -1,14 +1,17 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import { page } from '$app/state';
+
+  // Styles
+  import '$lib/styles/global.scss';
+
+  // Components
   import {
     SiteHeader,
     SiteFooter,
     Theme,
     Article,
   } from '@reuters-graphics/graphics-components';
-  import { browser } from '$app/environment';
-  import { page } from '$app/state';
-
-  import '$lib/styles/global.scss';
 
   let { children } = $props();
 

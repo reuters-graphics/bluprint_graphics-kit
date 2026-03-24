@@ -1,4 +1,18 @@
 <script>
+  // Utils and libraries
+  import pkg from '$pkg';
+  import { base, assets } from '$app/paths';
+  import { page } from '$app/state';
+  import { isReutersDotcom } from '$utils/env';
+
+  // Content
+  import { story as content } from '$locales/en/content.json';
+
+  // Styles
+  import '@reuters-graphics/graphics-components/scss/main.scss';
+  import '$lib/styles/global.scss';
+
+  // Components
   import {
     AdScripts,
     Analytics,
@@ -8,18 +22,7 @@
     BlogTOC,
     EndNotes,
   } from '@reuters-graphics/graphics-components';
-  import { base, assets } from '$app/paths';
-  import { page } from '$app/state';
-  import { isReutersDotcom } from '$utils/env';
-  import pkg from '$pkg';
-
   import Post from '$lib/Post.svelte';
-
-  // Content
-  import { story as content } from '$locales/en/content.json';
-
-  import '@reuters-graphics/graphics-components/scss/main.scss';
-  import '$lib/styles/global.scss';
 
   let { data } = $props();
 

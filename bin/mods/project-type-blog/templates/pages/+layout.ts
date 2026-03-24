@@ -1,8 +1,8 @@
-export const prerender = true;
-export const trailingSlash = 'always';
-
 import type { LayoutLoad } from './$types.js';
 import post from '$locales/en/post-1.json';
+
+export const prerender = true;
+export const trailingSlash = 'always';
 
 export const load: LayoutLoad = async () => {
     // All JSON files in the locales/en directory that start with "post" and end with ".json" are considered blog posts.
