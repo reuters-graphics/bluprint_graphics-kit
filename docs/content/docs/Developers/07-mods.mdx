@@ -29,7 +29,9 @@ This mod will:
 
 - Replace the [pages route structure](developers/project-structure/#pages) with blog-style structure.
 - Replace `src/lib/App.svelte` with a minimal `src/lib/Post.svelte` component.
-- Generate a new Rngs.io storyboard formatted in the blog style and wire up the metadata to `rngs-io.json`.
+- Generate a new Rngs.io storyboard formatted in the blog style and wire up the metadata to `rngs-io.json`. The storyboard will include two stories:
+    - "Main page" (`locales/en/content.json`), which contains metadata, headline, and notes for the entire blog.
+    - "Post 1" (`locales/en/post-1.json`), which contains metadata, headline, and other content for a blog post.
 
 Creating new posts:
 - Create a new branch in your repository for each new post, named `post-1`, `post-2`, etc.
