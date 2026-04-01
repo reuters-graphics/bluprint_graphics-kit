@@ -32,6 +32,7 @@ const config = {
   kit: {
     appDir: '_app',
     paths: {
+      relative: false,
       assets: getBasePath(mode, 'cdn', {
         trailingSlash: false,
         rootRelative: false,
