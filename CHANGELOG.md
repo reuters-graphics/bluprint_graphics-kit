@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.12
+
+### Patch Changes
+
+- 43608cf: Sets SvelteKit paths to absolute
+
 ## 2.2.11
 
 ### Patch Changes
