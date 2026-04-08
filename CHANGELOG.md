@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.3.0
+
+### Minor Changes
+
+- Adds new mod to convert project into blog format
+
 ## 2.2.11
 
 ### Patch Changes
