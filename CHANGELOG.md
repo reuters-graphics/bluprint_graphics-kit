@@ -1,10 +1,10 @@
 # @reuters-graphics/graphics-kit
 
-## 2.3.0
+## 2.2.12
 
-### Minor Changes
+### Patch Changes
 
-- Adds new mod to convert project into blog format
+- 43608cf: Sets SvelteKit paths to absolute
 
 ## 2.2.11
 
