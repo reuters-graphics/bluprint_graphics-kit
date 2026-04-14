@@ -21,6 +21,34 @@ pnpm mods
 
 Switch your [project type](/bluprint_graphics-kit/developers/project-structure/#project-type) to **embeds-only** or back to **pages+**.
 
+### Change project to blog format
+
+Convert a graphics-kit project into the Reuters Graphics blog format. 
+
+Do this with a new project, not with an existing project, as it will make large changes to your project structure and files. When creating a new project that's intended to be a blog with `bluprint start`, do not create a new RNGS.io document as this will be handled by the mod when you convert the project to the blog format.
+
+This mod will:
+
+- Replace the [pages route structure](developers/project-structure/#pages) with blog-style structure.
+- Replace `src/lib/App.svelte` with a minimal `src/lib/Post.svelte` component.
+- Generate a new Rngs.io storyboard formatted in the blog style and wire up the metadata to `rngs-io.json`. The storyboard will include two stories:
+    - "Main page" (`locales/en/content.json`), which contains metadata, headline, and notes for the entire blog.
+    - "Post 1" (`locales/en/post-1.json`), which contains metadata, headline, and other content for a blog post.
+
+Creating new posts:
+- Create a new branch in your repository for each new post, named `post-1`, `post-2`, etc.
+- Create a new Rngs.io story for each post by duplicating an existing blog post.
+    - To duplicate, click on an existing blog story in Rngs.io, then click on the gear icon on the top right, and copy key.
+    - At the root of the storyboard, click "Create a new story" and paste the copied key. Title the new story clearly, i.e. "Post 1: Maps", etc.
+- Connect the newly created Rngs.io story to the new branch by running `pnpm run stories:connect` and following the prompts. All posts must be named `locales/en/post-[ADD NUMBER OR DESCRIPTIVE NAME].json` to be recognised as blog posts.
+- Add additional blocks to the Rngs.io stories and `src/lib/Post.svelte` as needed to render different types of content in the blog post.
+- Make a pull request and merge it into main when the post is ready for publication.
+
+Tips:
+- Remember to update the `publishedDate` field for each post in Rngs.io. This field controls the order of the posts in the table of contents.
+- Add the blog post number to the names of Adobe Illustrator files and sharecards for organisation, e.g. `post-1-map.ai`, `sharecard-post-1.jpg`.
+- Edit the clocks in the blog by updating the `cities` array passed to the [`ClockWall` component](https://reuters-graphics.github.io/graphics-components/?path=/docs/components-blog-clockwall--docs) in `pages/+page.svelte`.
+
 ### Make ai2svelte embeds
 
 Make an embeddable page for an Adobe Illustrator graphic.

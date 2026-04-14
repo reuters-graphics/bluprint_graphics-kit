@@ -101,7 +101,9 @@
   },
   "dependencies": {
     "@reuters-graphics/graphics-components": "^3.3.3",
-    "language-tags": "^1.0.9"
+    "isbot": "^5.1.36",
+    "language-tags": "^1.0.9",
+    "slugify": "^1.6.8"
   },
   "reuters": {
     "graphic": {},
