@@ -14,7 +14,7 @@ Set up translations for the dotcom page, embed page, or both.
 
 1. Duplicate the English story in RNGS.io.
 
-  Click into the `page-en` story for your project in RNGS.io. Then click on the gear icon on the top right, and copy key. At the root of the storyboard, click "Create a new story" and paste the copied key. Title the new story clearly, e.g. `page-es`.
+  Click into the `page-en` story for your project in RNGS.io. Click the gear icon (top right) and select **Copy** under "Copy Key". Then, at the storyboard root, click **Create a new story** and paste the copied key. Title the new story clearly, e.g. `page-es`.
 
 2. Connect the translated story to the project.
 
@@ -27,8 +27,6 @@ Set up translations for the dotcom page, embed page, or both.
 
 
 3. Sync stories to pull translated content locally.
-  
-Run:
 
   ```sh
   pnpm stories:sync
@@ -48,7 +46,7 @@ If the translated file does not appear, make sure the translated RNGS.io doc has
 
 ### Pass `locale` into `App.svelte`
 
-Only do this if something inside [src/lib/App.svelte](/Users/U6022136/Documents/BACKEND/bluprint_graphics-kit/src/lib/App.svelte) actually needs to know the current language. 
+Only do this if something inside `App.svelte` actually needs to know the current language.
 
 Typical reasons to pass `locale` include a language toggle button, locale-specific links, or any component logic that depends on the active locale.
 
@@ -76,7 +74,7 @@ If you are translating only the dotcom page and not the embed, conditionally ren
 
 Create a new folder for the locale inside `pages/`, then copy `pages/+page.svelte` into it. See the [SvelteKit routing docs](https://svelte.dev/docs/kit/routing) for more on filesystem routing.
 
-To publish a dotrom page in both English 🇬🇧 and Spanish 🇪🇸, your `pages/` directory would look like this:
+To publish a dotcom page in both English 🇬🇧 and Spanish 🇪🇸, your `pages/` directory would look like this:
 <FileTree>
 - pages/
   - +page.svelte 🇬🇧 English homepage
@@ -88,20 +86,19 @@ To publish a dotrom page in both English 🇬🇧 and Spanish 🇪🇸, your `pa
 
 In the new locale page (`pages/{locale}/+page.svelte`), replace the derived `data.content` setup with a direct import of the translated story.
 
-Specifically, replace these lines:
+Specifically, replace these lines inside the `<script lang="ts">` block:
 
-```svelte
+```ts
 let { data }: { data: PageData } = $props();
 let content = $derived(data.content);
 ```
 
 with this:
 
-```svelte
+```ts
 // Spanish RNGS.io story
 import esStory from '$locales/es/content.json';
 
-// Get content
 let content = esStory.story;
 ```
 
@@ -122,11 +119,11 @@ To publish a dotcom and embed page in English 🇬🇧 and Spanish 🇪🇸, you
 <FileTree>
 - pages/
   - embeds/
-    - en
-      - page
+    - en/
+      - page/
         - +page.svelte 🇬🇧 English embed page
-    - es
-      - page
+    - es/
+      - page/
         - +page.svelte 🇪🇸 Spanish embed page
   - es/
     - +page.svelte 🇪🇸 Spanish homepage
