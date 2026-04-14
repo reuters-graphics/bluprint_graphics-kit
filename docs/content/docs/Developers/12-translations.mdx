@@ -1,0 +1,134 @@
+---
+title: Translations
+slug: developers/translations
+sidebar:
+  order: 31
+---
+
+import { FileTree, Steps, Aside } from '@astrojs/starlight/components';
+
+Set up translations for the dotcom page, embed page, or both.
+
+
+### Set up a translated RNGS.io story
+
+1. Duplicate the English story in RNGS.io.
+
+  Click into the `page-en` story for your project in RNGS.io. Click the gear icon (top right) and select **Copy** under "Copy Key". Then, at the storyboard root, click **Create a new story** and paste the copied key. Title the new story clearly, e.g. `page-es`.
+
+2. Connect the translated story to the project.
+
+  Run the following command in your terminal. Follow the prompts and save the translated story to `locales/{locale}/content.json`.
+
+  ```sh
+  pnpm stories:connect
+  ```
+
+
+
+3. Sync stories to pull translated content locally.
+
+  ```sh
+  pnpm stories:sync
+  ```
+
+After syncing, your project should look like this:
+
+<FileTree>
+- locales
+  - en
+    - content.json
+  - es
+    - content.json
+</FileTree>
+
+If the translated file does not appear, make sure the translated RNGS.io doc has been added with `pnpm stories:connect` before re-running `pnpm stories:sync`.
+
+### Pass `locale` into `App.svelte`
+
+Only do this if something inside `App.svelte` actually needs to know the current language.
+
+Typical reasons to pass `locale` include a language toggle button, locale-specific links, or any component logic that depends on the active locale.
+
+If you do need it, update `App.svelte` so it accepts a `locale` prop that defaults to English.
+
+```svelte
+<!-- In App.svelte -->
+<script lang="ts">
+  import type ArchieML from '$locales/en/content.json';
+
+  // Add `locale = 'en'`
+  let { embedded = false, content, locale = 'en' }: Props = $props();
+</script>
+```
+
+If you want a button control for switching languages, you can add `LanguageButton` from `@reuters-graphics/graphics-components` to `App.svelte`. See the [LanguageButton docs](https://reuters-graphics.github.io/graphics-components/?path=/docs/components-text-elements-languagebutton--docs) for usage details.
+
+<Aside>
+If you are translating only the dotcom page and not the embed, conditionally render `LanguageButton` only when `embedded === false`. Also omit language-switching UI on any route that does not have a translated counterpart.
+</Aside>
+
+### Create a translated dotcom page
+
+1.  Create a new page for the translated locale.
+
+Create a new folder for the locale inside `pages/`, then copy `pages/+page.svelte` into it. See the [SvelteKit routing docs](https://svelte.dev/docs/kit/routing) for more on filesystem routing.
+
+To publish a dotcom page in both English 🇬🇧 and Spanish 🇪🇸, your `pages/` directory would look like this:
+<FileTree>
+- pages/
+  - +page.svelte 🇬🇧 English homepage
+  - es/
+    - +page.svelte 🇪🇸 Spanish homepage
+</FileTree>
+
+2. Load the correct translated story content in the new page.
+
+In the new locale page (`pages/{locale}/+page.svelte`), replace the derived `data.content` setup with a direct import of the translated story.
+
+Specifically, replace these lines inside the `<script lang="ts">` block:
+
+```ts
+let { data }: { data: PageData } = $props();
+let content = $derived(data.content);
+```
+
+with this:
+
+```ts
+// Spanish RNGS.io story
+import esStory from '$locales/es/content.json';
+
+let content = esStory.story;
+```
+
+3. Pass `locale` into `App.svelte` as needed:
+
+```svelte
+<!-- In pages/{locale}/+page.svelte -->
+ <App {content} locale="es" />
+```
+
+Use the same pattern for any other language code.
+
+### Optional: Create a translated embed page
+
+If the embed should also be translated, follow the steps above with `pages/embeds/en/page/+page.svelte` as the source file and `pages/embeds/{locale}/page/+page.svelte` as the destination.
+
+To publish a dotcom and embed page in English 🇬🇧 and Spanish 🇪🇸, your `pages/` directory would look like this:
+<FileTree>
+- pages/
+  - embeds/
+    - en/
+      - page/
+        - +page.svelte 🇬🇧 English embed page
+    - es/
+      - page/
+        - +page.svelte 🇪🇸 Spanish embed page
+  - es/
+    - +page.svelte 🇪🇸 Spanish homepage
+  - +page.svelte 🇬🇧 English homepage
+</FileTree>
+
+
+If you are translating only the dotcom version and not the embed, keep the embed at English and make sure any language-switching UI is hidden for embedded rendering.
