@@ -1,6 +1,6 @@
 {
   "bluprint": "^0.6.3",
-  "name": "Graphics Kit",
+  "name": "Graphics Kit Test 2",
   "category": "Graphics rigs",
   "actions": [{
     "action": "prompt",
@@ -73,8 +73,7 @@
           "rngs-io stories new --name 'embeds' --template cm8q3vr0e0000l803tfleu4t4 --syncPath 'locales/en/embeds.json'"
         ]
       ],
-      ["git", ["add", "."]],
-      ["git", ["commit", "-m", "\"adds RNGS stories\""]]
+      ["git", ["add", "."]]
     ],
     "condition": ["makeRngsDocs", true]
   }, {
@@ -91,10 +90,12 @@
     "action": "execute",
     "cmds": [
       ["pnpm", ["startup:create-repo"]],
-	  ["git", ["push", "origin", "main"]],
+	  ["git", ["push", "-u", "origin", "main"]],
 	  ["git", ["checkout", "-b", "gfx"]],
-	  ["git", ["commit", "--allow-empty", "-m", "gfx initial"]],
-	  ["git", ["push", "origin", "gfx"]]
+	  ["git", ["commit", "-m", "\"adds RNGS stories\""]],
+	  ["git", ["add", "."]],
+	  ["git", ["commit", "--allow-empty", "-m", "'gfx initial'"]],
+	  ["git", ["push", "-u", "origin", "gfx"]]
     ]
   }, {
     "action": "log",
