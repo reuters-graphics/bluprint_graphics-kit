@@ -95,6 +95,15 @@
     "cmds": [
       ["pnpm", ["startup:create-repo"]]
     ]
+  },
+  {
+    "action": "execute",
+    "cmds": [
+	  ["git", ["push", "origin", "main"]],
+	  ["git", ["checkout", "-b", "gfx"]],
+	  ["git", ["push", "origin", "gfx"]]
+    ],
+    "condition": ["makeRngsDocs", true]
   }, {
     "action": "log",
     "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green pnpm start} to begin developing.\n"
