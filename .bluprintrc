@@ -1,6 +1,6 @@
 {
   "bluprint": "^0.6.3",
-  "name": "Graphics Kit Test 2",
+  "name": "Graphics Kit",
   "category": "Graphics rigs",
   "actions": [{
     "action": "prompt",
