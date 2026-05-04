@@ -90,12 +90,7 @@
   }, {
     "action": "execute",
     "cmds": [
-      ["pnpm", ["startup:create-repo"]]
-    ]
-  },
-  {
-    "action": "execute",
-    "cmds": [
+      ["pnpm", ["startup:create-repo"]],
 	  ["git", ["push", "origin", "main"]],
 	  ["git", ["checkout", "-b", "gfx"]],
 	  ["git", ["commit", "--allow-empty", "-m", "gfx initial"]],
