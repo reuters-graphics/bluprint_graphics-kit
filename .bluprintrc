@@ -41,6 +41,7 @@
   }, {
     "action": "execute",
     "cmds": [
+      ["git", ["config", "--global", "init.defaultBranch", "main"]],
       ["git", ["init"]],
       ["git", ["add", "."]],
       ["git", ["commit", "-m", "initial"]],
@@ -73,7 +74,10 @@
         ]
       ],
       ["git", ["add", "."]],
-      ["git", ["commit", "-m", "\"adds RNGS stories\""]]
+      ["git", ["commit", "-m", "\"adds RNGS stories\""]],
+	  ["git", ["push", "origin", "main"]],
+	  ["git", ["checkout", "-b", "gfx"]],
+	  ["git", ["push", "origin", "gfx"]]
     ],
     "condition": ["makeRngsDocs", true]
   }, {
