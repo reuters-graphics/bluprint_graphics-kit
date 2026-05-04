@@ -98,6 +98,7 @@
     "cmds": [
 	  ["git", ["push", "origin", "main"]],
 	  ["git", ["checkout", "-b", "gfx"]],
+	  ["git", ["commit", "--allow-empty", "-m", "gfx initial"]],
 	  ["git", ["push", "origin", "gfx"]]
     ],
     "condition": ["makeRngsDocs", true]
