@@ -100,8 +100,7 @@
 	  ["git", ["checkout", "-b", "gfx"]],
 	  ["git", ["commit", "--allow-empty", "-m", "gfx initial"]],
 	  ["git", ["push", "origin", "gfx"]]
-    ],
-    "condition": ["makeRngsDocs", true]
+    ]
   }, {
     "action": "log",
     "msg": "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nRun {green pnpm start} to begin developing.\n"
