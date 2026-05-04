@@ -74,7 +74,7 @@
         ]
       ],
       ["git", ["add", "."]],
-      ["git", ["commit", "-m", "\"adds RNGS stories\""]],
+      ["git", ["commit", "-m", "\"adds RNGS stories\""]]
     ],
     "condition": ["makeRngsDocs", true]
   }, {
