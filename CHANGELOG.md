@@ -324,7 +324,6 @@
   Obviously, the muscle memory around using `yarn` will take a bit to work out.
 
   For any of our basic commands, you can just replace `yarn` with `pnpm`:
-
   - `pnpm start`
   - `pnpm preview`
   - `pnpn upload`
