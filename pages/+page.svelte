@@ -12,7 +12,7 @@
   import App from '$lib/App.svelte';
   import pkg from '$pkg';
   import { dev } from '$app/environment';
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import { isReutersApp, isReutersDev, isReutersDotcom } from '$utils/env';
   import LogBlock from '$lib/components/dev/LogBlock.svelte';
@@ -36,7 +36,7 @@
   seoDescription={content.seoDescription}
   shareTitle={content.shareTitle}
   shareDescription={content.shareDescription}
-  shareImgPath={`${assets}/${content.shareImgPath}`}
+  shareImgPath={asset(`/images/${content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}

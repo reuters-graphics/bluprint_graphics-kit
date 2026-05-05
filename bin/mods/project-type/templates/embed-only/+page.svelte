@@ -1,7 +1,7 @@
 <script lang="ts">
   import { SEO } from '@reuters-graphics/graphics-components';
 
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import { isReutersDotcom, isReutersPreview } from '$utils/env';
 </script>
@@ -13,7 +13,7 @@
   seoDescription=""
   shareTitle=""
   shareDescription=""
-  shareImgPath={`${assets}/images/reuters-graphics.jpg`}
+  shareImgPath={asset('/images/reuters-graphics.jpg')}
 />
 
 <svelte:head>

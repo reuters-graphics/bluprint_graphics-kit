@@ -764,11 +764,11 @@ The following are HTML attributes you can put on any HTML element.
 
 ### Imports from `$app/paths`
 
-- **assets**: the absolute URL prefix for static assets (`config.kit.paths.assets`)
+- **asset**: the absolute URL prefix for static assets (`config.kit.paths.assets`)
 
   ```js
-  import { assets } from '$app/paths';
-  console.log(`<img src="${assets}/logo.png">`);
+  import { asset } from '$app/paths';
+  console.log(`<img src={asset('/logo.png')}>`);
   ```
 
 - **base**: the base path for your app (`config.kit.paths.base`)

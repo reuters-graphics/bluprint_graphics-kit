@@ -12,7 +12,7 @@
 
   let { embedded = false, content }: Props = $props();
 
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 
   import {
     Article,
@@ -77,7 +77,7 @@
           notes={block.notes}
           ariaDescription={block.altText}
         >
-          <AiChart assetsPath={assets || '/'} />
+          <AiChart assetsPath={asset('/')} />
         </GraphicBlock>
       {/if}
 

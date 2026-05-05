@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageProps } from './$types';
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import {
     Theme,
@@ -28,8 +28,8 @@
   shareTitle=""
   shareDescription=""
   shareImgPath={embed ?
-    `${assets}/images/embeds/${embed.locale?.trim()}/${embed.slug?.trim()}.jpg`
-  : `${assets}/images/reuters-graphics.jpg`}
+    asset(`/images/embeds/${embed.locale?.trim()}/${embed.slug?.trim()}.jpg`)
+  : asset('/images/reuters-graphics.jpg')}
 />
 
 <svelte:head>
