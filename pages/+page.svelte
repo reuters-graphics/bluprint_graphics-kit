@@ -36,7 +36,7 @@
   seoDescription={content.seoDescription}
   shareTitle={content.shareTitle}
   shareDescription={content.shareDescription}
-  shareImgPath={asset(`/images/${content.shareImgPath}`)}
+  shareImgPath={asset(`/${content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}

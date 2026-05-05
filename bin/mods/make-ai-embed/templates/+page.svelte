@@ -63,7 +63,7 @@
       notes={embed?.notes}
       ariaDescription={embed?.altText}
     >
-      <Graphic assetsPath={assets} />
+      <Graphic assetsPath={asset('/')} />
     </GraphicBlock>
   </Article>
 </Theme>

@@ -82,13 +82,13 @@ For example, to add a new FeaturePhoto:
 
 ### Paths to multimedia files
 
-Notice in the example above, we append the `assets` variable from SvelteKit's `$app/paths` module to the `src` path we got from the content block.
+Notice in the example above, we append the `asset` variable from SvelteKit's `$app/paths` module to the `src` path we got from the content block.
 
-Always assume that paths to local multimedia files including images and videos specified in content blocks are relative and must be prefixed with the `assets` variable to make them absolute. For example:
+Always assume that paths to local multimedia files including images and videos specified in content blocks are relative and must be prefixed with the `asset` variable to make them absolute. For example:
 
 ```svelte
 <FeaturePhoto
-  src="{assets}/{block.src}"
+  src={asset(`/${block.src}`)}
   alt={block.alt}
   caption={block.caption}
   credit={block.credit}
@@ -154,7 +154,7 @@ For example, to use an AI graphic from `src/lib/ai2svelte/map.svelte`:
           notes={block.notes}
           ariaDescription={block.altText}
         >
-          <AiChart assetsPath={assets || '/'} />
+          <AiChart assetsPath={asset('/')} />
         </GraphicBlock>
       {/if}
 
