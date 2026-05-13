@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.2.15
+
+### Patch Changes
+
+- cea5102: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.2.14
 
 ### Patch Changes
