@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^3.4.0
-        version: 3.4.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3))
+        specifier: ^3.4.1
+        version: 3.4.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3))
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -1297,8 +1297,8 @@ packages:
     resolution: {integrity: sha512-u6Uj2gvsQTmJOKNQ6DAMsyEQCof37r3L8fgqj2xmY0e7BGPq4NRRhvMrMEuwfQ9WgQbmIo73dq6NfrgscPchYQ==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@3.4.0':
-    resolution: {integrity: sha512-1uNH14ybJMIVl8hxp2PaMo/g3rCj8O9UKpIsy5yZiin4agaEZHHrBehmtRfDZMt4paGi68+fBTreyeQDXFpd2Q==}
+  '@reuters-graphics/graphics-components@3.4.1':
+    resolution: {integrity: sha512-X0njv0X0mXrlBLCV/11ysJUnY6r+bnkQ1g8PZKAoJLtcSkXWmDpWCLWmUnEEeCikgoNMtgamwbH0KLut0yMHRw==}
     engines: {node: '>=20.18'}
     peerDependencies:
       svelte: ^5.0.0
@@ -8288,7 +8288,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@3.4.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3))':
+  '@reuters-graphics/graphics-components@3.4.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3))':
     dependencies:
       '@fortawesome/free-regular-svg-icons': 6.7.2
       '@fortawesome/free-solid-svg-icons': 6.7.2
