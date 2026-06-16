@@ -101,7 +101,7 @@
   },
   "dependencies": {
     "isbot": "^5.1.36",
-    "slugify": "^1.6.8"
+    "slugify": "^1.6.8",
     "@reuters-graphics/graphics-components": "^3.5.0",
     "language-tags": "^1.0.9"
   },
