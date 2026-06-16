@@ -6,6 +6,8 @@
     embedded?: boolean;
     /* ArchieML story content */
     content: (typeof ArchieML)['story'];
+    /* Locale for the page */
+    locale?: string;
   }
 
   let { embedded = false, content }: Props = $props();
