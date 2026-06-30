@@ -1,3 +1,8 @@
+---
+name: SvelteKit
+description: Working with routing, layouts, load functions, hooks, or SvelteKit config
+---
+
 ## Project types
 
 SvelteKit supports all rendering modes: SPA, SSR, SSG, and you can mix them within one project.

@@ -51,7 +51,8 @@
       ["pnpm", ["install"]],
       ["pnpm", ["svelte-kit", "sync"]],
       ["npx", ["lefthook", "install"]],
-      ["pnpm", ["startup:check-creds"]]
+      ["pnpm", ["startup:check-creds"]],
+      ["pnpm", ["sync-llms"]]
     ]
   }, {
     "action": "prompt",

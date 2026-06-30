@@ -31,7 +31,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint": "eslint --fix .",
     "format": "prettier . --write",
-    "knip": "knip"
+    "knip": "knip",
+    "sync-llms": "node bin/sync-llms/index.js"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.32.2",

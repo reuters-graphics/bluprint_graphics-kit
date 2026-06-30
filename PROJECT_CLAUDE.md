@@ -55,8 +55,12 @@ pnpm format         # format
 
 ## Key dependencies
 
-| Dependency                              | Context doc                                                                      | When to use                                                                             |
-| --------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Svelte 5                                | [`.claude/llms/svelte/docs.md`](.claude/llms/svelte/docs.md)                     | Writing or modifying any Svelte component — covers runes, snippets, and Svelte 5 syntax |
-| SvelteKit                               | [`.claude/llms/svelte-kit/docs.md`](.claude/llms/svelte-kit/docs.md)             | Working with routing, layouts, load functions, hooks, or SvelteKit config               |
-| `@reuters-graphics/graphics-components` | [`bin/llms/graphics-components/llms.txt`](bin/llms/graphics-components/llms.txt) | Adding or modifying components from the team's component library                        |
+<!-- llms-deps:start -->
+
+| Dependency | Context doc                                                          | When to use                                                                                 |
+| ---------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ArchieML   | [`.claude/llms/archieml/docs.md`](.claude/llms/archieml/docs.md)     | Writing ArchieML syntax in rngs.io to match content block types used in graphics components |
+| Svelte 5   | [`.claude/llms/svelte/docs.md`](.claude/llms/svelte/docs.md)         | Writing or modifying any Svelte component — covers runes, snippets, and Svelte 5 syntax     |
+| SvelteKit  | [`.claude/llms/svelte-kit/docs.md`](.claude/llms/svelte-kit/docs.md) | Working with routing, layouts, load functions, hooks, or SvelteKit config                   |
+
+<!-- llms-deps:end -->

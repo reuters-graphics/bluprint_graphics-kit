@@ -1,3 +1,8 @@
+---
+name: ArchieML
+description: Writing ArchieML syntax in rngs.io to match content block types used in graphics components
+---
+
 # ArchieML
 
 ArchieML is a lightweight and intuitive markup language that allows for easily structuring data within text documents. It is designed to be human-readable, very flexible, and is particularly useful for creating structured data by users who may never have seen ArchieML or any other markup language before.
