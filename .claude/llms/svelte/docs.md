@@ -21,6 +21,7 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
   <script>
     let count = $state(0);
   </script>
+
   <button onclick={() => count++}>Clicked: {count}</button>
   ```
 - Do **NOT** complicate state management by wrapping it in custom objects; instead, update reactive variables directly.  
@@ -34,12 +35,12 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
 - Use `$state` in class fields for reactive properties. For example:
   ```js
   class Todo {
-  	done = $state(false);
-  	text = $state('');
-  	reset = () => {
-  		this.text = '';
-  		this.done = false;
-  	};
+    done = $state(false);
+    text = $state('');
+    reset = () => {
+      this.text = '';
+      this.done = false;
+    };
   }
   ```
 
@@ -76,13 +77,13 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 - Pass-by-Value Semantics: Use getter functions to ensure functions access the current value of reactive state. For example:
   ```js
   function add(getA, getB) {
-  	return () => getA() + getB();
+    return () => getA() + getB();
   }
   let a = 1,
-  	b = 2;
+    b = 2;
   let total = add(
-  	() => a,
-  	() => b
+    () => a,
+    () => b
   );
   console.log(total());
   ```
@@ -98,6 +99,7 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
   let count = $state(0);
   let doubled = $derived(count * 2);
 </script>
+
 <button onclick={() => count++}>{doubled}</button>
 ```
 
@@ -131,7 +133,11 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
   let likes = $derived(post.likes);
   async function onclick() {
     likes += 1;
-    try { await post.like(); } catch { likes -= 1; }
+    try {
+      await post.like();
+    } catch {
+      likes -= 1;
+    }
   }
 </script>
 ```
@@ -163,7 +169,9 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 <script>
   let count = $state(0);
   $effect(() => {
-    const interval = setInterval(() => { count += 1; }, 1000);
+    const interval = setInterval(() => {
+      count += 1;
+    }, 1000);
     return () => clearInterval(interval);
   });
 </script>
@@ -228,6 +236,7 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 <script>
   let { adjective } = $props();
 </script>
+
 <p>This component is {adjective}</p>
 ```
 
@@ -259,6 +268,7 @@ let { a, b, ...others } = $props();
 <script>
   const uid = $props.id();
 </script>
+
 <label for="{uid}-firstname">First Name:</label>
 <input id="{uid}-firstname" type="text" />
 ```
@@ -273,7 +283,8 @@ let { a, b, ...others } = $props();
 <script>
   let { value = $bindable() } = $props();
 </script>
-<input bind:value={value} />
+
+<input bind:value />
 ```
 
 - Do **NOT** overuse bindable props; instead, default to one-way data flow unless bi-directionality is truly needed.  
@@ -289,6 +300,7 @@ let { a, b, ...others } = $props();
     $host().dispatchEvent(new CustomEvent(type));
   }
 </script>
+
 <button onclick={() => dispatch('increment')}>Increment</button>
 ```
 
@@ -302,7 +314,12 @@ let { a, b, ...others } = $props();
   ```svelte
   {#snippet figure(image)}
     <figure>
-      <img src={image.src} alt={image.caption} width={image.width} height={image.height} />
+      <img
+        src={image.src}
+        alt={image.caption}
+        width={image.width}
+        height={image.height}
+      />
       <figcaption>{image.caption}</figcaption>
     </figure>
   {/snippet}
@@ -325,6 +342,7 @@ let { a, b, ...others } = $props();
   <script>
     let { message = "it's great to see you!" } = $props();
   </script>
+
   {#snippet hello(name)}
     <p>hello {name}! {message}!</p>
   {/snippet}
@@ -344,9 +362,10 @@ let { a, b, ...others } = $props();
     import Table from './Table.svelte';
     const fruits = [
       { name: 'apples', qty: 5, price: 2 },
-      { name: 'bananas', qty: 10, price: 1 }
+      { name: 'bananas', qty: 10, price: 1 },
     ];
   </script>
+
   {#snippet header()}
     <th>fruit</th>
     <th>qty</th>
@@ -368,12 +387,13 @@ let { a, b, ...others } = $props();
   Content not wrapped in a snippet declaration becomes the `children` snippet, rendering as fallback content.  
   _Example:_
   ```svelte
-  <!-- App.svelte -->
-  <Button>click me</Button>
   <!-- Button.svelte -->
   <script>
     let { children } = $props();
   </script>
+
+  <!-- App.svelte -->
+  <Button>click me</Button>
   <button>{@render children()}</button>
   ```
 
@@ -440,5 +460,6 @@ let { a, b, ...others } = $props();
 <script>
   let { cool } = $props();
 </script>
+
 <div class={{ cool, lame: !cool }}>Content</div>
 ```

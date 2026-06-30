@@ -24,6 +24,8 @@ src/statics/               # Static assets (images, videos, etc.)
 media-assets/              # Static media files (JPG, PDF and EPS files) provided to clients
 ```
 
+For detail on how CMS content is structured and how to wire it into graphics components in `App.svelte`, read [`.claude/context/content.md`](.claude/context/content.md).
+
 Most graphics projects publish a single page for reuters.com, an embeddable version of the same page for media clients and embed previewer page for previewing the embeddable in an iframe in development.
 
 Other projects may have additional pages for reuters.com (any additional page in the `pages/` directory) or addition embeds of individual graphics (pages in the `pages/embeds/` directory).
@@ -50,3 +52,11 @@ pnpm get-google     # Runs CLI that syncs local JSON files in locales/ with Goog
 pnpm lint           # lint
 pnpm format         # format
 ```
+
+## Key dependencies
+
+| Dependency                              | Context doc                                                                      | When to use                                                                             |
+| --------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Svelte 5                                | [`.claude/llms/svelte/docs.md`](.claude/llms/svelte/docs.md)                     | Writing or modifying any Svelte component — covers runes, snippets, and Svelte 5 syntax |
+| SvelteKit                               | [`.claude/llms/svelte-kit/docs.md`](.claude/llms/svelte-kit/docs.md)             | Working with routing, layouts, load functions, hooks, or SvelteKit config               |
+| `@reuters-graphics/graphics-components` | [`bin/llms/graphics-components/llms.txt`](bin/llms/graphics-components/llms.txt) | Adding or modifying components from the team's component library                        |
