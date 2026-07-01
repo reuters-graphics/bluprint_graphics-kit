@@ -1,7 +1,6 @@
 ---
 name: hello-skill
 description: Simple demonstration skill
-disable-model-invocation: true
 user-invocable: false
 allowed-tools: Read Edit Write
 ---
