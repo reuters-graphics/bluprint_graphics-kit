@@ -32,7 +32,8 @@
     "lint": "eslint --fix .",
     "format": "prettier . --write",
     "knip": "knip",
-    "sync-llms": "node bin/sync-llms/index.js"
+    "sync-llms": "node bin/sync-llms/index.js",
+    "test:skills": "vitest run --config .claude/skills/vitest.config.ts"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.32.2",
