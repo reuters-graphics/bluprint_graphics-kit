@@ -100,7 +100,18 @@ describe('<name>', () => {
 });
 ```
 
-### Step 6: Remind the user
+### Step 6: Document the skill in the developer docs
+
+Add a subsection documenting the new skill to `docs/content/docs/Developers/17-claude-code.mdx`, inside the existing `## Skills` section, **above** the `### \`/write-skill\`` subsection.
+
+Follow the same format as the `/write-skill` entry:
+
+- A `### \`/<name>\`` heading
+- One or two sentences describing what the skill does and when to use it
+- An **Invoking it** block showing the slash command and any argument patterns
+- A **What it creates** or **What it does** block describing the output
+
+### Step 7: Remind the user
 
 After creating both files, tell the user:
 
