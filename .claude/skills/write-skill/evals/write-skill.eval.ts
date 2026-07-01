@@ -20,9 +20,10 @@ describe('write-skill / guard: rejects existing skill', () => {
 
   beforeAll(async () => {
     worktree = createWorktree();
-    // Attempt to write a skill that already exists in the repo
-    messages = await runSkill('write-skill', 'write-skill', worktree.path);
-  });
+    // Attempt to write a skill that already exists — use hello-skill so the
+    // argument is unambiguously a different skill name (not the invoking skill)
+    messages = await runSkill('write-skill', 'hello-skill', worktree.path);
+  }, 180_000);
 
   afterAll(() => {
     removeWorktree(worktree);
@@ -46,12 +47,12 @@ describe('write-skill / guard: rejects existing skill', () => {
 
   it('does not overwrite the existing SKILL.md', () => {
     const skillMd = readFileSync(
-      join(worktree.path, '.claude/skills/write-skill/SKILL.md'),
+      join(worktree.path, '.claude/skills/hello-skill/SKILL.md'),
       'utf8'
     );
-    // The original write-skill SKILL.md should still contain its own name in
+    // The original hello-skill SKILL.md should still contain its own name in
     // the frontmatter — proof it was not replaced with generated content
-    expect(skillMd).toContain('name: write-skill');
+    expect(skillMd).toContain('name: hello-skill');
   });
 });
 
@@ -74,7 +75,7 @@ describe('write-skill / success: creates skill from description', () => {
       `${TEST_SKILL} A skill that adds the HTML comment <!-- ${MARKER} --> to the top of any Svelte file it edits`,
       worktree.path
     );
-  });
+  }, 300_000);
 
   afterAll(() => {
     removeWorktree(worktree);

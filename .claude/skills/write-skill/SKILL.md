@@ -7,19 +7,13 @@ allowed-tools: Read Write Bash
 
 ## Instructions
 
-### Step 0: Parse arguments and gather missing information
+### Step 0: Parse the skill name
 
-`$ARGUMENTS` will be one of:
-
-- `skill-name a brief description of what it does` — use the first word as the skill name and the rest as the brief
-- `skill-name` only — use the name, then ask the user what the skill should do before continuing
-- Empty — ask the user for both the skill name and a brief description before continuing
-
-Do not proceed past Step 0 until you have both the skill name and a clear brief.
+Extract the skill name from the first word of `$ARGUMENTS`. If `$ARGUMENTS` is empty, ask the user for the skill name before doing anything else.
 
 ### Step 1: Guard against overwriting an existing skill
 
-Check whether `.claude/skills/<name>/` already exists.
+Before asking for anything else, check whether `.claude/skills/<name>/` already exists.
 
 If it does, **stop immediately** and tell the user:
 
@@ -27,11 +21,15 @@ If it does, **stop immediately** and tell the user:
 
 Do not create any files if the directory already exists.
 
-### Step 2: Read existing skills for conventions
+### Step 2: Gather a brief description if not already provided
+
+If `$ARGUMENTS` contained only the skill name with no description, ask the user what the skill should do before continuing. Do not proceed until you have a clear brief.
+
+### Step 3: Read existing skills for conventions
 
 Read the SKILL.md files of a few existing skills in `.claude/skills/` to match the conventions already established in this project before writing anything.
 
-### Step 3: Create `.claude/skills/<name>/SKILL.md`
+### Step 4: Create `.claude/skills/<name>/SKILL.md`
 
 Use this structure, filling in the name and description from your gathered brief:
 
@@ -52,7 +50,7 @@ Frontmatter notes:
 - `allowed-tools` — omit tools the skill never calls.
 - Omit `disable-model-invocation` and `user-invocable` unless there is a specific reason — both default to the right behaviour for a normal skill.
 
-### Step 4: Create `.claude/skills/<name>/evals/<name>.eval.ts`
+### Step 5: Create `.claude/skills/<name>/evals/<name>.eval.ts`
 
 Use the project's standard eval pattern:
 
@@ -102,7 +100,7 @@ describe('<name>', () => {
 });
 ```
 
-### Step 5: Remind the user
+### Step 6: Remind the user
 
 After creating both files, tell the user:
 

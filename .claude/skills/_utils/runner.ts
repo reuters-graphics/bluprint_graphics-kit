@@ -70,7 +70,10 @@ export async function runSkill(
       skills: [skillName],
       allowedTools,
       model: process.env.ANTHROPIC_MODEL!,
-      permissionMode: 'acceptEdits',
+      // bypassPermissions is safe here: the skill runs in an isolated
+      // worktree that is discarded after the eval completes.
+      permissionMode: 'bypassPermissions',
+      allowDangerouslySkipPermissions: true,
       env: { ...process.env },
     },
   })) {
