@@ -82,11 +82,15 @@ export function runSkill(
     ['-p', invocation, '--model', process.env.ANTHROPIC_MODEL!],
     {
       cwd: worktreePath,
-      stdio: ['ignore', 'inherit', 'inherit'],
+      stdio: ['ignore', 'pipe', 'pipe'], // capture for debugging
       timeout: 120_000,
       encoding: 'utf8',
     }
   );
+
+  // Print captured output so we can see what Claude did during the eval
+  if (result.stdout) process.stdout.write(result.stdout);
+  if (result.stderr) process.stderr.write(result.stderr);
 
   if (result.error) throw result.error;
   if (result.status !== 0) {

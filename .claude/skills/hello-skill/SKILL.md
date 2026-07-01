@@ -6,7 +6,7 @@ user-invocable: false
 allowed-tools: Read Edit Write
 ---
 
-# Hello Skill
+## Instructions
 
 This is a demonstration skill. Your task is simple: add the following HTML comment as the very first line of `src/lib/App.svelte`, before the opening `<script>` tag.
 
