@@ -1,9 +1,9 @@
-import { query } from '@anthropic-ai/claude-agent-sdk';
+import { query, type SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 
 // Load .claude/skills/.env — required for API credentials.
-// Copy .claude/skills/.env.example to .claude/skills/.env and fill in the values.
+// Copy .claude/skills/.env.example to .env and fill in the values.
 const envFile = join(import.meta.dirname, '../.env');
 if (!existsSync(envFile)) {
   throw new Error(
@@ -49,15 +49,19 @@ function parseAllowedTools(skillName: string): string[] {
  * it the same way Claude Code does in an interactive session. Skills declared
  * in the worktree's .claude/skills/<name>/SKILL.md are loaded automatically.
  *
+ * Returns all SDK messages from the run so evals can inspect the full
+ * message stream — tool calls, results, model output, etc.
+ *
  * Set ANTHROPIC_BASE_URL to point at a LiteLLM proxy if needed.
  */
 export async function runSkill(
   skillName: string,
   prompt: string,
   worktreePath: string
-): Promise<void> {
+): Promise<SDKMessage[]> {
   const allowedTools = parseAllowedTools(skillName);
   const invocation = prompt ? `/${skillName} ${prompt}` : `/${skillName}`;
+  const messages: SDKMessage[] = [];
 
   for await (const message of query({
     prompt: invocation,
@@ -70,14 +74,8 @@ export async function runSkill(
       env: { ...process.env },
     },
   })) {
-    // Stream assistant messages to stdout so eval runs are visible
-    if (
-      message &&
-      typeof message === 'object' &&
-      'type' in message &&
-      message.type !== 'system'
-    ) {
-      process.stdout.write(JSON.stringify(message) + '\n');
-    }
+    messages.push(message);
   }
+
+  return messages;
 }
