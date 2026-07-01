@@ -1,7 +1,6 @@
 ---
 name: hello-skill
 description: Simple demonstration skill
-user-invocable: false
 allowed-tools: Read Edit Write
 ---
 

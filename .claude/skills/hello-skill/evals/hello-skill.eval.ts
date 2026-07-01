@@ -11,9 +11,9 @@ import { runSkill } from '../../utils/runner';
 describe('hello-skill', () => {
   let worktree: Worktree;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     worktree = createWorktree();
-    runSkill(
+    await runSkill(
       'hello-skill',
       'Run the hello skill on this project.',
       worktree.path
