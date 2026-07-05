@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.4.0
+
+### Minor Changes
+
+- 4644368: Adds LLM docs and dependency LLM docs extractor.
+
 ## 2.3.0
 
 ### Minor Changes
