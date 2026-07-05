@@ -1,0 +1,190 @@
+---
+title: Working with Claude Code
+slug: developers/claude-code
+sidebar:
+  order: 34
+---
+
+import LinkCard from '../../../components/LinkCardWithIcon.astro';
+import { Aside, FileTree } from '@astrojs/starlight/components';
+
+The graphics kit is wired for AI-assisted development using [Claude Code](https://claude.ai/code), Anthropic's agentic coding tool. When you open a graphics project in VS Code with the Claude Code extension, the agent already knows what the project is, how it's structured, where content lives, what components are available, and how to use them — without you explaining any of it.
+
+Claude Code can read files, run commands, edit code, and follow multi-step instructions. With the right context loaded, it can wire up a new graphic component from scratch, fix styling while respecting the design system, help set up a translation, or explain why a content block isn't rendering. The setup in this repo exists to make those interactions accurate and useful rather than generic and hallucinated.
+
+<LinkCard
+  title="Set up Claude for VS Code"
+  icon="external"
+  href="https://app.notion.com/p/Setting-up-Claude-for-VSCode-359e5f6c99bc801c8494de7ea3f07cbe"
+  target="_blank"
+  color="var(--sl-color-purple)"
+/>
+
+## How it works
+
+The graphics kit includes a `.claude/` directory at the root of every project. Claude Code reads this automatically when it starts. Inside:
+
+<FileTree>
+- .claude/
+  - CLAUDE.md               # Top-level project context loaded on every session
+  - context/                # Domain-specific docs Claude reads when relevant
+    - content.md            # CMS content structure and App.svelte wiring
+    - assets.md             # Static assets, paths, and conventions
+    - styling.md            # Design system tokens and SCSS conventions
+    - routing.md            # SvelteKit routing, embeds, and path aliases
+    - glossary.md           # Reuters- and kit-specific terminology
+    - publishing.md         # Publishing workflow and safety rules
+    - translations.md       # Setting up translations
+  - llms/                   # LLM-friendly reference docs for key dependencies
+    - svelte/               # Svelte 5 runes and syntax
+    - svelte-kit/           # SvelteKit routing, loading, and hooks
+    - archieml/             # ArchieML syntax for writing content in rngs.io
+    - graphics-components/  # Our in-house graphics components library and design system
+  - skills/                 # Reusable agent skills (slash commands)
+</FileTree>
+
+The `CLAUDE.md` file orients the agent to the project — the tech stack, key commands, how content flows from the CMS into the page, and what to read when working on specific parts of the codebase. Context docs load progressively: Claude reads them when they're relevant to what you've asked, not all at once.
+
+<Aside type="tip">
+You don't need to tell Claude Code about Svelte 5 syntax, our component library, or ArchieML. It already has current reference docs for all of these. Just describe what you want to build.
+</Aside>
+
+## Getting started
+
+1. [Install Claude Code](https://claude.ai/code) and the VS Code extension
+2. Open your graphics project in VS Code
+3. Press `Cmd+Esc` (Mac) or `Ctrl+Esc` (Windows) to open Claude Code, or click the Claude icon in the Activity Bar
+4. Start working — no configuration needed
+
+Claude Code will pick up the project context automatically. The first time you ask it to do something substantive (add a component, fix a layout, set up a translation), you'll notice it already understands the project's structure and conventions.
+
+## Skills
+
+Skills are reusable agent capabilities you can invoke with a slash command. They give Claude Code step-by-step instructions for a specific workflow — so you get consistent, convention-aware results every time rather than re-explaining the process yourself.
+
+Type `/` in the Claude Code input to see available skills and their descriptions.
+
+### `/write-skill`
+
+Scaffolds a new Claude Code skill for this project. Use it when you want to automate a repetitive workflow or encode a convention as a reusable command.
+
+**Invoking it:**
+
+```
+/write-skill
+```
+
+Claude Code will ask for a skill name and a brief description of what it should do.
+
+You can also provide them inline:
+
+```
+/write-skill skill-name A brief description of what the skill should do
+```
+
+**What it creates:**
+
+- `.claude/skills/<name>/SKILL.md` — the skill's instructions, written for Claude Code
+- `.claude/skills/<name>/evals/<name>.eval.ts` — a vitest eval to test the skill works correctly
+
+**After creating a skill:**
+
+<Aside type="caution">
+Skills must be committed to git before they can be tested. The eval system runs against HEAD, so uncommitted files are invisible to it. After reviewing the generated files:
+
+```sh
+git add .claude/skills/<name>/
+git commit -m "add <name> skill"
+pnpm test:skills
+```
+</Aside>
+
+## What Claude Code can help with
+
+Some things the context docs are specifically designed to support:
+
+**Adding graphics components** — Ask Claude Code to wire up a new component from `@reuters-graphics/graphics-components`. It knows the import pattern, how to add a new block type to the `#each` loop in `App.svelte`, and how to write the corresponding ArchieML content block in rngs.io.
+
+**Styling** — Claude Code knows our design system tokens and will use them correctly. It knows not to invent class names that don't exist and when to reach for fluid spacing vs fixed spacing.
+
+**Embeds and routing** — It understands the `pages/embeds/<lang>/<slug>/` structure, when to use `PymChild`, and how to set the `noindex` robots tag correctly.
+
+**Translations** — It knows the `locales/` structure, how to connect a translated rngs.io story, and how to set up a translated dotcom page.
+
+**ArchieML** — When you ask it to add a new component, it will suggest both the Svelte code and the ArchieML syntax to add in rngs.io to match.
+
+**Publishing** — It knows the three-step workflow (`preview` → `upload` → `pub`) and will not run `pnpm pub` without being explicitly told to.
+
+## Contributing skills to the bluprint
+
+Skills that ship with the graphics kit template live in the bluprint repository and are available in every project created from it. If you're working on the template itself and want to add a new skill, there are a few rules.
+
+### Rules
+
+**Every skill must ship with its own eval.** A skill without an eval has no way to detect regressions when the skill or its dependencies change. Use `/write-skill` to scaffold both files together.
+
+**Evals run locally, not in CI.** LLM calls are too slow and too expensive for a CI pipeline. Run them yourself before opening a PR:
+
+```sh
+pnpm test:skills
+```
+
+**Skills must be committed before their evals can run.** The eval system creates a git worktree from HEAD — uncommitted files are invisible to it. Commit the skill first, then test.
+
+**Evals should not mutate the working repo.** All file changes happen inside an isolated worktree that is discarded after the eval. Nothing the skill does during a test run affects the actual codebase.
+
+### Eval utilities
+
+Shared utilities live in `.claude/skills/_utils/` and are imported into eval files.
+
+**`createWorktree()`** → `Worktree`
+
+Creates a temporary git worktree from HEAD in a system temp directory and symlinks `node_modules` from the main project. The worktree is a clean, isolated copy of the committed codebase — the safe environment where skill evals run.
+
+**`removeWorktree(worktree)`**
+
+Removes the symlink and the worktree directory, and deletes the temporary branch. Call this in `afterAll`.
+
+**`runSkill(skillName, prompt, worktreePath)`** → `Promise<SDKMessage[]>`
+
+Invokes a skill via the Claude Agent SDK in the given worktree directory. Returns the full message stream from the SDK — assistant messages, tool calls, tool results, and a final result message — so evals can assert on exactly what the skill did, not just the file state it left behind.
+
+The returned `SDKMessage[]` is the same union type the SDK exports. Key members to narrow to in assertions:
+
+- `SDKResultSuccess` (`type: 'result'`, `subtype: 'success'`) — `num_turns`, `stop_reason`, `is_error`, `result`
+- `SDKAssistantMessage` (`type: 'assistant'`) — `message.content` contains the model's tool calls
+
+**Example eval structure:**
+
+```typescript
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { type SDKMessage, type SDKResultSuccess } from '@anthropic-ai/claude-agent-sdk';
+import { createWorktree, removeWorktree, type Worktree } from '../../_utils/worktree';
+import { runSkill } from '../../_utils/runner';
+
+describe('my-skill', () => {
+  let worktree: Worktree;
+  let messages: SDKMessage[];
+
+  beforeAll(async () => {
+    worktree = createWorktree();
+    messages = await runSkill('my-skill', 'a realistic prompt', worktree.path);
+  }, 300_000); // LLM calls need generous timeouts
+
+  afterAll(() => removeWorktree(worktree));
+
+  it('was invoked via the skill system', () => {
+    const result = messages.find(
+      (m): m is SDKResultSuccess => m.type === 'result' && !('error' in m)
+    );
+    expect(result?.num_turns).toBeGreaterThan(0);
+    expect(result?.stop_reason).toBe('end_turn');
+  });
+
+  // Add skill-specific assertions here
+});
+```
+
+<Aside type="tip">
+The `/write-skill` skill generates this boilerplate for you — including the eval file — so you rarely need to write it from scratch.
+</Aside>

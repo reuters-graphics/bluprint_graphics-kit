@@ -1,3 +1,8 @@
+---
+name: Svelte 5
+description: Writing or modifying any Svelte component — covers runes, snippets, and Svelte 5 syntax
+---
+
 ## Svelte
 
 You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syntax. If you don't know about the API yet, below is the most important information about it. Other syntax not explicitly listed like `{#if ...}` blocks stay the same, so you can reuse your Svelte 4 knowledge for these.
@@ -17,12 +22,15 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
 ### $state
 
 - `$state` creates reactive variables that update the UI automatically. For example:
+
   ```svelte
   <script>
     let count = $state(0);
   </script>
+
   <button onclick={() => count++}>Clicked: {count}</button>
   ```
+
 - Do **NOT** complicate state management by wrapping it in custom objects; instead, update reactive variables directly.  
   _In Svelte 4, you created state with let, e.g. `let count = 0;`, now use the $state rune, e.g. `let count = $state(0);`._
 - Arrays and objects become deeply reactive proxies. For example:
@@ -34,12 +42,12 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
 - Use `$state` in class fields for reactive properties. For example:
   ```js
   class Todo {
-  	done = $state(false);
-  	text = $state('');
-  	reset = () => {
-  		this.text = '';
-  		this.done = false;
-  	};
+    done = $state(false);
+    text = $state('');
+    reset = () => {
+      this.text = '';
+      this.done = false;
+    };
   }
   ```
 
@@ -76,13 +84,13 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 - Pass-by-Value Semantics: Use getter functions to ensure functions access the current value of reactive state. For example:
   ```js
   function add(getA, getB) {
-  	return () => getA() + getB();
+    return () => getA() + getB();
   }
   let a = 1,
-  	b = 2;
+    b = 2;
   let total = add(
-  	() => a,
-  	() => b
+    () => a,
+    () => b
   );
   console.log(total());
   ```
@@ -98,6 +106,7 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
   let count = $state(0);
   let doubled = $derived(count * 2);
 </script>
+
 <button onclick={() => count++}>{doubled}</button>
 ```
 
@@ -131,7 +140,11 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
   let likes = $derived(post.likes);
   async function onclick() {
     likes += 1;
-    try { await post.like(); } catch { likes -= 1; }
+    try {
+      await post.like();
+    } catch {
+      likes -= 1;
+    }
   }
 </script>
 ```
@@ -163,7 +176,9 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 <script>
   let count = $state(0);
   $effect(() => {
-    const interval = setInterval(() => { count += 1; }, 1000);
+    const interval = setInterval(() => {
+      count += 1;
+    }, 1000);
     return () => clearInterval(interval);
   });
 </script>
@@ -228,6 +243,7 @@ person = { name: 'Heraclitus', age: 50 }; // Correct way to update
 <script>
   let { adjective } = $props();
 </script>
+
 <p>This component is {adjective}</p>
 ```
 
@@ -259,6 +275,7 @@ let { a, b, ...others } = $props();
 <script>
   const uid = $props.id();
 </script>
+
 <label for="{uid}-firstname">First Name:</label>
 <input id="{uid}-firstname" type="text" />
 ```
@@ -273,7 +290,8 @@ let { a, b, ...others } = $props();
 <script>
   let { value = $bindable() } = $props();
 </script>
-<input bind:value={value} />
+
+<input bind:value />
 ```
 
 - Do **NOT** overuse bindable props; instead, default to one-way data flow unless bi-directionality is truly needed.  
@@ -289,6 +307,7 @@ let { a, b, ...others } = $props();
     $host().dispatchEvent(new CustomEvent(type));
   }
 </script>
+
 <button onclick={() => dispatch('increment')}>Increment</button>
 ```
 
@@ -302,7 +321,12 @@ let { a, b, ...others } = $props();
   ```svelte
   {#snippet figure(image)}
     <figure>
-      <img src={image.src} alt={image.caption} width={image.width} height={image.height} />
+      <img
+        src={image.src}
+        alt={image.caption}
+        width={image.width}
+        height={image.height}
+      />
       <figcaption>{image.caption}</figcaption>
     </figure>
   {/snippet}
@@ -321,15 +345,18 @@ let { a, b, ...others } = $props();
 - **Lexical Visibility:**  
   Snippets can be declared anywhere and reference variables from their outer lexical scope, including script or block-level declarations.  
   _Example:_
+
   ```svelte
   <script>
     let { message = "it's great to see you!" } = $props();
   </script>
+
   {#snippet hello(name)}
     <p>hello {name}! {message}!</p>
   {/snippet}
   {@render hello('alice')}
   ```
+
 - **Scope Limitations:**  
   Snippets are only accessible within their lexical scope; siblings and child blocks share scope, but nested snippets cannot be rendered outside.  
   _Usage caution:_ Do **NOT** attempt to render a snippet outside its declared scope.
@@ -339,14 +366,16 @@ let { a, b, ...others } = $props();
 - **As Props:**  
   Within a template, snippets are first-class values that can be passed to components as props.  
   _Example:_
+
   ```svelte
   <script>
     import Table from './Table.svelte';
     const fruits = [
       { name: 'apples', qty: 5, price: 2 },
-      { name: 'bananas', qty: 10, price: 1 }
+      { name: 'bananas', qty: 10, price: 1 },
     ];
   </script>
+
   {#snippet header()}
     <th>fruit</th>
     <th>qty</th>
@@ -361,19 +390,22 @@ let { a, b, ...others } = $props();
   {/snippet}
   <Table data={fruits} {header} {row} />
   ```
+
 - **Slot-like Behavior:**  
   Snippets declared inside component tags become implicit props (akin to slots) for the component.  
   _Svelte 4 used slots for this, e.g. `<Component><p slot="x" let:y>hi {y}</p></Component>`; now use snippets instead, e.g. `<Component>{#snippet x(y)}<p>hi {y}</p>{/snippet}</Component>`._
 - **Content Fallback:**  
   Content not wrapped in a snippet declaration becomes the `children` snippet, rendering as fallback content.  
   _Example:_
+
   ```svelte
-  <!-- App.svelte -->
-  <Button>click me</Button>
   <!-- Button.svelte -->
   <script>
     let { children } = $props();
   </script>
+
+  <!-- App.svelte -->
+  <Button>click me</Button>
   <button>{@render children()}</button>
   ```
 
@@ -440,5 +472,6 @@ let { a, b, ...others } = $props();
 <script>
   let { cool } = $props();
 </script>
+
 <div class={{ cool, lame: !cool }}>Content</div>
 ```

@@ -14,6 +14,7 @@ export default defineConfig({
   },
   test: {
     fileParallelism: false,
+    exclude: ['**/node_modules/**', '**/dist/**', '**/.{idea,git,cache,output,temp}/**', '.claude/**'],
   },
   css: {
     preprocessorOptions: { scss: { quietDeps: true, api: 'modern-compiler' } },

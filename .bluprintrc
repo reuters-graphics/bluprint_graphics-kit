@@ -20,6 +20,7 @@
       ".github/COMMIT_ERROR_ISSUE_TEMPLATE.md",
       ".github/PULL_REQUEST_TEMPLATE.md",
       "test/**/*",
+      "CLAUDE.md",
       "CHANGELOG.md",
       "CONTRIBUTING.md",
       "README.md",
@@ -32,6 +33,9 @@
   }, {
     "action": "move",
     "paths": ["PROJECT_README.md", "README.md"]
+  }, {
+    "action": "move",
+    "paths": ["PROJECT_CLAUDE.md", "CLAUDE.md"]
   }, {
     "action": "regexreplace",
     "files": ["package.json", "README.md"],
@@ -48,7 +52,8 @@
       ["pnpm", ["install"]],
       ["pnpm", ["svelte-kit", "sync"]],
       ["npx", ["lefthook", "install"]],
-      ["pnpm", ["startup:check-creds"]]
+      ["pnpm", ["startup:check-creds"]],
+      ["pnpm", ["sync-llms"]]
     ]
   }, {
     "action": "prompt",
