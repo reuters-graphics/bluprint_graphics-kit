@@ -56,10 +56,10 @@ export default defineConfig<Context>({
     regexreplace({
       files: ['package.json', 'README.md'],
       replace: [
-        ['projectName', '{{# slugify }}{{ projectName }}{{ /slugify }}'],
+        ['projectName', '{{#slugify}}{{ projectName }}{{/slugify}}'],
         [
           '"@reuters-graphics/graphics-kit"',
-          '"{{# slugify }}{{ projectName }}{{ /slugify }}"',
+          '"{{#slugify}}{{ projectName }}{{/slugify}}"',
         ],
       ],
     }),
@@ -83,8 +83,8 @@ export default defineConfig<Context>({
     execute(['git', 'add', '.']),
     execute(['git', 'commit', '-m', 'initial']),
     execute('pnpm install', { silent: true }),
-    execute(['pnpm', 'svelte-kit', 'sync']),
-    execute(['npx', 'lefthook', 'install']),
+    execute(['pnpm', 'svelte-kit', 'sync'], { silent: true }),
+    execute(['npx', 'lefthook', 'install'], { silent: true }),
     execute('pnpm startup:check-creds'),
 
     prompt({
