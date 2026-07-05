@@ -1,5 +1,15 @@
 # @reuters-graphics/graphics-kit
 
+## 2.3.0
+
+### Minor Changes
+
+- f07170f: Updates bluprint config for v1.0.0.
+
+### Patch Changes
+
+- ba201a1: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.2.17
 
 ### Patch Changes

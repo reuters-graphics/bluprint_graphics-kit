@@ -1,6 +1,6 @@
 {
   "name": "@reuters-graphics/graphics-kit",
-  "version": "2.2.17",
+  "version": "2.3.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -41,6 +41,7 @@
     "@changesets/cli": "^2.27.10",
     "@clack/prompts": "^0.10.0",
     "@evilmartians/lefthook": "^1.11.5",
+    "@reuters-graphics/bluprint": "^1.0.0",
     "@reuters-graphics/clack": "^0.0.2",
     "@reuters-graphics/graphics-bin": "^1.1.8",
     "@reuters-graphics/graphics-kit-publisher": "^3.2.0",
