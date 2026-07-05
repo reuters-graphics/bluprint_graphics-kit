@@ -64,12 +64,20 @@ export default defineConfig<Context>({
       ],
     }),
 
-    // Drop the authoring-only bluprint dependency from the scaffolded project's
-    // package.json (it's only here so this config type-checks while editing).
-    json('package.json', (pkg: { devDependencies?: Record<string, string> }) => {
-      if (pkg.devDependencies) delete pkg.devDependencies['@reuters-graphics/bluprint'];
-      return pkg;
-    }),
+    // Drop devDependencies only needed in the bluprint
+    json(
+      'package.json',
+      (pkg: { devDependencies?: Record<string, string> }) => {
+        if (!pkg.devDependencies) return pkg;
+
+        delete pkg.devDependencies['@astrojs/starlight'];
+        delete pkg.devDependencies['@changesets/cli'];
+        delete pkg.devDependencies['@reuters-graphics/bluprint'];
+        delete pkg.devDependencies['astro'];
+
+        return pkg;
+      }
+    ),
 
     execute(['git', 'init']),
     execute(['git', 'add', '.']),
