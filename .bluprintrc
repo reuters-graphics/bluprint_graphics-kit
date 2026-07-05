@@ -26,7 +26,8 @@
       "rngs-io.json",
       "docs/**/*",
       "astro.config.mjs",
-      ".changeset/*"
+      ".changeset/*",
+      "bluprint.config.ts"
     ]
   }, {
     "action": "move",
