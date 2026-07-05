@@ -43,6 +43,7 @@ export default defineConfig<Context>({
       '.github/PULL_REQUEST_TEMPLATE.md',
       'test/**/*',
       'CHANGELOG.md',
+      'CLAUDE.md',
       'CONTRIBUTING.md',
       'README.md',
       'rngs-io.json',
@@ -51,7 +52,10 @@ export default defineConfig<Context>({
       '.changeset/*',
     ]),
 
-    move([['PROJECT_README.md', 'README.md']]),
+    move([
+      ['PROJECT_README.md', 'README.md'],
+      ['PROJECT_CLAUDE.md', 'CLAUDE.md'],
+    ]),
 
     regexreplace({
       files: ['package.json', 'README.md'],
@@ -86,6 +90,7 @@ export default defineConfig<Context>({
     execute(['pnpm', 'svelte-kit', 'sync'], { silent: true }),
     execute(['npx', 'lefthook', 'install'], { silent: true }),
     execute('pnpm startup:check-creds'),
+    execute('pnpm sync-llms'),
 
     prompt({
       name: 'makeRngsDocs',
