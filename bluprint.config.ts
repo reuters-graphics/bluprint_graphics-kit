@@ -84,13 +84,13 @@ export default defineConfig<Context>({
     ),
 
     execute(['git', 'init']),
-    execute(['git', 'add', '.']),
-    execute(['git', 'commit', '-m', 'initial']),
     execute('pnpm install', { silent: true }),
     execute(['pnpm', 'svelte-kit', 'sync'], { silent: true }),
     execute(['npx', 'lefthook', 'install'], { silent: true }),
     execute('pnpm startup:check-creds'),
     execute('pnpm sync-llms'),
+    execute(['git', 'add', '.']),
+    execute(['git', 'commit', '-m', 'initial']),
 
     prompt({
       name: 'makeRngsDocs',
