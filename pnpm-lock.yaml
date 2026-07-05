@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@reuters-graphics/graphics-components':
-        specifier: ^3.5.0
-        version: 3.5.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0))(yaml@2.9.0)
+        specifier: ^3.10.1
+        version: 3.10.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0))(yaml@2.9.0)
       language-tags:
         specifier: ^1.0.9
         version: 1.0.9
@@ -1341,8 +1341,8 @@ packages:
     resolution: {integrity: sha512-u6Uj2gvsQTmJOKNQ6DAMsyEQCof37r3L8fgqj2xmY0e7BGPq4NRRhvMrMEuwfQ9WgQbmIo73dq6NfrgscPchYQ==}
     hasBin: true
 
-  '@reuters-graphics/graphics-components@3.5.0':
-    resolution: {integrity: sha512-G7PHU0RmlbVEyGRGSkP7r5dKecfH2//z+nbBeHjnl4X85jX7enEXkRq3XZO9grtMhLACrqJN22SAh7aNqWsivw==}
+  '@reuters-graphics/graphics-components@3.10.1':
+    resolution: {integrity: sha512-8UKRbylzlnJYa5SM9VbXZIeb6OFCOn3fXC8ffAJp49yrZA4rPQuRCQEGAWLkFIS1s9dZRgupESrAIQPyQi9A+g==}
     engines: {node: '>=20.18'}
     peerDependencies:
       svelte: ^5.0.0
@@ -8399,7 +8399,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@reuters-graphics/graphics-components@3.5.0(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0))(yaml@2.9.0)':
+  '@reuters-graphics/graphics-components@3.10.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.36.13)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0)))(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(svelte@5.36.13)(tsx@4.19.3)(vite@6.2.3(@types/node@22.13.14)(jiti@2.7.0)(sass@1.86.0)(tsx@4.19.3)(yaml@2.9.0))(yaml@2.9.0)':
     dependencies:
       '@fortawesome/free-regular-svg-icons': 6.7.2
       '@fortawesome/free-solid-svg-icons': 6.7.2
@@ -9294,7 +9294,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.28.0(typescript@5.8.2)
       '@typescript-eslint/utils': 8.28.0(eslint@9.23.0(jiti@2.7.0))(typescript@5.8.2)
-      debug: 4.4.0
+      debug: 4.4.3
       eslint: 9.23.0(jiti@2.7.0)
       ts-api-utils: 2.1.0(typescript@5.8.2)
       typescript: 5.8.2
@@ -9307,7 +9307,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.28.0
       '@typescript-eslint/visitor-keys': 8.28.0
-      debug: 4.4.0
+      debug: 4.4.3
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.9
