@@ -32,6 +32,10 @@ Most graphics projects publish a single page for reuters.com, an embeddable vers
 
 Other projects may have additional pages for reuters.com (any additional page in the `pages/` directory) or addition embeds of individual graphics (pages in the `pages/embeds/` directory).
 
+## Git workflow
+
+This project's working branch is **`gfx`**, not `main`. Push and pull to `gfx`. For the full explanation and how to migrate back once the restriction is lifted, read [`.claude/context/git-workflow.md`](.claude/context/git-workflow.md).
+
 ## External services
 
 - **rngs.io** is the Reuters Graphics CMS for writing page text and other structured data we want to edit in collaboration with others in our newsroom. We export that content to JSON files in the `locales/` directory. Those JSON files are synced and connections between the project and editable documents in rngs.io using the `rngs-io` CLI (see `stories:` prefixed scripts in `package.json`), provided by the `@reuters-graphics/rngs-io-client` library. Configuration for rngs.io connections is in `rngs-io.json`. For adding translations, read [`.claude/context/translations.md`](.claude/context/translations.md).

@@ -6,6 +6,12 @@ This repo also contains a **docs site**, an Astro Starlight site in `/docs/` wit
 
 Always keep template work and docs work clearly separate.
 
+## The `gfx` branch workaround (scaffolded projects only)
+
+`bluprint.config.ts` sets up a `gfx` working branch for each scaffolded project, and `.claude/context/git-workflow.md` documents it. **That workflow governs scaffolded graphics projects only — it does NOT apply to this template repo.** This repo uses normal GitHub Flow on `main` via PRs (see `CONTRIBUTING.md`); ignore `.claude/context/git-workflow.md` when working here (it exists in this repo only so it ships into scaffolded projects).
+
+It's a **temporary** measure while we negotiate to remove the org's default-branch restriction on our repos. To remove it once that lands, delete the `gfx workflow` block of `execute` actions in `bluprint.config.ts` and the `.claude/context/git-workflow.md` doc (and the Git workflow section in `PROJECT_CLAUDE.md`).
+
 ## Tech stack
 
 - **SvelteKit** with **Svelte 5** — always use Svelte 5 runes syntax (`$state`, `$derived`, `$effect`, etc.)
