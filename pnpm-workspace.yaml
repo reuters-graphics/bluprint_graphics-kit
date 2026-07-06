@@ -29,3 +29,10 @@ allowBuilds:
   esbuild: true
   sharp: true
   svelte-preprocess: true
+
+# pnpm 11 enforces a minimum release age (default 1440 min / 24h) before a
+# newly published version can be installed. Exempt our own scoped packages so
+# freshly released @reuters-graphics/* versions install immediately; all other
+# dependencies keep the default waiting period. (Ignored by pnpm 10.)
+minimumReleaseAgeExclude:
+  - '@reuters-graphics/*'
