@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.5.0
+
+### Minor Changes
+
+- 795ee22: Scaffolding now sets up a `gfx` working branch for new graphics projects. `main` is pushed as the protected default branch, then a `gfx` branch is created, pushed, and checked out — a temporary workaround for org default-branch protection that blocks our shared-branch deadline workflow. A new `.claude/context/git-workflow.md` doc ships with scaffolded projects explaining the `gfx` workflow and how to migrate back once the restriction is lifted.
+
 ## 2.4.1
 
 ### Patch Changes
