@@ -83,14 +83,14 @@ export default defineConfig<Context>({
       }
     ),
 
-    execute(['git', 'init']),
+    execute(['git', 'init'], { silent: true }),
     execute('pnpm install', { silent: true }),
     execute(['pnpm', 'svelte-kit', 'sync'], { silent: true }),
     execute(['npx', 'lefthook', 'install'], { silent: true }),
     execute('pnpm startup:check-creds'),
-    execute('pnpm sync-llms'),
-    execute(['git', 'add', '.']),
-    execute(['git', 'commit', '-m', 'initial']),
+    execute('pnpm sync-llms', { silent: true }),
+    execute(['git', 'add', '.'], { silent: true }),
+    execute(['git', 'commit', '-m', 'initial'], { silent: true }),
 
     prompt({
       name: 'makeRngsDocs',
@@ -107,9 +107,13 @@ export default defineConfig<Context>({
       "npx rngs-io stories new --name 'embeds' --template cm8q3vr0e0000l803tfleu4t4 --syncPath 'locales/en/embeds.json'",
       { when: (ctx) => ctx.makeRngsDocs === true }
     ),
-    execute('git add .', { when: (ctx) => ctx.makeRngsDocs === true }),
+    execute('git add .', {
+      when: (ctx) => ctx.makeRngsDocs === true,
+      silent: true,
+    }),
     execute('git commit -m "adds RNGS stories"', {
       when: (ctx) => ctx.makeRngsDocs === true,
+      silent: true,
     }),
     log(
       '\n{cyan RNGS.io} storyboard created at: {green https://www.rngs.io/storyboards/}\n',
