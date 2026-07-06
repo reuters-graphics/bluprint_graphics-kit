@@ -35,13 +35,13 @@
 #       # This line will notify a Teams channel everytime your project successfully publishes
 #       # GRAPHICS_SERVER_NOTIFY_TEAMS_CHANNEL: # Add a Teams webhook URL here
 #     steps:
-#       - uses: actions/checkout@v4
-#       - uses: pnpm/action-setup@v4
+#       - uses: actions/checkout@v7
+#       - uses: pnpm/action-setup@v6
 #         with:
 #           version: 9
-#       - uses: actions/setup-node@v4
+#       - uses: actions/setup-node@v6
 #         with:
-#           node-version: 20
+#           node-version: 22
 #           cache: pnpm
 #       - run: git config user.name github-actions
 #       - run: git config user.email github-actions@github.com
