@@ -1,0 +1,31 @@
+# Dependencies allowed to run postinstall/build scripts.
+#
+# pnpm 11 no longer reads the `pnpm` field in package.json and renamed
+# `onlyBuiltDependencies` to the `allowBuilds` map. We list both keys so the
+# config works on pnpm 10 (reads `onlyBuiltDependencies`, ignores `allowBuilds`)
+# and pnpm 11 (reads `allowBuilds`, ignores `onlyBuiltDependencies`). Keep the
+# two lists in sync. Requires pnpm >= 10 — pnpm 9 does not read this file.
+
+# Read by pnpm 10
+onlyBuiltDependencies:
+  - '@evilmartians/lefthook'
+  - '@fortawesome/fontawesome-common-types'
+  - '@fortawesome/free-regular-svg-icons'
+  - '@fortawesome/free-solid-svg-icons'
+  - '@parcel/watcher'
+  - '@sveltejs/kit'
+  - esbuild
+  - sharp
+  - svelte-preprocess
+
+# Read by pnpm 11
+allowBuilds:
+  '@evilmartians/lefthook': true
+  '@fortawesome/fontawesome-common-types': true
+  '@fortawesome/free-regular-svg-icons': true
+  '@fortawesome/free-solid-svg-icons': true
+  '@parcel/watcher': true
+  '@sveltejs/kit': true
+  esbuild: true
+  sharp: true
+  svelte-preprocess: true
