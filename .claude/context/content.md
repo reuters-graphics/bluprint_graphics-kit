@@ -17,6 +17,8 @@ The content is serialised to JSON, usually in `locales/en/content.json`. If the 
 }
 ```
 
+**IMPORTANT:** Never edit `locales/en/content.json` unless specifically instructed to do so by a user. Any changes made locally will simply be overwritten the next time the file is synced with its upstream source in rngs.io. Instead, you should suggest edits to the content in rngs.io using ArchieML syntax.
+
 ## Using content in graphics pages
 
 The `story` property from the content JSON file is usually passed directly to the `content` prop of `src/lib/App.svelte`.
@@ -47,7 +49,7 @@ Components from the `@reuters-graphics/graphics-components` library are often ad
 
 `content` represents text content pulled from our CMS as JSON that is passed into components via props.
 
-Each block in `content.blocks` (i.e., "content block") is usually an object with a `type` property and additional properties specific to the block type. For example:
+Each block in `content.blocks` (i.e., "content block") is usually an object with a `type` property, which specifies the kind of component that block belongs to, and additional properties specific to the block type. For example:
 
 - **Text Block**:
   ```json
@@ -72,7 +74,7 @@ Each block in `content.blocks` (i.e., "content block") is usually an object with
 
 To add a new component to the loop:
 
-1. Import the component in the script portion of the Svelte component.
+1. Import the component in the script portion of the Svelte component, if it isn't imported already.
 2. Add a new `else if` condition in the `{#each content.blocks as block}` loop to handle the new block type.
 3. Pass the required props to the component, ensuring they match the structure of the content block object.
 
@@ -123,7 +125,7 @@ For example, to add a new FeaturePhoto:
 
 While editable content is downloaded as JSON in the project, that data is written into our CMS, rngs.io, using ArchieML syntax.
 
-**When suggesting what content blocks to add for components, please also suggest how to write that content in rngs.io using ArchieML.**
+**When suggesting what content blocks to add or edit for components, please also suggest how to write that content in rngs.io using ArchieML.**
 
 Read about ArchieML syntax in `.claude/llms/archieml/docs.md`.
 

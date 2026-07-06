@@ -1,6 +1,6 @@
 # Graphics kit bluprint
 
-This repo contains the basic SvelteKit project template for graphics projects. New projects are started from this template using the team's inhouse CLI [`bluprint`](https://github.com/reuters-graphics/bluprint), which downloads the repo's tarball, scaffolds the project files from that, initialises a new repository and then customises some of the files and runs setup scripts for each project (configured in `.bluprintrc`).
+This repo contains the basic SvelteKit project template for graphics projects. New projects are started from this template using the team's inhouse CLI [`bluprint`](https://github.com/reuters-graphics/bluprint), which downloads the repo's tarball, scaffolds the project files from that, initialises a new repository and then customises some of the files and runs setup scripts for each project (configured in `bluprint.config.ts`).
 
 This repo also contains a **docs site**, an Astro Starlight site in `/docs/` with user-facing documentation for working with the kit. When a new project is scaffolded from this template, the `/docs/` directory is stripped from the new repo.
 

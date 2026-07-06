@@ -10,7 +10,7 @@ pnpm upload    # Build and upload to the Sphinx graphics server — staged but N
 pnpm pub       # Make a previously uploaded project live on the Sphinx server and reuters.com
 ```
 
-`preview` is safe to run at any time. `upload` and `pub` affect the live graphics infrastructure.
+`preview` is safe to run at any time. `upload` and `pub` affect live graphics and must only be run with user input in the terminal.
 
 ## ⚠️ Never run upload or pub autonomously
 

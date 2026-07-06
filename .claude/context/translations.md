@@ -17,7 +17,7 @@ locales/
 1. Duplicate the English RNGS.io story, connect it to the project, and sync:
 
 ```sh
-pnpm stories:connect   # connect the translated story, saving to locales/{locale}/content.json
+pnpm stories:connect   # connect the translated story, saving to locales/{locale}/content.json. (REQUIRES USER INPUT!)
 pnpm stories:sync      # pull translated content locally
 ```
 
@@ -63,4 +63,6 @@ For right-to-left languages (Arabic, Hebrew, etc.), set `lang` and `dir` attribu
 <html lang="ar" dir="rtl"></html>
 ```
 
-Override any directional style rules in `src/lib/styles/global.scss` using `padding-inline-start` / `padding-inline-end` rather than left/right equivalents.
+If `src/template.html` needs to handle both `ltr` and `rtl` languages, then `dir` must be set conditionally based on the page route's `<locale>` code set in the page path.
+
+Override any directional style rules in `src/lib/styles/global.scss`or in component style rules using derivatives like `padding-inline-start` / `padding-inline-end` and `margin-inline-start` / `margin-inline-end` rather than left/right equivalents.
