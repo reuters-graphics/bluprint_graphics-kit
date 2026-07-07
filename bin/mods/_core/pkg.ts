@@ -1,6 +1,13 @@
 import fs from 'fs';
 import * as find from 'empathic/find';
 
+/**
+ * Reads and edits the project's `package.json` (scripts and dependencies),
+ * keeping dependency lists alphabetically sorted.
+ *
+ * Constructed lazily — nothing touches disk until a `PackageJsonManager` is
+ * actually created, so importing a mod has no side effects.
+ */
 export class PackageJsonManager {
   private packageJson: {
     scripts: Record<string, string>;
@@ -10,17 +17,11 @@ export class PackageJsonManager {
   private filePath: string;
 
   constructor() {
-    this.filePath = find.up('package.json', { cwd: process.cwd() })!;
-    this.loadPackageJson();
-  }
-
-  private loadPackageJson(): void {
-    if (fs.existsSync(this.filePath)) {
-      const data = fs.readFileSync(this.filePath, 'utf-8');
-      this.packageJson = JSON.parse(data);
-    } else {
-      throw new Error('package.json file not found.');
-    }
+    const filePath = find.up('package.json', { cwd: process.cwd() });
+    if (!filePath) throw new Error('package.json file not found.');
+    this.filePath = filePath;
+    const data = fs.readFileSync(this.filePath, 'utf-8');
+    this.packageJson = JSON.parse(data);
   }
 
   private savePackageJson(): void {
@@ -41,9 +42,7 @@ export class PackageJsonManager {
   }
 
   addDependency(name: string, version: string): void {
-    if (!this.packageJson.dependencies) {
-      this.packageJson.dependencies = {};
-    }
+    this.packageJson.dependencies ??= {};
     this.packageJson.dependencies[name] = version;
     this.packageJson.dependencies = this.sortObjectKeys(
       this.packageJson.dependencies
@@ -52,19 +51,14 @@ export class PackageJsonManager {
   }
 
   removeDependency(name: string): void {
-    if (this.packageJson.dependencies && this.packageJson.dependencies[name]) {
+    if (this.packageJson.dependencies?.[name]) {
       delete this.packageJson.dependencies[name];
-      this.packageJson.dependencies = this.sortObjectKeys(
-        this.packageJson.dependencies
-      );
       this.savePackageJson();
     }
   }
 
   addDevDependency(name: string, version: string): void {
-    if (!this.packageJson.devDependencies) {
-      this.packageJson.devDependencies = {};
-    }
+    this.packageJson.devDependencies ??= {};
     this.packageJson.devDependencies[name] = version;
     this.packageJson.devDependencies = this.sortObjectKeys(
       this.packageJson.devDependencies
@@ -73,28 +67,20 @@ export class PackageJsonManager {
   }
 
   removeDevDependency(name: string): void {
-    if (
-      this.packageJson.devDependencies &&
-      this.packageJson.devDependencies[name]
-    ) {
+    if (this.packageJson.devDependencies?.[name]) {
       delete this.packageJson.devDependencies[name];
-      this.packageJson.devDependencies = this.sortObjectKeys(
-        this.packageJson.devDependencies
-      );
       this.savePackageJson();
     }
   }
 
   addScript(name: string, command: string): void {
-    if (!this.packageJson.scripts) {
-      this.packageJson.scripts = {};
-    }
+    this.packageJson.scripts ??= {};
     this.packageJson.scripts[name] = command;
     this.savePackageJson();
   }
 
   removeScript(name: string): void {
-    if (this.packageJson.scripts && this.packageJson.scripts[name]) {
+    if (this.packageJson.scripts?.[name]) {
       delete this.packageJson.scripts[name];
       this.savePackageJson();
     }

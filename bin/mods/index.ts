@@ -1,55 +1,59 @@
 import sade from 'sade';
-import { changeProjectType } from './project-type';
 import { intro } from '@reuters-graphics/clack';
 import { cancel, isCancel, log, outro, select } from '@clack/prompts';
-import { exportAiStatics } from './export-ai-statics';
-import { makeAiEmbed } from './make-ai-embed';
-import { unconfigRngsIo } from './rngs-io';
+import { registry, type ModDescriptor } from './registry';
+import { createContext } from './_core/context';
+import { CancelledError } from './_core/cancel';
+import { NotAProjectError } from './_core/locations';
+
+/**
+ * Run a mod with a fresh context and uniform error handling: cancellations exit
+ * cleanly, "not a project" errors report themselves, and any other failure is
+ * surfaced without a half-finished "Done."
+ */
+const dispatch = async (mod: ModDescriptor, opts: Record<string, unknown>) => {
+  try {
+    const ctx = createContext({ dryRun: !!opts['dry-run'] });
+    await mod.run(ctx, opts);
+    outro(ctx.dryRun ? 'Dry run complete.' : 'Done.');
+  } catch (error) {
+    if (error instanceof CancelledError) return cancel('Cancelled.');
+    if (error instanceof NotAProjectError) return cancel(error.message);
+    log.error(error instanceof Error ? error.message : String(error));
+    outro('Failed.');
+    process.exitCode = 1;
+  }
+};
 
 const prog = sade('kit-mods');
 
-prog
-  .command('project-type')
-  .option('-f, --force', 'Force the change', false)
-  .action(async (opts) => {
-    intro('Kit mods');
-    log.step('Change project type');
-    await changeProjectType(!!opts.force);
-    outro('Done.');
-  });
+prog.option('--dry-run', 'Preview changes without writing any files', false);
 
-prog.command('mods').action(async () => {
+// Interactive picker over all menu-visible mods.
+prog.command('mods').action(async (opts) => {
   intro('Kit mods');
-  const mod = await select({
+  const menu = registry.filter((m) => m.menu);
+  const chosen = await select({
     message: 'Which mod do you want?',
-    options: [
-      {
-        value: 'export-ai-statics',
-        label: 'Export AI statics',
-        hint: 'export JPG and EPS files',
-      },
-      {
-        value: 'make-ai-embed',
-        label: 'Make an embed page',
-        hint: 'for ai2svelte graphics',
-      },
-      {
-        value: 'project-type',
-        label: 'Change my project type',
-        hint: 'to embeds-only or pages+',
-      },
-    ],
-    initialValue: 'export-ai-statics',
+    options: menu.map((m) => ({ value: m.id, label: m.label, hint: m.hint })),
+    initialValue: menu[0]?.id,
   });
-  if (isCancel(mod)) return cancel();
-  if (mod === 'export-ai-statics') await exportAiStatics();
-  if (mod === 'make-ai-embed') await makeAiEmbed();
-  if (mod === 'project-type') await changeProjectType();
-  outro('Done.');
+  if (isCancel(chosen)) return cancel();
+  const mod = registry.find((m) => m.id === chosen);
+  if (mod) await dispatch(mod, opts);
 });
 
-prog.command('unconfig-rngs-io').action(() => {
-  unconfigRngsIo();
-});
+// Dedicated top-level command for each mod that declares one.
+for (const mod of registry) {
+  if (!mod.command) continue;
+  let cmd = prog.command(mod.command.name);
+  for (const [flag, desc, value] of mod.command.options ?? []) {
+    cmd = cmd.option(flag, desc, value);
+  }
+  cmd.action(async (opts) => {
+    intro('Kit mods');
+    await dispatch(mod, opts);
+  });
+}
 
 prog.parse(process.argv);

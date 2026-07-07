@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({'bin':d.get\\('bin'\\),'scripts':d.get\\('scripts'\\)},indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({**d.get\\('dependencies',{}\\),**d.get\\('devDependencies',{}\\)},indent=0\\)\\)\")",
+      "Bash(node -e \"import\\('@reuters-graphics/graphics-bin'\\).then\\(m=>console.log\\(Object.keys\\(m.utils.fs\\)\\)\\)\")",
+      "Bash(grep -iE 'test|alias|\\\\$test')",
+      "Bash(grep -n '$test\\\\|paths\\\\|module\\\\|target\\\\|moduleResolution' tsconfig.json)",
+      "Bash(grep -rn '$test' svelte.config.js .svelte-kit/tsconfig.json)",
+      "Bash(node -e \"import\\('@reuters-graphics/clack'\\).then\\(m=>console.log\\(Object.keys\\(m\\)\\)\\)\")",
+      "Bash(set -e)",
+      "Bash(cp 'bin/mods/make-ai-embed/templates/$types.d.ts' 'bin/mods/mods/make-ai-embed/templates/$types.d.ts')",
+      "Bash(cp 'bin/mods/rngs-io/templates/$types.d.ts' 'bin/mods/mods/unconfig-rngs-io/templates/$types.d.ts')",
+      "Bash(npx tsx *)",
+      "Bash(grep -v \"^$\")",
+      "Bash(node -e \"console.log\\(require\\('./package.json'\\).name\\)\")",
+      "Bash(echo \"exit=$?\")"
+    ]
+  }
+}

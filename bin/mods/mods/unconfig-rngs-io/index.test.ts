@@ -1,5 +1,6 @@
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
+import { createTestContext } from '$test/utils/modContext';
 import fs from 'fs';
 import path from 'path';
 import { unconfigRngsIo } from '.';
@@ -19,7 +20,7 @@ describe('Mods: unconfig-rngs-io', () => {
   });
 
   it('should overwrite layout.ts', async () => {
-    unconfigRngsIo();
+    unconfigRngsIo(createTestContext(twd.TWD));
 
     expect(fs.existsSync(path.join(twd.TWD, 'pages/+layout.ts'))).toBe(true);
     expect(fs.readFileSync(path.join(twd.TWD, 'pages/+layout.ts'), 'utf8'))

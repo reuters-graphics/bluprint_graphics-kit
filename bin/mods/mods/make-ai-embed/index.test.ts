@@ -1,5 +1,6 @@
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
+import { createTestContext } from '$test/utils/modContext';
 import fs from 'fs';
 import path from 'path';
 import { makeAiEmbed } from '.';
@@ -25,7 +26,10 @@ describe('Mods: make-ai-embed', () => {
       aiComponent
     );
 
-    await makeAiEmbed(aiComponent, 'en');
+    await makeAiEmbed(createTestContext(twd.TWD), {
+      aiComponent,
+      locale: 'en',
+    });
 
     expect(
       fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/map/+page.svelte'))
