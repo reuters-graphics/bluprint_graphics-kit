@@ -84,7 +84,7 @@ export default defineConfig<Context>({
     ),
 
     execute(['git', 'init'], { silent: true }),
-    execute('pnpm install', { silent: true }),
+    execute('pnpm install', { silent: true, failOnError: true }),
     execute(['pnpm', 'svelte-kit', 'sync'], { silent: true }),
     execute(['npx', 'lefthook', 'install'], { silent: true }),
     execute('pnpm startup:check-creds'),
@@ -131,10 +131,10 @@ export default defineConfig<Context>({
     // Normalize the local default branch to `main` (some devs' git defaults to `master`).
     execute(['git', 'branch', '-M', 'main'], { silent: true }),
     // Push `main` first so GitHub adopts it as the (protected) default branch.
-    execute('git push -u origin main'),
+    execute('git push -u origin main', { silent: true }),
     // Create + push the shared `gfx` working branch and leave the dev checked out on it.
     execute(['git', 'checkout', '-b', 'gfx'], { silent: true }),
-    execute('git push -u origin gfx'),
+    execute('git push -u origin gfx', { silent: true }),
 
     log(
       "\n\n🏁 Finished creating your project, {cyan {{ projectName }}}!\n\nYou're on the {cyan gfx} branch — push and pull to {cyan gfx}, not main.\n\nRun {green pnpm start} to begin developing.\n"
