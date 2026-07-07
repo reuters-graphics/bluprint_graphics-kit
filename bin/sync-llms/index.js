@@ -14,7 +14,10 @@ const SENTINEL_END = '<!-- llms-deps:end -->';
 
 // ── Config ────────────────────────────────────────────────────────────────────
 // Add package names here as they adopt the llms field in their package.json.
-const PACKAGES = ['@reuters-graphics/graphics-components'];
+const PACKAGES = [
+  '@reuters-graphics/graphics-components',
+  '@reuters-graphics/graphics-kit-publisher',
+];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
