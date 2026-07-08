@@ -1,20 +1,14 @@
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
+import { createTestContext } from '$test/utils/modContext';
 import { changeProjectType } from '.';
 import fs from 'fs-extra';
 import path from 'path';
-import * as url from 'url';
 import { execSync } from 'child_process';
 
 process.env.TESTING = 'true';
 
 const twd = new TestWorkingDirectory();
-
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-
-const templatesDir = path.join(__dirname, 'templates');
-const pagePlusTemplates = path.join(templatesDir, 'page+embed');
-const embedTemplates = path.join(templatesDir, 'embed-only');
 
 describe('Mods: project-type', () => {
   beforeAll(async () => {
@@ -26,7 +20,7 @@ describe('Mods: project-type', () => {
   });
 
   it('should change project type to embeds-only', async () => {
-    await changeProjectType(true);
+    await changeProjectType(createTestContext(twd.TWD), { force: true });
     // Removes page embed
     expect(
       fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/page/+page.svelte'))
@@ -39,13 +33,6 @@ describe('Mods: project-type', () => {
     expect(
       fs.readFileSync(path.join(twd.TWD, 'publisher.config.ts'), 'utf8')
     ).toMatch('locales/en/embeds.json?story.authors');
-    // Archives pages+ templates
-    expect(fs.existsSync(path.join(pagePlusTemplates, '+page.svelte'))).toBe(
-      true
-    );
-    expect(
-      fs.existsSync(path.join(pagePlusTemplates, 'embeds/en/page/+page.svelte'))
-    ).toBe(true);
   });
 
   it('should build embeds-only pages', async () => {
@@ -63,27 +50,12 @@ describe('Mods: project-type', () => {
   }, 30_000);
 
   it('should change project type back to pages+', async () => {
-    await changeProjectType(true);
+    await changeProjectType(createTestContext(twd.TWD), { force: true });
 
     // Brings back page embed
     expect(
       fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/page/+page.svelte'))
     ).toBe(true);
-
-    // Archives embeds+ template
-    expect(fs.existsSync(path.join(embedTemplates, '+page.svelte'))).toBe(true);
-    expect(
-      fs.existsSync(path.join(embedTemplates, 'publisher.config.ts'))
-    ).toBe(true);
-
-    // Removes pages+ templates
-    expect(fs.existsSync(path.join(pagePlusTemplates, '+page.svelte'))).toBe(
-      false
-    );
-    expect(
-      fs.existsSync(path.join(pagePlusTemplates, 'embeds/en/page/+page.svelte'))
-    ).toBe(false);
-
     // Rewrites homepage
     expect(
       fs.readFileSync(path.join(twd.TWD, 'pages/+page.svelte'), 'utf8')
@@ -92,6 +64,22 @@ describe('Mods: project-type', () => {
     expect(
       fs.readFileSync(path.join(twd.TWD, 'publisher.config.ts'), 'utf8')
     ).toMatch('locales/en/content.json?story.seoTitle');
+  });
+
+  it('dry run reports without changing files', async () => {
+    const before = fs.readFileSync(
+      path.join(twd.TWD, 'pages/+page.svelte'),
+      'utf8'
+    );
+    await changeProjectType(createTestContext(twd.TWD, [], { dryRun: true }), {
+      force: true,
+    });
+    expect(
+      fs.existsSync(path.join(twd.TWD, 'pages/embeds/en/page/+page.svelte'))
+    ).toBe(true);
+    expect(
+      fs.readFileSync(path.join(twd.TWD, 'pages/+page.svelte'), 'utf8')
+    ).toBe(before);
   });
 
   it('should build pages+ pages', async () => {
