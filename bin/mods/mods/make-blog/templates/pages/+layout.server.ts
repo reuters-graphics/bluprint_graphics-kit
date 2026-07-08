@@ -1,10 +1,12 @@
 export const prerender = true;
 export const trailingSlash = 'always';
 
-import type { LayoutLoad } from './$types.js';
+import type { LayoutServerLoad } from './$types.js';
 import type { PostStory } from '$lib/post';
 
-export const load: LayoutLoad = async () => {
+// Server-only: this runs at build time (all our projects prerender to static
+// files), so the post-collection glob and content stay out of the client bundle.
+export const load: LayoutServerLoad = async () => {
   // Every JSON file in $locales/en is a post — except content.json, which is
   // the main-page shell. Drop in a new post-*.json and it appears automatically.
   const postModules = import.meta.glob(

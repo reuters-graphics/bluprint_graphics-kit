@@ -23,6 +23,10 @@ describe('Mods: make-blog', () => {
     await makeBlog(createTestContext(twd.TWD), { force: true });
     const T = twd.TWD;
 
+    // Server layout engine replaces the base universal layout loader
+    expect(fs.existsSync(path.join(T, 'pages/+layout.server.ts'))).toBe(true);
+    expect(fs.existsSync(path.join(T, 'pages/+layout.ts'))).toBe(false);
+
     // New blog routes + component
     expect(fs.existsSync(path.join(T, 'pages/[date]/[slug]/+page.ts'))).toBe(
       true

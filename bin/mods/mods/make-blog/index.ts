@@ -42,7 +42,7 @@ const buildPlan = (root: string): FileOp[] => {
   const copy = (rel: string) => templateCopyOp(templatesDir, root, rel);
   const ops: FileOp[] = [
     copy('pages/+layout.svelte'),
-    copy('pages/+layout.ts'),
+    copy('pages/+layout.server.ts'),
     copy('pages/+page.svelte'),
     copy('pages/[date]/[slug]/+page.svelte'),
     copy('pages/[date]/[slug]/+page.ts'),
@@ -53,6 +53,10 @@ const buildPlan = (root: string): FileOp[] => {
     copy('locales/en/content.json'),
     copy('locales/en/post-1.json'),
     { kind: 'remove', path: path.join(root, 'src/lib/App.svelte') },
+    // Drop the base universal layout loader (RNGS live content) — the blog's
+    // data comes from +layout.server.ts, and a universal +layout.ts here would
+    // shadow it.
+    { kind: 'remove', path: path.join(root, 'pages/+layout.ts') },
     { kind: 'remove', path: path.join(root, 'pages/embeds/en/page') },
     { kind: 'remove', path: path.join(root, 'locales/en/embeds.json') },
     { kind: 'write', to: markerFile(root, 'blog'), content: MARKER_NOTE },

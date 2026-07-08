@@ -21,7 +21,7 @@ reversible `project-type` mod.
   `title`, `slugTitle`, `authors[]`, `publishedDate`, `updatedDate`, `blocks[]`). `content.json` becomes
   a **page shell** (`metadata` + `story` with SEO/share, `section`, `mainHeadline`, `endNotes[]`, **no
   blocks**).
-- **Engine — `pages/+layout.ts`:** `import.meta.glob('locales/en/*.json', '!content.json')`, map each to
+- **Engine — `pages/+layout.server.ts`:** `import.meta.glob('locales/en/*.json', '!content.json')`, map each to
   `.story`, sort by `publishedDate` desc → `{ posts }`. Drop in a new `post-N.json` and it appears
   automatically. Sets `prerender = true`, `trailingSlash = 'always'`.
 - **Main page — `pages/+page.svelte`:** `<SEO>`, headline from `content.mainHeadline`, `<BlogTOC>`, then
@@ -65,7 +65,8 @@ run twice; not meant to be combined with `project-type` afterward.
 charts/components, and the ~40 `aiCharts` entries down to `{ AiMap }`):
 
 - `pages/+layout.svelte` — site chrome (SiteHeader/SiteFooter/Theme/Article + Reuters-app detection).
-- `pages/+layout.ts` — glob+sort engine. Replace the example's `import post from '…/post-1.json'` type
+- `pages/+layout.server.ts` — server-only glob+sort engine (build-time; keeps post JSON out of the client
+  bundle since all projects prerender). Replace the example's `import post from '…/post-1.json'` type
   hack with the shared post type below.
 - `pages/+page.svelte` — main feed. **Keep `<ClockWall>`**, but set it to three generic cities the user
   can change later: **Singapore, London, New York**.
@@ -75,7 +76,7 @@ charts/components, and the ~40 `aiCharts` entries down to `{ AiMap }`):
   the `text` and `ai-graphic` block types (with `aiCharts = { AiMap }`); every other block type is added
   by the user when a post first uses it.
 - `src/lib/post.ts` — **new** shared `PostStory` / `Block` types, imported by `Post.svelte` and
-  `+layout.ts` (self-contained; avoids typing against `$locales` JSON that only exists post-transform).
+  `+layout.server.ts` (self-contained; avoids typing against `$locales` JSON that only exists post-transform).
 - (No slugify template — it's a **base scaffold util** now; see prerequisite below.)
 - `locales/en/content.json` + `locales/en/post-1.json` — **placeholder content stubs** matching the blog
   shape (main-page shell + one starter post). These ARE templated and copied so the app builds/runs even
@@ -86,7 +87,8 @@ The mod runs in **two phases**: (A) deterministic local scaffolding via the tran
 
 ### Phase A — local scaffolding (transactional `FileOp`s via `templateCopyOp` + removes/writes)
 
-1. Copy `pages/+layout.svelte`, `pages/+layout.ts`, `pages/+page.svelte` (overwrite).
+1. Copy `pages/+layout.svelte`, `pages/+layout.server.ts`, `pages/+page.svelte`; **remove the base
+   `pages/+layout.ts`** (its RNGS live-content universal load would shadow the server layout's `posts`).
 2. Copy `pages/[date]/[slug]/+page.svelte` + `+page.ts` (new route).
 3. Copy `src/lib/Post.svelte` and `src/lib/post.ts`; **remove `src/lib/App.svelte`**.
    3a. Copy placeholder `locales/en/content.json` + `locales/en/post-1.json` stubs (overwrite) so the app
