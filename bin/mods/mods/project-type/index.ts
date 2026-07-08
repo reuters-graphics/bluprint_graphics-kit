@@ -3,6 +3,7 @@ import path from 'path';
 import c from 'picocolors';
 import { moduleDir } from '../../_core/dirname';
 import { templateCopyOp } from '../../_core/template';
+import { hasMarker } from '../../_core/markers';
 import type { ModContext } from '../../_core/context';
 import type { FileOp } from '../../_core/plan';
 
@@ -52,6 +53,13 @@ export const changeProjectType = async (
   ctx: ModContext,
   opts: { force?: boolean } = {}
 ) => {
+  if (hasMarker(ctx.root, 'blog')) {
+    ctx.log.error(
+      'This project has been converted to a blog — project type no longer applies.'
+    );
+    return;
+  }
+
   const current = detectType(ctx.root);
   const target: ProjectType =
     current === 'pages-plus' ? 'embed-only' : 'pages-plus';

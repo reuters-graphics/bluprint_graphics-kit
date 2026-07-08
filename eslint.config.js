@@ -1,4 +1,5 @@
 import { svelte } from '@reuters-graphics/yaks-eslint';
+import mods from './bin/mods/eslint.config.js';
 
 /**
  * @type {import("eslint").Linter.Config[]}
@@ -26,4 +27,6 @@ export default [
       'svelte3/unused-export-let': 'off',
     },
   },
+  // Mod-specific overrides (kept in bin/mods/eslint.config.js). Last so it wins.
+  ...mods,
 ];
