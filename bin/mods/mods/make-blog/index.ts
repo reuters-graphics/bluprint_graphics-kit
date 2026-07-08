@@ -16,7 +16,20 @@ const RNGS_BLOG_TEMPLATES = {
   post: 'cluzaet6l0001l808jqznav5v', //      → locales/en/post-1.json
 };
 
+// The shared storyboard that holds RNGS.io story *templates*. Scaffolding is
+// supposed to replace it with the project's own storyboard; if it didn't, we
+// must never create blog stories here (it would pollute the templates board).
+const TEMPLATE_STORYBOARD_ID = 'cltmvxt5q0000l908irus4rdd';
+
 const ISBOT_VERSION = '^5.2.0';
+
+/** Whether rngs-io.json still points at the shared templates storyboard. */
+export const usesTemplateStoryboard = (root: string): boolean => {
+  const file = path.join(root, 'rngs-io.json');
+  if (!fs.existsSync(file)) return false;
+  const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+  return Object.keys(data.storyboards ?? {}).includes(TEMPLATE_STORYBOARD_ID);
+};
 
 const MARKER_NOTE = `This project was converted to a graphics blog by the make-blog mod.
 It is a one-way change — the project-type mod no longer applies.
@@ -83,6 +96,18 @@ const rngsCommands = [
 
 /** Phase B — best-effort RNGS.io wiring. Never rolls back Phase A. */
 const runRngsSetup = (ctx: ModContext) => {
+  // Never create stories in the shared templates storyboard.
+  if (usesTemplateStoryboard(ctx.root)) {
+    ctx.log.error(
+      `rngs-io.json still points at the shared templates storyboard (${TEMPLATE_STORYBOARD_ID}).`
+    );
+    ctx.log.error(
+      'Refusing to create blog stories there. Configure this project with its own storyboard, then run:'
+    );
+    for (const cmd of rngsCommands) ctx.log.message(`  ${cmd}`);
+    return;
+  }
+
   try {
     for (const cmd of rngsCommands) {
       ctx.log.step(`Running: ${cmd}`);

@@ -131,6 +131,11 @@ After Phase A succeeds, run (via `execSync`, using the storyboard kept in `rngs-
 Phase A. On failure, print the exact three commands for the user to run manually. Rationale: the local
 scaffold is always valid to keep; only the network step is fallible, and it's fully reproducible by hand.
 
+**Templates-storyboard safeguard:** before creating any stories, Phase B checks whether `rngs-io.json`
+still points at the shared templates storyboard (`cltmvxt5q0000l908irus4rdd` — scaffolding should have
+replaced it). If so, it bails loudly and prints the manual commands instead of creating blog stories in
+the shared templates board.
+
 ### One-way marker (blog is a one-way trip)
 
 Add a tiny `_core/markers.ts` helper — `markerFile(root, name)` → `path.join(root, 'bin/mods', '.converted-to-<name>')`

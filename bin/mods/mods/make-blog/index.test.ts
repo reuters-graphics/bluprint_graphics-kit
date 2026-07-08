@@ -1,7 +1,7 @@
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { TestWorkingDirectory } from '$test/utils/twd';
 import { createTestContext } from '$test/utils/modContext';
-import { makeBlog } from '.';
+import { makeBlog, usesTemplateStoryboard } from '.';
 import { changeProjectType } from '../project-type';
 import fs from 'fs-extra';
 import path from 'path';
@@ -73,6 +73,12 @@ describe('Mods: make-blog', () => {
     // make-blog refuses to re-run without --force — App stays gone, nothing restored
     await makeBlog(createTestContext(T));
     expect(fs.existsSync(path.join(T, 'src/lib/App.svelte'))).toBe(false);
+  });
+
+  it('detects the shared templates storyboard (Phase B safeguard)', () => {
+    // The upstream rngs-io.json (carried into the TWD) points at the shared
+    // templates storyboard, so Phase B must refuse to create stories there.
+    expect(usesTemplateStoryboard(twd.TWD)).toBe(true);
   });
 
   it('builds the blog from its placeholder content', async () => {
