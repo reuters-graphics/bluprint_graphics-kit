@@ -6,10 +6,12 @@ import { globSync } from 'glob';
 import slugify from '@sindresorhus/slugify';
 import { note } from '@reuters-graphics/clack';
 import { moduleDir } from '../../_core/dirname';
+import { templateCopyOp } from '../../_core/template';
 import { LOCALES } from '../../_core/constants';
 import type { ModContext } from '../../_core/context';
 
 const templatesDir = path.join(moduleDir(import.meta.url), 'templates');
+const EMBED_DIR = 'pages/embeds/[locale]/[slug]';
 
 const promptForAiComponent = async (ctx: ModContext) => {
   const aiComponents = globSync('*.svelte', {
@@ -53,20 +55,17 @@ export const makeAiEmbed = async (
     return;
   }
 
+  const pathReplace = { '[locale]': locale, '[slug]': aiSlug };
   ctx.apply([
-    {
-      kind: 'copy',
-      from: path.join(templatesDir, '+page.svelte'),
-      to: componentPath,
+    templateCopyOp(templatesDir, ctx.root, `${EMBED_DIR}/+page.svelte`, {
       replace: [
         { match: 'ai-chart.svelte', replace: path.basename(aiComponent) },
       ],
-    },
-    {
-      kind: 'copy',
-      from: path.join(templatesDir, '+page.server.ts'),
-      to: path.join(pagesDir, '+page.server.ts'),
-    },
+      pathReplace,
+    }),
+    templateCopyOp(templatesDir, ctx.root, `${EMBED_DIR}/+page.server.ts`, {
+      pathReplace,
+    }),
   ]);
 
   if (!process.env.TESTING && !ctx.dryRun) {
