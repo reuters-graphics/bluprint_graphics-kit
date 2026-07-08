@@ -1,6 +1,7 @@
 import { log } from '@clack/prompts';
 import type { ModContext } from '../../bin/mods/_core/context';
 import { applyPlan, type FileOp } from '../../bin/mods/_core/plan';
+import { PackageJsonManager } from '../../bin/mods/_core/pkg';
 
 /**
  * Build a {@link ModContext} for tests: prompts return queued `answers` in
@@ -27,8 +28,6 @@ export const createTestContext = (
     text: (async () => next()) as ModContext['text'],
     apply: (ops: FileOp[]) =>
       applyPlan(ops, { root, dryRun, log: (m) => log.step(m) }),
-    pkg: () => {
-      throw new Error('pkg() not stubbed in test context');
-    },
+    pkg: () => new PackageJsonManager(),
   };
 };

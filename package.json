@@ -67,6 +67,7 @@
     "fs-extra": "^11.3.0",
     "glob": "^11.0.0",
     "ignore": "^7.0.3",
+    "isbot": "^5.2.0",
     "knip": "^5.37.2",
     "magic-string": "^0.30.17",
     "mock-fs": "^5.5.0",
@@ -92,7 +93,8 @@
   },
   "dependencies": {
     "@reuters-graphics/graphics-components": "^3.10.1",
-    "language-tags": "^1.0.9"
+    "language-tags": "^1.0.9",
+    "slugify": "^1.6.9"
   },
   "reuters": {
     "graphic": {},

@@ -15,7 +15,12 @@
       "Bash(grep -v \"^$\")",
       "Bash(node -e \"console.log\\(require\\('./package.json'\\).name\\)\")",
       "Bash(echo \"exit=$?\")",
-      "Bash(echo \"lint exit=$?\")"
+      "Bash(echo \"lint exit=$?\")",
+      "Bash(grep -v ' main$')",
+      "Bash(xargs -n1 git branch -d)",
+      "Bash(node -e \"const p=require\\('@reuters-graphics/graphics-components/package.json'\\); console.log\\('main:',p.main,'module:',p.module,'exports:',JSON.stringify\\(p.exports,null,1\\)\\)\")",
+      "Bash(git stash *)",
+      "Bash(grep -iA1 \"ignore\\\\|threshold\\\\|diagnostic-sources\")"
     ]
   }
 }
