@@ -1,5 +1,15 @@
 # @reuters-graphics/graphics-kit
 
+## 2.8.1
+
+### Patch Changes
+
+- 5635ef0: Stop tracking `.claude/settings.json` and ignore both it and
+  `.claude/settings.local.json` in the project `.gitignore`. These hold personal,
+  machine-specific Claude Code settings (e.g. accumulated permission grants) that
+  shouldn't be committed or shipped into scaffolded projects. Shared Claude
+  resources under `.claude/` (context, llms, skills) remain tracked.
+
 ## 2.8.0
 
 ### Minor Changes
