@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "id": "",
+    "name": "Post 1"
+  },
+  "story": {
+    "title": "Your first post",
+    "slugTitle": "your-first-post",
+    "seoTitle": "Your first post",
+    "seoDescription": "Post description for search",
+    "shareTitle": "Your first post",
+    "shareDescription": "Post description for social media",
+    "shareImgPath": "images/reuters-graphics.jpg",
+    "shareImgAlt": "Alt text for share image.",
+    "authors": ["Jane Doe", "John Doe"],
+    "publishedDate": "2024-04-17T17:00:00.000Z",
+    "updatedDate": "",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "This is a placeholder blog post. It will be replaced when you sync content from RNGS.io."
+      }
+    ]
+  }
+}

@@ -48,6 +48,10 @@ const buildPlan = (root: string): FileOp[] => {
     copy('pages/[date]/[slug]/+page.ts'),
     copy('src/lib/Post.svelte'),
     copy('src/lib/post.ts'),
+    // Placeholder content so the app builds/runs before RNGS.io sync (Phase B).
+    // `stories:sync` overwrites these once the stories exist.
+    copy('locales/en/content.json'),
+    copy('locales/en/post-1.json'),
     { kind: 'remove', path: path.join(root, 'src/lib/App.svelte') },
     { kind: 'remove', path: path.join(root, 'pages/embeds/en/page') },
     { kind: 'remove', path: path.join(root, 'locales/en/embeds.json') },

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "id": "",
+    "name": "Main page"
+  },
+  "story": {
+    "seoTitle": "A Reuters Graphics blog",
+    "seoDescription": "Page description for search",
+    "shareTitle": "A Reuters Graphics blog",
+    "shareDescription": "Page description for social media",
+    "shareImgPath": "images/reuters-graphics.jpg",
+    "shareImgAlt": "Alt text for share image.",
+    "section": "Graphics",
+    "mainHeadline": "A Reuters Graphics blog",
+    "endNotes": [
+      {
+        "title": "Edited by",
+        "text": "Editor, Copyeditor"
+      }
+    ]
+  }
+}

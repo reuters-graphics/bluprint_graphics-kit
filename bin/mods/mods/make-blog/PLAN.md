@@ -77,10 +77,9 @@ charts/components, and the ~40 `aiCharts` entries down to `{ AiMap }`):
 - `src/lib/post.ts` — **new** shared `PostStory` / `Block` types, imported by `Post.svelte` and
   `+layout.ts` (self-contained; avoids typing against `$locales` JSON that only exists post-transform).
 - (No slugify template — it's a **base scaffold util** now; see prerequisite below.)
-
-**Not templated:** `locales/en/content.json` and `locales/en/post-1.json` are **RNGS-owned** — they are
-created/overwritten by `stories:sync` (see "RNGS.io wiring" below). Writing them in the mod is pointless
-because sync would overwrite them. The mod only reshapes `rngs-io.json` and then drives the RNGS CLI.
+- `locales/en/content.json` + `locales/en/post-1.json` — **placeholder content stubs** matching the blog
+  shape (main-page shell + one starter post). These ARE templated and copied so the app builds/runs even
+  if Phase B fails. They're RNGS-owned once wired: `stories:sync` overwrites them with real content.
 
 The mod runs in **two phases**: (A) deterministic local scaffolding via the transactional `applyPlan`
 (rolls back on error), then (B) best-effort RNGS.io setup via the CLI (network; never rolls back A).
@@ -90,6 +89,8 @@ The mod runs in **two phases**: (A) deterministic local scaffolding via the tran
 1. Copy `pages/+layout.svelte`, `pages/+layout.ts`, `pages/+page.svelte` (overwrite).
 2. Copy `pages/[date]/[slug]/+page.svelte` + `+page.ts` (new route).
 3. Copy `src/lib/Post.svelte` and `src/lib/post.ts`; **remove `src/lib/App.svelte`**.
+   3a. Copy placeholder `locales/en/content.json` + `locales/en/post-1.json` stubs (overwrite) so the app
+   builds/runs before Phase B; `stories:sync` overwrites them later.
 4. **Rewrite `rngs-io.json`**: set `storyboards.<storyboardId>.stories` to an empty object `{}` (a `write`
    op computed from the existing file — read, empty `stories`, write). **Keep the storyboard** — it groups
    the two stories we're about to create. This clears the stock page/embeds stories so `stories:sync`
@@ -105,8 +106,8 @@ The mod runs in **two phases**: (A) deterministic local scaffolding via the tran
 ### Phase B — RNGS.io wiring (post-scaffold, best-effort)
 
 `locales/` content is owned by RNGS.io: `stories:sync` re-downloads each story's JSON, overwriting local
-content. So instead of templating `content.json`/`post-1.json`, the mod creates two RNGS stories from
-**stable template IDs** and lets sync produce the files. Put the IDs in a constant high in the mod:
+content (including the Phase A stubs). The mod creates two RNGS stories from **stable template IDs** and
+lets sync replace the stubs with real content. Put the IDs in a constant high in the mod:
 
 ```ts
 // Stable RNGS.io story-template IDs for blog projects (update here if they ever change).
@@ -182,10 +183,10 @@ Phase B hits the network (RNGS + auth), so CI can't run it. Split the tests:
     the `slugify` dep.)
 - **One-way guard test:** after conversion, `changeProjectType(ctx)` refuses (marker present); and running
   `make-blog` again refuses without `--force`.
-- **Build test** (TWD): since sync can't run in CI, drop in **fixture** `locales/en/content.json` (shell)
-  and `locales/en/post-1.json` (starter with a known `slugTitle`/`publishedDate`) simulating sync output,
-  then `vite build` and assert `dist/index.html` **and** the permalink `dist/<date>/<slug>/index.html`
-  exist (proves the glob + crawler-link + prerender mechanism).
+- **Build test** (TWD): no fixtures needed — the mod's placeholder `content.json` + `post-1.json` stubs
+  make it buildable on their own. Run `vite build` and assert `dist/index.html` **and** the stub post's
+  permalink `dist/2024-04-17/your-first-post/index.html` exist (proves the glob + crawler-link + prerender
+  mechanism).
 - `pnpm check` and `eslint` clean; `--dry-run` prints Phase A plan + Phase B commands, writes nothing,
   runs no CLI.
 - Registry smoke test covers the new entry.

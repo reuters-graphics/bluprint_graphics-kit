@@ -10,41 +10,6 @@ import { execSync } from 'child_process';
 process.env.TESTING = 'true';
 
 const twd = new TestWorkingDirectory();
-
-// Simulates what `stories:sync` produces after the mod creates the RNGS stories.
-const CONTENT_SHELL = {
-  metadata: { id: 'main', name: 'Main page' },
-  story: {
-    seoTitle: 'A Reuters Graphics blog',
-    seoDescription: 'A blog.',
-    shareTitle: 'A Reuters Graphics blog',
-    shareDescription: 'A blog.',
-    shareImgPath: 'images/reuters-graphics.jpg',
-    shareImgAlt: 'Share image.',
-    section: 'Graphics',
-    mainHeadline: 'A Reuters Graphics blog',
-    endNotes: [{ title: 'Edited by', text: 'Editor' }],
-  },
-};
-
-const POST_1 = {
-  metadata: { id: 'post-1', name: 'Post 1' },
-  story: {
-    title: 'My first post',
-    slugTitle: 'my-first-post',
-    seoTitle: 'My first post',
-    seoDescription: 'The first post.',
-    shareTitle: 'My first post',
-    shareDescription: 'The first post.',
-    shareImgPath: 'images/reuters-graphics.jpg',
-    shareImgAlt: 'Share image.',
-    authors: ['Jane Doe'],
-    publishedDate: '2026-01-15T10:00:00.000Z',
-    updatedDate: '',
-    blocks: [{ type: 'text', text: 'Hello, world.' }],
-  },
-};
-
 describe('Mods: make-blog', () => {
   beforeAll(async () => {
     await twd.setup();
@@ -67,6 +32,11 @@ describe('Mods: make-blog', () => {
     ).toBe(true);
     expect(fs.existsSync(path.join(T, 'src/lib/Post.svelte'))).toBe(true);
     expect(fs.existsSync(path.join(T, 'src/lib/post.ts'))).toBe(true);
+
+    // Placeholder content so the app works before RNGS.io sync
+    expect(fs.existsSync(path.join(T, 'locales/en/post-1.json'))).toBe(true);
+    const content = fs.readJsonSync(path.join(T, 'locales/en/content.json'));
+    expect(content.story.mainHeadline).toBeTruthy();
 
     // Removed: single-page app + embed
     expect(fs.existsSync(path.join(T, 'src/lib/App.svelte'))).toBe(false);
@@ -101,16 +71,9 @@ describe('Mods: make-blog', () => {
     expect(fs.existsSync(path.join(T, 'src/lib/App.svelte'))).toBe(false);
   });
 
-  it('builds the blog with synced content', async () => {
+  it('builds the blog from its placeholder content', async () => {
     const T = twd.TWD;
-    // Stand in for `stories:sync` output.
-    fs.writeJsonSync(path.join(T, 'locales/en/content.json'), CONTENT_SHELL, {
-      spaces: 2,
-    });
-    fs.writeJsonSync(path.join(T, 'locales/en/post-1.json'), POST_1, {
-      spaces: 2,
-    });
-
+    // No fixtures needed — the mod already wrote content.json + post-1.json.
     try {
       execSync('vite build');
     } catch {
@@ -118,9 +81,9 @@ describe('Mods: make-blog', () => {
     }
 
     expect(fs.existsSync(path.join(T, 'dist/index.html'))).toBe(true);
-    // The starter post's prerendered permalink (proves glob + crawler-link mechanism)
+    // The placeholder post's prerendered permalink (proves glob + crawler-link mechanism)
     expect(
-      fs.existsSync(path.join(T, 'dist/2026-01-15/my-first-post/index.html'))
+      fs.existsSync(path.join(T, 'dist/2024-04-17/your-first-post/index.html'))
     ).toBe(true);
   }, 40_000);
 });
