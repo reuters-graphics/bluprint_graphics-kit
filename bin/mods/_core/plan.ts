@@ -4,17 +4,30 @@ import path from 'path';
 import { utils } from '@reuters-graphics/graphics-bin';
 
 /**
+ * A single find-and-replace applied to a template's contents on `copy`.
+ *
+ * - `match` a string replaces **every** literal occurrence.
+ * - `match` a RegExp is passed straight to `String.replace`, so its own flags
+ *   decide scope — add the `g` flag to replace all matches, omit it for the
+ *   first only.
+ */
+export interface Replacement {
+  match: string | RegExp;
+  replace: string;
+}
+
+/**
  * A single declarative file operation. Mods build a list of these and hand it
  * to {@link applyPlan}, which executes them transactionally.
  *
- * - `copy` — read `from`, optionally substitute every key of `replace` with its
- *   value, and write to `to`. Used for rendering templates.
+ * - `copy` — read `from`, apply each {@link Replacement} in order, and write to
+ *   `to`. Used for rendering templates.
  * - `write` — write literal `content` to `to`.
  * - `move` — rename `from` to `to`.
  * - `remove` — delete `path` (file or directory). Tolerant of a missing target.
  */
 export type FileOp =
-  | { kind: 'copy'; from: string; to: string; replace?: Record<string, string> }
+  | { kind: 'copy'; from: string; to: string; replace?: Replacement[] }
   | { kind: 'write'; to: string; content: string }
   | { kind: 'move'; from: string; to: string }
   | { kind: 'remove'; path: string };
@@ -28,11 +41,14 @@ export interface ApplyOptions {
   log?: (message: string) => void;
 }
 
-const substitute = (content: string, replace?: Record<string, string>) => {
+const substitute = (content: string, replace?: Replacement[]) => {
   if (!replace) return content;
   let out = content;
-  for (const [search, value] of Object.entries(replace)) {
-    out = out.split(search).join(value);
+  for (const { match, replace: value } of replace) {
+    out =
+      typeof match === 'string' ?
+        out.split(match).join(value)
+      : out.replace(match, value);
   }
   return out;
 };

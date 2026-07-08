@@ -58,7 +58,9 @@ export const makeAiEmbed = async (
       kind: 'copy',
       from: path.join(templatesDir, '+page.svelte'),
       to: componentPath,
-      replace: { 'ai-chart.svelte': path.basename(aiComponent) },
+      replace: [
+        { match: 'ai-chart.svelte', replace: path.basename(aiComponent) },
+      ],
     },
     {
       kind: 'copy',

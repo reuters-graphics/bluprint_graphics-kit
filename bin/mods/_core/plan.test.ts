@@ -27,7 +27,7 @@ describe('applyPlan', () => {
           kind: 'copy',
           from: path.join(root, 'tpl.txt'),
           to: path.join(root, 'out.txt'),
-          replace: { NAME: 'world' },
+          replace: [{ match: 'NAME', replace: 'world' }],
         },
         { kind: 'write', to: path.join(root, 'existing.txt'), content: 'NEW' },
       ],
@@ -35,6 +35,25 @@ describe('applyPlan', () => {
     );
     expect(read('out.txt')).toBe('hello world');
     expect(read('existing.txt')).toBe('NEW');
+  });
+
+  it('applies string (all occurrences) and regexp replacements in order', () => {
+    fs.writeFileSync(path.join(root, 'tpl.txt'), 'foo foo BAR-123');
+    applyPlan(
+      [
+        {
+          kind: 'copy',
+          from: path.join(root, 'tpl.txt'),
+          to: path.join(root, 'out.txt'),
+          replace: [
+            { match: 'foo', replace: 'baz' },
+            { match: /BAR-(\d+)/, replace: 'ID=$1' },
+          ],
+        },
+      ],
+      { root }
+    );
+    expect(read('out.txt')).toBe('baz baz ID=123');
   });
 
   it('dry run writes nothing', () => {
