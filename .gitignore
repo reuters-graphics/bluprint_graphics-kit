@@ -200,3 +200,7 @@ graphics-pack/
 project-files/docs-ai-ps/
 src/statics/images/docs-ai-ps
 .lefthook-local/
+
+# Claude Code local settings (personal permission grants etc.) — keep local
+.claude/settings.json
+.claude/settings.local.json
