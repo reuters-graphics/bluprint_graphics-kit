@@ -51,6 +51,39 @@ const describe = (op: FileOp, root: string): string => {
   }
 };
 
+/** Prefix for this tool's temp staging directories. */
+const STAGING_PREFIX = 'kit-mods-';
+
+/** Age after which an orphaned staging dir (from a killed run) is swept. */
+const STAGING_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+/**
+ * Best-effort removal of staging dirs left behind by hard-killed runs. Only
+ * touches dirs older than {@link STAGING_TTL_MS}, so concurrent live runs —
+ * always seconds old, possibly in other projects — are never disturbed.
+ */
+const sweepStaleStaging = () => {
+  const now = Date.now();
+  const tmp = os.tmpdir();
+  let entries: string[];
+  try {
+    entries = fs.readdirSync(tmp);
+  } catch {
+    return;
+  }
+  for (const entry of entries) {
+    if (!entry.startsWith(STAGING_PREFIX)) continue;
+    const dir = path.join(tmp, entry);
+    try {
+      if (now - fs.statSync(dir).mtimeMs > STAGING_TTL_MS) {
+        fs.rmSync(dir, { recursive: true, force: true });
+      }
+    } catch {
+      // Another process may have removed it mid-sweep; ignore.
+    }
+  }
+};
+
 /**
  * Apply a list of {@link FileOp}s to disk transactionally.
  *
@@ -77,7 +110,8 @@ export const applyPlan = (ops: FileOp[], options: ApplyOptions): void => {
     return;
   }
 
-  const staging = fs.mkdtempSync(path.join(os.tmpdir(), 'kit-mods-'));
+  sweepStaleStaging();
+  const staging = fs.mkdtempSync(path.join(os.tmpdir(), STAGING_PREFIX));
   const undo: (() => void)[] = [];
   let backupCounter = 0;
 
@@ -152,9 +186,8 @@ export const applyPlan = (ops: FileOp[], options: ApplyOptions): void => {
         // Best-effort rollback; surface the original error below.
       }
     }
-    fs.rmSync(staging, { recursive: true, force: true });
     throw error;
+  } finally {
+    fs.rmSync(staging, { recursive: true, force: true });
   }
-
-  fs.rmSync(staging, { recursive: true, force: true });
 };

@@ -82,4 +82,21 @@ describe('applyPlan', () => {
     expect(exists('created.txt')).toBe(false);
     expect(read('existing.txt')).toBe('ORIGINAL');
   });
+
+  it('sweeps orphaned staging dirs but leaves fresh ones alone', () => {
+    const stale = fs.mkdtempSync(path.join(os.tmpdir(), 'kit-mods-'));
+    const fresh = fs.mkdtempSync(path.join(os.tmpdir(), 'kit-mods-'));
+    // Backdate the orphan two hours; leave the fresh one at "now".
+    const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);
+    fs.utimesSync(stale, twoHoursAgo, twoHoursAgo);
+
+    // Any run triggers the sweep.
+    applyPlan([{ kind: 'write', to: path.join(root, 'x.txt'), content: 'x' }], {
+      root,
+    });
+
+    expect(fs.existsSync(stale)).toBe(false);
+    expect(fs.existsSync(fresh)).toBe(true);
+    fs.rmSync(fresh, { recursive: true, force: true });
+  });
 });
