@@ -81,9 +81,10 @@ describe('Mods: make-blog', () => {
     }
 
     expect(fs.existsSync(path.join(T, 'dist/index.html'))).toBe(true);
-    // The placeholder post's prerendered permalink (proves glob + crawler-link mechanism)
+    // The placeholder post's prerendered permalink: <publishedDate>/<slugified slugTitle>
+    // (proves glob + crawler-link mechanism)
     expect(
-      fs.existsSync(path.join(T, 'dist/2024-04-17/your-first-post/index.html'))
+      fs.existsSync(path.join(T, 'dist/2026-04-09/title-for-post/index.html'))
     ).toBe(true);
   }, 40_000);
 });

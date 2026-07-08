@@ -4,15 +4,23 @@
     "name": "Main page"
   },
   "story": {
-    "seoTitle": "A Reuters Graphics blog",
+    "seoTitle": "Page title for search",
     "seoDescription": "Page description for search",
-    "shareTitle": "A Reuters Graphics blog",
+    "shareTitle": "Page title for social media",
     "shareDescription": "Page description for social media",
-    "shareImgPath": "images/reuters-graphics.jpg",
-    "shareImgAlt": "Alt text for share image.",
-    "section": "Graphics",
-    "mainHeadline": "A Reuters Graphics blog",
+    "shareImgPath": "images/share-card.png",
+    "shareImgAlt": "A map of the border region between Israel and Lebanon. The map includes annotations for the positions of tank fire and a Reuters team.",
+    "section": "Topic Kicker",
+    "mainHeadline": "Reuters Graphics Blog",
     "endNotes": [
+      {
+        "title": "Note",
+        "text": "Data is current as of today"
+      },
+      {
+        "title": "Sources",
+        "text": "Data, Inc."
+      },
       {
         "title": "Edited by",
         "text": "Editor, Copyeditor"
