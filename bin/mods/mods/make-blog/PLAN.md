@@ -26,7 +26,7 @@ reversible `project-type` mod.
   automatically. Sets `prerender = true`, `trailingSlash = 'always'`.
 - **Main page — `pages/+page.svelte`:** `<SEO>`, headline from `content.mainHeadline`, `<BlogTOC>`, then
   `{#each data.posts as post, i}<Post content={post} isLastPost={…} />`, then `<EndNotes>`.
-- **Permalink route — `pages/[date]/[slug]/`:** `+page.ts` finds the post whose
+- **Permalink route — `pages/[date]/[slug]/`:** `+page.server.ts` finds the post whose
   `slugify(slugTitle) === params.slug` from the parent `posts`; `+page.svelte` renders `<SEO>` + one
   `<Post>` and, for real users (not bots), `goto(`${base}/#${slug}`)`. Routes prerender because
   `<BlogPost>` emits a hidden crawlable `<a href="{base}/{YYYY-MM-DD}/{slug}/">` the crawler follows.
@@ -70,7 +70,7 @@ charts/components, and the ~40 `aiCharts` entries down to `{ AiMap }`):
   hack with the shared post type below.
 - `pages/+page.svelte` — main feed. **Keep `<ClockWall>`**, but set it to three generic cities the user
   can change later: **Singapore, London, New York**.
-- `pages/[date]/[slug]/+page.svelte` and `+page.ts` — permalink route.
+- `pages/[date]/[slug]/+page.svelte` and `+page.server.ts` — permalink route.
 - `pages/$types.d.ts` and `pages/[date]/[slug]/$types.d.ts` — `$types` stubs (not copied; see notes).
 - `src/lib/Post.svelte` — reconfigured component, **re-typed in TS** (the example dropped TS). Keep only
   the `text` and `ai-graphic` block types (with `aiCharts = { AiMap }`); every other block type is added
@@ -89,7 +89,7 @@ The mod runs in **two phases**: (A) deterministic local scaffolding via the tran
 
 1. Copy `pages/+layout.svelte`, `pages/+layout.server.ts`, `pages/+page.svelte`; **remove the base
    `pages/+layout.ts`** (its RNGS live-content universal load would shadow the server layout's `posts`).
-2. Copy `pages/[date]/[slug]/+page.svelte` + `+page.ts` (new route).
+2. Copy `pages/[date]/[slug]/+page.svelte` + `+page.server.ts` (new route).
 3. Copy `src/lib/Post.svelte` and `src/lib/post.ts`; **remove `src/lib/App.svelte`**.
    3a. Copy placeholder `locales/en/content.json` + `locales/en/post-1.json` stubs (overwrite) so the app
    builds/runs before Phase B; `stories:sync` overwrites them later.
@@ -178,7 +178,7 @@ _Minor, decide at implementation:_ whether any `stories:*` package.json scripts 
 Phase B hits the network (RNGS + auth), so CI can't run it. Split the tests:
 
 - **Phase A scaffolding test** (TWD, deterministic; skip/stub Phase B via an env flag or by testing the
-  scaffolding function directly): run the mod, then assert `pages/[date]/[slug]/+page.ts` exists,
+  scaffolding function directly): run the mod, then assert `pages/[date]/[slug]/+page.server.ts` exists,
   `src/lib/App.svelte` + `pages/embeds/en/page/` + `locales/en/embeds.json` are gone, `src/lib/Post.svelte`
   - `src/lib/post.ts` + `bin/mods/.converted-to-blog` exist, `rngs-io.json` `stories` is `{}` (storyboard
     preserved), and the `isbot` dep was added. (Also assert the base scaffold now has `src/utils/slugify` and

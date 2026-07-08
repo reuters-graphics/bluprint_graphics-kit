@@ -45,7 +45,7 @@ const buildPlan = (root: string): FileOp[] => {
     copy('pages/+layout.server.ts'),
     copy('pages/+page.svelte'),
     copy('pages/[date]/[slug]/+page.svelte'),
-    copy('pages/[date]/[slug]/+page.ts'),
+    copy('pages/[date]/[slug]/+page.server.ts'),
     copy('src/lib/Post.svelte'),
     copy('src/lib/post.ts'),
     // Placeholder content so the app builds/runs before RNGS.io sync (Phase B).

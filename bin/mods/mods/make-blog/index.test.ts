@@ -28,9 +28,9 @@ describe('Mods: make-blog', () => {
     expect(fs.existsSync(path.join(T, 'pages/+layout.ts'))).toBe(false);
 
     // New blog routes + component
-    expect(fs.existsSync(path.join(T, 'pages/[date]/[slug]/+page.ts'))).toBe(
-      true
-    );
+    expect(
+      fs.existsSync(path.join(T, 'pages/[date]/[slug]/+page.server.ts'))
+    ).toBe(true);
     expect(
       fs.existsSync(path.join(T, 'pages/[date]/[slug]/+page.svelte'))
     ).toBe(true);

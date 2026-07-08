@@ -23,7 +23,8 @@
       "Bash(grep -iA1 \"ignore\\\\|threshold\\\\|diagnostic-sources\")",
       "Bash(node -e \"console.log\\(require\\('eslint/package.json'\\).version\\)\")",
       "Bash(echo \"eslint exit=$?\")",
-      "Bash(echo \"tsc exit=$?\")"
+      "Bash(echo \"tsc exit=$?\")",
+      "Bash(perl -0pi -e 's/\\\\Q`+page.ts` finds\\\\E/`+page.server.ts` finds/g; *)"
     ]
   }
 }
