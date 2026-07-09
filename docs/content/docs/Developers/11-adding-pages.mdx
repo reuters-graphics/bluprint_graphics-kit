@@ -51,7 +51,7 @@ import { story as content } from '$locales/en/anotherPage.json';
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={asset('/')}
   pageUrl={page.url}
   seoTitle={content.seoTitle}
   seoDescription={content.seoDescription}
@@ -94,7 +94,7 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={asset('/')}
   pageUrl={page.url}
   shareImgPath={asset('/another-page-share.jpg')}
 />

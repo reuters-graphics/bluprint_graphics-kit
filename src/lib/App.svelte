@@ -77,7 +77,7 @@
           notes={block.notes}
           ariaDescription={block.altText}
         >
-          <AiChart assetsPath={asset('') || '/'} />
+          <AiChart assetsPath={asset('/')} />
         </GraphicBlock>
       {/if}
 

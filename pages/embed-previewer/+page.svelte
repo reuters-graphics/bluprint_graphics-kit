@@ -18,7 +18,7 @@
       <div>
         <div>No embeds found.</div>
         <div>
-          <a href="{base}/">Go back</a>
+          <a href={resolve('/')}>Go back</a>
         </div>
       </div>
     </container>
