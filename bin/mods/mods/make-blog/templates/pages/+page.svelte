@@ -10,7 +10,7 @@
     BlogTOC,
   } from '@reuters-graphics/graphics-components';
   import pkg from '$pkg';
-  import { base, assets } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { page } from '$app/state';
   import { isReutersDotcom } from '$utils/env';
 
@@ -48,7 +48,7 @@
   seoDescription={content.seoDescription}
   shareTitle={content.shareTitle}
   shareDescription={content.shareDescription}
-  shareImgPath={`${assets}/${content.shareImgPath}`}
+  shareImgPath={asset(`/${content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}
@@ -72,7 +72,7 @@
   ]}
 />
 
-<BlogTOC posts={tocPosts} {base} />
+<BlogTOC posts={tocPosts} {resolve} />
 
 {#each data.posts as post, i}
   <Post content={post} isLastPost={i === data.posts.length - 1} />
