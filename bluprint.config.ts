@@ -78,6 +78,9 @@ export default defineConfig<Context>({
         delete pkg.devDependencies['@changesets/cli'];
         delete pkg.devDependencies['@reuters-graphics/bluprint'];
         delete pkg.devDependencies['astro'];
+        // Only needed for the make-blog mod's build test; the mod itself adds
+        // isbot as a real dependency when a project is converted to a blog.
+        delete pkg.devDependencies['isbot'];
 
         return pkg;
       }

@@ -5,28 +5,104 @@ sidebar:
   order: 26
 ---
 
-Graphics kit mods are low or no-code commands to update or add to your project.
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-To use one, run the `mods` command in your project.
+Graphics kit **mods** are low- or no-code commands that reconfigure your project or add features to it. Each mod bundles up the several file edits a task would otherwise require, so you don't have to make them by hand.
+
+Run the `mods` command in your project and pick one from the menu:
 
 ```console
 pnpm mods
 ```
 
+```
+┌  Kit mods
+│
+◆  Which mod do you want?
+│  ● Export AI statics — export JPG and EPS files
+│  ○ Make an embed page — for ai2svelte graphics
+│  ○ Change my project type — to embeds-only or pages+
+│  ○ Convert to a graphics blog — posts feed + permalinks
+└
+```
+
+<Aside type="tip">
+  Mods change files in your project. Run them on a clean working tree (commit or
+  stash first) so you can review — and easily undo — what a mod changed.
+</Aside>
+
 ## Available mods
 
-![A rocketship in space](../../../assets/mods.gif)
+<CardGrid>
+  <Card title="Change project type" icon="random">
+    Switch between **pages+** and **embeds-only**.
+  </Card>
+  <Card title="Make an embed page" icon="puzzle">
+    Create an embeddable page for an ai2svelte graphic.
+  </Card>
+  <Card title="Export AI statics" icon="download">
+    Export JPG and EPS versions of an Adobe Illustrator graphic.
+  </Card>
+  <Card title="Convert to a graphics blog" icon="open-book">
+    Turn the project into a reverse-chronological blog of posts.
+  </Card>
+</CardGrid>
 
 ### Change project type
 
-Switch your [project type](/bluprint_graphics-kit/developers/project-structure/#project-type) to **embeds-only** or back to **pages+**.
+Switch your [project type](/bluprint_graphics-kit/developers/project-structure/#project-type) between **pages+** (a full page that can also serve embeds) and **embeds-only** (just embeddable graphics, no standalone page).
 
-### Make ai2svelte embeds
+The mod detects your current type and swaps to the other, rewriting your homepage, your page embed and your `publisher.config.ts`. It's reversible — run it again to switch back.
 
-Make an embeddable page for an Adobe Illustrator graphic.
+<Aside>
+  Switching **overwrites** the homepage, page embed and publisher config with the
+  template for the target type, so any edits you've made to those specific files
+  will be replaced.
+</Aside>
 
-This command can only be run _after_ you've exported your graphic from Adobe Illustrator file using ai2svelte.
+### Make an embed page
+
+Make an embeddable page for an Adobe Illustrator graphic so it can be published as a media embed.
+
+You can only run this **after** you've exported your graphic from Adobe Illustrator with [ai2svelte](/bluprint_graphics-kit/developers/adobe-illustrator-graphics). It reads the components in `src/lib/ai2svelte/`, asks which one and which language the embed is for, and creates the embed page at `pages/embeds/<locale>/<slug>/`.
+
+<Aside>
+  After creating the embed, add the graphic to your `"embeds"` ArchieML doc and
+  [export AI statics](#export-ai-statics) for it before publishing.
+</Aside>
 
 ### Export AI statics
 
-Export JPG and EPS static versions of an Adobe Illustrator graphic.
+Export JPG and EPS static versions of an Adobe Illustrator graphic — the formats media clients need.
+
+Point it at an `.ai` file in your `project-files/` directory and choose a language. It writes the EPS and JPG into `media-assets/<locale>/<slug>/` and copies the JPG into `src/statics/` so it's available to your pages.
+
+See [statics for media clients](/bluprint_graphics-kit/developers/statics-for-media-clients) for how these are used.
+
+### Convert to a graphics blog
+
+Turn your project into a **graphics blog**: a single main page that lists every _post_ in reverse-chronological order, plus a permalink page for each post so individual posts can be shared and picked up by search crawlers.
+
+Each post is a JSON file in `locales/en/` (`post-1.json`, `post-2.json`, …). Drop a new one in and it appears on the blog automatically, newest first. Posts render through `src/lib/Post.svelte`, which handles `text` and `ai-graphic` blocks out of the box — add more block types there as your posts need them.
+
+When you run the mod it:
+
+1. Scaffolds the blog pages and a placeholder first post, so the app builds and runs right away.
+2. Creates two [RNGS.io](https://www.rngs.io/) stories for you — one for the main page and one for the first post — and syncs their content down.
+
+<Aside type="caution">
+  Converting to a blog is a **one-way** change. Once converted, the _Change
+  project type_ mod no longer applies.
+</Aside>
+
+<Aside type="note">
+  The RNGS.io step needs network access and your credentials. If it can't finish
+  (for example, you're offline), the mod prints the exact commands to run later —
+  your blog is already scaffolded and will build in the meantime.
+</Aside>
+
+To add more posts after converting, create another story synced to a new `locales/en/post-<n>.json`:
+
+```console
+pnpm stories:new
+```

@@ -1,6 +1,7 @@
 import type { ModContext } from './_core/context';
 import { changeProjectType } from './mods/project-type';
 import { makeAiEmbed } from './mods/make-ai-embed';
+import { makeBlog } from './mods/make-blog';
 import { exportAiStatics } from './mods/export-ai-statics';
 import { unconfigRngsIo } from './mods/unconfig-rngs-io';
 
@@ -54,6 +55,17 @@ export const registry: ModDescriptor[] = [
       options: [['-f, --force', 'Force the change', false]],
     },
     run: (ctx, opts) => changeProjectType(ctx, { force: !!opts?.force }),
+  },
+  {
+    id: 'make-blog',
+    label: 'Convert to a graphics blog',
+    hint: 'posts feed + permalinks (one-way)',
+    menu: true,
+    command: {
+      name: 'make-blog',
+      options: [['-f, --force', 'Force the change', false]],
+    },
+    run: (ctx, opts) => makeBlog(ctx, { force: !!opts?.force }),
   },
   {
     id: 'unconfig-rngs-io',
