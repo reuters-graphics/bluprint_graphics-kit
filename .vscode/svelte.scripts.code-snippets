@@ -10,13 +10,13 @@
   "Static paths": {
     "scope": "javascript",
     "prefix": "assets",
-    "body": ["import { assets } from '\\$app/paths';"],
-    "description": "SvelteKit assets path store",
+    "body": ["import { asset } from '\\$app/paths';"],
+    "description": "SvelteKit asset path function",
   },
   "SvelteKit $app/paths": {
     "scope": "javascript",
     "prefix": "paths",
-    "body": ["import { base, assets } from '\\$app/paths';"],
-    "description": "SvelteKit $app/paths stores",
+    "body": ["import { resolve, asset } from '\\$app/paths';"],
+    "description": "SvelteKit $app/paths functions",
   },
 }

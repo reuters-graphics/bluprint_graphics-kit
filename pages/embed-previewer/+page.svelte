@@ -1,12 +1,12 @@
 <script>
   import pages from '@svelte-kit-pages';
   import { Theme, Framer } from '@reuters-graphics/graphics-components';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import '@reuters-graphics/graphics-components/scss/main.scss';
 
   const embeds = pages
     .filter((p) => /^\/embeds\//.test(p))
-    .map((path) => `${base}/${path.replace(/^\//, '')}`)
+    .map((path) => resolve(path))
     .map((path) => (/\/$/.test(path) ? path : path + '/'));
 </script>
 
