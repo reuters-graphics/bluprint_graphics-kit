@@ -9,6 +9,13 @@ const mode =
   : process.env.NODE_ENV === 'production' ? 'prod'
   : 'dev';
 
+// Fully qualified base URL for the page (shared with vite.config.ts, which
+// injects it as the __BASE_URL__ constant for SEO's canonical/og:url tags).
+export const fullBasePath = getBasePath(mode, {
+  trailingSlash: false,
+  rootRelative: false,
+});
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: sveltePreprocess({

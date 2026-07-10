@@ -7,7 +7,7 @@
 </script>
 
 <SEO
-  baseUrl={asset('/')}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle=""
   seoDescription=""

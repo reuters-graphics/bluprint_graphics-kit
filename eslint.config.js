@@ -23,6 +23,11 @@ export default [
   },
   ...svelte,
   {
+    languageOptions: {
+      globals: {
+        __BASE_URL__: 'readonly',
+      },
+    },
     rules: {
       'svelte3/unused-export-let': 'off',
     },

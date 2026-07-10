@@ -1,3 +1,6 @@
+/** Fully qualified base URL for the page, injected by vite.config.ts. */
+declare const __BASE_URL__: string;
+
 declare module '@svelte-kit-pages' {
   const embeds: string[];
   export default embeds;
