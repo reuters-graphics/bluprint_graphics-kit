@@ -38,9 +38,17 @@
   shareDescription={content.shareDescription}
   shareImgPath={asset(`/${content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
+  shareImgWidth={1200}
+  shareImgHeight={628}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}
   authors={pkg?.reuters?.graphic?.authors}
+  articleSection={content.section}
+  keywords={content.keywords
+    ?.split(',')
+    .map((k) => k.trim())
+    .filter(Boolean)}
+  locale={content.locale}
 />
 
 <Theme base="light">

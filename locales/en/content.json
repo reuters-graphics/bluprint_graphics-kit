@@ -1,12 +1,12 @@
 {
   "metadata": {
     "id": "cltmvzj5m0000lc089jz22aet",
-    "name": "graphics-kit-page",
+    "name": "Graphic: Page",
     "storyboard": {
       "id": "cltmvxt5q0000l908irus4rdd",
       "name": "🔒 TEMPLATES"
     },
-    "lastSynced": "2025-03-26T17:16:03.466Z",
+    "lastSynced": "2026-07-10T20:27:43.097Z",
     "liveEditing": {
       "preview": {
         "aml": "https://graphics.thomsonreuters.com/apps/graphics-tools/prod/stories/cltmvzj5m0000lc089jz22aet/preview/story.aml",
@@ -23,16 +23,18 @@
     "shareDescription": "Page description for social media",
     "shareImgPath": "images/reuters-graphics.jpg",
     "shareImgAlt": "Alt text for share image.",
-    "hed": "A Reuters Graphics page",
     "section": "Graphics",
+    "keywords": "Graphics, News",
+    "locale": "en_GB",
+    "hed": "A Reuters Graphics page",
     "sectionUrl": "https://www.reuters.com/graphics/",
     "authors": ["Jane Doe", "John Doe"],
-    "publishTime": "2024-04-17T17:00:00.000Z",
+    "publishTime": "2025-10-20T17:00:00.000Z",
     "updateTime": "",
     "blocks": [
       {
         "type": "text",
-        "text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken. Turkey landjaeger <a href=\"https://www.reuters.com/graphics/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">kevin turducken kielbasa</a> pork loin, filet mignon leberkas meatball cow tenderloin. T-bone meatloaf kielbasa pancetta filet mignon doner. \r\n\r\nPig short ribs jerky, meatloaf <em>turducken ribeye strip steak</em> bacon pastrami tail pancetta chicken. Shankle pork loin burgdoggen, prosciutto beef ribs turducken ball tip.\r\n\r\nBoudin alcatra kevin, jerky swine <strong>brisket pastrami</strong> tail pork chop drumstick tongue."
+        "text": "Pig short ribs jerky, meatloaf turducken ribeye strip steak bacon pastrami tail pancetta chicken. Turkey landjaeger <a href=\"https://www.reuters.com/graphics/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">kevin turducken kielbasa</a> pork loin, filet mignon leberkas meatball cow tenderloin. T-bone meatloaf kielbasa pancetta filet mignon doner.\r\n\r\nPig short ribs jerky, meatloaf <em>turducken ribeye strip steak</em> bacon pastrami tail pancetta chicken. Shankle pork loin burgdoggen, prosciutto beef ribs turducken ball tip.\r\n\r\nBoudin alcatra kevin, jerky swine <strong>brisket pastrami</strong> tail pork chop drumstick tongue."
       },
       {
         "type": "ai-graphic",

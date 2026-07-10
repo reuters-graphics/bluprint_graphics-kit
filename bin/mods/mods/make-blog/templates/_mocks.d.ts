@@ -21,6 +21,7 @@ declare module '$lib/post' {
     blocks: Block[];
     seoDescription?: string;
     shareImgPath?: string;
+    keywords?: string;
     [key: string]: unknown;
   }
 
@@ -32,6 +33,8 @@ declare module '$lib/post' {
     shareImgPath: string;
     shareImgAlt: string;
     section: string;
+    keywords?: string;
+    locale?: string;
     mainHeadline: string;
     endNotes: { title: string; text: string }[];
   }

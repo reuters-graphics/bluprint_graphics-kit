@@ -41,9 +41,17 @@
   shareDescription=""
   shareImgPath={asset(`/${post?.shareImgPath || content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
+  shareImgWidth={1200}
+  shareImgHeight={628}
   publishTime={post?.publishedDate}
   updateTime={post?.updatedDate}
   {authors}
+  articleSection={content.section}
+  keywords={post.keywords
+    ?.split(',')
+    .map((k) => k.trim())
+    .filter(Boolean)}
+  locale={content.locale}
 />
 
 {#if post}

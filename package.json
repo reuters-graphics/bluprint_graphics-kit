@@ -92,7 +92,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@reuters-graphics/graphics-components": "4.1.0",
+    "@reuters-graphics/graphics-components": "4.2.0",
     "language-tags": "^1.0.9",
     "slugify": "^1.6.9"
   },
