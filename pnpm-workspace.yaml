@@ -13,6 +13,7 @@ onlyBuiltDependencies:
   - '@fortawesome/free-regular-svg-icons'
   - '@fortawesome/free-solid-svg-icons'
   - '@parcel/watcher'
+  - '@reuters-graphics/graphics-components'
   - '@sveltejs/kit'
   - esbuild
   - sharp
@@ -25,6 +26,7 @@ allowBuilds:
   '@fortawesome/free-regular-svg-icons': true
   '@fortawesome/free-solid-svg-icons': true
   '@parcel/watcher': true
+  '@reuters-graphics/graphics-components': true
   '@sveltejs/kit': true
   esbuild: true
   sharp: true

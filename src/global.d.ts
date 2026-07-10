@@ -7,12 +7,7 @@ declare module '$pkg' {
   import type { Graphic, RNGS } from '@reuters-graphics/server-client';
 
   type EditionType =
-    | 'interactive'
-    | 'media-interactive'
-    | 'JPG'
-    | 'EPS'
-    | 'PNG'
-    | 'PDF';
+    'interactive' | 'media-interactive' | 'JPG' | 'EPS' | 'PNG' | 'PDF';
 
   type PkgArchive = {
     url: string;

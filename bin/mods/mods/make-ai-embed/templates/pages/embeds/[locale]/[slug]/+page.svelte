@@ -21,7 +21,7 @@
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={asset('/')}
   pageUrl={page.url}
   seoTitle=""
   seoDescription=""
