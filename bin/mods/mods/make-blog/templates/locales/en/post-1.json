@@ -12,6 +12,7 @@
     "shareDescription": "Page description for social media",
     "shareImgPath": "images/share-card.png",
     "shareImgAlt": "Alt text for share image",
+    "keywords": "Graphics, News, Reuters News",
     "authors": ["Jane Doe", "John Doe"],
     "publishedDate": "2026-04-09T19:00:00.000Z",
     "updatedDate": "",

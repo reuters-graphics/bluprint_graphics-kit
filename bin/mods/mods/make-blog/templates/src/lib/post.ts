@@ -34,6 +34,8 @@ export interface PostStory {
   shareDescription?: string;
   shareImgPath?: string;
   shareImgAlt?: string;
+  /** Comma-separated keywords/tags, split into an array for the SEO component. */
+  keywords?: string;
   authors: string[];
   publishedDate: string;
   updatedDate: string;
@@ -52,6 +54,10 @@ export interface MainPageShell {
   shareImgPath: string;
   shareImgAlt: string;
   section: string;
+  /** Comma-separated keywords/tags, split into an array for the SEO component. */
+  keywords?: string;
+  /** Open Graph locale, e.g. `en_GB`. */
+  locale?: string;
   mainHeadline: string;
   endNotes: { title: string; text: string }[];
 }

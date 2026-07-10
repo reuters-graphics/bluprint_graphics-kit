@@ -10,6 +10,8 @@
     "shareDescription": "Page description for social media",
     "shareImgPath": "images/share-card.png",
     "shareImgAlt": "A map of the border region between Israel and Lebanon. The map includes annotations for the positions of tank fire and a Reuters team.",
+    "keywords": "Graphics, News, Reuters News",
+    "locale": "en_GB",
     "section": "Topic Kicker",
     "mainHeadline": "Reuters Graphics Blog",
     "endNotes": [
