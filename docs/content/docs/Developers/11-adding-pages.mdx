@@ -44,26 +44,28 @@ It's probably a good idea to include this metadata in a _separate_ ArchieML doc.
 import { SEO } from '@reuters-graphics/graphics-components';
 import pkg from '$pkg';
 import { page } from '$app/state';
-import { assets } from '$app/paths';
+import { asset } from '$app/paths';
 
 // A separate RNGS.io story doc
 import { story as content } from '$locales/en/anotherPage.json';
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle={content.seoTitle}
   seoDescription={content.seoDescription}
   shareTitle={content.shareTitle}
   shareDescription={content.shareDescription}
-  shareImgPath="{assets}/another-page-share.jpg"
+  shareImgPath={asset('/another-page-share.jpg')}
   shareImgAlt={content.shareImgAlt}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}
   authors={pkg?.reuters?.graphic?.authors}
 />
 ```
+
+`__BASE_URL__` is the fully specified base URL for your project. It's injected at build time in `vite.config.ts` and available as a global anywhere in your app — no import needed. The `SEO` component uses it to build canonical and share URLs with the correct origin.
 
 ## Adding embeds
 
@@ -88,15 +90,15 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 <script lang="ts">
   import { SEO } from '@reuters-graphics/graphics-components';
   import { page } from '$app/state';
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { PymChild } from '@reuters-graphics/graphics-components';
   // ...
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
-  shareImgPath="{assets}/another-page-share.jpg"
+  shareImgPath={asset('/another-page-share.jpg')}
 />
 
 <svelte:head>

@@ -26,14 +26,14 @@ Put images, fonts and other static media files in dedicated folders in the stati
 
 When you reference media files, you should **always use absolute paths** (`https://graphics.reuters.com/.../my-file.jpg`), not relative paths (`./my-file.jpg`).
 
-So to use media files in your component code, you need to prefix the path to them using SvelteKit's [built-in `assets` store](https://svelte.dev/docs/kit/$app-paths#assets). Here's how:
+So to use media files in your component code, you need to resolve the path to them using SvelteKit's [built-in `asset` function](https://svelte.dev/docs/kit/$app-paths#asset). Here's how:
 
 ```svelte
 <script>
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 </script>
 
-<img alt="" src="{assets}/images/my-image.jpg" />
+<img alt="" src={asset('/images/my-image.jpg')} />
 ```
 
 ### Using media files in component SCSS
@@ -42,11 +42,11 @@ Use inline styles to set SCSS styles with your media files.
 
 ```svelte
 <script>
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 </script>
 
 <div
-  style="background-image: url({assets}/images/my-image.jpg);"
+  style="background-image: url({asset('/images/my-image.jpg')});"
 ></div>
 
 <style lang="scss">

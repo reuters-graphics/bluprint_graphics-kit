@@ -772,29 +772,28 @@ The following are HTML attributes you can put on any HTML element.
 
 ### Imports from `$app/paths`
 
-- **assets**: the absolute URL prefix for static assets (`config.kit.paths.assets`)
+- **asset** _(v2.26+)_: resolve the URL of an asset in your `static` directory, prefixing it with `config.kit.paths.assets` if configured, or the base path otherwise
 
   ```js
-  import { assets } from '$app/paths';
-  console.log(`<img src="${assets}/logo.png">`);
+  import { asset } from '$app/paths';
+  console.log(`<img src="${asset('/logo.png')}">`);
   ```
 
-- **base**: the base path for your app (`config.kit.paths.base`)
-
-  ```svelte
-  <a href="{base}/about">About Us</a>
-  ```
-
-- **resolveRoute**: interpolate a route ID with parameters to form a pathname
+- **resolve** _(v2.26+)_: resolve a pathname by prefixing it with the base path, or a route ID by populating its dynamic segments with parameters
 
   ```js
-  import { resolveRoute } from '$app/paths';
-  resolveRoute('/blog/[slug]/[...rest]', {
+  import { resolve } from '$app/paths';
+  resolve('/blog/[slug]/[...rest]', {
     slug: 'hello',
     rest: '2024/updates',
   });
   // → "/blog/hello/2024/updates"
+
+  resolve('/about');
+  // → the base-prefixed pathname, for use in href="{resolve('/about')}"
   ```
+
+  `assets`, `base`, and `resolveRoute` still exist but are deprecated in favor of `asset` and `resolve`.
 
 ### Imports from `$app/server`
 

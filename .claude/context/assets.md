@@ -13,20 +13,20 @@ media-assets/         # Static files provided to media clients (JPG, PDF, EPS)
 
 ## Always use absolute paths
 
-Never use relative paths to reference files in `src/statics/`. Always prefix with the `assets` variable from SvelteKit's `$app/paths`:
+Never use relative paths to reference files in `src/statics/`. Always resolve them with the `asset` function from SvelteKit's `$app/paths`:
 
 ```svelte
 <script>
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 </script>
 
-<img src="{assets}/images/my-image.jpg" alt="" />
+<img src={asset('/images/my-image.jpg')} alt="" />
 ```
 
-This applies to asset paths in content blocks too — always prefix `block.src` or similar fields with `assets`:
+This applies to asset paths in content blocks too — always resolve `block.src` or similar fields with `asset`:
 
 ```svelte
-<FeaturePhoto src="{assets}/{block.src}" />
+<FeaturePhoto src={asset(`/${block.src}`)} />
 ```
 
 ### In component SCSS
@@ -35,10 +35,10 @@ Use inline styles to apply asset paths in component-scoped styles:
 
 ```svelte
 <script>
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 </script>
 
-<div style="background-image: url({assets}/images/my-image.jpg);"></div>
+<div style="background-image: url({asset('/images/my-image.jpg')});"></div>
 ```
 
 ### In global SCSS

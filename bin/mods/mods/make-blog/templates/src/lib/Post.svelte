@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { assets, base } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import {
     BodyText,
     GraphicBlock,
@@ -32,7 +32,7 @@
   authors={content.authors}
   publishTime={content.publishedDate}
   updateTime={content.updatedDate}
-  {base}
+  {resolve}
   {isLastPost}
 >
   {#each content.blocks as block}
@@ -55,7 +55,7 @@
           notes={block.notes}
           ariaDescription={block.altText}
         >
-          <AiGraphic assetsPath={assets || '/'} />
+          <AiGraphic assetsPath={asset('/')} />
         </GraphicBlock>
       {/if}
 

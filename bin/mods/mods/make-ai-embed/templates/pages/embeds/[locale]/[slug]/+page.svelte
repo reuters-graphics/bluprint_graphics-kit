@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageProps } from './$types';
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import {
     Theme,
@@ -21,15 +21,15 @@
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle=""
   seoDescription=""
   shareTitle=""
   shareDescription=""
   shareImgPath={embed ?
-    `${assets}/images/embeds/${embed.locale?.trim()}/${embed.slug?.trim()}.jpg`
-  : `${assets}/images/reuters-graphics.jpg`}
+    asset(`/images/embeds/${embed.locale?.trim()}/${embed.slug?.trim()}.jpg`)
+  : asset('/images/reuters-graphics.jpg')}
 />
 
 <svelte:head>
@@ -63,7 +63,7 @@
       notes={embed?.notes}
       ariaDescription={embed?.altText}
     >
-      <Graphic assetsPath={assets} />
+      <Graphic assetsPath={asset('/')} />
     </GraphicBlock>
   </Article>
 </Theme>

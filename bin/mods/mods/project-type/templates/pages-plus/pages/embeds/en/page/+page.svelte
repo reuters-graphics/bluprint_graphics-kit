@@ -1,6 +1,6 @@
 <script lang="ts">
   import pkg from '$pkg';
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
 
@@ -21,13 +21,13 @@
 </svelte:head>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle={content.seoTitle}
   seoDescription={content.seoDescription}
   shareTitle={content.shareTitle}
   shareDescription={content.shareDescription}
-  shareImgPath={`${assets}/${content.shareImgPath}`}
+  shareImgPath={asset(`/${content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
   publishTime={pkg?.reuters?.graphic?.published}
   updateTime={pkg?.reuters?.graphic?.updated}

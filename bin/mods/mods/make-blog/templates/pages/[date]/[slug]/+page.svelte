@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base, assets } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { onMount } from 'svelte';
   import { story as content } from '$locales/en/content.json';
   import { SEO } from '@reuters-graphics/graphics-components';
@@ -28,18 +28,18 @@
   // page scrolled to this post's anchor.
   onMount(async () => {
     if (navigator.webdriver || isbot(navigator.userAgent)) return;
-    await goto(`${base}/#${data.slug}`, { replaceState: true });
+    await goto(`${resolve('/')}#${data.slug}`, { replaceState: true });
   });
 </script>
 
 <SEO
-  baseUrl={import.meta.env.BASE_URL}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle={post?.slugTitle}
   seoDescription={post?.seoDescription}
   shareTitle={post?.title}
   shareDescription=""
-  shareImgPath={`${assets}/${post?.shareImgPath || content.shareImgPath}`}
+  shareImgPath={asset(`/${post?.shareImgPath || content.shareImgPath}`)}
   shareImgAlt={content.shareImgAlt}
   publishTime={post?.publishedDate}
   updateTime={post?.updatedDate}

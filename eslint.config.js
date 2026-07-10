@@ -23,6 +23,12 @@ export default [
   },
   ...svelte,
   {
+    // Build-time constant injected by Vite `define` (see vite.config.ts).
+    languageOptions: {
+      globals: {
+        __BASE_URL__: 'readonly',
+      },
+    },
     rules: {
       'svelte3/unused-export-let': 'off',
     },

@@ -84,7 +84,7 @@ For example, to add a new FeaturePhoto:
 <script lang="ts">
   // ...
 
-  import { assets } from '$app/paths';
+  import { asset } from '$app/paths';
 
   import {
     Article,
@@ -110,7 +110,7 @@ For example, to add a new FeaturePhoto:
     <!-- Add new FeaturePhoto block -->
   {:else if block.type === 'feature-photo'}
     <FeaturePhoto
-      src="{assets}/{block.src}"
+      src={asset(`/${block.src}`)}
       alt={block.alt}
       caption={block.caption}
       credit={block.credit}
