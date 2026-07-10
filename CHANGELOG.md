@@ -1,5 +1,15 @@
 # @reuters-graphics/graphics-kit
 
+## 2.9.0
+
+### Minor Changes
+
+- 30d8977: Updates the kit's Svelte, SvelteKit, Vite, and component library dependencies to their latest majors.
+
+### Patch Changes
+
+- ffd571c: Expose a fully specified `__BASE_URL__` global (injected at build time via Vite `define` from `getBasePath(mode, { trailingSlash: true, rootRelative: false })`) and pass it to the `SEO` component's `baseUrl` prop, so prerendered canonical/OG URLs use the correct site origin instead of the CDN asset path.
+
 ## 2.8.1
 
 ### Patch Changes
