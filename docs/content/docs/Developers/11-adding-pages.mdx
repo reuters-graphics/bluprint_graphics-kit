@@ -51,7 +51,7 @@ import { story as content } from '$locales/en/anotherPage.json';
 </script>
 
 <SEO
-  baseUrl={asset('/')}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle={content.seoTitle}
   seoDescription={content.seoDescription}
@@ -64,6 +64,8 @@ import { story as content } from '$locales/en/anotherPage.json';
   authors={pkg?.reuters?.graphic?.authors}
 />
 ```
+
+`__BASE_URL__` is the fully specified base URL for your project. It's injected at build time in `vite.config.ts` and available as a global anywhere in your app — no import needed. The `SEO` component uses it to build canonical and share URLs with the correct origin.
 
 ## Adding embeds
 
@@ -94,7 +96,7 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 </script>
 
 <SEO
-  baseUrl={asset('/')}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   shareImgPath={asset('/another-page-share.jpg')}
 />

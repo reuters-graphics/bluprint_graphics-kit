@@ -21,7 +21,7 @@
 </svelte:head>
 
 <SEO
-  baseUrl={asset('/')}
+  baseUrl={__BASE_URL__}
   pageUrl={page.url}
   seoTitle={content.seoTitle}
   seoDescription={content.seoDescription}
