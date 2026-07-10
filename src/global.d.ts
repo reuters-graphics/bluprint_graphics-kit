@@ -1,3 +1,11 @@
+/**
+ * Fully specified base URL for the page, injected at build time by Vite
+ * (see `vite.config.ts`) from
+ * `getBasePath(mode, { trailingSlash: true, rootRelative: false })`.
+ * Pass to the SEO component's `baseUrl` prop.
+ */
+declare const __BASE_URL__: string;
+
 declare module '@svelte-kit-pages' {
   const embeds: string[];
   export default embeds;
