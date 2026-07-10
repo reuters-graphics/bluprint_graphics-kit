@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import os from 'os';
 import path from 'path';
 import ignore from 'ignore';
 import fsPromises from 'fs/promises';
@@ -7,7 +8,10 @@ import { execSync } from 'child_process';
 
 export class TestWorkingDirectory {
   CWD = process.cwd();
-  TWD = path.join(process.cwd(), 'test', '.temp');
+  // A unique directory in the system temp dir (rather than inside the repo's
+  // own test/ folder). `node_modules` is symlinked in by absolute path, so the
+  // location doesn't matter, and os.tmpdir() is writable in GitHub Actions.
+  TWD = fs.mkdtempSync(path.join(os.tmpdir(), 'bluprint-graphics-kit-'));
 
   private async createSymlink(srcPath: string) {
     const symlinkSource = path.join(this.CWD, srcPath);
