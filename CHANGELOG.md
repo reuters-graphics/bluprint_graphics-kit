@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.10.1
+
+### Patch Changes
+
+- 171b4ae: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.10.0
 
 ### Minor Changes
