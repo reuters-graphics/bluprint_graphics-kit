@@ -38,6 +38,21 @@ export const inlineAdNumber = (n: string) => {
 };
 
 /**
+ * Whether a src-like value is an external URL rather than a local project asset path.
+ *
+ * @example
+ * ```
+ * isExternalUrl('https://example.com/video.mp4'); // true
+ * isExternalUrl('//example.com/video.mp4'); // true
+ * isExternalUrl('images/photo.jpg'); // false
+ * ```
+ * @param src Source path or URL
+ * @returns `true` if `src` is an absolute or protocol-relative URL
+ */
+export const isExternalUrl = (src: string) =>
+  /^(https?:)?\/\//i.test(src.trim());
+
+/**
  * Coerce a truth-y value to a proper boolean.
  *
  * @example

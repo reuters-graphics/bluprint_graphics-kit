@@ -23,11 +23,40 @@ Never use relative paths to reference files in `src/statics/`. Always resolve th
 <img src={asset('/images/my-image.jpg')} alt="" />
 ```
 
-This applies to asset paths in content blocks too — always resolve `block.src` or similar fields with `asset`:
+This applies to asset paths in content blocks too — resolve `block.src` or similar fields with `asset`:
 
 ```svelte
 <FeaturePhoto src={asset(`/${block.src}`)} />
 ```
+
+### Local assets vs. external URLs
+
+Not every `src`-like field points at a file in `src/statics/`. A `photo` or `video` block may instead carry a full URL to an externally hosted file (a CDN, a partner's server, etc.). `asset()` must never wrap an external URL — doing so mangles it into a broken local path.
+
+Before wiring a field, check the actual value in `content.json`: a local path is relative (`images/photo.jpg`); an external URL is absolute or protocol-relative (`https://cdn.example.com/photo.jpg`, `//cdn.example.com/photo.jpg`).
+
+A single block _type_ can carry either kind of value across different content instances — the CMS field doesn't restrict authors to one or the other. Don't assume a block type is "always local" or "always external" from one example; check every instance of that type in the doc.
+
+Wire only for what you actually observe:
+
+- Every instance local → one branch, wrapped in `asset()`.
+- Every instance external → one branch, passed through unresolved.
+- Both kinds observed among that type's instances → two branches, using `isExternalUrl()` from `$utils/propValidators` to tell them apart at runtime:
+
+```svelte
+<script>
+  import { asset } from '$app/paths';
+  import { isExternalUrl } from '$utils/propValidators';
+</script>
+
+{#if isExternalUrl(block.src)}
+  <FeaturePhoto src={block.src} />
+{:else}
+  <FeaturePhoto src={asset(`/${block.src}`)} />
+{/if}
+```
+
+Don't add the `isExternalUrl()` dual-branch defensively for a case that isn't present in the doc — a photo block with only local instances gets only the `asset()` branch, not a speculative external one "in case an editor pastes a URL later." If the content shape changes in rngs.io, re-run the wiring then.
 
 ### In component SCSS
 
