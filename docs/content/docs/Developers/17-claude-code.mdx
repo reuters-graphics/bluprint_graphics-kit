@@ -64,6 +64,30 @@ Skills are reusable agent capabilities you can invoke with a slash command. They
 
 Type `/` in the Claude Code input to see available skills and their descriptions.
 
+### `/screenshot-embeds`
+
+Captures screenshots of graphics-kit embed pages and helps wire those screenshots into each embed page's social/share metadata. Use it after adding or changing embeds, especially AI graphic embeds that need CMS asset-picker preview images.
+
+**Invoking it:**
+
+```
+/screenshot-embeds
+```
+
+You can also pass viewport overrides as JSON when a particular embed needs a non-standard crop:
+
+```
+/screenshot-embeds --viewports '{"en/map": {"width": 1200, "height": 628}}'
+```
+
+**What it does:**
+
+- Discovers embed routes at `pages/embeds/<locale>/<slug>/+page.svelte`
+- Runs `.claude/skills/screenshot-embeds/scripts/screenshot.mjs` to capture PNG screenshots
+- Saves screenshots under `src/statics/images/embeds/<locale>/<slug>.png`
+- Updates placeholder embed `SEO` metadata to reference the generated image with `asset('/images/embeds/<locale>/<slug>.png')`
+- Adds `shareImgWidth={1200}` and `shareImgHeight={628}` where needed so social metadata matches the generated default size
+
 ### `/write-skill`
 
 Scaffolds a new Claude Code skill for this project. Use it when you want to automate a repetitive workflow or encode a convention as a reusable command.
