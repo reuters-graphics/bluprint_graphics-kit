@@ -106,6 +106,27 @@ describe('embed share image checks', () => {
     expect(result.results[0].reason).toContain('Could not read image');
   });
 
+  it('uses URL-encoded og:image paths that point to valid local files', async () => {
+    await writeImage(
+      path.join(root, 'dist/cdn/images/custom image.jpg'),
+      '#00ff00'
+    );
+    fs.writeFileSync(
+      path.join(root, 'dist/embeds/en/page/index.html'),
+      html(
+        'https://www.reuters.com/graphics/testing/cdn/images/custom%20image.jpg'
+      )
+    );
+
+    const result = await checkEmbedShareImages({ root, log });
+
+    expect(result.fallbackCount).toBe(0);
+    expect(result.results[0]).toMatchObject({
+      source: 'metadata',
+      fallback: false,
+    });
+  });
+
   it('updates embed metadata to the placeholder only for fallback cases', async () => {
     await checkEmbedShareImages({ root, log });
 
@@ -169,6 +190,14 @@ describe('embed share image checks', () => {
     await expect(
       checkEmbedShareImages({ root, log, strict: true })
     ).rejects.toThrow(/Share image preflight failed for 1 embed/);
+  });
+
+  it('fails strict preflight when no embed html files are found', async () => {
+    fs.rmSync(path.join(root, 'dist/embeds'), { recursive: true, force: true });
+
+    await expect(
+      checkEmbedShareImages({ root, log, strict: true })
+    ).rejects.toThrow(/no embed index\.html files found/);
   });
 
   it('preserves normal publishing output when no fallback is needed', async () => {

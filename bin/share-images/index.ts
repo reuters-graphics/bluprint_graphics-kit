@@ -82,6 +82,14 @@ const getMetadata = (html: string) => {
   };
 };
 
+const decodeUrlPathname = (pathname: string) => {
+  try {
+    return decodeURI(pathname);
+  } catch {
+    return pathname;
+  }
+};
+
 const resolveMetadataImagePath = (
   htmlPath: string,
   canonicalUrl: string,
@@ -91,8 +99,11 @@ const resolveMetadataImagePath = (
   if (!canonicalUrl) return { error: 'No canonical URL metadata found.' };
 
   try {
-    const pagePath = new URL(canonicalUrl).pathname.replace(/index\.html$/, '');
-    const imagePath = new URL(imageUrl).pathname;
+    const pagePath = decodeUrlPathname(new URL(canonicalUrl).pathname).replace(
+      /index\.html$/,
+      ''
+    );
+    const imagePath = decodeUrlPathname(new URL(imageUrl).pathname);
     const relativeImagePath = path.posix.relative(pagePath, imagePath);
     return {
       imagePath: path.join(path.dirname(htmlPath), relativeImagePath),
@@ -202,6 +213,15 @@ export const checkEmbedShareImages = async ({
   );
   const manifestPath = path.join(distDir, 'share-images-manifest.json');
   const htmlPaths = getEmbedHtmlPaths(distDir);
+
+  if (strict && !htmlPaths.length) {
+    throw new Error(
+      `Share image preflight failed: no embed index.html files found in ${path.relative(
+        root,
+        path.join(distDir, 'embeds')
+      )}.`
+    );
+  }
 
   const placeholderProblem = await validateReadableImage(placeholderPath);
   if (placeholderProblem) {
