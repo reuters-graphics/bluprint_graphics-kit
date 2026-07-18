@@ -16,7 +16,8 @@
     "tests/**/*.js",
     "tests/**/*.ts",
     "tests/**/*.svelte",
-    // Mods
+    // Build helpers and mods
+    "bin/share-images/**/*.ts",
     "bin/mods/**/*.svelte",
     "bin/mods/**/*.ts"
   ],

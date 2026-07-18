@@ -24,6 +24,7 @@
     "publish:preview": "npx graphics-publisher preview",
     "publish:publish": "npx graphics-publisher publish",
     "publish:git-commit": "npx graphics github:push",
+    "share-images:check": "tsx ./bin/share-images/index.ts --strict",
     "startup:check-creds": "npx graphics dotfile:check",
     "startup:create-repo": "npx graphics github:create-repo",
     "startup": "npm-run-all startup:*",

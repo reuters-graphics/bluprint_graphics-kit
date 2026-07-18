@@ -1,5 +1,6 @@
 import { purgeStyles } from '@reuters-graphics/vite-plugin-purge-styles';
 import svelteKitPagesPlugin from './bin/svelte-kit/plugins/svelte-kit-pages/';
+import { shareImagePreviewPlugin } from './bin/share-images/';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { getBasePath } from '@reuters-graphics/graphics-kit-publisher';
 import { defineConfig } from 'vitest/config';
@@ -51,6 +52,7 @@ export default defineConfig({
   plugins: [
     sveltekit(),
     svelteKitPagesPlugin(),
+    shareImagePreviewPlugin(),
     purgeStyles({
       safeFiles: ['src/lib/styles/**/*.scss'],
     }),

@@ -109,3 +109,16 @@ Embed pages **must** have a canonical link element and should have a [`robots` m
 
 <PymChild polling={500} />
 ```
+
+### Embed share images
+
+Each embed needs a share image for the private producer-selection panel and Reuters Connect manifest. The image is generated at build time from the embed's metadata and is written beside the built embed as `_gfxpreview.png`, which is the file the publisher prefers when packaging media archives. This producer-panel image does **not** appear in the live embed.
+
+Use a real, meaningful image whenever possible by setting the embed page's `shareImgPath` to a JPG, PNG or GIF in `src/statics/`, usually through the `SEO` component. If that image is missing or cannot be decoded, the build falls back to `src/statics/images/reuters-graphics.jpg` so a late non-critical media-archive image problem does not block publication. The fallback is observable:
+
+- the build prints a warning naming the embed path and missing/broken image;
+- `dist/share-images-manifest.json` records the source image, fallback reason and remediation text;
+- the built embed gets a `reuters:share-image:fallback` marker naming the failure;
+- the built embed metadata is pointed at the placeholder only for fallback cases, so live SEO/social metadata is not silently left with a broken image URL.
+
+Run `pnpm share-images:check` before upload/publish for strict preflight. It uses the same checks but exits non-zero when an embed falls back, giving you an early signal in development or CI. To fix a warning, restore or export the intended image, update the embed's `shareImgPath`, then rebuild.
