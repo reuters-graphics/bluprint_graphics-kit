@@ -152,14 +152,15 @@ describe('GraphicsKit build', () => {
         expect($('meta[name=twitter:domain]').attr('content')).toBe(origin);
       });
 
-      it('sets the base URL origin in embed page SEO tags', () => {
+      // Embeds use the EmbedMetadata component, which emits only the canonical
+      // link and og:url (both origin-derived) — not the full SEO tag set.
+      it('sets the base URL origin in embed page metadata tags', () => {
         const embedUrl = new URL('embeds/en/page/', base).href;
         const $ = cheerio.load(
           fs.readFileSync(path.join(dist, 'embeds/en/page/index.html'), 'utf-8')
         );
         expect($('link[rel=canonical]').attr('href')).toBe(embedUrl);
         expect($('meta[property=og:url]').attr('content')).toBe(embedUrl);
-        expect($('meta[name=twitter:domain]').attr('content')).toBe(origin);
       });
     });
 

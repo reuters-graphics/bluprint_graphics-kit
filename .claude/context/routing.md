@@ -42,17 +42,21 @@ pages/
         +page.svelte        # Embeddable graphic at /embeds/en/map/
 ```
 
-Embed pages **must** include:
-
-- A `<meta name="robots" content="noindex, nofollow" />` tag to prevent search indexing
-- The `PymChild` component from `@reuters-graphics/graphics-components` to enable iframe resizing by the parent page
+Embed pages **must** include the `EmbedMetadata` component from `@reuters-graphics/graphics-components` — use it _instead of_ the `SEO` component, which is meant for full, standalone pages. `EmbedMetadata` renders the metadata an embed needs (a canonical link, an `og:image` and a `noindex, nofollow, noarchive` robots tag to prevent search indexing) and mounts the `PymChild` component for you to enable iframe resizing by the parent page — so you don't add `PymChild` or the robots tag separately.
 
 ```svelte
-<svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
-</svelte:head>
+<script lang="ts">
+  import { EmbedMetadata } from '@reuters-graphics/graphics-components';
+  import { page } from '$app/state';
+  import { asset } from '$app/paths';
+</script>
 
-<PymChild polling={500} />
+<EmbedMetadata
+  baseUrl={__BASE_URL__}
+  pageUrl={page.url}
+  previewImgPath={asset('/images/my-embed-preview.jpg')}
+  polling={500}
+/>
 ```
 
 ## Media assets for clients

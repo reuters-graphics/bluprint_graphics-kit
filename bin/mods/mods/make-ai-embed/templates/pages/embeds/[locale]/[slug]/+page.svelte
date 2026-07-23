@@ -5,8 +5,7 @@
   import {
     Theme,
     Article,
-    PymChild,
-    SEO,
+    EmbedMetadata,
     GraphicBlock,
   } from '@reuters-graphics/graphics-components';
   import LogBlock from '$lib/components/dev/LogBlock.svelte';
@@ -20,21 +19,14 @@
   let { embed } = data;
 </script>
 
-<SEO
+<EmbedMetadata
   baseUrl={__BASE_URL__}
   pageUrl={page.url}
-  seoTitle=""
-  seoDescription=""
-  shareTitle=""
-  shareDescription=""
-  shareImgPath={embed ?
+  previewImgPath={embed ?
     asset(`/images/embeds/${embed.locale?.trim()}/${embed.slug?.trim()}.jpg`)
   : asset('/images/reuters-graphics.jpg')}
+  polling={500}
 />
-
-<svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
-</svelte:head>
 
 <Theme base="light">
   <Article
@@ -67,8 +59,6 @@
     </GraphicBlock>
   </Article>
 </Theme>
-
-<PymChild polling={500} />
 
 <style>
   :global(article.embedded) {
