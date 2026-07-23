@@ -1,8 +1,7 @@
 <script lang="ts">
-  import pkg from '$pkg';
   import { asset } from '$app/paths';
   import { page } from '$app/state';
-  import { Theme, PymChild, SEO } from '@reuters-graphics/graphics-components';
+  import { Theme, EmbedMetadata } from '@reuters-graphics/graphics-components';
 
   import archieML from '$locales/en/content.json';
 
@@ -16,29 +15,16 @@
   let content = $derived(archieML.story);
 </script>
 
-<svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
-</svelte:head>
-
-<SEO
+<EmbedMetadata
   baseUrl={__BASE_URL__}
   pageUrl={page.url}
-  seoTitle={content.seoTitle}
-  seoDescription={content.seoDescription}
-  shareTitle={content.shareTitle}
-  shareDescription={content.shareDescription}
-  shareImgPath={asset(`/${content.shareImgPath}`)}
-  shareImgAlt={content.shareImgAlt}
-  publishTime={pkg?.reuters?.graphic?.published}
-  updateTime={pkg?.reuters?.graphic?.updated}
-  authors={pkg?.reuters?.graphic?.authors}
+  previewImgPath={asset(`/${content.shareImgPath}`)}
+  polling={500}
 />
 
 <Theme base="light">
   <App embedded={true} {content} />
 </Theme>
-
-<PymChild polling={500} />
 
 <style>
   :global(.headline-container) {

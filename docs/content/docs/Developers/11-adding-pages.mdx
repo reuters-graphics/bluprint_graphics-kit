@@ -83,29 +83,25 @@ Embeddable graphics should be created in an `embeds/` directory and then must be
 
 ### Required metadata
 
-Embed pages **must** have a canonical link element and should have a [`robots` metatag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) with `noindex, nofollow` to tell search engines not to surface the page in search results.
+Embed pages have their own metadata component: the [`EmbedMetadata` component](https://reuters-graphics.github.io/graphics-components/?path=/docs/components-page-metadata-embedmetadata--docs) from the Reuters graphics components library. Use it on embed pages _instead of_ the `SEO` component, which is meant for full, standalone pages.
+
+`EmbedMetadata` renders only what an embed needs — a canonical link, an `og:image` and a `noindex, nofollow, noarchive` [`robots` metatag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) so search engines don't surface the embed on its own — and it mounts the `PymChild` component for you, so you don't need to add it separately.
 
 ```svelte
-// 
+// pages/embeds/en/map/+page.svelte
 <script lang="ts">
-  import { SEO } from '@reuters-graphics/graphics-components';
+  import { EmbedMetadata } from '@reuters-graphics/graphics-components';
   import { page } from '$app/state';
   import { asset } from '$app/paths';
-  import { PymChild } from '@reuters-graphics/graphics-components';
   // ...
 </script>
 
-<SEO
+<EmbedMetadata
   baseUrl={__BASE_URL__}
   pageUrl={page.url}
-  shareImgPath={asset('/another-page-share.jpg')}
+  previewImgPath={asset('/another-page-share.jpg')}
+  polling={500}
 />
 
-<svelte:head>
-  <meta name="robots" content="noindex, nofollow" />
-</svelte:head>
-
 <!-- ... -->
-
-<PymChild polling={500} />
 ```
