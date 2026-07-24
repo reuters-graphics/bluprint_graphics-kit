@@ -12,6 +12,7 @@
     "pub": "npm-run-all publish:publish stories:autolink publish:git-commit",
     "build": "vite build",
     "build:preview": "PREVIEW=true vite build",
+    "diagnose": "npx graphics-publisher diagnose",
     "mods": "tsx ./bin/mods/index.ts mods",
     "savile": "savile row ./src/statics/images",
     "stories:unconfig": "tsx ./bin/mods/index.ts unconfig-rngs-io",
