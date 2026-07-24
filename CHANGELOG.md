@@ -1,5 +1,13 @@
 # @reuters-graphics/graphics-kit
 
+## 2.11.1
+
+### Patch Changes
+
+- f7c6035: Add a `diagnose` npm script that runs `graphics-publisher diagnose`, placed just above `mods` so it surfaces there in the VSCode npm scripts view.
+- 7d66b3a: Disable pnpm's `minimumReleaseAge` gate (`minimumReleaseAge: 0`) in `pnpm-workspace.yaml`. Projects are scaffolded from this template's committed lockfile via `pnpm install`, so under pnpm 11 (which enforces a 24h default) any lockfile entry published within that window would block a fresh scaffold entirely until the package aged out. Turning the gate off keeps scaffolding reliable regardless of when third-party dependency versions land. Also removes the now-redundant `minimumReleaseAgeExclude` for `@reuters-graphics/*`.
+- 0b039ce: Updates @reuters-graphics dependencies to latest versions.
+
 ## 2.11.0
 
 ### Minor Changes
