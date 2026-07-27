@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.11.2
+
+### Patch Changes
+
+- 1c9e672: Update `@reuters-graphics/savile` to 0.1.0. The `savile row` command used by the `savile` npm script is unchanged.
+
 ## 2.11.1
 
 ### Patch Changes
