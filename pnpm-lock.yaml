@@ -52,8 +52,8 @@ importers:
         specifier: ^0.1.12
         version: 0.1.12(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@reuters-graphics/savile':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       '@reuters-graphics/vite-plugin-purge-styles':
         specifier: ^0.0.4
         version: 0.0.4(vite@8.1.4(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.7.0)(sass@1.101.0)(tsx@4.23.0)(yaml@2.9.0))
@@ -2158,8 +2158,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@reuters-graphics/savile@0.1.0':
-    resolution: {integrity: sha512-1vzC8tPcfzYrbprUUbsk62KNEFJkBuvXm/R+SQ3dZXHhkAd0pU2vFJrA7juNbvEqqPcnVnwtc61UkfxOAJb7fw==}
+  '@reuters-graphics/savile@0.1.1':
+    resolution: {integrity: sha512-jFHkpLWEK+jRhjhIboeobrUz3IZ3pFMqNGQQoK/7ttYAeuqx0vNMtj8120WAt+uhL/e1yavk+ZRwAlAzVi30wg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -9518,10 +9518,11 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@reuters-graphics/savile@0.1.0':
+  '@reuters-graphics/savile@0.1.1':
     dependencies:
       '@clack/core': 0.4.2
       '@clack/prompts': 0.9.1
+      dedent: 1.7.2
       glob: 11.1.0
       image-size: 1.2.1
       is-unicode-supported: 2.1.0
@@ -9532,6 +9533,8 @@ snapshots:
       sade: 1.8.1
       sharp: 0.33.5
       update-notifier: 7.3.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
 
   '@reuters-graphics/server-client@2.0.5(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
