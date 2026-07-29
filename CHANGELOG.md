@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.11.4
+
+### Patch Changes
+
+- f6a59fc: Update `@reuters-graphics/vite-plugin-purge-styles` to 0.0.5.
+
 ## 2.11.3
 
 ### Patch Changes
