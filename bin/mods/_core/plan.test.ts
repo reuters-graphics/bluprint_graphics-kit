@@ -56,6 +56,63 @@ describe('applyPlan', () => {
     expect(read('out.txt')).toBe('baz baz ID=123');
   });
 
+  it('copies a binary file byte-for-byte when there is nothing to substitute', () => {
+    // Leading bytes of a JPEG/JFIF header — invalid UTF-8, so a text round trip
+    // would mangle them to U+FFFD and break the image.
+    const jpeg = Buffer.from([0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46]);
+    fs.writeFileSync(path.join(root, 'graphic.jpg'), jpeg);
+    applyPlan(
+      [
+        {
+          kind: 'copy',
+          from: path.join(root, 'graphic.jpg'),
+          to: path.join(root, 'embeds/out.jpg'),
+        },
+      ],
+      { root }
+    );
+    expect(
+      fs.readFileSync(path.join(root, 'embeds/out.jpg')).equals(jpeg)
+    ).toBe(true);
+  });
+
+  it('refuses to apply replacements to a non-UTF-8 file, changing nothing', () => {
+    fs.writeFileSync(
+      path.join(root, 'graphic.jpg'),
+      Buffer.from([0xff, 0xd8, 0xff, 0xe0])
+    );
+    expect(() =>
+      applyPlan(
+        [
+          {
+            kind: 'copy',
+            from: path.join(root, 'graphic.jpg'),
+            to: path.join(root, 'out.jpg'),
+            replace: [{ match: 'nope', replace: 'x' }],
+          },
+        ],
+        { root }
+      )
+    ).toThrow(/non-UTF-8/);
+    expect(exists('out.jpg')).toBe(false);
+  });
+
+  it('preserves multi-byte characters through a substituting copy', () => {
+    fs.writeFileSync(path.join(root, 'tpl.txt'), '— café 😀 NAME');
+    applyPlan(
+      [
+        {
+          kind: 'copy',
+          from: path.join(root, 'tpl.txt'),
+          to: path.join(root, 'out.txt'),
+          replace: [{ match: 'NAME', replace: 'wörld' }],
+        },
+      ],
+      { root }
+    );
+    expect(read('out.txt')).toBe('— café 😀 wörld');
+  });
+
   it('dry run writes nothing', () => {
     applyPlan(
       [{ kind: 'write', to: path.join(root, 'nope.txt'), content: 'X' }],

@@ -6,6 +6,9 @@ import { utils } from '@reuters-graphics/graphics-bin';
 /**
  * A single find-and-replace applied to a template's contents on `copy`.
  *
+ * Supplying any replacement makes `copy` treat the file as UTF-8 text, so only
+ * use these for text templates — never for binary files.
+ *
  * - `match` a string replaces **every** literal occurrence.
  * - `match` a RegExp is passed straight to `String.replace`, so its own flags
  *   decide scope — add the `g` flag to replace all matches, omit it for the
@@ -20,8 +23,10 @@ export interface Replacement {
  * A single declarative file operation. Mods build a list of these and hand it
  * to {@link applyPlan}, which executes them transactionally.
  *
- * - `copy` — read `from`, apply each {@link Replacement} in order, and write to
- *   `to`. Used for rendering templates.
+ * - `copy` — copy `from` to `to`. With `replace`, the file is read as UTF-8 text
+ *   and each {@link Replacement} is applied in order, for rendering templates;
+ *   without it the bytes are copied verbatim, so binary files are safe. Passing
+ *   `replace` for a file that isn't valid UTF-8 throws rather than corrupting it.
  * - `write` — write literal `content` to `to`.
  * - `move` — rename `from` to `to`.
  * - `remove` — delete `path` (file or directory). Tolerant of a missing target.
@@ -157,12 +162,25 @@ export const applyPlan = (ops: FileOp[], options: ApplyOptions): void => {
       switch (op.kind) {
         case 'copy': {
           recordRestore(op.to);
-          const content = substitute(
-            fs.readFileSync(op.from, 'utf-8'),
-            op.replace
-          );
           utils.fs.ensureDir(op.to);
-          fs.writeFileSync(op.to, content, 'utf-8');
+          // With nothing to substitute there's no reason to decode, so copy the
+          // bytes verbatim — the only form that's safe for binary files.
+          if (!op.replace?.length) {
+            fs.copyFileSync(op.from, op.to);
+            break;
+          }
+          // Substituting requires text. Decoding a binary would replace every
+          // invalid sequence with U+FFFD and silently corrupt the output, so
+          // confirm the round trip is lossless before writing anything.
+          const bytes = fs.readFileSync(op.from);
+          const text = bytes.toString('utf-8');
+          if (!Buffer.from(text, 'utf-8').equals(bytes)) {
+            throw new Error(
+              `Cannot apply replacements to non-UTF-8 file: ${op.from}. ` +
+                'Omit `replace` to copy it verbatim.'
+            );
+          }
+          fs.writeFileSync(op.to, substitute(text, op.replace), 'utf-8');
           break;
         }
         case 'write': {
