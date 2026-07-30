@@ -29,39 +29,130 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      # Updates the tracked internal dependencies, then reports exactly which
+      # ones moved and to what version. The triggering dispatch carries no
+      # payload — and a single dispatch can pick up releases of more than one
+      # package anyway — so package.json before vs. after is the only reliable
+      # source for that. Emits nothing when no version actually changed, so a
+      # duplicate or no-op dispatch doesn't raise an empty PR.
       - name: Update dependencies
+        id: update
         run: |
-          pnpm update @reuters-graphics/graphics-components --latest
-          pnpm update @reuters-graphics/graphics-kit-publisher --latest
+          cat > "$RUNNER_TEMP/update-deps.mjs" <<'NODE'
+          import { execSync } from 'node:child_process';
+          import fs from 'node:fs';
 
-      - name: Create changeset
-        run: |
-          cat << EOF > .changeset/update-dependencies-$(date +%s).md
-          ---
-          '@reuters-graphics/graphics-kit': patch
-          ---
+          /** Internal packages to track, with the repo that publishes each. */
+          const PACKAGES = [
+            {
+              name: '@reuters-graphics/graphics-components',
+              repo: 'reuters-graphics/graphics-components',
+            },
+            {
+              name: '@reuters-graphics/graphics-kit-publisher',
+              repo: 'reuters-graphics/graphics-kit-publisher',
+            },
+          ];
 
-          Updates @reuters-graphics dependencies to latest versions.
-          EOF
+          /** Declared range for a package, from whichever block holds it. */
+          const specOf = (name) => {
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
+            return pkg.dependencies?.[name] ?? pkg.devDependencies?.[name] ?? null;
+          };
+
+          /** Drop any range prefix (`^`, `~`, …) to leave a bare version. */
+          const bare = (spec) => spec?.replace(/^[^\d]*/, '') ?? null;
+
+          const before = new Map(PACKAGES.map((p) => [p.name, specOf(p.name)]));
+
+          execSync(
+            `pnpm update ${PACKAGES.map((p) => p.name).join(' ')} --latest`,
+            { stdio: 'inherit' }
+          );
+
+          const updated = [];
+          for (const p of PACKAGES) {
+            const from = bare(before.get(p.name));
+            const to = bare(specOf(p.name));
+            if (from && to && from !== to) updated.push({ ...p, from, to });
+          }
+
+          const outputs = [];
+          /** Always heredoc-quoted, so multi-line values survive intact. */
+          const emit = (key, value) =>
+            outputs.push(`${key}<<__GHA_EOF__\n${value}\n__GHA_EOF__`);
+          const flush = () =>
+            fs.appendFileSync(
+              process.env.GITHUB_OUTPUT,
+              `${outputs.join('\n')}\n`
+            );
+
+          if (updated.length === 0) {
+            emit('changed', 'false');
+            flush();
+            console.log('No tracked dependency changed version — nothing to do.');
+            process.exit(0);
+          }
+
+          const short = (p) => p.name.replace('@reuters-graphics/', '');
+          const notes = (p) => `https://github.com/${p.repo}/releases/tag/v${p.to}`;
+          const diff = (p) => `https://github.com/${p.repo}/compare/v${p.from}...v${p.to}`;
+
+          // This summary becomes the kit's CHANGELOG entry, so it has to name
+          // each package and the versions it moved between.
+          const summary =
+            updated.length === 1 ?
+              `Update \`${updated[0].name}\` from ${updated[0].from} to [${updated[0].to}](${notes(updated[0])}).`
+            : [
+                'Update internal dependencies:',
+                '',
+                ...updated.map(
+                  (p) => `- \`${p.name}\` from ${p.from} to [${p.to}](${notes(p)})`
+                ),
+              ].join('\n');
+
+          fs.writeFileSync(
+            `.changeset/update-dependencies-${Date.now()}.md`,
+            `---\n'@reuters-graphics/graphics-kit': patch\n---\n\n${summary}\n`
+          );
+
+          emit('changed', 'true');
+          emit(
+            'title',
+            `chore: update ${updated.map((p) => `${short(p)} to ${p.to}`).join(', ')}`
+          );
+          emit(
+            'body',
+            [
+              '## Summary',
+              '',
+              'Automated update triggered by an upstream release.',
+              '',
+              '## Changes',
+              '',
+              ...updated.map(
+                (p) =>
+                  `- \`${p.name}\` \`${p.from}\` → \`${p.to}\` — [release notes](${notes(p)}) · [full diff](${diff(p)})`
+              ),
+              '',
+              '---',
+              '🤖 This PR was automatically created by the dependency update workflow.',
+            ].join('\n')
+          );
+          flush();
+          NODE
+          node "$RUNNER_TEMP/update-deps.mjs"
 
       - name: Create Pull Request
+        if: steps.update.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore: update dependencies'
+          commit-message: ${{ steps.update.outputs.title }}
           branch: update-dependencies
           delete-branch: true
-          title: 'chore: Update dependencies'
-          body: |
-            ## Summary
-            Automated update triggered by upstream release.
-
-            ## Changes
-            - Updates @reuters-graphics/graphics-components to the latest version
-            - Updates @reuters-graphics/graphics-kit-publisher to the latest version
-
-            ---
-            🤖 This PR was automatically created by the dependency update workflow.
+          title: ${{ steps.update.outputs.title }}
+          body: ${{ steps.update.outputs.body }}
           labels: |
             dependencies
             automated
