@@ -77,14 +77,16 @@ To add a new component to the loop:
 1. Import the component in the script portion of the Svelte component, if it isn't imported already.
 2. Add a new `else if` condition in the `{#each content.blocks as block}` loop to handle the new block type.
 3. Pass the required props to the component, ensuring they match the structure of the content block object.
+4. If the block has a `src`-like field, check its actual value(s) in `content.json` first — it may be a local asset path or an external URL. Only write the branch(es) that match what you actually observe: a single `asset()`-wrapped branch if every instance of that block type is a local path, a single passthrough branch if every instance is an external URL, or both branches (using `isExternalUrl()`) only when you observe both kinds among that type's instances. See [`.claude/context/assets.md`](./assets.md#local-assets-vs-external-urls) for the branching pattern — don't add the dual-branch/`isExternalUrl()` treatment speculatively for a case not present in the doc.
 
-For example, to add a new FeaturePhoto:
+For example, given a doc where `feature-photo` blocks appear with both local and external `src` values:
 
 ```svelte
 <script lang="ts">
   // ...
 
   import { asset } from '$app/paths';
+  import { isExternalUrl } from '$utils/propValidators';
 
   import {
     Article,
@@ -108,6 +110,13 @@ For example, to add a new FeaturePhoto:
     <!-- Other block types -->
 
     <!-- Add new FeaturePhoto block -->
+  {:else if block.type === 'feature-photo' && isExternalUrl(block.src)}
+    <FeaturePhoto
+      src={block.src}
+      alt={block.alt}
+      caption={block.caption}
+      credit={block.credit}
+    />
   {:else if block.type === 'feature-photo'}
     <FeaturePhoto
       src={asset(`/${block.src}`)}
