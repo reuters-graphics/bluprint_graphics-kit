@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.11.9
+
+### Patch Changes
+
+- 6e3b0bf: Update `@reuters-graphics/graphics-components` from 4.10.1 to [4.12.0](https://github.com/reuters-graphics/graphics-components/releases/tag/v4.12.0).
+
 ## 2.11.8
 
 ### Patch Changes
