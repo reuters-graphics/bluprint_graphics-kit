@@ -49,3 +49,10 @@ Prefer fluid spacing tokens (prefixed with `f`, e.g. `fmb-3`, `fpy-2`) over fixe
 **Global styles** go in `src/lib/styles/global.scss`, already imported across all pages and embeds. Add additional global stylesheets as separate `.scss` files and import them in the specific page that needs them.
 
 Use `:global()` in component styles when targeting elements created by `{@html}` or third-party JS, since Svelte won't scope rules for elements it can't detect statically.
+
+## Writing CSS/SCSS for a request
+
+- **Scope tightly.** Target only the elements the request names — a specific class, component, or selector — never a bare tag selector (`div`, `p`, `a`) in global styles or a shared component, since that silently restyles every future use of that tag. Component styles are scoped by Svelte, so a bare tag selector there is fine.
+- **Check Baseline.** Before using a CSS feature, confirm it's [Baseline "Widely available"](https://web-platform-dx.github.io/web-features/) (or at minimum "Newly available") on [caniuse.com](https://caniuse.com) or [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS). If a feature is limited-availability, say so and suggest a fallback rather than using it silently.
+- **Be concise.** Reuse existing tokens/mixins (see above) over new raw CSS. Write the fewest rules and selectors that satisfy the request — no defensive overrides for cases the request didn't mention.
+- **Ask when the target is unclear.** If the request doesn't make clear which element(s) it should affect (e.g. "make the text bigger" in a component with several text elements), ask which one before writing a selector broad enough to guess.
