@@ -29,6 +29,11 @@ export default defineConfig({
     // drop grouped-selector branches (lightningcss#1260); @container queries need ~2022 anyway.
     cssTarget: ['chrome105', 'safari16', 'firefox110', 'edge105'],
   },
+  optimizeDeps: {
+    // ponytail: Vite 8's dep optimizer can't resolve the `?worker&url` query in the
+    // TileMap worker import (graphics-components#501); drop once #502 ships.
+    exclude: ['maplibre-gl'],
+  },
   server: {
     open: true,
     port: 3000,
