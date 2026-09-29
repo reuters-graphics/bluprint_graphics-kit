@@ -1,6 +1,6 @@
 {
   "name": "@reuters-graphics/graphics-kit",
-  "version": "2.11.12",
+  "version": "2.11.13",
   "type": "module",
   "private": true,
   "scripts": {
