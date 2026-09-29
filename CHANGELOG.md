@@ -1,5 +1,11 @@
 # @reuters-graphics/graphics-kit
 
+## 2.11.12
+
+### Patch Changes
+
+- 963abe7: Removes ads
+
 ## 2.11.11
 
 ### Patch Changes
