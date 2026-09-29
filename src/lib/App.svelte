@@ -21,10 +21,9 @@
     EndNotes,
     SiteHeadline,
     GraphicBlock,
-    InlineAd,
   } from '@reuters-graphics/graphics-components';
   import LogBlock from './components/dev/LogBlock.svelte';
-  import { containerWidth, inlineAdNumber } from '$utils/propValidators';
+  import { containerWidth } from '$utils/propValidators';
   import { isReutersDotcom } from '$utils/env';
   import { page } from '$app/state';
   import pkg from '$pkg';
