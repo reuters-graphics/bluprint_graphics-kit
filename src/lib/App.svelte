@@ -21,10 +21,9 @@
     EndNotes,
     SiteHeadline,
     GraphicBlock,
-    InlineAd,
   } from '@reuters-graphics/graphics-components';
   import LogBlock from './components/dev/LogBlock.svelte';
-  import { containerWidth, inlineAdNumber } from '$utils/propValidators';
+  import { containerWidth } from '$utils/propValidators';
   import { isReutersDotcom } from '$utils/env';
   import { page } from '$app/state';
   import pkg from '$pkg';
@@ -79,14 +78,6 @@
         >
           <AiChart assetsPath={asset('/')} />
         </GraphicBlock>
-      {/if}
-
-      <!-- Inline ad -->
-    {:else if block.type === 'inline-ad'}
-      {#if isReutersDotcom(page.url)}
-        <InlineAd n={inlineAdNumber(block.n)} />
-      {:else}
-        <LogBlock level="info" message="An ad will appear here on dotcom" />
       {/if}
 
       <!-- Warning block -->

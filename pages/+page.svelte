@@ -6,7 +6,6 @@
     SiteHeader,
     SiteFooter,
     EmbedPreviewerLink,
-    LeaderboardAd,
     Theme,
   } from '@reuters-graphics/graphics-components';
   import App from '$lib/App.svelte';
@@ -14,8 +13,7 @@
   import { dev } from '$app/environment';
   import { asset } from '$app/paths';
   import { page } from '$app/state';
-  import { isReutersApp, isReutersDev, isReutersDotcom } from '$utils/env';
-  import LogBlock from '$lib/components/dev/LogBlock.svelte';
+  import { isReutersApp, isReutersDotcom } from '$utils/env';
 
   // Styles
   import '@reuters-graphics/graphics-components/scss/main.scss';
@@ -53,11 +51,6 @@
 
 <Theme base="light">
   {#if !isReutersApp(page.url)}
-    {#if isReutersDotcom(page.url)}
-      <LeaderboardAd />
-    {:else if isReutersDev(page.url)}
-      <LogBlock level="info" message="An ad will appear here on dotcom" />
-    {/if}
     <SiteHeader />
   {/if}
 

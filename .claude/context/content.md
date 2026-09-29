@@ -93,7 +93,6 @@ For example, to add a new FeaturePhoto:
     EndNotes,
     SiteHeadline,
     GraphicBlock,
-    InlineAd,
     FeaturePhoto, // Add the component to others already imported
   } from '@reuters-graphics/graphics-components';
 
