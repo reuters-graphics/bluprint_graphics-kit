@@ -81,14 +81,6 @@
         </GraphicBlock>
       {/if}
 
-      <!-- Inline ad -->
-    {:else if block.type === 'inline-ad'}
-      {#if isReutersDotcom(page.url)}
-        <InlineAd n={inlineAdNumber(block.n)} />
-      {:else}
-        <LogBlock level="info" message="An ad will appear here on dotcom" />
-      {/if}
-
       <!-- Warning block -->
     {:else}
       <LogBlock message={`Unknown block type: "${block.type}"`} />

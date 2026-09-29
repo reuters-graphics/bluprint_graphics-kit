@@ -53,11 +53,6 @@
 
 <Theme base="light">
   {#if !isReutersApp(page.url)}
-    {#if isReutersDotcom(page.url)}
-      <LeaderboardAd />
-    {:else if isReutersDev(page.url)}
-      <LogBlock level="info" message="An ad will appear here on dotcom" />
-    {/if}
     <SiteHeader />
   {/if}
 
