@@ -37,6 +37,7 @@ export const promptText = async (opts: {
   message: string;
   placeholder?: string;
   initialValue?: string;
+  validate?: (value: string) => string | undefined;
 }): Promise<string> => {
   const result = await text(opts);
   if (isCancel(result)) throw new CancelledError();

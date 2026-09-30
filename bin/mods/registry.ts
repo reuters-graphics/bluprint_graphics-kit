@@ -41,7 +41,7 @@ export const registry: ModDescriptor[] = [
   {
     id: 'make-ai-embed',
     label: 'Make an embed page',
-    hint: 'for ai2svelte graphics',
+    hint: 'for an ai2svelte graphic or a blank page',
     menu: true,
     run: (ctx) => makeAiEmbed(ctx),
   },

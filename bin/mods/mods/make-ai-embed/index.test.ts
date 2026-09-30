@@ -3,7 +3,7 @@ import { TestWorkingDirectory } from '$test/utils/twd';
 import { createTestContext } from '$test/utils/modContext';
 import fs from 'fs';
 import path from 'path';
-import { makeAiEmbed } from '.';
+import { makeAiEmbed, slugError } from '.';
 import { execSync } from 'child_process';
 
 process.env.TESTING = 'true';
@@ -46,6 +46,37 @@ describe('Mods: make-ai-embed', () => {
     );
   });
 
+  it('should make a blank embed page from prompts', async () => {
+    // Answers: embed kind, language, slug
+    await makeAiEmbed(
+      createTestContext(twd.TWD, ['blank', 'en', 'embed-name'])
+    );
+
+    const embedDir = path.join(twd.TWD, 'pages/embeds/en/embed-name');
+    expect(fs.existsSync(path.join(embedDir, '+page.server.ts'))).toBe(true);
+    const pageContent = fs.readFileSync(
+      path.join(embedDir, '+page.svelte'),
+      'utf-8'
+    );
+    expect(pageContent).toMatch('locale: en and slug: embed-name');
+    expect(pageContent).toMatch('**Embed description**');
+    expect(pageContent).not.toMatch('[locale]');
+    expect(pageContent).not.toMatch('[slug]');
+
+    const imagesDir = path.join(twd.TWD, 'src/statics/images');
+    expect(
+      fs.readFileSync(path.join(imagesDir, 'embeds/en/embed-name.jpg'))
+    ).toEqual(fs.readFileSync(path.join(imagesDir, 'reuters-graphics.jpg')));
+  });
+
+  it('should refuse unusable slugs', () => {
+    expect(slugError(twd.TWD, 'en', '')).toBeTruthy();
+    expect(slugError(twd.TWD, 'en', 'Embed Name')).toBeTruthy();
+    expect(slugError(twd.TWD, 'en', 'page')).toBeTruthy();
+    expect(slugError(twd.TWD, 'en', 'embed-name')).toBeTruthy();
+    expect(slugError(twd.TWD, 'fr', 'embed-name')).toBeUndefined();
+  });
+
   it('should build the app without error', async () => {
     try {
       execSync('vite build');
@@ -56,6 +87,9 @@ describe('Mods: make-ai-embed', () => {
 
     expect(
       fs.existsSync(path.join(twd.TWD, 'dist/embeds/en/map/index.html'))
+    ).toBe(true);
+    expect(
+      fs.existsSync(path.join(twd.TWD, 'dist/embeds/en/embed-name/index.html'))
     ).toBe(true);
     expect(
       fs.existsSync(path.join(twd.TWD, 'dist/embeds/en/page/index.html'))

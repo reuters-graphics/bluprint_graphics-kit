@@ -20,7 +20,7 @@ pnpm mods
 │
 ◆  Which mod do you want?
 │  ● Export AI statics — export JPG and EPS files
-│  ○ Make an embed page — for ai2svelte graphics
+│  ○ Make an embed page — for an ai2svelte graphic or a blank page
 │  ○ Change my project type — to embeds-only or pages+
 │  ○ Convert to a graphics blog — posts feed + permalinks
 └
@@ -38,7 +38,8 @@ pnpm mods
     Switch between **pages+** and **embeds-only**.
   </Card>
   <Card title="Make an embed page" icon="puzzle">
-    Create an embeddable page for an ai2svelte graphic.
+    Create an embeddable page for an ai2svelte graphic, or a blank one to wire
+    your own component into.
   </Card>
   <Card title="Export AI statics" icon="download">
     Export JPG and EPS versions of an Adobe Illustrator graphic.
@@ -62,13 +63,26 @@ The mod detects your current type and swaps to the other, rewriting your homepag
 
 ### Make an embed page
 
-Make an embeddable page for an Adobe Illustrator graphic so it can be published as a media embed.
+Make an embeddable page so a graphic can be published as a media embed. It works the same way in **pages+** and **embeds-only** projects. The mod first asks which kind of embed you want:
 
-You can only run this **after** you've exported your graphic from Adobe Illustrator with [ai2svelte](/bluprint_graphics-kit/developers/adobe-illustrator-graphics). It reads the components in `src/lib/ai2svelte/`, asks which one and which language the embed is for, and creates the embed page at `pages/embeds/<locale>/<slug>/`.
+- **ai2svelte graphic** — for a graphic you've already exported from Adobe Illustrator with [ai2svelte](/bluprint_graphics-kit/developers/adobe-illustrator-graphics). It reads the components in `src/lib/ai2svelte/`, asks which one and which language the embed is for, and names the embed after the component.
+- **Blank** — for anything else, such as a custom Svelte component. It asks for the language and a slug (for example, `embed-name`), then creates a page with a graphic block that holds a placeholder where your component goes, plus bold placeholders for the title, description and notes. Import your component and render it inside the graphic block in place of the placeholder.
+
+Either way, the embed page is created at `pages/embeds/<locale>/<slug>/`.
 
 <Aside>
-  After creating the embed, add the graphic to your `"embeds"` ArchieML doc and
-  [export AI statics](#export-ai-statics) for it before publishing.
+  After creating the embed, add it to your `"embeds"` ArchieML doc using the
+  same `locale` and `slug`. On a blank embed, the graphic block takes its props
+  from that entry: `title`, `description` and `notes` replace the placeholders,
+  `altText` becomes the accessible description, and optional `width` and
+  `textWidth` (for example, `wide`) set its size, defaulting to `normal`.
+
+  Each embed also needs a preview image at
+  `src/statics/images/embeds/<locale>/<slug>.jpg`. For an ai2svelte graphic,
+  [export AI statics](#export-ai-statics) to create it. For a blank embed, the
+  mod adds a copy of the generic `reuters-graphics.jpg` there so your project
+  still builds — **replace it with a real image of your graphic before
+  publishing.**
 </Aside>
 
 ### Export AI statics

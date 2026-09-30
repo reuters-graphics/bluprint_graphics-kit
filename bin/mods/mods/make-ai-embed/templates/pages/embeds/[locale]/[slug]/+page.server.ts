@@ -8,6 +8,8 @@ interface Embed {
   description?: string;
   notes?: string;
   altText?: string;
+  width?: string;
+  textWidth?: string;
 }
 
 export const load: PageServerLoad = ({ route }) => {
